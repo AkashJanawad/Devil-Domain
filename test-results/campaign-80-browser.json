@@ -1,0 +1,72 @@
+{
+  "results": [
+    {
+      "id": 71,
+      "state": "win",
+      "name": "LOOSE THREAD"
+    },
+    {
+      "id": 72,
+      "state": "win",
+      "name": "DOVETAIL"
+    },
+    {
+      "id": 73,
+      "state": "win",
+      "name": "THE INSPECTION PIT"
+    },
+    {
+      "id": 74,
+      "state": "win",
+      "name": "NEEDLE VALVE"
+    },
+    {
+      "id": 75,
+      "state": "win",
+      "name": "SUNDIAL STEPS"
+    },
+    {
+      "id": 76,
+      "state": "win",
+      "name": "FIRE ESCAPE"
+    },
+    {
+      "id": 77,
+      "state": "win",
+      "name": "THE GLASSBLOWER"
+    },
+    {
+      "id": 78,
+      "state": "win",
+      "name": "DEAD LETTER LIFT"
+    },
+    {
+      "id": 79,
+      "state": "win",
+      "name": "CARBON COPY"
+    },
+    {
+      "id": 80,
+      "state": "win",
+      "name": "NIGHT WATCH"
+    }
+  ],
+  "saves": {
+    "done": {
+      "0": true,
+      "49": true,
+      "69": true,
+      "70": true,
+      "71": true,
+      "72": true,
+      "73": true,
+      "74": true,
+      "75": true,
+      "76": true,
+      "77": true,
+      "78": true,
+      "79": true
+    },
+    "sentinel": "keep"
+  }
+}

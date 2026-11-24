@@ -1,0 +1,50 @@
+{
+  "url": "http://127.0.0.1:8091/#composite-playtest-lab",
+  "assets": [
+    {
+      "route": "/forge/app.js",
+      "status": 200,
+      "matchesDisk": true,
+      "cacheControl": null,
+      "etag": null,
+      "lastModified": null
+    },
+    {
+      "route": "/forge/composite-player.js",
+      "status": 200,
+      "matchesDisk": true,
+      "cacheControl": null,
+      "etag": null,
+      "lastModified": null
+    },
+    {
+      "route": "/composite-lab?level=481",
+      "status": 200,
+      "matchesDisk": true,
+      "cacheControl": null,
+      "etag": null,
+      "lastModified": null
+    }
+  ],
+  "rootHasExplicitLabRoute": true,
+  "fixtures": [
+    {
+      "id": 481,
+      "name": "COMPOSITE A — LAUNCH INTO THE PULSE",
+      "hash": "0ea7d42def12c9398be1a14c3475c95c6e6aceca0ccc1338e9ac7fbe9400c4c6",
+      "matchesSavedFixture": true
+    },
+    {
+      "id": 482,
+      "name": "COMPOSITE B — CARRY THE KEY",
+      "hash": "6fa410bde5cd7099f69dc3c16057a6a23cbff19db4a6b6579920a69560676094",
+      "matchesSavedFixture": true
+    },
+    {
+      "id": 483,
+      "name": "COMPOSITE C — THREE TERMS",
+      "hash": "f832b1b95c8250c945e7642f97744db1e354ad01747787cad1e0472250e0a4d6",
+      "matchesSavedFixture": true
+    }
+  ]
+}

@@ -1,0 +1,583 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 52,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 52,
+    "name": "BORROWED FLOOR",
+    "targetDifficulty": "HARD",
+    "intent": "Board the diagonal freight lift, transfer onto its high unloading dock and take the portal down.",
+    "surprise": "A suspended crate drops onto the unloading dock as you arrive.",
+    "spawn": {
+      "x": 55,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 887,
+          "y": 416
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 190,
+        "h": 40
+      },
+      {
+        "x": 540,
+        "y": 260,
+        "w": 230,
+        "h": 16
+      },
+      {
+        "x": 790,
+        "y": 480,
+        "w": 170,
+        "h": 60
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 210,
+            "y": 460,
+            "w": 120,
+            "h": 16
+          },
+          {
+            "toX": 430,
+            "toY": 290,
+            "speed": 150,
+            "phase": 0.66
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 660,
+            "y": 65,
+            "w": 54,
+            "h": 42
+          },
+          {
+            "x": 550,
+            "y": 130,
+            "w": 35,
+            "h": 130
+          },
+          {
+            "shakeTime": 0.6,
+            "floorY": 260
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          725,
+          212,
+          800,
+          432,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          840,
+          480,
+          36
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          190,
+          540,
+          600,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "freight",
+        "cargo",
+        "chute",
+        "teeth",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Board diagonal freight",
+          "target": {
+            "trap": "freight",
+            "dx": 30,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "freight",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Unload high",
+          "target": {
+            "x": 575,
+            "y": 228
+          },
+          "reach": {
+            "x": 540,
+            "y": 210,
+            "w": 90,
+            "h": 30
+          },
+          "requires": [
+            {
+              "trap": "cargo",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Take chute",
+          "target": {
+            "x": 730,
+            "y": 228
+          },
+          "requires": [
+            {
+              "trap": "chute",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Exit hop",
+          "target": {
+            "x": 885,
+            "y": 448
+          },
+          "reach": {
+            "x": 875,
+            "y": 330,
+            "w": 65,
+            "h": 150
+          },
+          "requires": [],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "freight",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "cargo",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "chute",
+          "event": "activate",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "70d1e51212d611fb57cd85e7492738c912ee6574c3d6be4e88d3556a95e1e0e7",
+      "seed": 52,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 449,
+      "seconds": 3.7416666666666667,
+      "end": [
+        887.3750000000011,
+        391.25,
+        "win"
+      ]
+    },
+    "expanded": 20659,
+    "rejectedWins": 18,
+    "removedJumpPressTicks": []
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "70d1e51212d611fb57cd85e7492738c912ee6574c3d6be4e88d3556a95e1e0e7",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 449,
+      "seconds": 3.7416666666666667,
+      "end": [
+        887.3750000000011,
+        391.25,
+        "win"
+      ]
+    },
+    "ticks": 449,
+    "successfulReplaySeconds": 3.7416666666666667,
+    "seconds": {
+      "activeTraversal": 3.7333333333333334,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.13333333333333333
+    },
+    "distance": {
+      "selfPixels": 1251.5610104977213,
+      "carriedPixels": 62.87694504098893,
+      "portalPixels": 242.2816773531115
+    },
+    "inputs": {
+      "jumpPresses": 7,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "freight",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 88
+      },
+      {
+        "trap": "cargo",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 323
+      },
+      {
+        "trap": "chute",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 403
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 88,
+        "id": "freight",
+        "event": "ride"
+      },
+      {
+        "tick": 99,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Board diagonal freight"
+      },
+      {
+        "tick": 323,
+        "id": "cargo",
+        "event": "trigger"
+      },
+      {
+        "tick": 333,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 333,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Unload high"
+      },
+      {
+        "tick": 403,
+        "id": "chute",
+        "event": "activate"
+      },
+      {
+        "tick": 403,
+        "id": "teeth",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 403,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Take chute"
+      },
+      {
+        "tick": 444,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Exit hop"
+      }
+    ],
+    "stagesCompleted": 4,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "freight:ride": 66,
+      "stage:0:complete": 1,
+      "cargo:trigger": 1,
+      "platform:1:land": 2,
+      "stage:1:complete": 1,
+      "chute:activate": 1,
+      "teeth:hazardNear": 9,
+      "stage:2:complete": 1,
+      "stage:3:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 17,
+      "score": 0.34500000000000003,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 57,
+      "score": 0.3261904761904762,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 21,
+      "score": 0.3054166666666666,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 6.999
+}

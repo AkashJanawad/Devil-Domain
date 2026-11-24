@@ -1,0 +1,841 @@
+[
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 81,
+      "season": 2,
+      "name": "HIDDEN PASSAGE — FALL",
+      "seed": 305011,
+      "targetDifficulty": "MEDIUM",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true,
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 420,
+          "y": 300,
+          "w": 160,
+          "h": 16
+        },
+        {
+          "x": 720,
+          "y": 260,
+          "w": 240,
+          "h": 16
+        },
+        {
+          "x": 180,
+          "y": 420,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 280,
+          "y": 360,
+          "w": 90,
+          "h": 16
+        }
+      ],
+      "traps": [
+        {
+          "type": "MovingPlatform",
+          "args": [
+            {
+              "x": 580,
+              "y": 300,
+              "w": 110,
+              "h": 16
+            },
+            {
+              "toX": 650,
+              "toY": 275,
+              "speed": 85,
+              "pause": 0.15
+            }
+          ]
+        },
+        {
+          "type": "PopSpikes",
+          "args": [
+            145,
+            480,
+            38,
+            {
+              "x": 95,
+              "y": 350,
+              "w": 25,
+              "h": 130
+            },
+            {
+              "delay": 0.35
+            }
+          ]
+        },
+        {
+          "type": "FallBlock",
+          "args": [
+            {
+              "x": 805,
+              "y": 20,
+              "w": 48,
+              "h": 35
+            },
+            {
+              "x": 740,
+              "y": 150,
+              "w": 25,
+              "h": 110
+            },
+            {
+              "shakeTime": 0.65
+            }
+          ]
+        }
+      ],
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 196
+          }
+        ],
+        "options": {
+          "fleeDist": 70
+        }
+      },
+      "checkpoints": [],
+      "design": {
+        "version": 3,
+        "access": "stairs",
+        "crossing": "shuttle",
+        "encounter": "fall",
+        "stages": [
+          {
+            "x": 0,
+            "y": 330,
+            "w": 420,
+            "h": 150
+          },
+          {
+            "x": 420,
+            "y": 150,
+            "w": 320,
+            "h": 166
+          },
+          {
+            "x": 720,
+            "y": 110,
+            "w": 240,
+            "h": 170
+          }
+        ],
+        "waypoints": [
+          {
+            "x": 475,
+            "y": 260,
+            "w": 100,
+            "h": 100,
+            "reach": {
+              "x": 420,
+              "y": 170,
+              "w": 160,
+              "h": 130
+            }
+          }
+        ]
+      }
+    },
+    "fingerprint": "4cb2d1413108aa569016402a3813f329effc95624888ba7608a5f30c5db2fd55",
+    "status": "GENERATING",
+    "approved": false,
+    "v3": {
+      "id": 81,
+      "seed": 305011,
+      "targetDifficulty": "MEDIUM",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true
+    }
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 82,
+      "season": 2,
+      "name": "HIDDEN PROMISE — SPIKES",
+      "seed": 305012,
+      "targetDifficulty": "MEDIUM",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true,
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 400,
+          "y": 300,
+          "w": 160,
+          "h": 16
+        },
+        {
+          "x": 720,
+          "y": 260,
+          "w": 240,
+          "h": 16
+        },
+        {
+          "x": 180,
+          "y": 420,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 280,
+          "y": 360,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 560,
+          "y": 300,
+          "w": 160,
+          "h": 16
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            145,
+            480,
+            38,
+            {
+              "x": 95,
+              "y": 350,
+              "w": 25,
+              "h": 130
+            },
+            {
+              "delay": 0.35
+            }
+          ]
+        },
+        {
+          "type": "PopSpikes",
+          "args": [
+            805,
+            260,
+            40,
+            {
+              "x": 740,
+              "y": 150,
+              "w": 25,
+              "h": 110
+            },
+            {
+              "delay": 0.5
+            }
+          ]
+        }
+      ],
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 196
+          }
+        ],
+        "options": {
+          "fleeDist": 70
+        }
+      },
+      "checkpoints": [],
+      "design": {
+        "version": 3,
+        "access": "stairs",
+        "crossing": "bridge",
+        "encounter": "spikes",
+        "stages": [
+          {
+            "x": 0,
+            "y": 330,
+            "w": 400,
+            "h": 150
+          },
+          {
+            "x": 400,
+            "y": 150,
+            "w": 320,
+            "h": 166
+          },
+          {
+            "x": 720,
+            "y": 110,
+            "w": 240,
+            "h": 170
+          }
+        ],
+        "waypoints": [
+          {
+            "x": 455,
+            "y": 260,
+            "w": 100,
+            "h": 100,
+            "reach": {
+              "x": 400,
+              "y": 170,
+              "w": 160,
+              "h": 130
+            }
+          }
+        ]
+      }
+    },
+    "fingerprint": "e2fa0092170399a2ac53098b33b87a9c005834a678634a7be1c61bb4b8ca500b",
+    "status": "GENERATING",
+    "approved": false,
+    "v3": {
+      "id": 82,
+      "seed": 305012,
+      "targetDifficulty": "MEDIUM",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true
+    }
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 83,
+      "season": 2,
+      "name": "HIDDEN PROMISE — LASER",
+      "seed": 305013,
+      "targetDifficulty": "MEDIUM",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true,
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 380,
+          "y": 300,
+          "w": 160,
+          "h": 16
+        },
+        {
+          "x": 720,
+          "y": 260,
+          "w": 240,
+          "h": 16
+        },
+        {
+          "x": 180,
+          "y": 420,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 280,
+          "y": 360,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 540,
+          "y": 300,
+          "w": 180,
+          "h": 16
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            145,
+            480,
+            38,
+            {
+              "x": 95,
+              "y": 350,
+              "w": 25,
+              "h": 130
+            },
+            {
+              "delay": 0.35
+            }
+          ]
+        },
+        {
+          "type": "Laser",
+          "args": [
+            {
+              "x": 805,
+              "y": 50,
+              "len": 210,
+              "vertical": true,
+              "period": 2.8,
+              "warn": 0.7,
+              "fire": 0.35
+            }
+          ]
+        }
+      ],
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 196
+          }
+        ],
+        "options": {
+          "fleeDist": 70
+        }
+      },
+      "checkpoints": [],
+      "design": {
+        "version": 3,
+        "access": "stairs",
+        "crossing": "bridge",
+        "encounter": "laser",
+        "stages": [
+          {
+            "x": 0,
+            "y": 330,
+            "w": 380,
+            "h": 150
+          },
+          {
+            "x": 380,
+            "y": 150,
+            "w": 320,
+            "h": 166
+          },
+          {
+            "x": 720,
+            "y": 110,
+            "w": 240,
+            "h": 170
+          }
+        ],
+        "waypoints": [
+          {
+            "x": 435,
+            "y": 260,
+            "w": 100,
+            "h": 100,
+            "reach": {
+              "x": 380,
+              "y": 170,
+              "w": 160,
+              "h": 130
+            }
+          }
+        ]
+      }
+    },
+    "fingerprint": "b602f93e3af058bb71951100964355536011e3c0a0c0d8f475a6ecdc69eaef74",
+    "status": "GENERATING",
+    "approved": false,
+    "v3": {
+      "id": 83,
+      "seed": 305013,
+      "targetDifficulty": "MEDIUM",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true
+    }
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 84,
+      "season": 2,
+      "name": "HIDDEN PROMISE — FALL",
+      "seed": 305014,
+      "targetDifficulty": "BEGINNER",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true,
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 420,
+          "y": 300,
+          "w": 160,
+          "h": 16
+        },
+        {
+          "x": 720,
+          "y": 260,
+          "w": 240,
+          "h": 16
+        },
+        {
+          "x": 180,
+          "y": 420,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 280,
+          "y": 360,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 580,
+          "y": 300,
+          "w": 140,
+          "h": 16
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            145,
+            480,
+            38,
+            {
+              "x": 95,
+              "y": 350,
+              "w": 25,
+              "h": 130
+            },
+            {
+              "delay": 0.35
+            }
+          ]
+        },
+        {
+          "type": "FallBlock",
+          "args": [
+            {
+              "x": 805,
+              "y": 20,
+              "w": 48,
+              "h": 35
+            },
+            {
+              "x": 740,
+              "y": 150,
+              "w": 25,
+              "h": 110
+            },
+            {
+              "shakeTime": 0.65
+            }
+          ]
+        }
+      ],
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 196
+          }
+        ],
+        "options": {
+          "fleeDist": 70
+        }
+      },
+      "checkpoints": [],
+      "design": {
+        "version": 3,
+        "access": "stairs",
+        "crossing": "bridge",
+        "encounter": "fall",
+        "stages": [
+          {
+            "x": 0,
+            "y": 330,
+            "w": 420,
+            "h": 150
+          },
+          {
+            "x": 420,
+            "y": 150,
+            "w": 320,
+            "h": 166
+          },
+          {
+            "x": 720,
+            "y": 110,
+            "w": 240,
+            "h": 170
+          }
+        ],
+        "waypoints": [
+          {
+            "x": 475,
+            "y": 260,
+            "w": 100,
+            "h": 100,
+            "reach": {
+              "x": 420,
+              "y": 170,
+              "w": 160,
+              "h": 130
+            }
+          }
+        ]
+      }
+    },
+    "fingerprint": "3a952d131a3f818abeb20081b4f86f8b03fbe960456bf45c7801e4e9c5fabfb2",
+    "status": "GENERATING",
+    "approved": false,
+    "v3": {
+      "id": 84,
+      "seed": 305014,
+      "targetDifficulty": "BEGINNER",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true
+    }
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 85,
+      "season": 2,
+      "name": "HIDDEN PROMISE — SPIKES",
+      "seed": 305015,
+      "targetDifficulty": "BEGINNER",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true,
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 400,
+          "y": 300,
+          "w": 160,
+          "h": 16
+        },
+        {
+          "x": 720,
+          "y": 260,
+          "w": 240,
+          "h": 16
+        },
+        {
+          "x": 180,
+          "y": 420,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 280,
+          "y": 360,
+          "w": 90,
+          "h": 16
+        },
+        {
+          "x": 560,
+          "y": 300,
+          "w": 160,
+          "h": 16
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            145,
+            480,
+            38,
+            {
+              "x": 95,
+              "y": 350,
+              "w": 25,
+              "h": 130
+            },
+            {
+              "delay": 0.35
+            }
+          ]
+        },
+        {
+          "type": "PopSpikes",
+          "args": [
+            805,
+            260,
+            40,
+            {
+              "x": 740,
+              "y": 150,
+              "w": 25,
+              "h": 110
+            },
+            {
+              "delay": 0.5
+            }
+          ]
+        }
+      ],
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 196
+          }
+        ],
+        "options": {
+          "fleeDist": 70
+        }
+      },
+      "checkpoints": [],
+      "design": {
+        "version": 3,
+        "access": "stairs",
+        "crossing": "bridge",
+        "encounter": "spikes",
+        "stages": [
+          {
+            "x": 0,
+            "y": 330,
+            "w": 400,
+            "h": 150
+          },
+          {
+            "x": 400,
+            "y": 150,
+            "w": 320,
+            "h": 166
+          },
+          {
+            "x": 720,
+            "y": 110,
+            "w": 240,
+            "h": 170
+          }
+        ],
+        "waypoints": [
+          {
+            "x": 455,
+            "y": 260,
+            "w": 100,
+            "h": 100,
+            "reach": {
+              "x": 400,
+              "y": 170,
+              "w": 160,
+              "h": 130
+            }
+          }
+        ]
+      }
+    },
+    "fingerprint": "faef2a9a576be41088ad3805f1e38ccd5ab1f75d1b54c2330ebb5f1bc199dc71",
+    "status": "GENERATING",
+    "approved": false,
+    "v3": {
+      "id": 85,
+      "seed": 305015,
+      "targetDifficulty": "BEGINNER",
+      "batchDifficulty": "MEDIUM",
+      "experimental": true
+    }
+  }
+]

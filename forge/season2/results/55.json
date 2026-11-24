@@ -1,0 +1,586 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 55,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 55,
+    "name": "PRESSURE POST",
+    "targetDifficulty": "MEDIUM",
+    "intent": "Cross the stamping conveyor, mail yourself through the partition and spring up to the receiving window.",
+    "surprise": "A block drops next to the receiving spring when the portal delivers you.",
+    "spawn": {
+      "x": 55,
+      "y": 268
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 885,
+          "y": 246
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 300,
+        "w": 210,
+        "h": 16
+      },
+      {
+        "x": 440,
+        "y": 300,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "x": 540,
+        "y": 0,
+        "w": 24,
+        "h": 540
+      },
+      {
+        "x": 580,
+        "y": 500,
+        "w": 150,
+        "h": 40
+      },
+      {
+        "x": 800,
+        "y": 310,
+        "w": 160,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Conveyor",
+        "args": [
+          {
+            "x": 210,
+            "y": 300,
+            "w": 230,
+            "h": 16
+          },
+          {
+            "dir": 1,
+            "force": 75
+          }
+        ]
+      },
+      {
+        "type": "Crusher",
+        "args": [
+          330,
+          65,
+          {
+            "topY": 35,
+            "floorY": 300,
+            "period": 2.1,
+            "phase": 1.3,
+            "hold": 0.2,
+            "upSpeed": 320
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          255,
+          300,
+          42
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          475,
+          252,
+          595,
+          452,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 630,
+            "y": 350,
+            "w": 38,
+            "h": 35
+          },
+          {
+            "x": 580,
+            "y": 330,
+            "w": 60,
+            "h": 170
+          },
+          {
+            "shakeTime": 0.5,
+            "floorY": 500
+          }
+        ]
+      },
+      {
+        "type": "Spring",
+        "args": [
+          675,
+          500,
+          {
+            "power": -1000,
+            "w": 50
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          730,
+          540,
+          230,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "belt",
+        "stamp",
+        "offcuts",
+        "mail",
+        "receipt",
+        "returnSpring",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Pass the stamp",
+          "target": {
+            "x": 430,
+            "y": 268
+          },
+          "reach": {
+            "x": 405,
+            "y": 200,
+            "w": 65,
+            "h": 100
+          },
+          "requires": [],
+          "grounded": false
+        },
+        {
+          "label": "Portal delivery",
+          "target": {
+            "x": 480,
+            "y": 268
+          },
+          "requires": [
+            {
+              "trap": "mail",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Launch receipt",
+          "target": {
+            "x": 685,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "receipt",
+              "event": "trigger",
+              "minTicks": 1
+            },
+            {
+              "trap": "returnSpring",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Receiving window",
+          "target": {
+            "x": 875,
+            "y": 278
+          },
+          "reach": {
+            "x": 800,
+            "y": 260,
+            "w": 150,
+            "h": 30
+          },
+          "requires": [],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "mail",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "receipt",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "returnSpring",
+          "event": "activate",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "f2357250227db9b0ba2a94d2fc59e29b03b6641f2d09c7b8b26856fb68f456a0",
+      "seed": 55,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 268
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 312,
+      "seconds": 2.6,
+      "end": [
+        866.5833333333377,
+        234.20138888888889,
+        "win"
+      ]
+    },
+    "expanded": 13459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      288
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "f2357250227db9b0ba2a94d2fc59e29b03b6641f2d09c7b8b26856fb68f456a0",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 312,
+      "seconds": 2.6,
+      "end": [
+        866.5833333333377,
+        278,
+        "win"
+      ]
+    },
+    "ticks": 312,
+    "successfulReplaySeconds": 2.6,
+    "seconds": {
+      "activeTraversal": 2.591666666666667,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 961.914086164993,
+      "carriedPixels": 0,
+      "portalPixels": 285.1341130634582
+    },
+    "inputs": {
+      "jumpPresses": 2,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "mail",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 185
+      },
+      {
+        "trap": "receipt",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 185
+      },
+      {
+        "trap": "returnSpring",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 216
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 74,
+        "id": "offcuts",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 107,
+        "id": "stamp",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 179,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Pass the stamp"
+      },
+      {
+        "tick": 185,
+        "id": "mail",
+        "event": "activate"
+      },
+      {
+        "tick": 185,
+        "id": "receipt",
+        "event": "trigger"
+      },
+      {
+        "tick": 185,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 185,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Portal delivery"
+      },
+      {
+        "tick": 216,
+        "id": "returnSpring",
+        "event": "activate"
+      },
+      {
+        "tick": 216,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Launch receipt"
+      },
+      {
+        "tick": 287,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Receiving window"
+      },
+      {
+        "tick": 293,
+        "id": "platform:4",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 4,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "offcuts:hazardNear": 8,
+      "stamp:hazardNear": 4,
+      "stage:0:complete": 1,
+      "mail:activate": 1,
+      "receipt:trigger": 1,
+      "platform:3:land": 1,
+      "stage:1:complete": 1,
+      "returnSpring:activate": 1,
+      "stage:2:complete": 1,
+      "stage:3:complete": 1,
+      "platform:4:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 57,
+      "score": 0.275,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 52,
+      "score": 0.27467532467532463,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 60,
+      "score": 0.23286713286713287,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 5.267
+}

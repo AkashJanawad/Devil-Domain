@@ -1,0 +1,15 @@
+
+> devildomain@1.0.0 cap:sync
+> npm run build && cap sync android
+
+
+> devildomain@1.0.0 build
+> node scripts/build.js
+
+Bundled development web assets: Z:\Automation\Devil Domain\www
+√ Copying web assets from www to android\app\src\main\assets\public in 21.07ms
+√ Creating capacitor.config.json in android\app\src\main\assets in 986.20μs
+√ copy android in 34.57ms
+√ Updating Android plugins in 2.25ms
+√ update android in 90.81ms
+[info] Sync finished in 0.147s

@@ -1,0 +1,11 @@
+
+> devildomain@1.0.0 test:browser
+> node tests/browser-smoke.js && node tests/browser-replays.js
+
+PASS: Chrome mobile viewport; menu, keyboard level 1 completion, progression/reload, lifecycle pause, all 100 level render smoke checks, small-screen grid, no JS errors or external requests.
+PASS: 61 campaign victories including levels 51–100; release unlocks and legacy progress verified.
+npm notice
+npm notice New minor version of npm available! 11.7.0 -> 11.21.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.2
+npm notice To update run: npm install -g npm@11.21.2
+npm notice

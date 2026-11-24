@@ -1,0 +1,852 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 82,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 82,
+    "name": "COUNTERWEIGHT POST",
+    "targetDifficulty": "HARD",
+    "intent": "Ride the rising mail basket from the right, unlock the postern and transfer to the upper stair.",
+    "surprise": "The final delivery dislodges a weight over the exit landing.",
+    "spawn": {
+      "x": 873,
+      "y": 458
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 867,
+          "y": 116
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 790,
+        "y": 490,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "x": 347,
+        "y": 315,
+        "w": 145,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 385,
+        "w": 250,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 250,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 180,
+        "w": 195,
+        "h": 16
+      },
+      {
+        "x": 245,
+        "y": 115,
+        "w": 113,
+        "h": 16
+      },
+      {
+        "x": 420,
+        "y": 170,
+        "w": 125,
+        "h": 16
+      },
+      {
+        "x": 610,
+        "y": 110,
+        "w": 108,
+        "h": 16
+      },
+      {
+        "x": 780,
+        "y": 180,
+        "w": 180,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 640,
+            "y": 422,
+            "w": 118,
+            "h": 16
+          },
+          {
+            "toX": 505,
+            "toY": 325,
+            "speed": 125,
+            "phase": 0.8
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          399,
+          305,
+          "post"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 271,
+            "y": 266,
+            "w": 22,
+            "h": 274
+          },
+          "post"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          75,
+          337,
+          57,
+          132,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 836,
+            "y": 22,
+            "w": 42,
+            "h": 34
+          },
+          {
+            "x": 725,
+            "y": 0,
+            "w": 40,
+            "h": 200
+          },
+          {
+            "shakeTime": 0.6,
+            "floorY": 180
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          250,
+          540,
+          540,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "basket",
+        "stamp",
+        "postern",
+        "tube",
+        "weight",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Ride basket",
+          "target": {
+            "trap": "basket",
+            "dx": 38,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "basket",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Stamp delivery",
+          "target": {
+            "x": 405,
+            "y": 283
+          },
+          "requires": [
+            {
+              "trap": "stamp",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Transfer post",
+          "target": {
+            "x": 80,
+            "y": 353
+          },
+          "requires": [
+            {
+              "trap": "postern",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "tube",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "First upper stair",
+          "target": {
+            "x": 301.5,
+            "y": 83
+          },
+          "reach": {
+            "x": 245,
+            "y": 77,
+            "w": 113,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Middle stair",
+          "target": {
+            "x": 482.5,
+            "y": 138
+          },
+          "reach": {
+            "x": 420,
+            "y": 132,
+            "w": 125,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Last upper stair",
+          "target": {
+            "x": 664,
+            "y": 78
+          },
+          "reach": {
+            "x": 610,
+            "y": 72,
+            "w": 108,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Delivered",
+          "target": {
+            "x": 884,
+            "y": 148
+          },
+          "requires": [
+            {
+              "trap": "weight",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "basket",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "stamp",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "postern",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "tube",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "weight",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "85dc8de56dee409746812c95e78a942a1fc1c2e2f29ce0fcc446097a1c79b5bd",
+      "seed": 82,
+      "initial": {
+        "spawn": {
+          "x": 873,
+          "y": 458
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 700,
+      "seconds": 5.833333333333333,
+      "end": [
+        848.2083333333374,
+        114.33680555555553,
+        "win"
+      ]
+    },
+    "expanded": 33259,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      504,
+      444,
+      612,
+      672
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "85dc8de56dee409746812c95e78a942a1fc1c2e2f29ce0fcc446097a1c79b5bd",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 700,
+      "seconds": 5.833333333333333,
+      "end": [
+        848.2083333333374,
+        148,
+        "win"
+      ]
+    },
+    "ticks": 700,
+    "successfulReplaySeconds": 5.833333333333333,
+    "seconds": {
+      "activeTraversal": 5.825,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1841.304876100162,
+      "carriedPixels": 45.698759486956284,
+      "portalPixels": 210.04579731258528
+    },
+    "inputs": {
+      "jumpPresses": 5,
+      "horizontalReversals": 1
+    },
+    "required": [
+      {
+        "trap": "basket",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 65
+      },
+      {
+        "trap": "stamp",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 185
+      },
+      {
+        "trap": "postern",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 274
+      },
+      {
+        "trap": "tube",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 338
+      },
+      {
+        "trap": "weight",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 634
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 65,
+        "id": "basket",
+        "event": "ride"
+      },
+      {
+        "tick": 76,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Ride basket"
+      },
+      {
+        "tick": 178,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 185,
+        "id": "stamp",
+        "event": "activate"
+      },
+      {
+        "tick": 185,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Stamp delivery"
+      },
+      {
+        "tick": 212,
+        "id": "postern",
+        "event": "open"
+      },
+      {
+        "tick": 274,
+        "id": "postern",
+        "event": "pass"
+      },
+      {
+        "tick": 278,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 338,
+        "id": "tube",
+        "event": "activate"
+      },
+      {
+        "tick": 338,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Transfer post"
+      },
+      {
+        "tick": 416,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 427,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "First upper stair"
+      },
+      {
+        "tick": 505,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 507,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Middle stair"
+      },
+      {
+        "tick": 583,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 593,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Last upper stair"
+      },
+      {
+        "tick": 634,
+        "id": "weight",
+        "event": "trigger"
+      },
+      {
+        "tick": 634,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Delivered"
+      },
+      {
+        "tick": 672,
+        "id": "platform:8",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "basket:ride": 59,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "stamp:activate": 1,
+      "stage:1:complete": 1,
+      "postern:open": 1,
+      "postern:pass": 1,
+      "platform:2:land": 1,
+      "tube:activate": 1,
+      "stage:2:complete": 1,
+      "platform:5:land": 1,
+      "stage:3:complete": 1,
+      "platform:6:land": 1,
+      "stage:4:complete": 1,
+      "platform:7:land": 1,
+      "stage:5:complete": 1,
+      "weight:trigger": 1,
+      "stage:6:complete": 1,
+      "platform:8:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 87,
+      "score": 0.4928571428571429,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 73,
+      "score": 0.44125000000000003,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 85,
+      "score": 0.4371428571428571,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 30.61
+}

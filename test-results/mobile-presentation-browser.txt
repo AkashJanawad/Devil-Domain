@@ -1,0 +1,1 @@
+PASS: 9 viewports, cutout insets, intro, grid/touch sizing, renderer equivalence, adaptive recovery and 24–120 Hz fixed-step equivalence.

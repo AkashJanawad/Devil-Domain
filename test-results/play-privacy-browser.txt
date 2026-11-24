@@ -1,0 +1,1 @@
+PASS: offline privacy viewer, contact, small-phone layout, close/Escape/native Back and unchanged saves.

@@ -1,0 +1,887 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 73,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 73,
+    "name": "THE INSPECTION PIT",
+    "targetDifficulty": "HARD",
+    "intent": "Descend the inspection steps from the right, duck under the piston, then use the lower access point to reach the locked overhead walk.",
+    "surprise": "An inspection weight falls onto the lower approach when you step off the last tread.",
+    "spawn": {
+      "x": 866,
+      "y": 305
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 881,
+          "y": 111
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 765,
+        "y": 337,
+        "w": 195,
+        "h": 16
+      },
+      {
+        "x": 585,
+        "y": 390,
+        "w": 110,
+        "h": 16
+      },
+      {
+        "x": 425,
+        "y": 445,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 500,
+        "w": 358,
+        "h": 40
+      },
+      {
+        "x": 0,
+        "y": 240,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 185,
+        "w": 245,
+        "h": 16
+      },
+      {
+        "x": 305,
+        "y": 130,
+        "w": 104,
+        "h": 16
+      },
+      {
+        "x": 472,
+        "y": 185,
+        "w": 124,
+        "h": 16
+      },
+      {
+        "x": 670,
+        "y": 175,
+        "w": 290,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Crusher",
+        "args": [
+          615,
+          47,
+          {
+            "topY": 258,
+            "floorY": 390,
+            "period": 1.84,
+            "hold": 0.15,
+            "phase": 0.53,
+            "upSpeed": 270
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 267,
+            "y": 280,
+            "w": 46,
+            "h": 42
+          },
+          {
+            "x": 350,
+            "y": 315,
+            "w": 48,
+            "h": 185
+          },
+          {
+            "shakeTime": 0.46,
+            "floorY": 500
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          165,
+          490,
+          "inspect"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          60,
+          452,
+          72,
+          137,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 541,
+            "y": 0,
+            "len": 240,
+            "vertical": true,
+            "period": 1.95,
+            "warn": 0.4,
+            "fire": 0.45
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 745,
+            "y": 0,
+            "w": 24,
+            "h": 175
+          },
+          "inspect"
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          358,
+          540,
+          602,
+          {
+            "size": 28
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "piston",
+        "weight",
+        "stamp",
+        "access",
+        "beam",
+        "lock",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Piston tread",
+          "target": {
+            "x": 640,
+            "y": 358
+          },
+          "reach": {
+            "x": 585,
+            "y": 352,
+            "w": 110,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Last tread",
+          "target": {
+            "x": 475,
+            "y": 413
+          },
+          "reach": {
+            "x": 425,
+            "y": 407,
+            "w": 100,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Inspection stamp",
+          "target": {
+            "x": 170,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "weight",
+              "event": "trigger",
+              "minTicks": 1
+            },
+            {
+              "trap": "stamp",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Access point",
+          "target": {
+            "x": 66,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "access",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Overhead step",
+          "target": {
+            "x": 357,
+            "y": 98
+          },
+          "reach": {
+            "x": 305,
+            "y": 92,
+            "w": 104,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Inspect beam",
+          "target": {
+            "x": 588,
+            "y": 153
+          },
+          "requires": [
+            {
+              "trap": "beam",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Walk gate",
+          "target": {
+            "x": 786,
+            "y": 143
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "stamp",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "weight",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "access",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "beam",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "537de40600bd05713d6e975b6bf4aedc885ff991a34d405fe11fd363bd03fbd2",
+      "seed": 73,
+      "initial": {
+        "spawn": {
+          "x": 866,
+          "y": 305
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 724,
+      "seconds": 6.033333333333333,
+      "end": [
+        861.152777777782,
+        118.84027777777776,
+        "win"
+      ]
+    },
+    "expanded": 34459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      120,
+      228,
+      180,
+      252,
+      300,
+      276,
+      324,
+      480,
+      540,
+      636,
+      684
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "537de40600bd05713d6e975b6bf4aedc885ff991a34d405fe11fd363bd03fbd2",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 725,
+      "seconds": 6.041666666666667,
+      "end": [
+        862.4861111111154,
+        143,
+        "win"
+      ]
+    },
+    "ticks": 725,
+    "successfulReplaySeconds": 6.041666666666667,
+    "seconds": {
+      "activeTraversal": 6.025,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0.008333333333333333,
+      "neutralWaiting": 0,
+      "blockedInput": 0.008333333333333333,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1760.6378662317939,
+      "carriedPixels": 0,
+      "portalPixels": 315.3419076358542
+    },
+    "inputs": {
+      "jumpPresses": 2,
+      "horizontalReversals": 1
+    },
+    "required": [
+      {
+        "trap": "stamp",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 305
+      },
+      {
+        "trap": "weight",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 219
+      },
+      {
+        "trap": "access",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 359
+      },
+      {
+        "trap": "beam",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 566
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 683
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 90,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 90,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Piston tread"
+      },
+      {
+        "tick": 171,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 171,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Last tread"
+      },
+      {
+        "tick": 219,
+        "id": "weight",
+        "event": "trigger"
+      },
+      {
+        "tick": 243,
+        "id": "pit",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 244,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 305,
+        "id": "stamp",
+        "event": "activate"
+      },
+      {
+        "tick": 305,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Inspection stamp"
+      },
+      {
+        "tick": 332,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 359,
+        "id": "access",
+        "event": "activate"
+      },
+      {
+        "tick": 359,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Access point"
+      },
+      {
+        "tick": 467,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 473,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Overhead step"
+      },
+      {
+        "tick": 546,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 566,
+        "id": "beam",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 566,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Inspect beam"
+      },
+      {
+        "tick": 639,
+        "id": "platform:8",
+        "event": "land"
+      },
+      {
+        "tick": 683,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 683,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Walk gate"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "stage:1:complete": 1,
+      "weight:trigger": 1,
+      "pit:hazardNear": 14,
+      "platform:3:land": 1,
+      "stamp:activate": 1,
+      "stage:2:complete": 1,
+      "lock:open": 1,
+      "access:activate": 1,
+      "stage:3:complete": 1,
+      "platform:6:land": 1,
+      "stage:4:complete": 1,
+      "platform:7:land": 1,
+      "beam:beamCross": 16,
+      "stage:5:complete": 1,
+      "platform:8:land": 1,
+      "lock:pass": 1,
+      "stage:6:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 79,
+      "score": 0.37416666666666665,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 74,
+      "score": 0.34454545454545454,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 60,
+      "score": 0.30112299465240644,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 30.741
+}

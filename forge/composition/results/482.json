@@ -1,0 +1,2277 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "id": 482,
+    "season": 10,
+    "name": "COMPOSITE B — CARRY THE KEY",
+    "seed": 482,
+    "targetDifficulty": "MEDIUM",
+    "experimental": true,
+    "developerOnly": true,
+    "spawn": {
+      "x": 55,
+      "y": 440
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 884,
+          "y": 196
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 480,
+        "w": 250,
+        "h": 16
+      },
+      {
+        "x": 760,
+        "y": 480,
+        "w": 200,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 260,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 180,
+        "y": 200,
+        "w": 90,
+        "h": 16
+      },
+      {
+        "x": 300,
+        "y": 140,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "x": 420,
+        "y": 80,
+        "w": 140,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 250,
+            "y": 450,
+            "w": 110,
+            "h": 16
+          },
+          {
+            "toX": 650,
+            "speed": 130,
+            "pause": 0,
+            "phase": 0
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 530,
+            "y": 276,
+            "len": 264,
+            "vertical": true,
+            "period": 1.7,
+            "warn": 0.35,
+            "fire": 0.5,
+            "phase": 0.2
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          830,
+          480,
+          45,
+          {
+            "x": 775,
+            "y": 320,
+            "w": 25,
+            "h": 160
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          250,
+          540,
+          510,
+          {
+            "size": 40
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          890,
+          432,
+          55,
+          212,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          475,
+          70,
+          "switch:route"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 600,
+            "y": 0,
+            "w": 24,
+            "h": 260
+          },
+          "switch:route"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          720,
+          260,
+          65,
+          {
+            "x": 650,
+            "y": 110,
+            "w": 25,
+            "h": 150
+          },
+          {
+            "delay": 0.18
+          }
+        ]
+      }
+    ],
+    "checkpoints": [],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "ride/carrier",
+        "ride/laser",
+        "ride/ambush",
+        "ride/pit",
+        "ride/portal",
+        "switch/button",
+        "switch/gate",
+        "switch/ambush"
+      ],
+      "stages": [
+        {
+          "label": "ride: enter",
+          "entryOf": "ride",
+          "target": {
+            "x": 60,
+            "y": 448
+          },
+          "reach": {
+            "x": 40,
+            "y": 380,
+            "w": 100,
+            "h": 100
+          },
+          "grounded": false
+        },
+        {
+          "label": "ride: Board moving support",
+          "target": {
+            "trap": "ride/carrier",
+            "dx": 35,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "ride/carrier",
+              "event": "ride",
+              "minTicks": 12,
+              "sinceEncounterEntry": true
+            }
+          ]
+        },
+        {
+          "label": "ride: Cross timed beam while carried",
+          "target": {
+            "x": 560,
+            "y": 418
+          },
+          "requires": [
+            {
+              "trap": "ride/laser",
+              "event": "beamCrossRiding",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ]
+        },
+        {
+          "label": "ride: Reach new bank",
+          "target": {
+            "x": 785,
+            "y": 448
+          },
+          "reach": {
+            "x": 760,
+            "y": 400,
+            "w": 70,
+            "h": 80
+          },
+          "requires": []
+        },
+        {
+          "label": "ride: Clear hidden bank trap",
+          "target": {
+            "x": 884,
+            "y": 416
+          },
+          "reach": {
+            "x": 855,
+            "y": 350,
+            "w": 100,
+            "h": 130
+          },
+          "requires": [
+            {
+              "trap": "ride/ambush",
+              "event": "trigger",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ]
+        },
+        {
+          "label": "ride: Portal handoff",
+          "target": {
+            "x": 890,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "ride/portal",
+              "event": "activate",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ]
+        },
+        {
+          "label": "ride: complete",
+          "exitOf": "ride",
+          "target": {
+            "x": 55,
+            "y": 228
+          },
+          "reach": {
+            "x": 45,
+            "y": 160,
+            "w": 100,
+            "h": 100
+          },
+          "grounded": false,
+          "requires": [
+            {
+              "trap": "ride/carrier",
+              "event": "ride",
+              "minTicks": 12,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/laser",
+              "event": "beamCrossRiding",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/ambush",
+              "event": "trigger",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/portal",
+              "event": "activate",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ]
+        },
+        {
+          "label": "switch: enter",
+          "entryOf": "switch",
+          "target": {
+            "x": 60,
+            "y": 228
+          },
+          "reach": {
+            "x": 40,
+            "y": 160,
+            "w": 100,
+            "h": 100
+          },
+          "grounded": false
+        },
+        {
+          "label": "switch: Climb step 1",
+          "target": {
+            "x": 220,
+            "y": 168
+          },
+          "reach": {
+            "x": 180,
+            "y": 160,
+            "w": 90,
+            "h": 10
+          },
+          "grounded": true,
+          "requires": []
+        },
+        {
+          "label": "switch: Climb step 2",
+          "target": {
+            "x": 340,
+            "y": 108
+          },
+          "reach": {
+            "x": 300,
+            "y": 100,
+            "w": 100,
+            "h": 10
+          },
+          "grounded": true,
+          "requires": []
+        },
+        {
+          "label": "switch: Activate elevated switch",
+          "target": {
+            "x": 475,
+            "y": 48
+          },
+          "requires": [
+            {
+              "trap": "switch/button",
+              "event": "activate",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ]
+        },
+        {
+          "label": "switch: Use newly opened route",
+          "target": {
+            "x": 655,
+            "y": 228
+          },
+          "reach": {
+            "x": 625,
+            "y": 0,
+            "w": 65,
+            "h": 260
+          },
+          "requires": [
+            {
+              "trap": "switch/gate",
+              "event": "pass",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ]
+        },
+        {
+          "label": "switch: Jump hidden escape trap",
+          "target": {
+            "x": 884,
+            "y": 196
+          },
+          "reach": {
+            "x": 855,
+            "y": 130,
+            "w": 100,
+            "h": 130
+          },
+          "requires": [
+            {
+              "trap": "switch/ambush",
+              "event": "trigger",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ]
+        },
+        {
+          "label": "switch: complete",
+          "exitOf": "switch",
+          "target": {
+            "x": 884,
+            "y": 228
+          },
+          "reach": {
+            "x": 855,
+            "y": 130,
+            "w": 100,
+            "h": 130
+          },
+          "grounded": false,
+          "requires": [
+            {
+              "trap": "switch/button",
+              "event": "activate",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/gate",
+              "event": "open",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/gate",
+              "event": "pass",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/ambush",
+              "event": "trigger",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ]
+        }
+      ],
+      "required": [
+        {
+          "trap": "ride/carrier",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "ride/laser",
+          "event": "beamCrossRiding",
+          "minTicks": 1
+        },
+        {
+          "trap": "ride/ambush",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "ride/portal",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "switch/button",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "switch/gate",
+          "event": "open",
+          "minTicks": 1
+        },
+        {
+          "trap": "switch/gate",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "switch/ambush",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ],
+      "encounters": [
+        {
+          "key": "ride",
+          "kind": "moving-platform-timed-hazard",
+          "origin": "Phase 1 B: carried beam crossing, dismount and triggered escape",
+          "entry": {
+            "region": {
+              "x": 40,
+              "y": 380,
+              "w": 100,
+              "h": 100
+            },
+            "target": {
+              "x": 60,
+              "y": 448
+            },
+            "grounded": false
+          },
+          "exit": {
+            "region": {
+              "x": 45,
+              "y": 160,
+              "w": 100,
+              "h": 100
+            },
+            "target": {
+              "x": 55,
+              "y": 228
+            },
+            "grounded": false
+          },
+          "required": [
+            {
+              "trap": "ride/carrier",
+              "event": "ride",
+              "minTicks": 12,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/laser",
+              "event": "beamCrossRiding",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/ambush",
+              "event": "trigger",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/portal",
+              "event": "activate",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ],
+          "connection": {
+            "kind": "portal",
+            "trap": "portal",
+            "preservesVerticalVelocity": true
+          },
+          "geometry": {
+            "world": {
+              "w": 960,
+              "h": 540
+            },
+            "noStaticOverlap": true,
+            "entryClearance": {
+              "w": 26,
+              "h": 32
+            },
+            "room": {
+              "x": 0,
+              "y": 276,
+              "w": 960,
+              "h": 264
+            },
+            "gap": 510,
+            "carrierWidth": 110,
+            "beamSpansRoom": true,
+            "minRoomHeight": 140
+          },
+          "firstStage": 0,
+          "lastStage": 6
+        },
+        {
+          "key": "switch",
+          "kind": "switch-route-hidden-escape",
+          "origin": "Phase 1 C: elevation-dependent switch, full-height gate, downstream escape",
+          "entry": {
+            "region": {
+              "x": 40,
+              "y": 160,
+              "w": 100,
+              "h": 100
+            },
+            "target": {
+              "x": 60,
+              "y": 228
+            },
+            "grounded": false
+          },
+          "exit": {
+            "region": {
+              "x": 855,
+              "y": 130,
+              "w": 100,
+              "h": 130
+            },
+            "target": {
+              "x": 884,
+              "y": 228
+            },
+            "grounded": false
+          },
+          "required": [
+            {
+              "trap": "switch/button",
+              "event": "activate",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/gate",
+              "event": "open",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/gate",
+              "event": "pass",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/ambush",
+              "event": "trigger",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ],
+          "connection": {
+            "kind": "finish",
+            "supportY": 260
+          },
+          "geometry": {
+            "world": {
+              "w": 960,
+              "h": 540
+            },
+            "noStaticOverlap": true,
+            "entryClearance": {
+              "w": 26,
+              "h": 32
+            },
+            "room": {
+              "x": 0,
+              "y": 0,
+              "w": 960,
+              "h": 276
+            },
+            "stepRise": 60,
+            "gateReachesCeiling": true,
+            "minRoomHeight": 260
+          },
+          "firstStage": 7,
+          "lastStage": 13
+        }
+      ]
+    },
+    "composition": {
+      "version": 1,
+      "manual": true,
+      "encounters": [
+        {
+          "key": "ride",
+          "kind": "moving-platform-timed-hazard",
+          "origin": "Phase 1 B: carried beam crossing, dismount and triggered escape",
+          "entry": {
+            "region": {
+              "x": 40,
+              "y": 380,
+              "w": 100,
+              "h": 100
+            },
+            "target": {
+              "x": 60,
+              "y": 448
+            },
+            "grounded": false
+          },
+          "exit": {
+            "region": {
+              "x": 45,
+              "y": 160,
+              "w": 100,
+              "h": 100
+            },
+            "target": {
+              "x": 55,
+              "y": 228
+            },
+            "grounded": false
+          },
+          "required": [
+            {
+              "trap": "ride/carrier",
+              "event": "ride",
+              "minTicks": 12,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/laser",
+              "event": "beamCrossRiding",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/ambush",
+              "event": "trigger",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "ride/portal",
+              "event": "activate",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ],
+          "connection": {
+            "kind": "portal",
+            "trap": "portal",
+            "preservesVerticalVelocity": true
+          },
+          "geometry": {
+            "world": {
+              "w": 960,
+              "h": 540
+            },
+            "noStaticOverlap": true,
+            "entryClearance": {
+              "w": 26,
+              "h": 32
+            },
+            "room": {
+              "x": 0,
+              "y": 276,
+              "w": 960,
+              "h": 264
+            },
+            "gap": 510,
+            "carrierWidth": 110,
+            "beamSpansRoom": true,
+            "minRoomHeight": 140
+          },
+          "firstStage": 0,
+          "lastStage": 6
+        },
+        {
+          "key": "switch",
+          "kind": "switch-route-hidden-escape",
+          "origin": "Phase 1 C: elevation-dependent switch, full-height gate, downstream escape",
+          "entry": {
+            "region": {
+              "x": 40,
+              "y": 160,
+              "w": 100,
+              "h": 100
+            },
+            "target": {
+              "x": 60,
+              "y": 228
+            },
+            "grounded": false
+          },
+          "exit": {
+            "region": {
+              "x": 855,
+              "y": 130,
+              "w": 100,
+              "h": 130
+            },
+            "target": {
+              "x": 884,
+              "y": 228
+            },
+            "grounded": false
+          },
+          "required": [
+            {
+              "trap": "switch/button",
+              "event": "activate",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/gate",
+              "event": "open",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/gate",
+              "event": "pass",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            },
+            {
+              "trap": "switch/ambush",
+              "event": "trigger",
+              "minTicks": 1,
+              "sinceEncounterEntry": true
+            }
+          ],
+          "connection": {
+            "kind": "finish",
+            "supportY": 260
+          },
+          "geometry": {
+            "world": {
+              "w": 960,
+              "h": 540
+            },
+            "noStaticOverlap": true,
+            "entryClearance": {
+              "w": 26,
+              "h": 32
+            },
+            "room": {
+              "x": 0,
+              "y": 0,
+              "w": 960,
+              "h": 276
+            },
+            "stepRise": 60,
+            "gateReachesCeiling": true,
+            "minRoomHeight": 260
+          },
+          "firstStage": 7,
+          "lastStage": 13
+        }
+      ],
+      "connections": [
+        {
+          "from": "ride",
+          "to": "switch",
+          "kind": "portal",
+          "exitRegion": {
+            "x": 45,
+            "y": 160,
+            "w": 100,
+            "h": 100
+          },
+          "entryRegion": {
+            "x": 40,
+            "y": 160,
+            "w": 100,
+            "h": 100
+          }
+        }
+      ]
+    }
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "6fa410bde5cd7099f69dc3c16057a6a23cbff19db4a6b6579920a69560676094",
+      "seed": 482,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 696,
+      "seconds": 5.8,
+      "end": [
+        865.416666666671,
+        228,
+        "win"
+      ]
+    },
+    "expanded": 52099,
+    "rejectedWins": 0,
+    "searchTrace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "6fa410bde5cd7099f69dc3c16057a6a23cbff19db4a6b6579920a69560676094",
+      "seed": 482,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    }
+  },
+  "cleanup": {
+    "removedJumpPressTicks": [
+      24,
+      672
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "6fa410bde5cd7099f69dc3c16057a6a23cbff19db4a6b6579920a69560676094",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 696,
+      "seconds": 5.8,
+      "end": [
+        865.416666666671,
+        228,
+        "win"
+      ]
+    },
+    "ticks": 696,
+    "successfulReplaySeconds": 5.8,
+    "seconds": {
+      "activeTraversal": 5.791666666666667,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.03333333333333333
+    },
+    "distance": {
+      "selfPixels": 2094.451025397382,
+      "carriedPixels": 112.89243055555494,
+      "portalPixels": 828.6898627377858
+    },
+    "inputs": {
+      "jumpPresses": 7,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "ride/carrier",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 132
+      },
+      {
+        "trap": "ride/laser",
+        "event": "beamCrossRiding",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 175
+      },
+      {
+        "trap": "ride/ambush",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 272
+      },
+      {
+        "trap": "ride/portal",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 325
+      },
+      {
+        "trap": "switch/button",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 509
+      },
+      {
+        "trap": "switch/gate",
+        "event": "open",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 536
+      },
+      {
+        "trap": "switch/gate",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 587
+      },
+      {
+        "trap": "switch/ambush",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 588
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "encounter:ride",
+        "event": "enter"
+      },
+      {
+        "tick": 1,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "ride: enter"
+      },
+      {
+        "tick": 10,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 132,
+        "id": "ride/carrier",
+        "event": "ride"
+      },
+      {
+        "tick": 143,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "ride: Board moving support"
+      },
+      {
+        "tick": 175,
+        "id": "ride/laser",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 175,
+        "id": "ride/laser",
+        "event": "beamCrossRiding",
+        "phase": "off"
+      },
+      {
+        "tick": 175,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "ride: Cross timed beam while carried"
+      },
+      {
+        "tick": 269,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 272,
+        "id": "ride/ambush",
+        "event": "trigger"
+      },
+      {
+        "tick": 276,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "ride: Reach new bank"
+      },
+      {
+        "tick": 319,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "ride: Clear hidden bank trap"
+      },
+      {
+        "tick": 323,
+        "id": "ride/ambush",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 325,
+        "id": "ride/portal",
+        "event": "activate"
+      },
+      {
+        "tick": 325,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 325,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "ride: Portal handoff"
+      },
+      {
+        "tick": 326,
+        "id": "encounter:ride",
+        "event": "complete"
+      },
+      {
+        "tick": 326,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "ride: complete"
+      },
+      {
+        "tick": 327,
+        "id": "encounter:switch",
+        "event": "enter"
+      },
+      {
+        "tick": 327,
+        "id": "stage:7",
+        "event": "complete",
+        "label": "switch: enter"
+      },
+      {
+        "tick": 393,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 393,
+        "id": "stage:8",
+        "event": "complete",
+        "label": "switch: Climb step 1"
+      },
+      {
+        "tick": 434,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 440,
+        "id": "stage:9",
+        "event": "complete",
+        "label": "switch: Climb step 2"
+      },
+      {
+        "tick": 487,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 509,
+        "id": "switch/button",
+        "event": "activate"
+      },
+      {
+        "tick": 509,
+        "id": "stage:10",
+        "event": "complete",
+        "label": "switch: Activate elevated switch"
+      },
+      {
+        "tick": 536,
+        "id": "switch/gate",
+        "event": "open"
+      },
+      {
+        "tick": 587,
+        "id": "switch/gate",
+        "event": "pass"
+      },
+      {
+        "tick": 588,
+        "id": "switch/ambush",
+        "event": "trigger"
+      },
+      {
+        "tick": 588,
+        "id": "stage:11",
+        "event": "complete",
+        "label": "switch: Use newly opened route"
+      },
+      {
+        "tick": 668,
+        "id": "switch/ambush",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 692,
+        "id": "stage:12",
+        "event": "complete",
+        "label": "switch: Jump hidden escape trap"
+      },
+      {
+        "tick": 693,
+        "id": "encounter:switch",
+        "event": "complete"
+      },
+      {
+        "tick": 693,
+        "id": "stage:13",
+        "event": "complete",
+        "label": "switch: complete"
+      }
+    ],
+    "stagesCompleted": 14,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "encounter:ride:enter": 1,
+      "stage:0:complete": 1,
+      "platform:0:land": 1,
+      "ride/carrier:ride": 60,
+      "stage:1:complete": 1,
+      "ride/laser:beamCross": 8,
+      "ride/laser:beamCrossRiding": 8,
+      "stage:2:complete": 1,
+      "platform:1:land": 1,
+      "ride/ambush:trigger": 1,
+      "stage:3:complete": 1,
+      "stage:4:complete": 1,
+      "ride/ambush:hazardNear": 2,
+      "ride/portal:activate": 1,
+      "platform:2:land": 3,
+      "stage:5:complete": 1,
+      "encounter:ride:complete": 1,
+      "stage:6:complete": 1,
+      "encounter:switch:enter": 1,
+      "stage:7:complete": 1,
+      "platform:3:land": 1,
+      "stage:8:complete": 1,
+      "platform:4:land": 1,
+      "stage:9:complete": 1,
+      "platform:5:land": 1,
+      "switch/button:activate": 1,
+      "stage:10:complete": 1,
+      "switch/gate:open": 1,
+      "switch/gate:pass": 1,
+      "switch/ambush:trigger": 1,
+      "stage:11:complete": 1,
+      "switch/ambush:hazardNear": 1,
+      "stage:12:complete": 1,
+      "encounter:switch:complete": 1,
+      "stage:13:complete": 1
+    },
+    "encounters": [
+      {
+        "key": "ride",
+        "enteredTick": 1,
+        "completedTick": 326,
+        "interactions": {
+          "ride/carrier:ride": 60,
+          "ride/laser:beamCrossRiding": 8,
+          "ride/ambush:trigger": 1,
+          "ride/portal:activate": 1
+        }
+      },
+      {
+        "key": "switch",
+        "enteredTick": 327,
+        "completedTick": 693,
+        "interactions": {
+          "switch/button:activate": 1,
+          "switch/gate:open": 1,
+          "switch/gate:pass": 1,
+          "switch/ambush:trigger": 1
+        }
+      }
+    ],
+    "orderedEncountersComplete": true
+  },
+  "accepted": true,
+  "reasons": [],
+  "bypass": {
+    "horizonSeconds": 30,
+    "scope": "Two ground-only runs and eighteen fixed rightward jump policies. Bounded probes, not exhaustive reachability proof.",
+    "results": [
+      {
+        "policy": "ground run 1",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 115,
+          "seconds": 0.9583333333333334,
+          "end": [
+            291.6666666666668,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "ground run -1",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 3600,
+          "seconds": 30,
+          "end": [
+            0,
+            448,
+            "play"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 200ms / delay 0ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 107,
+          "seconds": 0.8916666666666667,
+          "end": [
+            273.2638888888892,
+            477.3958333333333,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 200ms / delay 100ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 115,
+          "seconds": 0.9583333333333334,
+          "end": [
+            264.9861111111115,
+            476.96527777777777,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 200ms / delay 200ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 127,
+          "seconds": 1.0583333333333333,
+          "end": [
+            264.9861111111115,
+            476.96527777777777,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 300ms / delay 0ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 361,
+          "seconds": 3.0083333333333333,
+          "end": [
+            858.9013194444484,
+            428.89930555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 300ms / delay 100ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 160,
+          "seconds": 1.3333333333333333,
+          "end": [
+            364.36111111111063,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 300ms / delay 200ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 172,
+          "seconds": 1.4333333333333333,
+          "end": [
+            364.36111111111063,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 400ms / delay 0ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 654,
+          "seconds": 5.45,
+          "end": [
+            698.7083333333347,
+            228,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 400ms / delay 100ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 184,
+          "seconds": 1.5333333333333334,
+          "end": [
+            417.3611111111102,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 400ms / delay 200ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 196,
+          "seconds": 1.6333333333333333,
+          "end": [
+            417.3611111111102,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 500ms / delay 0ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 115,
+          "seconds": 0.9583333333333334,
+          "end": [
+            290.9305555555557,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 500ms / delay 100ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 160,
+          "seconds": 1.3333333333333333,
+          "end": [
+            364.36111111111063,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 500ms / delay 200ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 172,
+          "seconds": 1.4333333333333333,
+          "end": [
+            364.36111111111063,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 600ms / delay 0ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 364,
+          "seconds": 3.033333333333333,
+          "end": [
+            854.0425347222265,
+            428.89930555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 600ms / delay 100ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 160,
+          "seconds": 1.3333333333333333,
+          "end": [
+            364.36111111111063,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 600ms / delay 200ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 172,
+          "seconds": 1.4333333333333333,
+          "end": [
+            364.36111111111063,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 800ms / delay 0ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 3600,
+          "seconds": 30,
+          "end": [
+            574,
+            145.58333333333331,
+            "play"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 800ms / delay 100ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 184,
+          "seconds": 1.5333333333333334,
+          "end": [
+            417.3611111111102,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "policy": "jump cycle 800ms / delay 200ms",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 196,
+          "seconds": 1.6333333333333333,
+          "end": [
+            417.3611111111102,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      }
+    ]
+  },
+  "jumpPresses": [
+    {
+      "start": 7,
+      "end": 8,
+      "tick": 84
+    },
+    {
+      "start": 16,
+      "end": 18,
+      "tick": 192
+    },
+    {
+      "start": 22,
+      "end": 24,
+      "tick": 264
+    },
+    {
+      "start": 28,
+      "end": 30,
+      "tick": 336
+    },
+    {
+      "start": 32,
+      "end": 34,
+      "tick": 384
+    },
+    {
+      "start": 38,
+      "end": 39,
+      "tick": 456
+    },
+    {
+      "start": 50,
+      "end": 53,
+      "tick": 600
+    }
+  ],
+  "runWallSeconds": 24.806,
+  "approved": false,
+  "integrated": false,
+  "dependencyEvidence": {
+    "scope": "One intervention at a time with the remaining winning inputs unchanged. Does not prove all alternate routes impossible.",
+    "results": [
+      {
+        "kind": "disable mechanic",
+        "mechanic": "ride/carrier",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 143,
+          "seconds": 1.1916666666666667,
+          "end": [
+            353.4999999999996,
+            477.3958333333333,
+            "dead"
+          ]
+        }
+      },
+      {
+        "kind": "disable mechanic",
+        "mechanic": "ride/portal",
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 696,
+          "seconds": 5.8,
+          "end": [
+            934,
+            448,
+            "play"
+          ]
+        }
+      },
+      {
+        "kind": "disable mechanic",
+        "mechanic": "switch/button",
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 696,
+          "seconds": 5.8,
+          "end": [
+            574,
+            228,
+            "play"
+          ]
+        }
+      },
+      {
+        "kind": "remove jump",
+        "tick": 84,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 115,
+          "seconds": 0.9583333333333334,
+          "end": [
+            291.6666666666668,
+            476.36805555555554,
+            "dead"
+          ]
+        },
+        "contractsAccepted": false
+      },
+      {
+        "kind": "remove jump",
+        "tick": 192,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 226,
+          "seconds": 1.8833333333333333,
+          "end": [
+            649.6840972222221,
+            478.61805555555554,
+            "dead"
+          ]
+        },
+        "contractsAccepted": false
+      },
+      {
+        "kind": "remove jump",
+        "tick": 264,
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 311,
+          "seconds": 2.591666666666667,
+          "end": [
+            837.3924305555587,
+            448,
+            "dead"
+          ]
+        },
+        "contractsAccepted": false
+      },
+      {
+        "kind": "remove jump",
+        "tick": 336,
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 696,
+          "seconds": 5.8,
+          "end": [
+            574,
+            228,
+            "play"
+          ]
+        },
+        "contractsAccepted": false
+      },
+      {
+        "kind": "remove jump",
+        "tick": 384,
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 696,
+          "seconds": 5.8,
+          "end": [
+            574,
+            228,
+            "play"
+          ]
+        },
+        "contractsAccepted": false
+      },
+      {
+        "kind": "remove jump",
+        "tick": 456,
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 696,
+          "seconds": 5.8,
+          "end": [
+            574,
+            228,
+            "play"
+          ]
+        },
+        "contractsAccepted": false
+      },
+      {
+        "kind": "remove jump",
+        "tick": 600,
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 621,
+          "seconds": 5.175,
+          "end": [
+            699.7916666666681,
+            228,
+            "dead"
+          ]
+        },
+        "contractsAccepted": false
+      },
+      {
+        "kind": "laser phase intervention",
+        "mechanic": "ride/laser",
+        "from": 0.2,
+        "to": 0.10000000000000009,
+        "offsetSeconds": -0.17,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 175,
+          "seconds": 1.4583333333333333,
+          "end": [
+            503.1741666666652,
+            418,
+            "dead"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,908 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 96,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 96,
+    "name": "OFF THE RECORD",
+    "targetDifficulty": "EXPERT",
+    "intent": "Board the overhead record carriage, unlock the archive tube, then descend through a separate lower shelf route.",
+    "surprise": "An archived weight falls as you enter the tube, and the lower shelf gives way beneath you.",
+    "spawn": {
+      "x": 50,
+      "y": 208
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 57,
+          "y": 426
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 240,
+        "w": 185,
+        "h": 16
+      },
+      {
+        "x": 492,
+        "y": 180,
+        "w": 155,
+        "h": 16
+      },
+      {
+        "x": 735,
+        "y": 245,
+        "w": 225,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 300,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 790,
+        "y": 490,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "x": 450,
+        "y": 475,
+        "w": 125,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 490,
+        "w": 190,
+        "h": 50
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 220,
+            "y": 235,
+            "w": 125,
+            "h": 16
+          },
+          {
+            "toX": 365,
+            "toY": 207,
+            "speed": 125,
+            "phase": 0.65
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          539,
+          170,
+          "record"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 699,
+            "y": 0,
+            "w": 22,
+            "h": 300
+          },
+          "record"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          877,
+          197,
+          859,
+          442,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 745,
+            "y": 320,
+            "w": 36,
+            "h": 35
+          },
+          {
+            "x": 820,
+            "y": 100,
+            "w": 30,
+            "h": 145
+          },
+          {
+            "shakeTime": 0.65,
+            "floorY": 490
+          }
+        ]
+      },
+      {
+        "type": "BlinkPlatform",
+        "args": [
+          {
+            "x": 635,
+            "y": 422,
+            "w": 105,
+            "h": 16
+          },
+          {
+            "period": 2,
+            "onFrac": 0.78,
+            "phase": 0.12
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 264,
+            "y": 433,
+            "w": 116,
+            "h": 16
+          },
+          {
+            "delay": 0.72
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          190,
+          540,
+          600,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "record",
+        "index",
+        "lock",
+        "tube",
+        "parcel",
+        "lower",
+        "shelf",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Ride record",
+          "target": {
+            "trap": "record",
+            "dx": 38,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "record",
+              "event": "ride",
+              "minTicks": 15
+            }
+          ]
+        },
+        {
+          "label": "Archive index",
+          "target": {
+            "x": 552,
+            "y": 148
+          },
+          "requires": [
+            {
+              "trap": "index",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Archive tube",
+          "target": {
+            "x": 880,
+            "y": 213
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "tube",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "parcel",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Blink shelf",
+          "target": {
+            "x": 687.5,
+            "y": 390
+          },
+          "reach": {
+            "x": 635,
+            "y": 384,
+            "w": 105,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Low shelf",
+          "target": {
+            "x": 512.5,
+            "y": 443
+          },
+          "reach": {
+            "x": 450,
+            "y": 437,
+            "w": 125,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Brittle shelf",
+          "target": {
+            "x": 322,
+            "y": 401
+          },
+          "reach": {
+            "x": 264,
+            "y": 395,
+            "w": 116,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "shelf",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Last record",
+          "target": {
+            "x": 95,
+            "y": 458
+          },
+          "reach": {
+            "x": 0,
+            "y": 452,
+            "w": 190,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        }
+      ],
+      "required": [
+        {
+          "trap": "record",
+          "event": "ride",
+          "minTicks": 15
+        },
+        {
+          "trap": "index",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "tube",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "parcel",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "shelf",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "c7191f818b55eb27f52dab31ce601b63fefe5358d2b71a005aa0b564910e4610",
+      "seed": 96,
+      "initial": {
+        "spawn": {
+          "x": 50,
+          "y": 208
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 727,
+      "seconds": 6.058333333333334,
+      "end": [
+        88.8749999999958,
+        436.30555555555554,
+        "win"
+      ]
+    },
+    "expanded": 34459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      480,
+      636,
+      696
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "c7191f818b55eb27f52dab31ce601b63fefe5358d2b71a005aa0b564910e4610",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 730,
+      "seconds": 6.083333333333333,
+      "end": [
+        88.68055555555132,
+        458,
+        "win"
+      ]
+    },
+    "ticks": 730,
+    "successfulReplaySeconds": 6.083333333333333,
+    "seconds": {
+      "activeTraversal": 6.075,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.016666666666666666
+    },
+    "distance": {
+      "selfPixels": 1937.5617746131081,
+      "carriedPixels": 17.318867676642594,
+      "portalPixels": 245.17061765221945
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 4
+    },
+    "required": [
+      {
+        "trap": "record",
+        "event": "ride",
+        "minTicks": 15,
+        "observed": true,
+        "firstTick": 94
+      },
+      {
+        "trap": "index",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 210
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 303
+      },
+      {
+        "trap": "tube",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 363
+      },
+      {
+        "trap": "parcel",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 337
+      },
+      {
+        "trap": "shelf",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 603
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 94,
+        "id": "record",
+        "event": "ride"
+      },
+      {
+        "tick": 108,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Ride record"
+      },
+      {
+        "tick": 192,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 210,
+        "id": "index",
+        "event": "activate"
+      },
+      {
+        "tick": 210,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Archive index"
+      },
+      {
+        "tick": 237,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 299,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 303,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 337,
+        "id": "parcel",
+        "event": "trigger"
+      },
+      {
+        "tick": 363,
+        "id": "tube",
+        "event": "activate"
+      },
+      {
+        "tick": 363,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Archive tube"
+      },
+      {
+        "tick": 418,
+        "id": "pit",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 433,
+        "id": "parcel",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 472,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Blink shelf"
+      },
+      {
+        "tick": 516,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 516,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Low shelf"
+      },
+      {
+        "tick": 603,
+        "id": "shelf",
+        "event": "trigger"
+      },
+      {
+        "tick": 603,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Brittle shelf"
+      },
+      {
+        "tick": 685,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 685,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Last record"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "record:ride": 40,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "index:activate": 1,
+      "stage:1:complete": 1,
+      "lock:open": 1,
+      "platform:2:land": 1,
+      "lock:pass": 1,
+      "parcel:trigger": 1,
+      "tube:activate": 1,
+      "stage:2:complete": 1,
+      "pit:hazardNear": 3,
+      "parcel:hazardNear": 14,
+      "stage:3:complete": 1,
+      "platform:5:land": 1,
+      "stage:4:complete": 1,
+      "shelf:trigger": 1,
+      "stage:5:complete": 1,
+      "platform:6:land": 1,
+      "stage:6:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 99,
+      "score": 0.4069930069930069,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 61,
+      "score": 0.3993706293706294,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 93,
+      "score": 0.38666666666666666,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 22.343
+}

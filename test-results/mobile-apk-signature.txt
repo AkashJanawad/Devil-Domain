@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Devil Domain, OU=Android, O=Devil Domain
+Signer #1 certificate SHA-256 digest: cb264552457d481e225e14ebb24b6db7111bcb9fb70a1cedcb5f68261833289f
+Signer #1 certificate SHA-1 digest: aa85c7dd3fde1744ff4c4b35f858234f5ab03cf6
+Signer #1 certificate MD5 digest: 9aaf227b6a0c6f2af4b9774dd2b50933
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 410f6e3c4a9dbf195316c0b779be0b0f7e12616e597dc2fd036b6b02983722c5
+Signer #1 public key SHA-1 digest: f88a05124b4324437d9fa8a607e3aef1ff4141fd
+Signer #1 public key MD5 digest: 3748709298452a3208eddca842f82555

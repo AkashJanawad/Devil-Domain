@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Native themed-icon mask: two characters and gem, no raster transparency noise. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <group android:pivotX="54" android:pivotY="54" android:scaleX="0.9" android:scaleY="0.9">
+    <path android:fillColor="#FFFFFFFF" android:fillType="evenOdd"
+        android:pathData="M39,26 L49,35 Q54,33 60,35 L69,26 L72,43 Q78,54 78,65 L72,69 L69,53 L63,47 L59,52 Q54,50 49,52 L43,47 L39,53 L36,69 L30,65 Q30,54 36,43 Z M40,42 L50,47 Q43,51 40,42 Z M68,42 L58,47 Q65,51 68,42 Z" />
+    <path android:fillColor="#FFFFFFFF" android:fillType="evenOdd"
+        android:pathData="M43,54 L48,58 Q54,55 60,58 L65,54 L68,71 Q54,76 40,71 Z M47,63 a3,3 0,1 0,0,6 a3,3 0,1 0,0,-6 M59,63 a3,3 0,1 0,0,6 a3,3 0,1 0,0,-6" />
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M44,77 L49,77 L46,81 L38,81 Z M52,77 L57,77 L60,81 L49,81 Z M60,77 L64,77 L70,81 L63,81 Z M39,83 L46,83 L51,88 Z M49,83 L60,83 L54,90 Z M63,83 L69,83 L57,88 Z" />
+    </group>
+</vector>

@@ -1,0 +1,856 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 86,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 86,
+    "name": "UNDER THE ORCHARD",
+    "targetDifficulty": "HARD",
+    "intent": "Cross the orchard canopy, take the hollow trunk down, then ride the root ferry to the low exit.",
+    "surprise": "A hanging fruit falls as the ferry leaves; hidden thorns guard its destination.",
+    "spawn": {
+      "x": 46,
+      "y": 218
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 76,
+          "y": 426
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 250,
+        "w": 193,
+        "h": 16
+      },
+      {
+        "x": 249,
+        "y": 185,
+        "w": 112,
+        "h": 16
+      },
+      {
+        "x": 423,
+        "y": 245,
+        "w": 116,
+        "h": 16
+      },
+      {
+        "x": 605,
+        "y": 182,
+        "w": 115,
+        "h": 16
+      },
+      {
+        "x": 780,
+        "y": 250,
+        "w": 180,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 300,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 730,
+        "y": 490,
+        "w": 230,
+        "h": 50
+      },
+      {
+        "x": 0,
+        "y": 490,
+        "w": 263,
+        "h": 50
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Teleporter",
+        "args": [
+          871,
+          202,
+          855,
+          442,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 315,
+            "y": 459,
+            "w": 135,
+            "h": 16
+          },
+          {
+            "toX": 597,
+            "speed": 155,
+            "phase": 0.2
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 669,
+            "y": 320,
+            "w": 38,
+            "h": 34
+          },
+          {
+            "x": 700,
+            "y": 320,
+            "w": 35,
+            "h": 170
+          },
+          {
+            "shakeTime": 0.55,
+            "floorY": 490
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          162,
+          490,
+          42,
+          {
+            "x": 281,
+            "y": 320,
+            "w": 35,
+            "h": 170
+          },
+          {
+            "delay": 0.27
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          263,
+          540,
+          467,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "trunk",
+        "root",
+        "fruit",
+        "thorns",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "First bough",
+          "target": {
+            "x": 305,
+            "y": 153
+          },
+          "reach": {
+            "x": 249,
+            "y": 147,
+            "w": 112,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Low bough",
+          "target": {
+            "x": 481,
+            "y": 213
+          },
+          "reach": {
+            "x": 423,
+            "y": 207,
+            "w": 116,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Last bough",
+          "target": {
+            "x": 662.5,
+            "y": 150
+          },
+          "reach": {
+            "x": 605,
+            "y": 144,
+            "w": 115,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Hollow trunk",
+          "target": {
+            "x": 881,
+            "y": 218
+          },
+          "requires": [
+            {
+              "trap": "trunk",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Ride root",
+          "target": {
+            "trap": "root",
+            "dx": 38,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "root",
+              "event": "ride",
+              "minTicks": 15
+            }
+          ],
+          "reach": {
+            "x": 290,
+            "y": 380,
+            "w": 190,
+            "h": 110
+          }
+        },
+        {
+          "label": "Leave roots",
+          "target": {
+            "x": 225,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "fruit",
+              "event": "trigger",
+              "minTicks": 1
+            },
+            {
+              "trap": "thorns",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "trunk",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "root",
+          "event": "ride",
+          "minTicks": 15
+        },
+        {
+          "trap": "fruit",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "thorns",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "60d4790465e67f5875dc6d209ecaf7e5cfd9689cbe36d4d5ed4931d966227ff6",
+      "seed": 86,
+      "initial": {
+        "spawn": {
+          "x": 46,
+          "y": 218
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 825,
+      "seconds": 6.875,
+      "end": [
+        106.99031570129829,
+        456.27430555555554,
+        "win"
+      ]
+    },
+    "expanded": 39259,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      84,
+      120,
+      168,
+      264,
+      300,
+      396,
+      480
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "60d4790465e67f5875dc6d209ecaf7e5cfd9689cbe36d4d5ed4931d966227ff6",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 825,
+      "seconds": 6.875,
+      "end": [
+        107.73197498026593,
+        456.27430555555554,
+        "win"
+      ]
+    },
+    "ticks": 825,
+    "successfulReplaySeconds": 6.875,
+    "seconds": {
+      "activeTraversal": 6.241666666666666,
+      "passiveTransport": 0.6166666666666667,
+      "stationary": 0.016666666666666666,
+      "neutralWaiting": 0,
+      "blockedInput": 0.016666666666666666,
+      "repeatedTraversal": 0.21666666666666667
+    },
+    "distance": {
+      "selfPixels": 2133.7001112668077,
+      "carriedPixels": 159.5873709614184,
+      "portalPixels": 273.83708680254915
+    },
+    "inputs": {
+      "jumpPresses": 7,
+      "horizontalReversals": 6
+    },
+    "required": [
+      {
+        "trap": "trunk",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 369
+      },
+      {
+        "trap": "root",
+        "event": "ride",
+        "minTicks": 15,
+        "observed": true,
+        "firstTick": 496
+      },
+      {
+        "trap": "fruit",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 456
+      },
+      {
+        "trap": "thorns",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 730
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 92,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 98,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "First bough"
+      },
+      {
+        "tick": 176,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 177,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Low bough"
+      },
+      {
+        "tick": 272,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 272,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Last bough"
+      },
+      {
+        "tick": 341,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 369,
+        "id": "trunk",
+        "event": "activate"
+      },
+      {
+        "tick": 369,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Hollow trunk"
+      },
+      {
+        "tick": 403,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 456,
+        "id": "fruit",
+        "event": "trigger"
+      },
+      {
+        "tick": 496,
+        "id": "root",
+        "event": "ride"
+      },
+      {
+        "tick": 522,
+        "id": "fruit",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 667,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Ride root"
+      },
+      {
+        "tick": 730,
+        "id": "thorns",
+        "event": "trigger"
+      },
+      {
+        "tick": 730,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Leave roots"
+      },
+      {
+        "tick": 761,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 770,
+        "id": "thorns",
+        "event": "hazardNear"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "stage:1:complete": 1,
+      "platform:3:land": 1,
+      "stage:2:complete": 1,
+      "platform:4:land": 1,
+      "trunk:activate": 1,
+      "stage:3:complete": 1,
+      "platform:6:land": 1,
+      "fruit:trigger": 1,
+      "root:ride": 114,
+      "fruit:hazardNear": 26,
+      "stage:4:complete": 1,
+      "thorns:trigger": 1,
+      "stage:5:complete": 1,
+      "platform:7:land": 1,
+      "thorns:hazardNear": 6
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 52,
+      "score": 0.3792857142857143,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 26,
+      "score": 0.32035714285714284,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 83,
+      "score": 0.31000000000000005,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 34.585
+}

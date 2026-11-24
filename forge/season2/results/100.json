@@ -1,0 +1,1060 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 100,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 100,
+    "name": "THE HUNDREDTH DOOR",
+    "targetDifficulty": "EXPERT",
+    "intent": "Ride to the first door and its key, launch after the second door, then follow its portal down through the gate and cooling beam to the final escape.",
+    "surprise": "The door flees twice. Its final retreat arms hidden teeth on your original starting bank.",
+    "spawn": {
+      "x": 48,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 530,
+          "y": 251
+        },
+        {
+          "x": 850,
+          "y": 116
+        },
+        {
+          "x": 52,
+          "y": 436
+        }
+      ],
+      "options": {
+        "fleeDist": 60
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 180,
+        "h": 40
+      },
+      {
+        "x": 470,
+        "y": 315,
+        "w": 160,
+        "h": 16
+      },
+      {
+        "x": 730,
+        "y": 180,
+        "w": 230,
+        "h": 16
+      },
+      {
+        "x": 640,
+        "y": 260,
+        "w": 320,
+        "h": 16
+      },
+      {
+        "x": 690,
+        "y": 500,
+        "w": 270,
+        "h": 40
+      },
+      {
+        "x": 355,
+        "y": 450,
+        "w": 130,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 204,
+            "y": 450,
+            "w": 112,
+            "h": 16
+          },
+          {
+            "toX": 350,
+            "toY": 340,
+            "speed": 130,
+            "phase": 0.64
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          519,
+          305,
+          "hundred"
+        ]
+      },
+      {
+        "type": "Spring",
+        "args": [
+          568,
+          315,
+          {
+            "w": 56,
+            "power": -960
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          901,
+          132,
+          853,
+          452,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 787,
+            "y": 276,
+            "w": 22,
+            "h": 224
+          },
+          "hundred"
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 642,
+            "y": 276,
+            "len": 264,
+            "vertical": true,
+            "period": 2.1,
+            "warn": 0.45,
+            "fire": 0.45,
+            "phase": 0.14
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 550,
+            "y": 475,
+            "w": 85,
+            "h": 16
+          },
+          {
+            "delay": 0.75
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          116,
+          500,
+          37,
+          {
+            "x": 206,
+            "y": 350,
+            "w": 35,
+            "h": 150
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          180,
+          540,
+          510,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "lift",
+        "key",
+        "launch",
+        "return",
+        "lock",
+        "cooling",
+        "bridge",
+        "teeth",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Ride lift",
+          "target": {
+            "trap": "lift",
+            "dx": 38,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "lift",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ],
+          "reach": {
+            "x": 340,
+            "y": 270,
+            "w": 150,
+            "h": 80
+          },
+          "grounded": true
+        },
+        {
+          "label": "First door and key",
+          "target": {
+            "x": 535,
+            "y": 283
+          },
+          "requires": [
+            {
+              "trap": "key",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Launch after door",
+          "target": {
+            "x": 583,
+            "y": 283
+          },
+          "requires": [
+            {
+              "trap": "launch",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Second door",
+          "target": {
+            "x": 845,
+            "y": 148
+          },
+          "reach": {
+            "x": 730,
+            "y": 142,
+            "w": 230,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 2
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Return portal",
+          "target": {
+            "x": 904,
+            "y": 148
+          },
+          "requires": [
+            {
+              "trap": "return",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Carry key through lock",
+          "target": {
+            "x": 737,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Cooling bridge",
+          "target": {
+            "x": 592.5,
+            "y": 443
+          },
+          "reach": {
+            "x": 550,
+            "y": 437,
+            "w": 85,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "cooling",
+              "event": "beamCross",
+              "minTicks": 1
+            },
+            {
+              "trap": "bridge",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Last island",
+          "target": {
+            "x": 420,
+            "y": 418
+          },
+          "reach": {
+            "x": 355,
+            "y": 412,
+            "w": 130,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Hundredth door",
+          "target": {
+            "x": 65,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "teeth",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "lift",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "key",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 2
+        },
+        {
+          "trap": "launch",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "return",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "cooling",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "bridge",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "teeth",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "0f5565dc28b908e710f5641ed3d1a30889874a8e4c8f3be7f81d633c71624d56",
+      "seed": 100,
+      "initial": {
+        "spawn": {
+          "x": 48,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 837,
+      "seconds": 6.975,
+      "end": [
+        83.26048680264445,
+        435.3333175204023,
+        "win"
+      ]
+    },
+    "expanded": 39883,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      468
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "0f5565dc28b908e710f5641ed3d1a30889874a8e4c8f3be7f81d633c71624d56",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 837,
+      "seconds": 6.975,
+      "end": [
+        83.26048680264445,
+        435.3333175204023,
+        "win"
+      ]
+    },
+    "ticks": 837,
+    "successfulReplaySeconds": 6.975,
+    "seconds": {
+      "activeTraversal": 6.908333333333333,
+      "passiveTransport": 0.06666666666666667,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.3333333333333333
+    },
+    "distance": {
+      "selfPixels": 2454.745785608824,
+      "carriedPixels": 96.61674541776011,
+      "portalPixels": 320.63703747705796
+    },
+    "inputs": {
+      "jumpPresses": 12,
+      "horizontalReversals": 6
+    },
+    "required": [
+      {
+        "trap": "lift",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 112
+      },
+      {
+        "trap": "key",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 267
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 2,
+        "observed": true,
+        "firstTick": 259
+      },
+      {
+        "trap": "launch",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 290
+      },
+      {
+        "trap": "return",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 442
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 490
+      },
+      {
+        "trap": "cooling",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 541
+      },
+      {
+        "trap": "bridge",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 564
+      },
+      {
+        "trap": "teeth",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 69
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 51,
+        "id": "pit",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 69,
+        "id": "teeth",
+        "event": "trigger"
+      },
+      {
+        "tick": 112,
+        "id": "lift",
+        "event": "ride"
+      },
+      {
+        "tick": 217,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Ride lift"
+      },
+      {
+        "tick": 259,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 263,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 267,
+        "id": "key",
+        "event": "activate"
+      },
+      {
+        "tick": 267,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "First door and key"
+      },
+      {
+        "tick": 290,
+        "id": "launch",
+        "event": "activate"
+      },
+      {
+        "tick": 290,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Launch after door"
+      },
+      {
+        "tick": 294,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 374,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 437,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Second door"
+      },
+      {
+        "tick": 442,
+        "id": "return",
+        "event": "activate"
+      },
+      {
+        "tick": 442,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Return portal"
+      },
+      {
+        "tick": 490,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 490,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Carry key through lock"
+      },
+      {
+        "tick": 541,
+        "id": "cooling",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 564,
+        "id": "bridge",
+        "event": "trigger"
+      },
+      {
+        "tick": 564,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Cooling bridge"
+      },
+      {
+        "tick": 630,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 630,
+        "id": "stage:7",
+        "event": "complete",
+        "label": "Last island"
+      },
+      {
+        "tick": 631,
+        "id": "stage:8",
+        "event": "complete",
+        "label": "Hundredth door"
+      },
+      {
+        "tick": 835,
+        "id": "teeth",
+        "event": "hazardNear"
+      }
+    ],
+    "stagesCompleted": 9,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 2,
+      "pit:hazardNear": 9,
+      "teeth:trigger": 1,
+      "lift:ride": 84,
+      "stage:0:complete": 1,
+      "exit:relocate": 2,
+      "platform:1:land": 1,
+      "key:activate": 1,
+      "stage:1:complete": 1,
+      "launch:activate": 1,
+      "stage:2:complete": 1,
+      "lock:open": 1,
+      "platform:2:land": 2,
+      "stage:3:complete": 1,
+      "return:activate": 1,
+      "stage:4:complete": 1,
+      "lock:pass": 1,
+      "stage:5:complete": 1,
+      "cooling:beamCross": 17,
+      "bridge:trigger": 1,
+      "stage:6:complete": 1,
+      "platform:5:land": 3,
+      "stage:7:complete": 1,
+      "stage:8:complete": 1,
+      "teeth:hazardNear": 3
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 83,
+      "score": 0.44833333333333336,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 60,
+      "score": 0.4226923076923077,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 87,
+      "score": 0.40960784313725485,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 20.777
+}

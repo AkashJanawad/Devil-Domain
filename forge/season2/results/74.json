@@ -1,0 +1,934 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 74,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 74,
+    "name": "NEEDLE VALVE",
+    "targetDifficulty": "EXPERT",
+    "intent": "Open the inlet from a raised step and ferry across its beam. Bleed the pressure through the upper pipe and cross the brittle valve seat.",
+    "surprise": "The upper valve seat cracks under your feet and the last flange sprouts teeth.",
+    "spawn": {
+      "x": 48,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 43,
+          "y": 126
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 230,
+        "h": 40
+      },
+      {
+        "x": 255,
+        "y": 425,
+        "w": 110,
+        "h": 16
+      },
+      {
+        "x": 740,
+        "y": 415,
+        "w": 220,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 260,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 665,
+        "y": 180,
+        "w": 295,
+        "h": 16
+      },
+      {
+        "x": 330,
+        "y": 125,
+        "w": 110,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 190,
+        "w": 250,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          290,
+          415,
+          "inlet"
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 380,
+            "y": 411,
+            "w": 118,
+            "h": 16
+          },
+          {
+            "toX": 628,
+            "speed": 135,
+            "phase": 0.6
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 568,
+            "y": 276,
+            "len": 264,
+            "vertical": true,
+            "period": 2.1,
+            "warn": 0.4,
+            "fire": 0.42,
+            "phase": 0.16
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 785,
+            "y": 276,
+            "w": 22,
+            "h": 139
+          },
+          "inlet"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          880,
+          367,
+          820,
+          132,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 512,
+            "y": 178,
+            "w": 94,
+            "h": 16
+          },
+          {
+            "delay": 0.54
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          145,
+          190,
+          47,
+          {
+            "x": 265,
+            "y": 10,
+            "w": 35,
+            "h": 180
+          },
+          {
+            "delay": 0.28
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          230,
+          540,
+          730,
+          {
+            "size": 32
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "valve",
+        "float",
+        "gauge",
+        "inlet",
+        "bleed",
+        "seat",
+        "flange",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Open inlet",
+          "target": {
+            "x": 302,
+            "y": 393
+          },
+          "requires": [
+            {
+              "trap": "valve",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Board float",
+          "target": {
+            "trap": "float",
+            "dx": 30,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "float",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Cross gauge",
+          "target": {
+            "x": 603,
+            "y": 379
+          },
+          "requires": [
+            {
+              "trap": "gauge",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Inlet gate",
+          "target": {
+            "x": 829,
+            "y": 383
+          },
+          "requires": [
+            {
+              "trap": "inlet",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Bleed pipe",
+          "target": {
+            "x": 882,
+            "y": 383
+          },
+          "requires": [
+            {
+              "trap": "bleed",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Valve seat",
+          "target": {
+            "x": 550,
+            "y": 146
+          },
+          "requires": [
+            {
+              "trap": "seat",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Raised lip",
+          "target": {
+            "x": 385,
+            "y": 93
+          },
+          "reach": {
+            "x": 330,
+            "y": 87,
+            "w": 110,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Clear flange",
+          "target": {
+            "x": 64,
+            "y": 158
+          },
+          "requires": [
+            {
+              "trap": "flange",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "valve",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "float",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "gauge",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "inlet",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "bleed",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "seat",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "flange",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "8e64f1942f238a12eb117b286503337ba3868d7dee44e20cc4bbff4d742e0169",
+      "seed": 74,
+      "initial": {
+        "spawn": {
+          "x": 48,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 736,
+      "seconds": 6.133333333333334,
+      "end": [
+        73.79166666666347,
+        118.71527777777776,
+        "win"
+      ]
+    },
+    "expanded": 35059,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      12,
+      336,
+      420,
+      504,
+      720
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "8e64f1942f238a12eb117b286503337ba3868d7dee44e20cc4bbff4d742e0169",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 740,
+      "seconds": 6.166666666666667,
+      "end": [
+        74.62499999999677,
+        158,
+        "win"
+      ]
+    },
+    "ticks": 740,
+    "successfulReplaySeconds": 6.166666666666667,
+    "seconds": {
+      "activeTraversal": 6.158333333333333,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 2034.3219418217436,
+      "carriedPixels": 13.992641129032279,
+      "portalPixels": 237.22537852861993
+    },
+    "inputs": {
+      "jumpPresses": 7,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "valve",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 105
+      },
+      {
+        "trap": "float",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 169
+      },
+      {
+        "trap": "gauge",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 230
+      },
+      {
+        "trap": "inlet",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 368
+      },
+      {
+        "trap": "bleed",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 394
+      },
+      {
+        "trap": "seat",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 522
+      },
+      {
+        "trap": "flange",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 636
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 105,
+        "id": "valve",
+        "event": "activate"
+      },
+      {
+        "tick": 105,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Open inlet"
+      },
+      {
+        "tick": 112,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 132,
+        "id": "inlet",
+        "event": "open"
+      },
+      {
+        "tick": 169,
+        "id": "float",
+        "event": "ride"
+      },
+      {
+        "tick": 180,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Board float"
+      },
+      {
+        "tick": 230,
+        "id": "gauge",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 230,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Cross gauge"
+      },
+      {
+        "tick": 256,
+        "id": "gauge",
+        "event": "beamCrossRiding",
+        "phase": "off"
+      },
+      {
+        "tick": 336,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 368,
+        "id": "inlet",
+        "event": "pass"
+      },
+      {
+        "tick": 368,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Inlet gate"
+      },
+      {
+        "tick": 394,
+        "id": "bleed",
+        "event": "activate"
+      },
+      {
+        "tick": 394,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Bleed pipe"
+      },
+      {
+        "tick": 522,
+        "id": "seat",
+        "event": "trigger"
+      },
+      {
+        "tick": 522,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Valve seat"
+      },
+      {
+        "tick": 576,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 576,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Raised lip"
+      },
+      {
+        "tick": 636,
+        "id": "flange",
+        "event": "trigger"
+      },
+      {
+        "tick": 636,
+        "id": "stage:7",
+        "event": "complete",
+        "label": "Clear flange"
+      },
+      {
+        "tick": 663,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 675,
+        "id": "flange",
+        "event": "hazardNear"
+      }
+    ],
+    "stagesCompleted": 8,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "valve:activate": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "inlet:open": 1,
+      "float:ride": 40,
+      "stage:1:complete": 1,
+      "gauge:beamCross": 32,
+      "stage:2:complete": 1,
+      "gauge:beamCrossRiding": 3,
+      "platform:2:land": 1,
+      "inlet:pass": 1,
+      "stage:3:complete": 1,
+      "bleed:activate": 1,
+      "stage:4:complete": 1,
+      "seat:trigger": 1,
+      "stage:5:complete": 1,
+      "platform:5:land": 1,
+      "stage:6:complete": 1,
+      "flange:trigger": 1,
+      "stage:7:complete": 1,
+      "platform:6:land": 2,
+      "flange:hazardNear": 22
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 79,
+      "score": 0.42346153846153844,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 60,
+      "score": 0.41615384615384615,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 70,
+      "score": 0.4033333333333333,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 32.678
+}

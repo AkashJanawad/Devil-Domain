@@ -1,0 +1,792 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 76,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 76,
+    "name": "FIRE ESCAPE",
+    "targetDifficulty": "HARD",
+    "intent": "Pull the release above the hatch, drop into the smoke passage and escape through a spring shaft on the other side of the fire wall.",
+    "surprise": "The return passage arms an otherwise invisible row of floor teeth.",
+    "spawn": {
+      "x": 50,
+      "y": 173
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 893,
+          "y": 241
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 205,
+        "w": 250,
+        "h": 16
+      },
+      {
+        "x": 299,
+        "y": 142,
+        "w": 125,
+        "h": 16
+      },
+      {
+        "x": 468,
+        "y": 205,
+        "w": 98,
+        "h": 16
+      },
+      {
+        "x": 705,
+        "y": 205,
+        "w": 25,
+        "h": 16
+      },
+      {
+        "x": 730,
+        "y": 0,
+        "w": 22,
+        "h": 540
+      },
+      {
+        "x": 0,
+        "y": 265,
+        "w": 566,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 490,
+        "w": 730,
+        "h": 50
+      },
+      {
+        "x": 752,
+        "y": 500,
+        "w": 208,
+        "h": 40
+      },
+      {
+        "x": 850,
+        "y": 305,
+        "w": 110,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          360,
+          132,
+          "escape"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 566,
+            "y": 205,
+            "w": 139,
+            "h": 16
+          },
+          "escape"
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 455,
+            "y": 281,
+            "len": 209,
+            "vertical": true,
+            "period": 1.85,
+            "warn": 0.42,
+            "fire": 0.45,
+            "phase": 0.25
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          251,
+          490,
+          57,
+          {
+            "x": 555,
+            "y": 290,
+            "w": 40,
+            "h": 200
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          70,
+          442,
+          757,
+          452,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Spring",
+        "args": [
+          796,
+          500,
+          {
+            "w": 47,
+            "power": -1010
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "release",
+        "hatch",
+        "smoke",
+        "embers",
+        "vent",
+        "eject"
+      ],
+      "stages": [
+        {
+          "label": "Pull release",
+          "target": {
+            "x": 366,
+            "y": 110
+          },
+          "requires": [
+            {
+              "trap": "release",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Hatch descent",
+          "target": {
+            "x": 630,
+            "y": 458
+          },
+          "reach": {
+            "x": 566,
+            "y": 285,
+            "w": 138,
+            "h": 205
+          },
+          "requires": [
+            {
+              "trap": "hatch",
+              "event": "open",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Pass smoke",
+          "target": {
+            "x": 416,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "smoke",
+              "event": "beamCross",
+              "minTicks": 1
+            },
+            {
+              "trap": "embers",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Enter vent",
+          "target": {
+            "x": 75,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "vent",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Clear shaft",
+          "target": {
+            "x": 808,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "eject",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "release",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "hatch",
+          "event": "open",
+          "minTicks": 1
+        },
+        {
+          "trap": "smoke",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "embers",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "vent",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "eject",
+          "event": "activate",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "8aa6f4fdbc7e5a2efdf58f01af16dcf5be9bc9e8ca633ca9ce3448e36550eee5",
+      "seed": 76,
+      "initial": {
+        "spawn": {
+          "x": 50,
+          "y": 173
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 631,
+      "seconds": 5.258333333333334,
+      "end": [
+        874.0416666666672,
+        241.17708333333303,
+        "win"
+      ]
+    },
+    "expanded": 29659,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      12,
+      132,
+      192,
+      264,
+      360
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "8aa6f4fdbc7e5a2efdf58f01af16dcf5be9bc9e8ca633ca9ce3448e36550eee5",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 629,
+      "seconds": 5.241666666666666,
+      "end": [
+        874.0416666666672,
+        241.17708333333303,
+        "win"
+      ]
+    },
+    "ticks": 629,
+    "successfulReplaySeconds": 5.241666666666666,
+    "seconds": {
+      "activeTraversal": 5.2,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0.03333333333333333,
+      "neutralWaiting": 0.03333333333333333,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.06666666666666667
+    },
+    "distance": {
+      "selfPixels": 1842.8271818797436,
+      "carriedPixels": 0,
+      "portalPixels": 659.6730217033819
+    },
+    "inputs": {
+      "jumpPresses": 3,
+      "horizontalReversals": 4
+    },
+    "required": [
+      {
+        "trap": "release",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 136
+      },
+      {
+        "trap": "hatch",
+        "event": "open",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 163
+      },
+      {
+        "trap": "smoke",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 389
+      },
+      {
+        "trap": "embers",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 274
+      },
+      {
+        "trap": "vent",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 553
+      },
+      {
+        "trap": "eject",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 565
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 136,
+        "id": "release",
+        "event": "activate"
+      },
+      {
+        "tick": 136,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Pull release"
+      },
+      {
+        "tick": 140,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 163,
+        "id": "hatch",
+        "event": "open"
+      },
+      {
+        "tick": 204,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 274,
+        "id": "embers",
+        "event": "trigger"
+      },
+      {
+        "tick": 278,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Hatch descent"
+      },
+      {
+        "tick": 301,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 375,
+        "id": "smoke",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 389,
+        "id": "smoke",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 389,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Pass smoke"
+      },
+      {
+        "tick": 494,
+        "id": "embers",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 553,
+        "id": "vent",
+        "event": "activate"
+      },
+      {
+        "tick": 553,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Enter vent"
+      },
+      {
+        "tick": 565,
+        "id": "eject",
+        "event": "activate"
+      },
+      {
+        "tick": 565,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Clear shaft"
+      }
+    ],
+    "stagesCompleted": 5,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "release:activate": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "hatch:open": 1,
+      "platform:2:land": 1,
+      "embers:trigger": 1,
+      "stage:1:complete": 1,
+      "platform:6:land": 3,
+      "smoke:hazardNear": 14,
+      "smoke:beamCross": 17,
+      "stage:2:complete": 1,
+      "embers:hazardNear": 11,
+      "vent:activate": 1,
+      "stage:3:complete": 1,
+      "eject:activate": 1,
+      "stage:4:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 77,
+      "score": 0.368796992481203,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 79,
+      "score": 0.35987394957983193,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 70,
+      "score": 0.34815789473684206,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 25.313
+}

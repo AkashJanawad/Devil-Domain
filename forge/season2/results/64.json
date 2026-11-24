@@ -1,0 +1,707 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 64,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 64,
+    "name": "ROUND TRIP FARE",
+    "targetDifficulty": "HARD",
+    "intent": "Take the same portal both ways. Fetch the fare from the upper booth, return to the concourse, then clear the broken track.",
+    "surprise": "The booth landing arms spikes on the return trip.",
+    "spawn": {
+      "x": 50,
+      "y": 448
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 895,
+          "y": 416
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 480,
+        "w": 635,
+        "h": 60
+      },
+      {
+        "x": 765,
+        "y": 480,
+        "w": 195,
+        "h": 60
+      },
+      {
+        "x": 0,
+        "y": 245,
+        "w": 500,
+        "h": 16
+      },
+      {
+        "x": 535,
+        "y": 185,
+        "w": 130,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 280,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Teleporter",
+        "args": [
+          305,
+          432,
+          330,
+          197,
+          {
+            "twoWay": true
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          600,
+          175,
+          "fare"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 505,
+            "y": 296,
+            "w": 22,
+            "h": 184
+          },
+          "fare"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          420,
+          480,
+          52,
+          {
+            "x": 544,
+            "y": 65,
+            "w": 30,
+            "h": 120
+          },
+          {
+            "delay": 0.35
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          635,
+          540,
+          130,
+          {
+            "size": 35
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "ticket",
+        "pay",
+        "turnstile",
+        "fareTrap",
+        "track"
+      ],
+      "stages": [
+        {
+          "label": "Up to booth",
+          "target": {
+            "x": 310,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "ticket",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Collect fare",
+          "target": {
+            "x": 610,
+            "y": 153
+          },
+          "requires": [
+            {
+              "trap": "pay",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "fareTrap",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Return ticket",
+          "target": {
+            "x": 330,
+            "y": 213
+          },
+          "requires": [
+            {
+              "trap": "ticket",
+              "event": "activate",
+              "minTicks": 2
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Pass turnstile",
+          "target": {
+            "x": 555,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "turnstile",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Jump the track",
+          "target": {
+            "x": 825,
+            "y": 448
+          },
+          "reach": {
+            "x": 765,
+            "y": 425,
+            "w": 160,
+            "h": 40
+          },
+          "requires": [],
+          "grounded": true
+        }
+      ],
+      "required": [
+        {
+          "trap": "ticket",
+          "event": "activate",
+          "minTicks": 2
+        },
+        {
+          "trap": "pay",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "turnstile",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "fareTrap",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "45516e0ab153f73003159ed167d1ac880c5bf57d1eae6fec53711eb34f16780a",
+      "seed": 64,
+      "initial": {
+        "spawn": {
+          "x": 50,
+          "y": 448
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 625,
+      "seconds": 5.208333333333333,
+      "end": [
+        875.3750000000045,
+        404.30902777777777,
+        "win"
+      ]
+    },
+    "expanded": 29659,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      456,
+      564,
+      600
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "45516e0ab153f73003159ed167d1ac880c5bf57d1eae6fec53711eb34f16780a",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 625,
+      "seconds": 5.208333333333333,
+      "end": [
+        875.3750000000045,
+        448,
+        "win"
+      ]
+    },
+    "ticks": 625,
+    "successfulReplaySeconds": 5.208333333333333,
+    "seconds": {
+      "activeTraversal": 5.191666666666666,
+      "passiveTransport": 0.016666666666666666,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1699.072334185767,
+      "carriedPixels": 0,
+      "portalPixels": 481.3395812865434
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "ticket",
+        "event": "activate",
+        "minTicks": 2,
+        "observed": true,
+        "firstTick": 111
+      },
+      {
+        "trap": "pay",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 227
+      },
+      {
+        "trap": "turnstile",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 468
+      },
+      {
+        "trap": "fareTrap",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 201
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 111,
+        "id": "ticket",
+        "event": "activate"
+      },
+      {
+        "tick": 111,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Up to booth"
+      },
+      {
+        "tick": 199,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 201,
+        "id": "fareTrap",
+        "event": "trigger"
+      },
+      {
+        "tick": 227,
+        "id": "pay",
+        "event": "activate"
+      },
+      {
+        "tick": 227,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Collect fare"
+      },
+      {
+        "tick": 254,
+        "id": "turnstile",
+        "event": "open"
+      },
+      {
+        "tick": 309,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 363,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Return ticket"
+      },
+      {
+        "tick": 446,
+        "id": "fareTrap",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 468,
+        "id": "turnstile",
+        "event": "pass"
+      },
+      {
+        "tick": 468,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Pass turnstile"
+      },
+      {
+        "tick": 576,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 576,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Jump the track"
+      }
+    ],
+    "stagesCompleted": 5,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 2,
+      "ticket:activate": 2,
+      "stage:0:complete": 1,
+      "platform:3:land": 1,
+      "fareTrap:trigger": 1,
+      "pay:activate": 1,
+      "stage:1:complete": 1,
+      "turnstile:open": 1,
+      "platform:2:land": 1,
+      "stage:2:complete": 1,
+      "fareTrap:hazardNear": 6,
+      "turnstile:pass": 1,
+      "stage:3:complete": 1,
+      "platform:1:land": 1,
+      "stage:4:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 39,
+      "score": 0.5457142857142857,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 34,
+      "score": 0.46291666666666664,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 51,
+      "score": 0.4392857142857143,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 23.76
+}

@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: EXTREME exact quotas and rejection of easier results
+ok 1 - EXTREME exact quotas and rejection of easier results
+  ---
+  duration_ms: 3.315
+  type: 'test'
+  ...
+# Subtest: VERY HARD exact quotas and rejection of easier results
+ok 2 - VERY HARD exact quotas and rejection of easier results
+  ---
+  duration_ms: 1.2558
+  type: 'test'
+  ...
+# Subtest: HARD exact quotas and rejection of easier results
+ok 3 - HARD exact quotas and rejection of easier results
+  ---
+  duration_ms: 0.471
+  type: 'test'
+  ...
+# Subtest: odd count, beginner and released reservations
+ok 4 - odd count, beginner and released reservations
+  ---
+  duration_ms: 11.738
+  type: 'test'
+  ...
+# Subtest: production files untouched
+ok 5 - production files untouched
+  ---
+  duration_ms: 3.605
+  type: 'test'
+  ...
+# Subtest: saved Season 2 failures were generation constraints
+ok 6 - saved Season 2 failures were generation constraints
+  ---
+  duration_ms: 1.7597
+  type: 'test'
+  ...
+# Subtest: determinism, automatic slots and season boundary
+ok 7 - determinism, automatic slots and season boundary
+  ---
+  duration_ms: 15.6792
+  type: 'test'
+  ...
+# Subtest: seven active categories and two-factor difficulty
+ok 8 - seven active categories and two-factor difficulty
+  ---
+  duration_ms: 1.216
+  type: 'test'
+  ...
+# Subtest: candidate 51 proof bound to identity; unapproved
+ok 9 - candidate 51 proof bound to identity; unapproved
+  ---
+  duration_ms: 12.3279
+  type: 'test'
+  ...
+# Subtest: candidate 52 proof bound to identity; unapproved
+ok 10 - candidate 52 proof bound to identity; unapproved
+  ---
+  duration_ms: 10.4131
+  type: 'test'
+  ...
+# Subtest: candidate 53 proof bound to identity; unapproved
+ok 11 - candidate 53 proof bound to identity; unapproved
+  ---
+  duration_ms: 14.6511
+  type: 'test'
+  ...
+# Subtest: candidate 54 proof bound to identity; unapproved
+ok 12 - candidate 54 proof bound to identity; unapproved
+  ---
+  duration_ms: 9.97
+  type: 'test'
+  ...
+# Subtest: candidate 55 proof bound to identity; unapproved
+ok 13 - candidate 55 proof bound to identity; unapproved
+  ---
+  duration_ms: 11.205
+  type: 'test'
+  ...
+# Subtest: candidate 56 proof bound to identity; unapproved
+ok 14 - candidate 56 proof bound to identity; unapproved
+  ---
+  duration_ms: 15.6267
+  type: 'test'
+  ...
+# Subtest: candidate 57 proof bound to identity; unapproved
+ok 15 - candidate 57 proof bound to identity; unapproved
+  ---
+  duration_ms: 10.1942
+  type: 'test'
+  ...
+# Subtest: candidate 58 proof bound to identity; unapproved
+ok 16 - candidate 58 proof bound to identity; unapproved
+  ---
+  duration_ms: 12.7765
+  type: 'test'
+  ...
+# Subtest: candidate 59 proof bound to identity; unapproved
+ok 17 - candidate 59 proof bound to identity; unapproved
+  ---
+  duration_ms: 15.0625
+  type: 'test'
+  ...
+# Subtest: candidate 60 proof bound to identity; unapproved
+ok 18 - candidate 60 proof bound to identity; unapproved
+  ---
+  duration_ms: 9.2147
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 270.5159

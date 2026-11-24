@@ -1,0 +1,50 @@
+41 VERIFIED 2.925 {
+  id: 4,
+  score: 0.5666666666666667,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+42 VERIFIED 2.8333333333333335 {
+  id: 19,
+  score: 0.5375,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+43 VERIFIED 2.925 {
+  id: 20,
+  score: 0.6249999999999999,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+44 VERIFIED 3.125 {
+  id: 9,
+  score: 0.5666666666666667,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+45 VERIFIED 2 {
+  id: 6,
+  score: 0.52,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+46 VERIFIED 3.125 {
+  id: 13,
+  score: 0.59,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+47 VERIFIED 2.925 {
+  id: 45,
+  score: 0.52,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+48 VERIFIED 3.1416666666666666 {
+  id: 20,
+  score: 0.5666666666666667,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+49 VERIFIED 3.0833333333333335 {
+  id: 6,
+  score: 0.485,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}
+50 VERIFIED 3.125 {
+  id: 20,
+  score: 0.6249999999999999,
+  reason: '35% geometry cells + 35% mechanic overlap + 20% activation order + 10% exits; names/colors ignored'
+}

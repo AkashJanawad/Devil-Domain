@@ -1,0 +1,525 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 56,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 56,
+    "name": "THE LOW ROAD",
+    "targetDifficulty": "MEDIUM",
+    "intent": "Leave the high right bank, ride left over the saw, drop to the portal and clear the low ambush.",
+    "surprise": "The portal delivers you above a spike trigger on the lower road.",
+    "spawn": {
+      "x": 870,
+      "y": 118
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 55,
+          "y": 416
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 760,
+        "y": 150,
+        "w": 200,
+        "h": 16
+      },
+      {
+        "x": 400,
+        "y": 320,
+        "w": 160,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 480,
+        "w": 350,
+        "h": 60
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 480,
+            "y": 240,
+            "w": 115,
+            "h": 16
+          },
+          {
+            "toX": 710,
+            "speed": 130,
+            "phase": 0.35
+          }
+        ]
+      },
+      {
+        "type": "Saw",
+        "args": [
+          [
+            {
+              "x": 440,
+              "y": 280
+            },
+            {
+              "x": 660,
+              "y": 280
+            }
+          ],
+          {
+            "speed": 110,
+            "r": 17
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          430,
+          272,
+          290,
+          432,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          155,
+          480,
+          60,
+          {
+            "x": 260,
+            "y": 310,
+            "w": 30,
+            "h": 170
+          },
+          {
+            "delay": 0.2
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          350,
+          540,
+          610,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "ferry",
+        "saw",
+        "drain",
+        "ambush",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Board leftbound ferry",
+          "target": {
+            "trap": "ferry",
+            "dx": 50,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "ferry",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Drop to drain",
+          "target": {
+            "x": 435,
+            "y": 288
+          },
+          "requires": [
+            {
+              "trap": "drain",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Leftward escape",
+          "target": {
+            "x": 65,
+            "y": 448
+          },
+          "reach": {
+            "x": 30,
+            "y": 350,
+            "w": 90,
+            "h": 130
+          },
+          "requires": [
+            {
+              "trap": "ambush",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "ferry",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "drain",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "ambush",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "6dfbde81b72010142cb9cf7a017e9f84c88a6f5a81261fcb7ee9ea94b2812196",
+      "seed": 56,
+      "initial": {
+        "spawn": {
+          "x": 870,
+          "y": 118
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 301,
+      "seconds": 2.5083333333333333,
+      "end": [
+        85.9166666666664,
+        402.46180555555554,
+        "win"
+      ]
+    },
+    "expanded": 13459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": []
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "6dfbde81b72010142cb9cf7a017e9f84c88a6f5a81261fcb7ee9ea94b2812196",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 301,
+      "seconds": 2.5083333333333333,
+      "end": [
+        85.9166666666664,
+        402.46180555555554,
+        "win"
+      ]
+    },
+    "ticks": 301,
+    "successfulReplaySeconds": 2.5083333333333333,
+    "seconds": {
+      "activeTraversal": 2.5,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 934.5605435124148,
+      "carriedPixels": 12.771557971014431,
+      "portalPixels": 231.07085975669955
+    },
+    "inputs": {
+      "jumpPresses": 3,
+      "horizontalReversals": 5
+    },
+    "required": [
+      {
+        "trap": "ferry",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 93
+      },
+      {
+        "trap": "drain",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 203
+      },
+      {
+        "trap": "ambush",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 208
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 93,
+        "id": "ferry",
+        "event": "ride"
+      },
+      {
+        "tick": 104,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Board leftbound ferry"
+      },
+      {
+        "tick": 162,
+        "id": "saw",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 176,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 203,
+        "id": "drain",
+        "event": "activate"
+      },
+      {
+        "tick": 203,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Drop to drain"
+      },
+      {
+        "tick": 208,
+        "id": "ambush",
+        "event": "trigger"
+      },
+      {
+        "tick": 236,
+        "id": "ambush",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 286,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Leftward escape"
+      }
+    ],
+    "stagesCompleted": 3,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "ferry:ride": 17,
+      "stage:0:complete": 1,
+      "saw:hazardNear": 7,
+      "platform:1:land": 1,
+      "drain:activate": 1,
+      "stage:1:complete": 1,
+      "ambush:trigger": 1,
+      "ambush:hazardNear": 14,
+      "stage:2:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 26,
+      "score": 0.38999999999999996,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 21,
+      "score": 0.30916666666666665,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 17,
+      "score": 0.2978571428571429,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 5.049
+}

@@ -1,0 +1,488 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 53,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 53,
+    "name": "AFTER YOU",
+    "targetDifficulty": "EASY",
+    "intent": "A descending staircase with wide landings; the exit politely moves to the next landing.",
+    "surprise": "The second landing collapses and the door relocates forward, never backwards.",
+    "spawn": {
+      "x": 55,
+      "y": 188
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 475,
+          "y": 286
+        },
+        {
+          "x": 875,
+          "y": 356
+        }
+      ],
+      "options": {
+        "fleeDist": 65
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 220,
+        "w": 160,
+        "h": 16
+      },
+      {
+        "x": 440,
+        "y": 350,
+        "w": 120,
+        "h": 16
+      },
+      {
+        "x": 720,
+        "y": 420,
+        "w": 240,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "CollapseFloor",
+        "args": [
+          {
+            "x": 240,
+            "y": 290,
+            "w": 120,
+            "h": 16
+          },
+          {
+            "x": 205,
+            "y": 100,
+            "w": 50,
+            "h": 200
+          },
+          {
+            "delay": 0.6,
+            "shakeTime": 0.25
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          0,
+          540,
+          720,
+          {
+            "size": 28
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "courtesy",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Borrow second stair",
+          "target": {
+            "x": 280,
+            "y": 258
+          },
+          "reach": {
+            "x": 240,
+            "y": 250,
+            "w": 120,
+            "h": 16
+          },
+          "requires": [
+            {
+              "trap": "courtesy",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Door steps aside",
+          "target": {
+            "x": 475,
+            "y": 318
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Final landing",
+          "target": {
+            "x": 870,
+            "y": 388
+          },
+          "reach": {
+            "x": 800,
+            "y": 310,
+            "w": 140,
+            "h": 110
+          },
+          "requires": [],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "courtesy",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "8c03789053169a69255d00f85cfb41dd52feb3901d3ecb70912057808f5cf065",
+      "seed": 53,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 188
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 369,
+      "seconds": 3.075,
+      "end": [
+        856.7916666666708,
+        344.77430555555554,
+        "win"
+      ]
+    },
+    "expanded": 15727,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      48,
+      180,
+      108,
+      348,
+      300
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "8c03789053169a69255d00f85cfb41dd52feb3901d3ecb70912057808f5cf065",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 369,
+      "seconds": 3.075,
+      "end": [
+        856.7916666666708,
+        388,
+        "win"
+      ]
+    },
+    "ticks": 369,
+    "successfulReplaySeconds": 3.075,
+    "seconds": {
+      "activeTraversal": 3.075,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1011.7556145590933,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 1,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "courtesy",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 64
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 171
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 64,
+        "id": "courtesy",
+        "event": "trigger"
+      },
+      {
+        "tick": 90,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Borrow second stair"
+      },
+      {
+        "tick": 171,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 171,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Door steps aside"
+      },
+      {
+        "tick": 172,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 299,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 344,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Final landing"
+      }
+    ],
+    "stagesCompleted": 3,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "courtesy:trigger": 1,
+      "stage:0:complete": 1,
+      "exit:relocate": 1,
+      "stage:1:complete": 1,
+      "platform:1:land": 1,
+      "platform:2:land": 1,
+      "stage:2:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 2,
+      "score": 0.22499999999999998,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 21,
+      "score": 0.2125,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 52,
+      "score": 0.18999999999999997,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 4.372
+}

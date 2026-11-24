@@ -1,0 +1,26 @@
+[
+  {
+    "width": 568,
+    "height": 320,
+    "localPolicyLoaded": true,
+    "closeEscapeNativeBack": true,
+    "savesUnchanged": true,
+    "externalRequests": []
+  },
+  {
+    "width": 800,
+    "height": 360,
+    "localPolicyLoaded": true,
+    "closeEscapeNativeBack": true,
+    "savesUnchanged": true,
+    "externalRequests": []
+  },
+  {
+    "width": 360,
+    "height": 800,
+    "localPolicyLoaded": true,
+    "closeEscapeNativeBack": true,
+    "savesUnchanged": true,
+    "externalRequests": []
+  }
+]

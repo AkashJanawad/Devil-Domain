@@ -1,0 +1,11 @@
+{
+  "apk": "Z:\\Automation\\Devil Domain\\android\\app\\build\\outputs\\apk\\debug\\Devil-Domain-100-levels.apk",
+  "bytes": 4190581,
+  "sha256": "CC2E85AA4CE8AD13986790DA36F6F2BAB9E259122F6A3AFB2D70876446E1E14C",
+  "campaignLevels": 100,
+  "level34FixIncluded": true,
+  "allLevelsUnlockedForTesting": true,
+  "signatureMatchesPrevious": true,
+  "packagedAssetsMatchSource": true,
+  "physicalDeviceTested": false
+}

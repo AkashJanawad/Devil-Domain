@@ -1,0 +1,19 @@
+[
+  {
+    "privateFilesAbsent": true,
+    "package": "android/app/build/outputs/apk/playtest/app-playtest.apk",
+    "matchedWebAssets": 18,
+    "releaseProgressionLocked": true
+  },
+  {
+    "privateFilesAbsent": true,
+    "package": "android/app/build/outputs/bundle/release/app-release.aab",
+    "matchedWebAssets": 18,
+    "releaseProgressionLocked": true
+  },
+  {
+    "adaptiveAllowedRadiusPixels": 132,
+    "storeFormatsValid": true,
+    "adaptiveMaxRadiusPixels": 122
+  }
+]

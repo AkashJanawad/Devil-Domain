@@ -1,0 +1,1029 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 80,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 80,
+    "name": "NIGHT WATCH",
+    "targetDifficulty": "EXPERT",
+    "intent": "Wind the night clock and follow its door down to the works. Spring across the first well, transfer to the timing sled and take the lower gate.",
+    "surprise": "Following the clock door wakes the teeth on the last approach.",
+    "spawn": {
+      "x": 50,
+      "y": 180
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 826,
+          "y": 146
+        },
+        {
+          "x": 47,
+          "y": 426
+        }
+      ],
+      "options": {
+        "fleeDist": 65
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 212,
+        "w": 188,
+        "h": 16
+      },
+      {
+        "x": 245,
+        "y": 149,
+        "w": 106,
+        "h": 16
+      },
+      {
+        "x": 423,
+        "y": 103,
+        "w": 125,
+        "h": 16
+      },
+      {
+        "x": 610,
+        "y": 165,
+        "w": 105,
+        "h": 16
+      },
+      {
+        "x": 767,
+        "y": 210,
+        "w": 135,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 250,
+        "w": 865,
+        "h": 16
+      },
+      {
+        "x": 733,
+        "y": 500,
+        "w": 227,
+        "h": 40
+      },
+      {
+        "x": 530,
+        "y": 374,
+        "w": 143,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 490,
+        "w": 235,
+        "h": 50
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          472,
+          93,
+          "watch"
+        ]
+      },
+      {
+        "type": "Pendulum",
+        "args": [
+          580,
+          18,
+          {
+            "len": 137,
+            "amp": 0.6,
+            "speed": 1.82,
+            "r": 14
+          }
+        ]
+      },
+      {
+        "type": "Spring",
+        "args": [
+          777,
+          500,
+          {
+            "w": 52,
+            "power": -931
+          }
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 265,
+            "y": 452,
+            "w": 105,
+            "h": 16
+          },
+          {
+            "toX": 419,
+            "speed": 118,
+            "phase": 0.5
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 361,
+            "y": 266,
+            "len": 274,
+            "vertical": true,
+            "period": 2.1,
+            "warn": 0.45,
+            "fire": 0.45,
+            "phase": 0.18
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 199,
+            "y": 266,
+            "w": 21,
+            "h": 224
+          },
+          "watch"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          122,
+          490,
+          41,
+          {
+            "x": 237,
+            "y": 285,
+            "w": 43,
+            "h": 225
+          },
+          {
+            "delay": 0.26
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          235,
+          540,
+          498,
+          {
+            "size": 32
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "clock",
+        "pendulum",
+        "winder",
+        "sled",
+        "timing",
+        "lock",
+        "teeth",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Winding step",
+          "target": {
+            "x": 298,
+            "y": 117
+          },
+          "reach": {
+            "x": 245,
+            "y": 111,
+            "w": 106,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Wind clock",
+          "target": {
+            "x": 483,
+            "y": 71
+          },
+          "requires": [
+            {
+              "trap": "clock",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Follow clock door",
+          "target": {
+            "x": 831,
+            "y": 178
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Descend outside the works",
+          "target": {
+            "x": 910.5,
+            "y": 468
+          },
+          "reach": {
+            "x": 866,
+            "y": 462,
+            "w": 89,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Wind lower spring",
+          "target": {
+            "x": 796,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "winder",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Machinery ledge",
+          "target": {
+            "x": 601.5,
+            "y": 342
+          },
+          "reach": {
+            "x": 530,
+            "y": 336,
+            "w": 143,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Board sled",
+          "target": {
+            "trap": "sled",
+            "dx": 30,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "sled",
+              "event": "ride",
+              "minTicks": 10
+            }
+          ]
+        },
+        {
+          "label": "Cross timing beam",
+          "target": {
+            "x": 322,
+            "y": 420
+          },
+          "requires": [
+            {
+              "trap": "timing",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Escape the works",
+          "target": {
+            "x": 85,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "teeth",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "clock",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 1
+        },
+        {
+          "trap": "winder",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "sled",
+          "event": "ride",
+          "minTicks": 10
+        },
+        {
+          "trap": "timing",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "teeth",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "8d1c94e7a869d555ce9ee0f712e90adbf76731668a04e27c9e2d678a52c29b74",
+      "seed": 80,
+      "initial": {
+        "spawn": {
+          "x": 50,
+          "y": 180
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          true
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 827,
+      "seconds": 6.891666666666667,
+      "end": [
+        78.89656565656523,
+        433.3645833333333,
+        "win"
+      ]
+    },
+    "expanded": 39260,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      12,
+      264,
+      432,
+      492
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "8d1c94e7a869d555ce9ee0f712e90adbf76731668a04e27c9e2d678a52c29b74",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 827,
+      "seconds": 6.891666666666667,
+      "end": [
+        78.99851731601731,
+        433.3645833333333,
+        "win"
+      ]
+    },
+    "ticks": 827,
+    "successfulReplaySeconds": 6.891666666666667,
+    "seconds": {
+      "activeTraversal": 6.883333333333334,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.1
+    },
+    "distance": {
+      "selfPixels": 2680.1782638256623,
+      "carriedPixels": 56.654260461760714,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 7,
+      "horizontalReversals": 6
+    },
+    "required": [
+      {
+        "trap": "clock",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 187
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 333
+      },
+      {
+        "trap": "winder",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 471
+      },
+      {
+        "trap": "sled",
+        "event": "ride",
+        "minTicks": 10,
+        "observed": true,
+        "firstTick": 632
+      },
+      {
+        "trap": "timing",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 712
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 781
+      },
+      {
+        "trap": "teeth",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 736
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 116,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 116,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Winding step"
+      },
+      {
+        "tick": 164,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 187,
+        "id": "clock",
+        "event": "activate"
+      },
+      {
+        "tick": 187,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Wind clock"
+      },
+      {
+        "tick": 214,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 260,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 332,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 333,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 333,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Follow clock door"
+      },
+      {
+        "tick": 432,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 432,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Descend outside the works"
+      },
+      {
+        "tick": 471,
+        "id": "winder",
+        "event": "activate"
+      },
+      {
+        "tick": 471,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Wind lower spring"
+      },
+      {
+        "tick": 553,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 553,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Machinery ledge"
+      },
+      {
+        "tick": 632,
+        "id": "sled",
+        "event": "ride"
+      },
+      {
+        "tick": 641,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Board sled"
+      },
+      {
+        "tick": 674,
+        "id": "timing",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 712,
+        "id": "timing",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 712,
+        "id": "timing",
+        "event": "beamCrossRiding",
+        "phase": "off"
+      },
+      {
+        "tick": 712,
+        "id": "stage:7",
+        "event": "complete",
+        "label": "Cross timing beam"
+      },
+      {
+        "tick": 736,
+        "id": "teeth",
+        "event": "trigger"
+      },
+      {
+        "tick": 781,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 781,
+        "id": "stage:8",
+        "event": "complete",
+        "label": "Escape the works"
+      },
+      {
+        "tick": 814,
+        "id": "teeth",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 822,
+        "id": "platform:8",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 9,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "clock:activate": 1,
+      "stage:1:complete": 1,
+      "lock:open": 1,
+      "platform:3:land": 1,
+      "platform:4:land": 1,
+      "exit:relocate": 1,
+      "stage:2:complete": 1,
+      "platform:6:land": 1,
+      "stage:3:complete": 1,
+      "winder:activate": 1,
+      "stage:4:complete": 1,
+      "platform:7:land": 1,
+      "stage:5:complete": 1,
+      "sled:ride": 59,
+      "stage:6:complete": 1,
+      "timing:hazardNear": 37,
+      "timing:beamCross": 9,
+      "timing:beamCrossRiding": 9,
+      "stage:7:complete": 1,
+      "teeth:trigger": 1,
+      "lock:pass": 1,
+      "stage:8:complete": 1,
+      "teeth:hazardNear": 14,
+      "platform:8:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 70,
+      "score": 0.3464912280701754,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 51,
+      "score": 0.33416666666666667,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 71,
+      "score": 0.33249999999999996,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 39.011
+}

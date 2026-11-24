@@ -1,0 +1,831 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 81,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 81,
+    "name": "THE SWITCHBACK ARCHIVE",
+    "targetDifficulty": "HARD",
+    "intent": "Climb the archive shelves to release the sealed reading room, then take its book chute to the overhead gallery.",
+    "surprise": "Entering the chute wakes a row of hidden teeth in the gallery.",
+    "spawn": {
+      "x": 48,
+      "y": 458
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 80,
+          "y": 106
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 490,
+        "w": 205,
+        "h": 50
+      },
+      {
+        "x": 245,
+        "y": 420,
+        "w": 110,
+        "h": 16
+      },
+      {
+        "x": 402,
+        "y": 355,
+        "w": 128,
+        "h": 16
+      },
+      {
+        "x": 585,
+        "y": 418,
+        "w": 120,
+        "h": 16
+      },
+      {
+        "x": 760,
+        "y": 480,
+        "w": 200,
+        "h": 60
+      },
+      {
+        "x": 0,
+        "y": 245,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 650,
+        "y": 170,
+        "w": 310,
+        "h": 16
+      },
+      {
+        "x": 400,
+        "y": 112,
+        "w": 125,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 170,
+        "w": 290,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          444,
+          345,
+          "archive"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 803,
+            "y": 261,
+            "w": 22,
+            "h": 219
+          },
+          "archive"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          884,
+          432,
+          835,
+          122,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          183,
+          170,
+          45,
+          {
+            "x": 851,
+            "y": 285,
+            "w": 34,
+            "h": 195
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 575,
+            "y": 0,
+            "len": 245,
+            "vertical": true,
+            "period": 2.1,
+            "warn": 0.45,
+            "fire": 0.46,
+            "phase": 0.1
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          205,
+          540,
+          555,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "index",
+        "seal",
+        "chute",
+        "ink",
+        "reader",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "First shelf",
+          "target": {
+            "x": 300,
+            "y": 388
+          },
+          "reach": {
+            "x": 245,
+            "y": 382,
+            "w": 110,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Index switch",
+          "target": {
+            "x": 452,
+            "y": 323
+          },
+          "requires": [
+            {
+              "trap": "index",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Descending shelf",
+          "target": {
+            "x": 645,
+            "y": 386
+          },
+          "reach": {
+            "x": 585,
+            "y": 380,
+            "w": 120,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Sealed chute",
+          "target": {
+            "x": 884,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "seal",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "chute",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Gallery bridge",
+          "target": {
+            "x": 462.5,
+            "y": 80
+          },
+          "reach": {
+            "x": 400,
+            "y": 74,
+            "w": 125,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "reader",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Read the exit",
+          "target": {
+            "x": 95,
+            "y": 138
+          },
+          "requires": [
+            {
+              "trap": "ink",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "index",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "seal",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "chute",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "reader",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "ink",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "65e05edc53ac83964b5f5c82c791a09f2442f2bd55256d83335b36f5f2902d49",
+      "seed": 81,
+      "initial": {
+        "spawn": {
+          "x": 48,
+          "y": 458
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 707,
+      "seconds": 5.891666666666667,
+      "end": [
+        111.83333333332979,
+        138,
+        "win"
+      ]
+    },
+    "expanded": 33263,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      84,
+      216,
+      264,
+      408
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "65e05edc53ac83964b5f5c82c791a09f2442f2bd55256d83335b36f5f2902d49",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 707,
+      "seconds": 5.891666666666667,
+      "end": [
+        111.83333333332979,
+        138,
+        "win"
+      ]
+    },
+    "ticks": 707,
+    "successfulReplaySeconds": 5.891666666666667,
+    "seconds": {
+      "activeTraversal": 5.883333333333334,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1978.4671863532187,
+      "carriedPixels": 0,
+      "portalPixels": 310.75334370687017
+    },
+    "inputs": {
+      "jumpPresses": 5,
+      "horizontalReversals": 1
+    },
+    "required": [
+      {
+        "trap": "index",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 175
+      },
+      {
+        "trap": "seal",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 358
+      },
+      {
+        "trap": "chute",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 374
+      },
+      {
+        "trap": "reader",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 495
+      },
+      {
+        "trap": "ink",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 359
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 90,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 96,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "First shelf"
+      },
+      {
+        "tick": 175,
+        "id": "index",
+        "event": "activate"
+      },
+      {
+        "tick": 175,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Index switch"
+      },
+      {
+        "tick": 176,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 202,
+        "id": "seal",
+        "event": "open"
+      },
+      {
+        "tick": 253,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 253,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Descending shelf"
+      },
+      {
+        "tick": 332,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 358,
+        "id": "seal",
+        "event": "pass"
+      },
+      {
+        "tick": 359,
+        "id": "ink",
+        "event": "trigger"
+      },
+      {
+        "tick": 374,
+        "id": "chute",
+        "event": "activate"
+      },
+      {
+        "tick": 374,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Sealed chute"
+      },
+      {
+        "tick": 495,
+        "id": "reader",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 526,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 526,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Gallery bridge"
+      },
+      {
+        "tick": 527,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Read the exit"
+      },
+      {
+        "tick": 629,
+        "id": "platform:8",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "index:activate": 1,
+      "stage:1:complete": 1,
+      "platform:2:land": 1,
+      "seal:open": 1,
+      "platform:3:land": 1,
+      "stage:2:complete": 1,
+      "platform:4:land": 1,
+      "seal:pass": 1,
+      "ink:trigger": 1,
+      "chute:activate": 1,
+      "stage:3:complete": 1,
+      "reader:beamCross": 17,
+      "platform:7:land": 1,
+      "stage:4:complete": 1,
+      "stage:5:complete": 1,
+      "platform:8:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 79,
+      "score": 0.4777310924369748,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 89,
+      "score": 0.4298402255639098,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 74,
+      "score": 0.425,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 28.325
+}

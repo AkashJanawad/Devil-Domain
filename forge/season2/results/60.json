@@ -1,0 +1,866 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 60,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 60,
+    "name": "CROWN OF CINDERS",
+    "targetDifficulty": "EXPERT",
+    "intent": "Spring left into a cargo loft, take its portal to the roof, then cross the fragile sky bridge and unlock the crown.",
+    "surprise": "A hanging crate falls across the launch route; the roof bridge crumbles underfoot.",
+    "spawn": {
+      "x": 865,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 55,
+          "y": 186
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 740,
+        "y": 500,
+        "w": 220,
+        "h": 40
+      },
+      {
+        "x": 550,
+        "y": 340,
+        "w": 180,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 270,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 700,
+        "y": 180,
+        "w": 260,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 250,
+        "w": 280,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Spring",
+        "args": [
+          760,
+          500,
+          {
+            "power": -1000,
+            "w": 55
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 660,
+            "y": 288,
+            "w": 40,
+            "h": 30
+          },
+          {
+            "x": 705,
+            "y": 286,
+            "w": 30,
+            "h": 214
+          },
+          {
+            "shakeTime": 0.65,
+            "floorY": 540
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          560,
+          292,
+          830,
+          132,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 560,
+            "y": 200,
+            "w": 100,
+            "h": 16
+          },
+          {
+            "delay": 0.55
+          }
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 340,
+            "y": 230,
+            "w": 110,
+            "h": 16
+          },
+          {
+            "toX": 440,
+            "speed": 100,
+            "phase": 0.3
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 480,
+            "y": 0,
+            "len": 270,
+            "vertical": true,
+            "period": 1.9,
+            "warn": 0.4,
+            "fire": 0.4,
+            "phase": 0.3
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          220,
+          240,
+          "crown"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 120,
+            "y": 0,
+            "w": 24,
+            "h": 250
+          },
+          "crown"
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          0,
+          540,
+          740,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "launch",
+        "cargo",
+        "roof",
+        "fragile",
+        "bridge",
+        "beam",
+        "crown",
+        "lock",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Leftward launch",
+          "target": {
+            "x": 775,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "launch",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Cargo loft",
+          "target": {
+            "x": 610,
+            "y": 308
+          },
+          "reach": {
+            "x": 550,
+            "y": 300,
+            "w": 180,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "cargo",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Roof portal",
+          "target": {
+            "x": 565,
+            "y": 308
+          },
+          "requires": [
+            {
+              "trap": "roof",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Fragile roof",
+          "target": {
+            "x": 600,
+            "y": 168
+          },
+          "reach": {
+            "x": 560,
+            "y": 160,
+            "w": 100,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Moving sky bridge",
+          "target": {
+            "trap": "bridge",
+            "dx": 35,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "bridge",
+              "event": "ride",
+              "minTicks": 12
+            },
+            {
+              "trap": "beam",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ]
+        },
+        {
+          "label": "Crown switch",
+          "target": {
+            "x": 225,
+            "y": 218
+          },
+          "requires": [
+            {
+              "trap": "crown",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Crown gate",
+          "target": {
+            "x": 70,
+            "y": 218
+          },
+          "reach": {
+            "x": 25,
+            "y": 120,
+            "w": 80,
+            "h": 130
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "launch",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "cargo",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "roof",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "bridge",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "beam",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "crown",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "39a24ff474d88f5750e00629df0c21ea5cf72c7bdc4a3469b747b82e2b23f2fb",
+      "seed": 60,
+      "initial": {
+        "spawn": {
+          "x": 865,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 575,
+      "seconds": 4.791666666666667,
+      "end": [
+        86.09722222222003,
+        218,
+        "win"
+      ]
+    },
+    "expanded": 26663,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      240
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "39a24ff474d88f5750e00629df0c21ea5cf72c7bdc4a3469b747b82e2b23f2fb",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 575,
+      "seconds": 4.791666666666667,
+      "end": [
+        86.09722222222003,
+        218,
+        "win"
+      ]
+    },
+    "ticks": 575,
+    "successfulReplaySeconds": 4.791666666666667,
+    "seconds": {
+      "activeTraversal": 4.158333333333333,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0.625,
+      "neutralWaiting": 0.5,
+      "blockedInput": 0.125,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1362.3652223143188,
+      "carriedPixels": 12.88888888888954,
+      "portalPixels": 290.62028703201116
+    },
+    "inputs": {
+      "jumpPresses": 3,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "launch",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 31
+      },
+      {
+        "trap": "cargo",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 66
+      },
+      {
+        "trap": "roof",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 215
+      },
+      {
+        "trap": "bridge",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 430
+      },
+      {
+        "trap": "beam",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 389
+      },
+      {
+        "trap": "crown",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 499
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 572
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 31,
+        "id": "launch",
+        "event": "activate"
+      },
+      {
+        "tick": 31,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Leftward launch"
+      },
+      {
+        "tick": 66,
+        "id": "cargo",
+        "event": "trigger"
+      },
+      {
+        "tick": 78,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 78,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Cargo loft"
+      },
+      {
+        "tick": 144,
+        "id": "cargo",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 215,
+        "id": "roof",
+        "event": "activate"
+      },
+      {
+        "tick": 215,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Roof portal"
+      },
+      {
+        "tick": 307,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Fragile roof"
+      },
+      {
+        "tick": 308,
+        "id": "fragile",
+        "event": "trigger"
+      },
+      {
+        "tick": 378,
+        "id": "beam",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 389,
+        "id": "beam",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 430,
+        "id": "bridge",
+        "event": "ride"
+      },
+      {
+        "tick": 441,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Moving sky bridge"
+      },
+      {
+        "tick": 499,
+        "id": "crown",
+        "event": "activate"
+      },
+      {
+        "tick": 499,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Crown switch"
+      },
+      {
+        "tick": 502,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 526,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 572,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 572,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Crown gate"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "launch:activate": 1,
+      "stage:0:complete": 1,
+      "cargo:trigger": 1,
+      "platform:1:land": 2,
+      "stage:1:complete": 1,
+      "cargo:hazardNear": 22,
+      "roof:activate": 1,
+      "stage:2:complete": 1,
+      "stage:3:complete": 1,
+      "fragile:trigger": 1,
+      "beam:hazardNear": 10,
+      "beam:beamCross": 16,
+      "bridge:ride": 16,
+      "stage:4:complete": 1,
+      "crown:activate": 1,
+      "stage:5:complete": 1,
+      "platform:4:land": 1,
+      "lock:open": 1,
+      "lock:pass": 1,
+      "stage:6:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 40,
+      "score": 0.2888636363636363,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 52,
+      "score": 0.26015151515151513,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 51,
+      "score": 0.255,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 12.329
+}

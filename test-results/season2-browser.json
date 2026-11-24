@@ -1,0 +1,118 @@
+{
+  "results": [
+    {
+      "id": 91,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 659,
+      "seconds": 5.491666666666666,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 92,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 575,
+      "seconds": 4.791666666666667,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 93,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 574,
+      "seconds": 4.783333333333333,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 94,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 557,
+      "seconds": 4.641666666666667,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 95,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 612,
+      "seconds": 5.1,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 96,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 730,
+      "seconds": 6.083333333333333,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 97,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 729,
+      "seconds": 6.075,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 98,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 454,
+      "seconds": 3.783333333333333,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 99,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 783,
+      "seconds": 6.525,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 100,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 837,
+      "seconds": 6.975,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "postRequests": [],
+  "filesUnchanged": true
+}

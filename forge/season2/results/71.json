@@ -1,0 +1,846 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 71,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 71,
+    "name": "LOOSE THREAD",
+    "targetDifficulty": "HARD",
+    "intent": "Thread the upper eyelets to unlatch the sewing room. The fleeing door leads down to a second crossing beneath the loom.",
+    "surprise": "The far door jumps underneath the first landing. Crossing the lower seam raises its needles.",
+    "spawn": {
+      "x": 52,
+      "y": 208
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 818,
+          "y": 171
+        },
+        {
+          "x": 65,
+          "y": 426
+        }
+      ],
+      "options": {
+        "fleeDist": 65
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 240,
+        "w": 200,
+        "h": 16
+      },
+      {
+        "x": 248,
+        "y": 175,
+        "w": 108,
+        "h": 16
+      },
+      {
+        "x": 415,
+        "y": 112,
+        "w": 120,
+        "h": 16
+      },
+      {
+        "x": 593,
+        "y": 175,
+        "w": 102,
+        "h": 16
+      },
+      {
+        "x": 758,
+        "y": 235,
+        "w": 135,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 490,
+        "w": 335,
+        "h": 50
+      },
+      {
+        "x": 468,
+        "y": 490,
+        "w": 492,
+        "h": 50
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          465,
+          102,
+          "thread"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 188,
+            "y": 256,
+            "w": 22,
+            "h": 234
+          },
+          "thread"
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 595,
+            "y": 260,
+            "len": 230,
+            "vertical": true,
+            "period": 1.85,
+            "warn": 0.42,
+            "fire": 0.48,
+            "phase": 0.18
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          246,
+          490,
+          48,
+          {
+            "x": 470,
+            "y": 280,
+            "w": 35,
+            "h": 210
+          },
+          {
+            "delay": 0.24
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          335,
+          540,
+          133,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "latch",
+        "eye",
+        "needle",
+        "hem",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "First eyelet",
+          "target": {
+            "x": 302,
+            "y": 143
+          },
+          "reach": {
+            "x": 248,
+            "y": 137,
+            "w": 108,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Unlatch",
+          "target": {
+            "x": 470,
+            "y": 80
+          },
+          "requires": [
+            {
+              "trap": "latch",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Find runaway door",
+          "target": {
+            "x": 818,
+            "y": 203
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Drop past the lip",
+          "target": {
+            "x": 872.5,
+            "y": 458
+          },
+          "reach": {
+            "x": 800,
+            "y": 452,
+            "w": 145,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Cross lower needle",
+          "target": {
+            "x": 550,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "needle",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Cross the seam",
+          "target": {
+            "x": 138,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "hem",
+              "event": "trigger",
+              "minTicks": 1
+            },
+            {
+              "trap": "eye",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "latch",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 1
+        },
+        {
+          "trap": "needle",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "hem",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "eye",
+          "event": "pass",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "b04e7471f4be5b140479d2761e24c65d8ea67ff23ac1da451d32c68bbd3e5d6d",
+      "seed": 71,
+      "initial": {
+        "spawn": {
+          "x": 52,
+          "y": 208
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 777,
+      "seconds": 6.475,
+      "end": [
+        94.87500000000126,
+        447.81597222222223,
+        "win"
+      ]
+    },
+    "expanded": 36863,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      228,
+      288,
+      468,
+      432,
+      564,
+      504,
+      732
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "b04e7471f4be5b140479d2761e24c65d8ea67ff23ac1da451d32c68bbd3e5d6d",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 777,
+      "seconds": 6.475,
+      "end": [
+        94.87500000000126,
+        458,
+        "win"
+      ]
+    },
+    "ticks": 777,
+    "successfulReplaySeconds": 6.475,
+    "seconds": {
+      "activeTraversal": 6.475,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 2334.2352640423596,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 6,
+      "horizontalReversals": 1
+    },
+    "required": [
+      {
+        "trap": "latch",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 183
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 328
+      },
+      {
+        "trap": "needle",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 549
+      },
+      {
+        "trap": "hem",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 593
+      },
+      {
+        "trap": "eye",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 747
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 112,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 112,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "First eyelet"
+      },
+      {
+        "tick": 162,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 183,
+        "id": "latch",
+        "event": "activate"
+      },
+      {
+        "tick": 183,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Unlatch"
+      },
+      {
+        "tick": 210,
+        "id": "eye",
+        "event": "open"
+      },
+      {
+        "tick": 253,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 325,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 328,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 328,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Find runaway door"
+      },
+      {
+        "tick": 439,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 439,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Drop past the lip"
+      },
+      {
+        "tick": 549,
+        "id": "needle",
+        "event": "beamCross",
+        "phase": "warn"
+      },
+      {
+        "tick": 549,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Cross lower needle"
+      },
+      {
+        "tick": 569,
+        "id": "needle",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 593,
+        "id": "hem",
+        "event": "trigger"
+      },
+      {
+        "tick": 672,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 678,
+        "id": "hem",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 747,
+        "id": "eye",
+        "event": "pass"
+      },
+      {
+        "tick": 747,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Cross the seam"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 2,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "latch:activate": 1,
+      "stage:1:complete": 1,
+      "eye:open": 1,
+      "platform:3:land": 1,
+      "platform:4:land": 1,
+      "exit:relocate": 1,
+      "stage:2:complete": 1,
+      "platform:6:land": 1,
+      "stage:3:complete": 1,
+      "needle:beamCross": 16,
+      "stage:4:complete": 1,
+      "needle:hazardNear": 7,
+      "hem:trigger": 1,
+      "platform:5:land": 2,
+      "hem:hazardNear": 22,
+      "eye:pass": 1,
+      "stage:5:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 79,
+      "score": 0.4125,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 34,
+      "score": 0.3507954545454546,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 80,
+      "score": 0.33249999999999996,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 28.818
+}

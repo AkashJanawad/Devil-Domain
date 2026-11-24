@@ -1,0 +1,852 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 59,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 59,
+    "name": "UNDER THE CONTRACT",
+    "targetDifficulty": "HARD",
+    "intent": "Open the upper gate, warp below the sealed floor, then thread a laser and crusher on the lower return route.",
+    "surprise": "The upper bridge starts collapsing; the lower exit approach grows spikes.",
+    "spawn": {
+      "x": 55,
+      "y": 128
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 55,
+          "y": 416
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 160,
+        "w": 300,
+        "h": 16
+      },
+      {
+        "x": 380,
+        "y": 95,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "x": 500,
+        "y": 160,
+        "w": 460,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 220,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 480,
+        "w": 960,
+        "h": 60
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "CollapseFloor",
+        "args": [
+          {
+            "x": 300,
+            "y": 160,
+            "w": 200,
+            "h": 16
+          },
+          {
+            "x": 260,
+            "y": 0,
+            "w": 35,
+            "h": 160
+          },
+          {
+            "delay": 0.7,
+            "shakeTime": 0.2
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          410,
+          85,
+          "permit"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 560,
+            "y": 0,
+            "w": 24,
+            "h": 160
+          },
+          "permit"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          850,
+          112,
+          850,
+          432,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 620,
+            "y": 236,
+            "len": 244,
+            "vertical": true,
+            "period": 1.8,
+            "warn": 0.35,
+            "fire": 0.45,
+            "phase": 0.2
+          }
+        ]
+      },
+      {
+        "type": "Crusher",
+        "args": [
+          400,
+          65,
+          {
+            "topY": 236,
+            "floorY": 480,
+            "period": 2.3,
+            "phase": 0.4,
+            "hold": 0.18,
+            "upSpeed": 310
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          190,
+          480,
+          65,
+          {
+            "x": 285,
+            "y": 300,
+            "w": 30,
+            "h": 180
+          },
+          {
+            "delay": 0.25
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "bridge",
+        "permit",
+        "lock",
+        "descent",
+        "beam",
+        "press",
+        "finePrint"
+      ],
+      "stages": [
+        {
+          "label": "Bridge permit",
+          "target": {
+            "x": 420,
+            "y": 63
+          },
+          "requires": [
+            {
+              "trap": "permit",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "bridge",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Upper gate",
+          "target": {
+            "x": 615,
+            "y": 128
+          },
+          "reach": {
+            "x": 585,
+            "y": 0,
+            "w": 80,
+            "h": 160
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Read underside",
+          "target": {
+            "x": 855,
+            "y": 128
+          },
+          "requires": [
+            {
+              "trap": "descent",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Lower beam",
+          "target": {
+            "x": 570,
+            "y": 448
+          },
+          "reach": {
+            "x": 540,
+            "y": 300,
+            "w": 70,
+            "h": 180
+          },
+          "requires": [
+            {
+              "trap": "beam",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Past press",
+          "target": {
+            "x": 340,
+            "y": 448
+          },
+          "reach": {
+            "x": 300,
+            "y": 350,
+            "w": 70,
+            "h": 130
+          },
+          "requires": [],
+          "grounded": false
+        },
+        {
+          "label": "Fine print escape",
+          "target": {
+            "x": 60,
+            "y": 448
+          },
+          "reach": {
+            "x": 30,
+            "y": 330,
+            "w": 100,
+            "h": 150
+          },
+          "requires": [
+            {
+              "trap": "finePrint",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "bridge",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "permit",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "descent",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "beam",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "finePrint",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "db76c5b60fc6186c9fcd19efd5c8daa9d71c8a101834cbb05e55be36c71746ee",
+      "seed": 59,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 128
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 710,
+      "seconds": 5.916666666666667,
+      "end": [
+        85.24999999999625,
+        427.7083333333333,
+        "win"
+      ]
+    },
+    "expanded": 33859,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      156,
+      384,
+      492,
+      432,
+      588,
+      528,
+      684
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "db76c5b60fc6186c9fcd19efd5c8daa9d71c8a101834cbb05e55be36c71746ee",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 710,
+      "seconds": 5.916666666666667,
+      "end": [
+        85.4166666666629,
+        448,
+        "win"
+      ]
+    },
+    "ticks": 710,
+    "successfulReplaySeconds": 5.916666666666667,
+    "seconds": {
+      "activeTraversal": 5.908333333333333,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1857.6027321612269,
+      "carriedPixels": 0,
+      "portalPixels": 321.19737193213604
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "bridge",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 88
+      },
+      {
+        "trap": "permit",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 156
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 246
+      },
+      {
+        "trap": "descent",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 358
+      },
+      {
+        "trap": "beam",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 466
+      },
+      {
+        "trap": "finePrint",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 607
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 88,
+        "id": "bridge",
+        "event": "trigger"
+      },
+      {
+        "tick": 145,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 156,
+        "id": "permit",
+        "event": "activate"
+      },
+      {
+        "tick": 156,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Bridge permit"
+      },
+      {
+        "tick": 183,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 228,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 246,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 246,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Upper gate"
+      },
+      {
+        "tick": 358,
+        "id": "descent",
+        "event": "activate"
+      },
+      {
+        "tick": 358,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Read underside"
+      },
+      {
+        "tick": 466,
+        "id": "beam",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 473,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Lower beam"
+      },
+      {
+        "tick": 581,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Past press"
+      },
+      {
+        "tick": 607,
+        "id": "finePrint",
+        "event": "trigger"
+      },
+      {
+        "tick": 690,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Fine print escape"
+      },
+      {
+        "tick": 696,
+        "id": "platform:4",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 2,
+      "bridge:trigger": 1,
+      "platform:1:land": 1,
+      "permit:activate": 1,
+      "stage:0:complete": 1,
+      "lock:open": 1,
+      "platform:2:land": 2,
+      "lock:pass": 1,
+      "stage:1:complete": 1,
+      "descent:activate": 1,
+      "stage:2:complete": 1,
+      "beam:beamCross": 16,
+      "stage:3:complete": 1,
+      "stage:4:complete": 1,
+      "finePrint:trigger": 1,
+      "stage:5:complete": 1,
+      "platform:4:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 48,
+      "score": 0.2925,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 56,
+      "score": 0.25545454545454543,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 20,
+      "score": 0.255,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 15.198
+}

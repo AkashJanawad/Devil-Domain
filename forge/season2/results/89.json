@@ -1,0 +1,934 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 89,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 89,
+    "name": "THE FLOODGATE",
+    "targetDifficulty": "HARD",
+    "intent": "Cross the reservoir to release its upper gate, then return through the drain into a separate lower obstacle course.",
+    "surprise": "The drain opens onto a floor spike ambush; the next landing is fragile.",
+    "spawn": {
+      "x": 52,
+      "y": 198
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 877,
+          "y": 426
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 230,
+        "w": 220,
+        "h": 16
+      },
+      {
+        "x": 282,
+        "y": 165,
+        "w": 118,
+        "h": 16
+      },
+      {
+        "x": 461,
+        "y": 225,
+        "w": 122,
+        "h": 16
+      },
+      {
+        "x": 645,
+        "y": 160,
+        "w": 115,
+        "h": 16
+      },
+      {
+        "x": 815,
+        "y": 230,
+        "w": 145,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 280,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 490,
+        "w": 275,
+        "h": 50
+      },
+      {
+        "x": 475,
+        "y": 430,
+        "w": 143,
+        "h": 16
+      },
+      {
+        "x": 760,
+        "y": 490,
+        "w": 200,
+        "h": 50
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          685,
+          150,
+          "flood"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 787,
+            "y": 0,
+            "w": 20,
+            "h": 280
+          },
+          "flood"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          875,
+          182,
+          54,
+          442,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          179,
+          490,
+          43,
+          {
+            "x": 848,
+            "y": 0,
+            "w": 30,
+            "h": 230
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 335,
+            "y": 468,
+            "w": 90,
+            "h": 16
+          },
+          {
+            "delay": 0.7
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 687,
+            "y": 296,
+            "len": 244,
+            "vertical": true,
+            "period": 2.05,
+            "warn": 0.45,
+            "fire": 0.45,
+            "phase": 0.2
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          275,
+          540,
+          485,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "wheel",
+        "gate",
+        "drain",
+        "barbs",
+        "foam",
+        "sluice",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Reservoir pier",
+          "target": {
+            "x": 341,
+            "y": 133
+          },
+          "reach": {
+            "x": 282,
+            "y": 127,
+            "w": 118,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Low pier",
+          "target": {
+            "x": 522,
+            "y": 193
+          },
+          "reach": {
+            "x": 461,
+            "y": 187,
+            "w": 122,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Release floodgate",
+          "target": {
+            "x": 698,
+            "y": 128
+          },
+          "requires": [
+            {
+              "trap": "wheel",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Drain",
+          "target": {
+            "x": 879,
+            "y": 198
+          },
+          "requires": [
+            {
+              "trap": "gate",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "drain",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "barbs",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Foam landing",
+          "target": {
+            "x": 380,
+            "y": 436
+          },
+          "reach": {
+            "x": 335,
+            "y": 430,
+            "w": 90,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "foam",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Sluice island",
+          "target": {
+            "x": 546.5,
+            "y": 398
+          },
+          "reach": {
+            "x": 475,
+            "y": 392,
+            "w": 143,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Beyond sluice",
+          "target": {
+            "x": 858,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "sluice",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "wheel",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "gate",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "drain",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "barbs",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "foam",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "sluice",
+          "event": "beamCross",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "231d89badb203a43c65c3c0b9acdcd276b07c228a3d4917a59629c0e6ffa88f9",
+      "seed": 89,
+      "initial": {
+        "spawn": {
+          "x": 52,
+          "y": 198
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 780,
+      "seconds": 6.5,
+      "end": [
+        859.0972222222265,
+        457.99305555555554,
+        "win"
+      ]
+    },
+    "expanded": 36859,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      192,
+      24,
+      120,
+      276,
+      732
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "231d89badb203a43c65c3c0b9acdcd276b07c228a3d4917a59629c0e6ffa88f9",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 780,
+      "seconds": 6.5,
+      "end": [
+        859.0972222222265,
+        458,
+        "win"
+      ]
+    },
+    "ticks": 780,
+    "successfulReplaySeconds": 6.5,
+    "seconds": {
+      "activeTraversal": 6.483333333333333,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0.008333333333333333,
+      "neutralWaiting": 0.008333333333333333,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.275
+    },
+    "distance": {
+      "selfPixels": 2218.6737830071884,
+      "carriedPixels": 0,
+      "portalPixels": 834.7199690300557
+    },
+    "inputs": {
+      "jumpPresses": 8,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "wheel",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 282
+      },
+      {
+        "trap": "gate",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 348
+      },
+      {
+        "trap": "drain",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 368
+      },
+      {
+        "trap": "barbs",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 356
+      },
+      {
+        "trap": "foam",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 505
+      },
+      {
+        "trap": "sluice",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 689
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 128,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 128,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Reservoir pier"
+      },
+      {
+        "tick": 191,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 192,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Low pier"
+      },
+      {
+        "tick": 282,
+        "id": "wheel",
+        "event": "activate"
+      },
+      {
+        "tick": 282,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Release floodgate"
+      },
+      {
+        "tick": 284,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 309,
+        "id": "gate",
+        "event": "open"
+      },
+      {
+        "tick": 348,
+        "id": "gate",
+        "event": "pass"
+      },
+      {
+        "tick": 356,
+        "id": "barbs",
+        "event": "trigger"
+      },
+      {
+        "tick": 357,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 368,
+        "id": "drain",
+        "event": "activate"
+      },
+      {
+        "tick": 368,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Drain"
+      },
+      {
+        "tick": 446,
+        "id": "barbs",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 456,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 505,
+        "id": "foam",
+        "event": "trigger"
+      },
+      {
+        "tick": 505,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Foam landing"
+      },
+      {
+        "tick": 571,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 571,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Sluice island"
+      },
+      {
+        "tick": 678,
+        "id": "sluice",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 689,
+        "id": "sluice",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 689,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Beyond sluice"
+      },
+      {
+        "tick": 737,
+        "id": "platform:8",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "stage:1:complete": 1,
+      "wheel:activate": 1,
+      "stage:2:complete": 1,
+      "platform:3:land": 1,
+      "gate:open": 1,
+      "gate:pass": 1,
+      "barbs:trigger": 1,
+      "platform:4:land": 1,
+      "drain:activate": 1,
+      "stage:3:complete": 1,
+      "barbs:hazardNear": 11,
+      "platform:6:land": 1,
+      "foam:trigger": 1,
+      "stage:4:complete": 1,
+      "platform:7:land": 3,
+      "stage:5:complete": 1,
+      "sluice:hazardNear": 11,
+      "sluice:beamCross": 16,
+      "stage:6:complete": 1,
+      "platform:8:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 64,
+      "score": 0.46428571428571425,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 81,
+      "score": 0.4298402255639098,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 39,
+      "score": 0.42380952380952375,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 35.628
+}

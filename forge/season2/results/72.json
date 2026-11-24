@@ -1,0 +1,791 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 72,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 72,
+    "name": "DOVETAIL",
+    "targetDifficulty": "HARD",
+    "intent": "Chain two springs to reach the upper joint. Follow the door back across the crumbling beam and over the blade.",
+    "surprise": "The exit jumps across the roof. The joint beneath the return span gives way.",
+    "spawn": {
+      "x": 45,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 693,
+          "y": 116
+        },
+        {
+          "x": 46,
+          "y": 116
+        }
+      ],
+      "options": {
+        "fleeDist": 60
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 255,
+        "h": 40
+      },
+      {
+        "x": 297,
+        "y": 340,
+        "w": 308,
+        "h": 16
+      },
+      {
+        "x": 602,
+        "y": 180,
+        "w": 228,
+        "h": 16
+      },
+      {
+        "x": 275,
+        "y": 155,
+        "w": 105,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 180,
+        "w": 205,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Spring",
+        "args": [
+          163,
+          500,
+          {
+            "w": 58,
+            "power": -985
+          }
+        ]
+      },
+      {
+        "type": "Spring",
+        "args": [
+          534,
+          340,
+          {
+            "w": 65,
+            "power": -1010
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 392,
+            "y": 188,
+            "w": 108,
+            "h": 16
+          },
+          {
+            "delay": 0.8
+          }
+        ]
+      },
+      {
+        "type": "Saw",
+        "args": [
+          [
+            {
+              "x": 228,
+              "y": 144
+            },
+            {
+              "x": 250,
+              "y": 183
+            }
+          ],
+          {
+            "speed": 85,
+            "r": 13
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          90,
+          180,
+          38,
+          {
+            "x": 241,
+            "y": 30,
+            "w": 40,
+            "h": 150
+          },
+          {
+            "delay": 0.27
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          255,
+          540,
+          705,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "low",
+        "high",
+        "joint",
+        "saw",
+        "cut",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Lower spring",
+          "target": {
+            "x": 169,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "low",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Middle joint",
+          "target": {
+            "x": 372,
+            "y": 308
+          },
+          "reach": {
+            "x": 298,
+            "y": 302,
+            "w": 148,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Upper spring",
+          "target": {
+            "x": 544,
+            "y": 308
+          },
+          "requires": [
+            {
+              "trap": "high",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Upper door landing",
+          "target": {
+            "x": 716,
+            "y": 148
+          },
+          "reach": {
+            "x": 602,
+            "y": 142,
+            "w": 228,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Loose joint on return",
+          "target": {
+            "x": 446,
+            "y": 156
+          },
+          "reach": {
+            "x": 392,
+            "y": 150,
+            "w": 108,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "joint",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Saw approach",
+          "target": {
+            "x": 327.5,
+            "y": 123
+          },
+          "reach": {
+            "x": 275,
+            "y": 117,
+            "w": 105,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Exit cut",
+          "target": {
+            "x": 66,
+            "y": 148
+          },
+          "requires": [
+            {
+              "trap": "cut",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "low",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "high",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 1
+        },
+        {
+          "trap": "joint",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "cut",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "0a8cb1e9fb6c95ac71573b296db3e0a125cffb04265716f1ac8bf1389cc6a055",
+      "seed": 72,
+      "initial": {
+        "spawn": {
+          "x": 45,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 571,
+      "seconds": 4.758333333333334,
+      "end": [
+        76.70833333333388,
+        127.59722222222219,
+        "win"
+      ]
+    },
+    "expanded": 26663,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      60
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "0a8cb1e9fb6c95ac71573b296db3e0a125cffb04265716f1ac8bf1389cc6a055",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 571,
+      "seconds": 4.758333333333334,
+      "end": [
+        76.70833333333388,
+        127.59722222222219,
+        "win"
+      ]
+    },
+    "ticks": 571,
+    "successfulReplaySeconds": 4.758333333333334,
+    "seconds": {
+      "activeTraversal": 4.758333333333334,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1800.8735163367858,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 5,
+      "horizontalReversals": 1
+    },
+    "required": [
+      {
+        "trap": "low",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 50
+      },
+      {
+        "trap": "high",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 218
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 288
+      },
+      {
+        "trap": "joint",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 392
+      },
+      {
+        "trap": "cut",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 480
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 50,
+        "id": "low",
+        "event": "activate"
+      },
+      {
+        "tick": 50,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Lower spring"
+      },
+      {
+        "tick": 133,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 133,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Middle joint"
+      },
+      {
+        "tick": 218,
+        "id": "high",
+        "event": "activate"
+      },
+      {
+        "tick": 218,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Upper spring"
+      },
+      {
+        "tick": 288,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 305,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 305,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Upper door landing"
+      },
+      {
+        "tick": 392,
+        "id": "joint",
+        "event": "trigger"
+      },
+      {
+        "tick": 392,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Loose joint on return"
+      },
+      {
+        "tick": 452,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 452,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Saw approach"
+      },
+      {
+        "tick": 480,
+        "id": "cut",
+        "event": "trigger"
+      },
+      {
+        "tick": 480,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Exit cut"
+      },
+      {
+        "tick": 485,
+        "id": "saw",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 532,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 539,
+        "id": "cut",
+        "event": "hazardNear"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "low:activate": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "high:activate": 1,
+      "stage:2:complete": 1,
+      "exit:relocate": 1,
+      "platform:2:land": 1,
+      "stage:3:complete": 1,
+      "joint:trigger": 1,
+      "stage:4:complete": 1,
+      "platform:3:land": 2,
+      "stage:5:complete": 1,
+      "cut:trigger": 1,
+      "stage:6:complete": 1,
+      "saw:hazardNear": 41,
+      "platform:4:land": 1,
+      "cut:hazardNear": 18
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 58,
+      "score": 0.35208791208791207,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 30,
+      "score": 0.3214285714285714,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 23,
+      "score": 0.2774025974025974,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 19.236
+}

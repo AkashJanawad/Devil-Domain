@@ -1,0 +1,852 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 61,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 61,
+    "name": "FUSE GALLERY",
+    "targetDifficulty": "HARD",
+    "intent": "Climb the fuse gallery, arm the lock above the service tunnel and descend at the far end. Jump the contacts on the return.",
+    "surprise": "Arming the gallery wakes the contacts in the lower tunnel.",
+    "spawn": {
+      "x": 50,
+      "y": 228
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 44,
+          "y": 416
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 260,
+        "w": 165,
+        "h": 16
+      },
+      {
+        "x": 210,
+        "y": 195,
+        "w": 110,
+        "h": 16
+      },
+      {
+        "x": 520,
+        "y": 155,
+        "w": 160,
+        "h": 16
+      },
+      {
+        "x": 740,
+        "y": 220,
+        "w": 220,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 280,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 480,
+        "w": 960,
+        "h": 60
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 365,
+            "y": 220,
+            "w": 105,
+            "h": 16
+          },
+          {
+            "delay": 0.55
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          585,
+          145,
+          "arm"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          870,
+          172,
+          845,
+          432,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 600,
+            "y": 296,
+            "len": 184,
+            "vertical": true,
+            "period": 1.8,
+            "warn": 0.4,
+            "fire": 0.45
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          305,
+          480,
+          68,
+          {
+            "x": 420,
+            "y": 296,
+            "w": 40,
+            "h": 184
+          },
+          {
+            "delay": 0.26
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 140,
+            "y": 296,
+            "w": 24,
+            "h": 184
+          },
+          "arm"
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "fuse",
+        "arm",
+        "drop",
+        "beam",
+        "contacts",
+        "lock"
+      ],
+      "stages": [
+        {
+          "label": "First riser",
+          "target": {
+            "x": 245,
+            "y": 163
+          },
+          "reach": {
+            "x": 210,
+            "y": 157,
+            "w": 110,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Cross fuse",
+          "target": {
+            "x": 400,
+            "y": 188
+          },
+          "requires": [
+            {
+              "trap": "fuse",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Arm lock",
+          "target": {
+            "x": 595,
+            "y": 123
+          },
+          "requires": [
+            {
+              "trap": "arm",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Enter tunnel",
+          "target": {
+            "x": 870,
+            "y": 188
+          },
+          "requires": [
+            {
+              "trap": "drop",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Pass live beam",
+          "target": {
+            "x": 575,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "beam",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Clear contacts",
+          "target": {
+            "x": 265,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "contacts",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Reach service door",
+          "target": {
+            "x": 75,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "fuse",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "arm",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "drop",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "beam",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "contacts",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "a497f318d5d8a23abfe986910c1c4a8984a3b568450508deb58f9a1741772d21",
+      "seed": 61,
+      "initial": {
+        "spawn": {
+          "x": 50,
+          "y": 228
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 724,
+      "seconds": 6.033333333333333,
+      "end": [
+        74.49999999999635,
+        423.84027777777777,
+        "win"
+      ]
+    },
+    "expanded": 34459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      108,
+      72,
+      252,
+      396,
+      444,
+      324,
+      516,
+      480,
+      636,
+      684
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "a497f318d5d8a23abfe986910c1c4a8984a3b568450508deb58f9a1741772d21",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 728,
+      "seconds": 6.066666666666666,
+      "end": [
+        75.33333333332965,
+        448,
+        "win"
+      ]
+    },
+    "ticks": 728,
+    "successfulReplaySeconds": 6.066666666666666,
+    "seconds": {
+      "activeTraversal": 6.058333333333334,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1825.3353712603707,
+      "carriedPixels": 0,
+      "portalPixels": 260.01454286250987
+    },
+    "inputs": {
+      "jumpPresses": 3,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "fuse",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 147
+      },
+      {
+        "trap": "arm",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 238
+      },
+      {
+        "trap": "drop",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 371
+      },
+      {
+        "trap": "beam",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 486
+      },
+      {
+        "trap": "contacts",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 552
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 708
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 80,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 80,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "First riser"
+      },
+      {
+        "tick": 147,
+        "id": "fuse",
+        "event": "trigger"
+      },
+      {
+        "tick": 147,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Cross fuse"
+      },
+      {
+        "tick": 212,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 238,
+        "id": "arm",
+        "event": "activate"
+      },
+      {
+        "tick": 238,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Arm lock"
+      },
+      {
+        "tick": 265,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 321,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 371,
+        "id": "drop",
+        "event": "activate"
+      },
+      {
+        "tick": 371,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Enter tunnel"
+      },
+      {
+        "tick": 486,
+        "id": "beam",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 486,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Pass live beam"
+      },
+      {
+        "tick": 552,
+        "id": "contacts",
+        "event": "trigger"
+      },
+      {
+        "tick": 552,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Clear contacts"
+      },
+      {
+        "tick": 626,
+        "id": "contacts",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 636,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 708,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 708,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Reach service door"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "fuse:trigger": 1,
+      "stage:1:complete": 1,
+      "platform:2:land": 1,
+      "arm:activate": 1,
+      "stage:2:complete": 1,
+      "lock:open": 1,
+      "platform:3:land": 1,
+      "drop:activate": 1,
+      "stage:3:complete": 1,
+      "beam:beamCross": 16,
+      "stage:4:complete": 1,
+      "contacts:trigger": 1,
+      "stage:5:complete": 1,
+      "contacts:hazardNear": 16,
+      "platform:5:land": 1,
+      "lock:pass": 1,
+      "stage:6:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 59,
+      "score": 0.4248076923076923,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 69,
+      "score": 0.40267857142857144,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 64,
+      "score": 0.3526785714285714,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 30.882
+}

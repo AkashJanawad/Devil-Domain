@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: level 30: movement-only victory, surprise activation, repeatability and death reset
+ok 1 - level 30: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 79.0718
+  type: 'test'
+  ...
+# Subtest: level 31: movement-only victory, surprise activation, repeatability and death reset
+ok 2 - level 31: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 33.4004
+  type: 'test'
+  ...
+# Subtest: level 32: movement-only victory, surprise activation, repeatability and death reset
+ok 3 - level 32: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 76.8208
+  type: 'test'
+  ...
+# Subtest: level 33: movement-only victory, surprise activation, repeatability and death reset
+ok 4 - level 33: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 28.9852
+  type: 'test'
+  ...
+# Subtest: level 34: movement-only victory, surprise activation, repeatability and death reset
+ok 5 - level 34: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 40.5565
+  type: 'test'
+  ...
+# Subtest: level 35: movement-only victory, surprise activation, repeatability and death reset
+ok 6 - level 35: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 27.1213
+  type: 'test'
+  ...
+# Subtest: level 36: movement-only victory, surprise activation, repeatability and death reset
+ok 7 - level 36: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 32.3207
+  type: 'test'
+  ...
+# Subtest: level 37: movement-only victory, surprise activation, repeatability and death reset
+ok 8 - level 37: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 36.1438
+  type: 'test'
+  ...
+# Subtest: level 38: movement-only victory, surprise activation, repeatability and death reset
+ok 9 - level 38: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 39.5071
+  type: 'test'
+  ...
+# Subtest: level 39: movement-only victory, surprise activation, repeatability and death reset
+ok 10 - level 39: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 20.7993
+  type: 'test'
+  ...
+# Subtest: level 40: movement-only victory, surprise activation, repeatability and death reset
+ok 11 - level 40: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 43.0566
+  type: 'test'
+  ...
+# Subtest: level 30 recorded route fails with old ceiling and succeeds with corrected geometry
+ok 12 - level 30 recorded route fails with old ceiling and succeeds with corrected geometry
+  ---
+  duration_ms: 31.8545
+  type: 'test'
+  ...
+# Subtest: level 30 completion progresses to 31; 40 completes the campaign
+ok 13 - level 30 completion progresses to 31; 40 completes the campaign
+  ---
+  duration_ms: 35.8583
+  type: 'test'
+  ...
+# Subtest: development unlock enables all 40 without changing saves
+ok 14 - development unlock enables all 40 without changing saves
+  ---
+  duration_ms: 4.494
+  type: 'test'
+  ...
+# Subtest: release and disabled development retain genuine sequential unlocking
+ok 15 - release and disabled development retain genuine sequential unlocking
+  ---
+  duration_ms: 4.7866
+  type: 'test'
+  ...
+# Subtest: old 30-level saves unlock 31 and preserve statistics, without completing expansion
+ok 16 - old 30-level saves unlock 31 and preserve statistics, without completing expansion
+  ---
+  duration_ms: 3.1526
+  type: 'test'
+  ...
+# Subtest: release packaging always overwrites developer configuration
+ok 17 - release packaging always overwrites developer configuration
+  ---
+  duration_ms: 87.4496
+  type: 'test'
+  ...
+# Subtest: original levels 1-29 definitions match the pre-expansion inventory
+ok 18 - original levels 1-29 definitions match the pre-expansion inventory
+  ---
+  duration_ms: 12.7227
+  type: 'test'
+  ...
+# Subtest: gate close-speed option preserves original default
+ok 19 - gate close-speed option preserves original default
+  ---
+  duration_ms: 2.218
+  type: 'test'
+  ...
+# Subtest: level 34 gates allow a normal forward run; the old timing pushes the player back
+ok 20 - level 34 gates allow a normal forward run; the old timing pushes the player back
+  ---
+  duration_ms: 52.8297
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 832.9619

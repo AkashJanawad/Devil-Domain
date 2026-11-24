@@ -1,0 +1,627 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 63,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 63,
+    "name": "STAMP COLLECTOR",
+    "targetDifficulty": "HARD",
+    "intent": "Catch the first postmark above the spring. Stamp the permit on a fragile bridge, then descend past the press to catch the fleeing exit.",
+    "surprise": "The balcony door flees to the stamp room as its bridge starts to give.",
+    "spawn": {
+      "x": 50,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 315,
+          "y": 266
+        },
+        {
+          "x": 875,
+          "y": 426
+        }
+      ],
+      "options": {
+        "fleeDist": 65
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 245,
+        "h": 40
+      },
+      {
+        "x": 290,
+        "y": 330,
+        "w": 135,
+        "h": 16
+      },
+      {
+        "x": 650,
+        "y": 360,
+        "w": 105,
+        "h": 16
+      },
+      {
+        "x": 765,
+        "y": 490,
+        "w": 195,
+        "h": 50
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Spring",
+        "args": [
+          160,
+          500,
+          {
+            "w": 65,
+            "power": -1000
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 485,
+            "y": 270,
+            "w": 110,
+            "h": 16
+          },
+          {
+            "delay": 0.53
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          515,
+          260,
+          "post"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 715,
+            "y": 0,
+            "w": 22,
+            "h": 490
+          },
+          "post"
+        ]
+      },
+      {
+        "type": "Crusher",
+        "args": [
+          807,
+          48,
+          {
+            "topY": 190,
+            "floorY": 490,
+            "period": 2.35,
+            "phase": 0.6,
+            "upSpeed": 360,
+            "hold": 0.2
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          245,
+          540,
+          520,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "spring",
+        "permitBridge",
+        "permit",
+        "bars",
+        "press",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Launch",
+          "target": {
+            "x": 175,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "spring",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Find first postmark",
+          "target": {
+            "x": 335,
+            "y": 298
+          },
+          "reach": {
+            "x": 290,
+            "y": 288,
+            "w": 135,
+            "h": 15
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Stamp permit",
+          "target": {
+            "x": 535,
+            "y": 238
+          },
+          "requires": [
+            {
+              "trap": "permit",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "permitBridge",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Through the bars",
+          "target": {
+            "x": 750,
+            "y": 330
+          },
+          "requires": [
+            {
+              "trap": "bars",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "spring",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 1
+        },
+        {
+          "trap": "permitBridge",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "permit",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "bars",
+          "event": "pass",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "ae56fe23617640ba0dc4777e48a3619da2258931549f796a266f901b5cfcdc97",
+      "seed": 63,
+      "initial": {
+        "spawn": {
+          "x": 50,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 371,
+      "seconds": 3.091666666666667,
+      "end": [
+        856.2083333333375,
+        458,
+        "win"
+      ]
+    },
+    "expanded": 16459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      120,
+      204
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "ae56fe23617640ba0dc4777e48a3619da2258931549f796a266f901b5cfcdc97",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 371,
+      "seconds": 3.091666666666667,
+      "end": [
+        856.2083333333375,
+        458,
+        "win"
+      ]
+    },
+    "ticks": 371,
+    "successfulReplaySeconds": 3.091666666666667,
+    "seconds": {
+      "activeTraversal": 3.091666666666667,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1136.4792097446511,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 1,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "spring",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 47
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 107
+      },
+      {
+        "trap": "permitBridge",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 200
+      },
+      {
+        "trap": "permit",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 206
+      },
+      {
+        "trap": "bars",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 318
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 47,
+        "id": "spring",
+        "event": "activate"
+      },
+      {
+        "tick": 47,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Launch"
+      },
+      {
+        "tick": 107,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 130,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 130,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Find first postmark"
+      },
+      {
+        "tick": 200,
+        "id": "permitBridge",
+        "event": "trigger"
+      },
+      {
+        "tick": 206,
+        "id": "permit",
+        "event": "activate"
+      },
+      {
+        "tick": 206,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Stamp permit"
+      },
+      {
+        "tick": 233,
+        "id": "bars",
+        "event": "open"
+      },
+      {
+        "tick": 287,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 318,
+        "id": "bars",
+        "event": "pass"
+      },
+      {
+        "tick": 318,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Through the bars"
+      },
+      {
+        "tick": 367,
+        "id": "platform:3",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 4,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "spring:activate": 1,
+      "stage:0:complete": 1,
+      "exit:relocate": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "permitBridge:trigger": 1,
+      "permit:activate": 1,
+      "stage:2:complete": 1,
+      "bars:open": 1,
+      "platform:2:land": 1,
+      "bars:pass": 1,
+      "stage:3:complete": 1,
+      "platform:3:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 51,
+      "score": 0.42714285714285705,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 64,
+      "score": 0.327840909090909,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 40,
+      "score": 0.32666666666666666,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 12.645
+}

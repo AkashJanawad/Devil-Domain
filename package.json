@@ -1,0 +1,37 @@
+{
+  "name": "devildomain",
+  "version": "1.0.0",
+  "description": "Devil Domain — a minimalist Android-first rage-platformer. Simple to understand. Difficult to master. Surprisingly fun to fail.",
+  "main": "game.js",
+  "scripts": {
+    "start": "npx serve . -l 8080",
+    "build": "node scripts/build.js",
+    "cap:add": "npx cap add android",
+    "cap:sync": "npm run build && cap sync android",
+    "cap:open": "npx cap open android",
+    "test": "npm run build && node tests/run-tests.js && node --test tests/gameplay.test.js tests/expansion.test.js && node --test tests/forge.test.js",
+    "test:browser": "node tests/browser-smoke.js && node tests/browser-replays.js",
+    "build:release": "node scripts/build.js --release",
+    "cap:sync:release": "npm run build:release && cap sync android",
+    "test:replays": "node --test tests/expansion.test.js",
+    "forge": "node forge/server.js",
+    "forge:batch": "node forge/batch.js",
+    "test:forge": "node --test tests/forge.test.js",
+    "test:forge:browser": "node forge/browser-test.js",
+    "test:forge:v2": "node --test tests/forge-v2.test.js"
+  },
+  "keywords": [
+    "game",
+    "platformer",
+    "android",
+    "rage-game"
+  ],
+  "author": "Devil Domain Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
+    "playwright-core": "^1.64.1"
+  }
+}

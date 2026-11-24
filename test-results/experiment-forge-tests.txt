@@ -1,0 +1,40 @@
+✔ EXTREME exact quotas and rejection of easier results (9.1889ms)
+✔ VERY HARD exact quotas and rejection of easier results (4.1889ms)
+✔ HARD exact quotas and rejection of easier results (1.0514ms)
+✔ odd count, beginner and released reservations (31.8683ms)
+✔ deduplication distinguishes dynamics the old key merged (20.4268ms)
+✔ search snapshot restores pending input, trap timers and ordered progress (25.2356ms)
+✔ time accounting distinguishes waiting, carrying, portals and repeated motion (2.1251ms)
+✔ actual engine standing still is measured as waiting after initial landing (16.391ms)
+✔ measurement refuses stale or unsuccessful proof (15.1681ms)
+✔ LAB A — LAND THEN WARP: fresh replay, measurements, requirements and counterfactuals (156.4827ms)
+✔ LAB B — CROSS THE PULSE: fresh replay, measurements, requirements and counterfactuals (227.1391ms)
+✔ LAB C — OPEN THE ESCAPE: fresh replay, measurements, requirements and counterfactuals (267.6878ms)
+✔ experimental fixtures remain outside production and active generation (8.3757ms)
+✔ production files untouched (11.0318ms)
+✔ saved Season 2 failures were generation constraints (5.1499ms)
+✔ determinism, automatic slots and season boundary (45.7904ms)
+✔ seven active categories and two-factor difficulty (3.0717ms)
+✔ candidate 51 proof bound to identity; unapproved (33.6145ms)
+✔ candidate 52 proof bound to identity; unapproved (24.0344ms)
+✔ candidate 53 proof bound to identity; unapproved (46.7166ms)
+✔ candidate 54 proof bound to identity; unapproved (27.6518ms)
+✔ candidate 55 proof bound to identity; unapproved (28.1624ms)
+✔ candidate 56 proof bound to identity; unapproved (43.9148ms)
+✔ candidate 57 proof bound to identity; unapproved (34.2993ms)
+✔ candidate 58 proof bound to identity; unapproved (33.2879ms)
+✔ candidate 59 proof bound to identity; unapproved (50.7371ms)
+✔ candidate 60 proof bound to identity; unapproved (26.695ms)
+✔ deterministic compositional alternatives, no boomerang exits (18.7297ms)
+✔ quality cannot accept geometry without a completion proof (1.5172ms)
+✔ repeated exit destinations rejected even with existing winning proof (35.6871ms)
+✔ experimental reporting never claims target-band fulfillment (1.1978ms)
+✔ five experimental proofs: exact hashes, quality, novelty and timing tolerance (1108.4711ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1496.7209

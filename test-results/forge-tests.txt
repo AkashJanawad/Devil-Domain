@@ -1,0 +1,124 @@
+TAP version 13
+# Subtest: original 40 definitions are byte-identical
+ok 1 - original 40 definitions are byte-identical
+  ---
+  duration_ms: 1.8636
+  type: 'test'
+  ...
+# Subtest: generation deterministic and constraints reject explicitly
+ok 2 - generation deterministic and constraints reject explicitly
+  ---
+  duration_ms: 2.4924
+  type: 'test'
+  ...
+# Subtest: malformed geometry, references, checkpoints and missing surprise rejected
+ok 3 - malformed geometry, references, checkpoints and missing surprise rejected
+  ---
+  duration_ms: 1.2589
+  type: 'test'
+  ...
+# Subtest: renamed/recolored identical layout rejected as duplicate
+ok 4 - renamed/recolored identical layout rejected as duplicate
+  ---
+  duration_ms: 0.9722
+  type: 'test'
+  ...
+# Subtest: bounded search failure is UNVERIFIED, never impossible
+ok 5 - bounded search failure is UNVERIFIED, never impossible
+  ---
+  duration_ms: 10.563
+  type: 'test'
+  ...
+# Subtest: tampered trace cannot verify
+ok 6 - tampered trace cannot verify
+  ---
+  duration_ms: 3.8271
+  type: 'test'
+  ...
+# Subtest: limited repair revalidates out-of-world exit
+ok 7 - limited repair revalidates out-of-world exit
+  ---
+  duration_ms: 12.9738
+  type: 'test'
+  ...
+# Subtest: wind triggers, affects motion, resets; old constructors retained
+ok 8 - wind triggers, affects motion, resets; old constructors retained
+  ---
+  duration_ms: 2.3911
+  type: 'test'
+  ...
+# Subtest: level 41: schema, replay repeatability, hidden activation, production data
+ok 9 - level 41: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 25.9298
+  type: 'test'
+  ...
+# Subtest: level 42: schema, replay repeatability, hidden activation, production data
+ok 10 - level 42: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 23.8268
+  type: 'test'
+  ...
+# Subtest: level 43: schema, replay repeatability, hidden activation, production data
+ok 11 - level 43: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 29.7932
+  type: 'test'
+  ...
+# Subtest: level 44: schema, replay repeatability, hidden activation, production data
+ok 12 - level 44: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 27.5657
+  type: 'test'
+  ...
+# Subtest: level 45: schema, replay repeatability, hidden activation, production data
+ok 13 - level 45: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 23.9569
+  type: 'test'
+  ...
+# Subtest: level 46: schema, replay repeatability, hidden activation, production data
+ok 14 - level 46: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 30.1112
+  type: 'test'
+  ...
+# Subtest: level 47: schema, replay repeatability, hidden activation, production data
+ok 15 - level 47: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 28.7643
+  type: 'test'
+  ...
+# Subtest: level 48: schema, replay repeatability, hidden activation, production data
+ok 16 - level 48: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 26.5628
+  type: 'test'
+  ...
+# Subtest: level 49: schema, replay repeatability, hidden activation, production data
+ok 17 - level 49: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 32.1851
+  type: 'test'
+  ...
+# Subtest: level 50: schema, replay repeatability, hidden activation, production data
+ok 18 - level 50: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 27.7641
+  type: 'test'
+  ...
+# Subtest: season 2 unavailable; legacy progress retained; final completion screen
+ok 19 - season 2 unavailable; legacy progress retained; final completion screen
+  ---
+  duration_ms: 3.0278
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 430.1338

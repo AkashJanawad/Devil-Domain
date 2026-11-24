@@ -1,0 +1,599 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 68,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 68,
+    "name": "AFTERIMAGE",
+    "targetDifficulty": "HARD",
+    "intent": "Follow the door from a blinking island to a suspended balcony. Its second jump reveals a spring crossing to the last arch.",
+    "surprise": "The door flees twice, and its second hiding place triggers a falling keystone.",
+    "spawn": {
+      "x": 45,
+      "y": 448
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 269,
+          "y": 351
+        },
+        {
+          "x": 535,
+          "y": 246
+        },
+        {
+          "x": 889,
+          "y": 141
+        }
+      ],
+      "options": {
+        "fleeDist": 60
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 480,
+        "w": 165,
+        "h": 60
+      },
+      {
+        "x": 500,
+        "y": 310,
+        "w": 150,
+        "h": 16
+      },
+      {
+        "x": 830,
+        "y": 205,
+        "w": 130,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "BlinkPlatform",
+        "args": [
+          {
+            "x": 228,
+            "y": 415,
+            "w": 115,
+            "h": 16
+          },
+          {
+            "period": 2,
+            "onFrac": 0.76,
+            "phase": 0.02
+          }
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 365,
+            "y": 375,
+            "w": 90,
+            "h": 16
+          },
+          {
+            "toX": 405,
+            "toY": 323,
+            "speed": 80,
+            "phase": 0.33
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 535,
+            "y": 120,
+            "w": 42,
+            "h": 38
+          },
+          {
+            "x": 490,
+            "y": 120,
+            "w": 35,
+            "h": 190
+          },
+          {
+            "shakeTime": 0.65,
+            "floorY": 310
+          }
+        ]
+      },
+      {
+        "type": "Spring",
+        "args": [
+          615,
+          310,
+          {
+            "power": -975,
+            "w": 50
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          165,
+          540,
+          795,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "image",
+        "lift",
+        "keystone",
+        "lastSpring",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "First afterimage",
+          "target": {
+            "x": 270,
+            "y": 383
+          },
+          "reach": {
+            "x": 228,
+            "y": 375,
+            "w": 115,
+            "h": 15
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Ride lift",
+          "target": {
+            "trap": "lift",
+            "dx": 35,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "lift",
+              "event": "ride",
+              "minTicks": 8
+            }
+          ]
+        },
+        {
+          "label": "Second afterimage",
+          "target": {
+            "x": 540,
+            "y": 278
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 2
+            },
+            {
+              "trap": "keystone",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Last arch",
+          "target": {
+            "x": 624,
+            "y": 278
+          },
+          "requires": [
+            {
+              "trap": "lastSpring",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 2
+        },
+        {
+          "trap": "lift",
+          "event": "ride",
+          "minTicks": 8
+        },
+        {
+          "trap": "keystone",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "lastSpring",
+          "event": "activate",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "fa628afd996f2497e1e01cd5c4b98b4aa172f54fdecfa0e38b8b806d3a3eec81",
+      "seed": 68,
+      "initial": {
+        "spawn": {
+          "x": 45,
+          "y": 448
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 371,
+      "seconds": 3.091666666666667,
+      "end": [
+        869.5015484019292,
+        133.57291666666666,
+        "win"
+      ]
+    },
+    "expanded": 16459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      264,
+      348
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "fa628afd996f2497e1e01cd5c4b98b4aa172f54fdecfa0e38b8b806d3a3eec81",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 371,
+      "seconds": 3.091666666666667,
+      "end": [
+        869.5015484019292,
+        173,
+        "win"
+      ]
+    },
+    "ticks": 371,
+    "successfulReplaySeconds": 3.091666666666667,
+    "seconds": {
+      "activeTraversal": 3.091666666666667,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1181.0609990203216,
+      "carriedPixels": 30.003103509437835,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 2,
+        "observed": true,
+        "firstTick": 84
+      },
+      {
+        "trap": "lift",
+        "event": "ride",
+        "minTicks": 8,
+        "observed": true,
+        "firstTick": 147
+      },
+      {
+        "trap": "keystone",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 189
+      },
+      {
+        "trap": "lastSpring",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 262
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 84,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 92,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "First afterimage"
+      },
+      {
+        "tick": 147,
+        "id": "lift",
+        "event": "ride"
+      },
+      {
+        "tick": 154,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Ride lift"
+      },
+      {
+        "tick": 189,
+        "id": "keystone",
+        "event": "trigger"
+      },
+      {
+        "tick": 197,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Second afterimage"
+      },
+      {
+        "tick": 222,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 262,
+        "id": "lastSpring",
+        "event": "activate"
+      },
+      {
+        "tick": 262,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Last arch"
+      },
+      {
+        "tick": 354,
+        "id": "platform:2",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 4,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "exit:relocate": 2,
+      "stage:0:complete": 1,
+      "lift:ride": 35,
+      "stage:1:complete": 1,
+      "keystone:trigger": 1,
+      "stage:2:complete": 1,
+      "platform:1:land": 1,
+      "lastSpring:activate": 1,
+      "stage:3:complete": 1,
+      "platform:2:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 52,
+      "score": 0.34285714285714286,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 58,
+      "score": 0.31523809523809526,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 57,
+      "score": 0.29940476190476184,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 11.931
+}

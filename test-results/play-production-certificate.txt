@@ -1,0 +1,25 @@
+Signer #1:
+
+Certificate #1:
+Owner: CN=Devil Domain, OU=Android, O=Devil Domain
+Issuer: CN=Devil Domain, OU=Android, O=Devil Domain
+Serial number: f22ec6c3419ae01b
+Valid from: Sun Nov 15 23:24:27 IST 2026 until: Thu Apr 02 23:24:27 IST 2054
+Certificate fingerprints:
+	 SHA1: AA:85:C7:DD:3F:DE:17:44:FF:4C:4B:35:F8:58:23:4F:5A:B0:3C:F6
+	 SHA256: CB:26:45:52:45:7D:48:1E:22:5E:14:EB:B2:4B:6D:B7:11:1B:CB:9F:B7:0A:1C:ED:CB:5F:68:26:18:33:28:9F
+Signature algorithm name: SHA384withRSA
+Subject Public Key Algorithm: 3072-bit RSA key
+Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: D7 DD F5 34 59 C9 CE DE   23 3C EA C2 E2 B7 2F 96  ...4Y...#<..../.
+0010: E4 51 F6 7B                                        .Q..
+]
+]
+
+

@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: production files untouched
+ok 1 - production files untouched
+  ---
+  duration_ms: 5.6446
+  type: 'test'
+  ...
+# Subtest: saved Season 2 failures were generation constraints
+ok 2 - saved Season 2 failures were generation constraints
+  ---
+  duration_ms: 2.5188
+  type: 'test'
+  ...
+# Subtest: determinism, automatic slots and season boundary
+ok 3 - determinism, automatic slots and season boundary
+  ---
+  duration_ms: 14.5984
+  type: 'test'
+  ...
+# Subtest: six active categories and two-factor difficulty
+ok 4 - six active categories and two-factor difficulty
+  ---
+  duration_ms: 1.4183
+  type: 'test'
+  ...
+# Subtest: candidate 51 proof bound to identity; unapproved
+ok 5 - candidate 51 proof bound to identity; unapproved
+  ---
+  duration_ms: 13.1181
+  type: 'test'
+  ...
+# Subtest: candidate 52 proof bound to identity; unapproved
+ok 6 - candidate 52 proof bound to identity; unapproved
+  ---
+  duration_ms: 10.5323
+  type: 'test'
+  ...
+# Subtest: candidate 53 proof bound to identity; unapproved
+ok 7 - candidate 53 proof bound to identity; unapproved
+  ---
+  duration_ms: 15.2478
+  type: 'test'
+  ...
+# Subtest: candidate 54 proof bound to identity; unapproved
+ok 8 - candidate 54 proof bound to identity; unapproved
+  ---
+  duration_ms: 9.8771
+  type: 'test'
+  ...
+# Subtest: candidate 55 proof bound to identity; unapproved
+ok 9 - candidate 55 proof bound to identity; unapproved
+  ---
+  duration_ms: 11.4601
+  type: 'test'
+  ...
+# Subtest: candidate 56 proof bound to identity; unapproved
+ok 10 - candidate 56 proof bound to identity; unapproved
+  ---
+  duration_ms: 15.5832
+  type: 'test'
+  ...
+# Subtest: candidate 57 proof bound to identity; unapproved
+ok 11 - candidate 57 proof bound to identity; unapproved
+  ---
+  duration_ms: 10.0593
+  type: 'test'
+  ...
+# Subtest: candidate 58 proof bound to identity; unapproved
+ok 12 - candidate 58 proof bound to identity; unapproved
+  ---
+  duration_ms: 9.3631
+  type: 'test'
+  ...
+# Subtest: candidate 59 proof bound to identity; unapproved
+ok 13 - candidate 59 proof bound to identity; unapproved
+  ---
+  duration_ms: 15.3188
+  type: 'test'
+  ...
+# Subtest: candidate 60 proof bound to identity; unapproved
+ok 14 - candidate 60 proof bound to identity; unapproved
+  ---
+  duration_ms: 8.8782
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 264.0805

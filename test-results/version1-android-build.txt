@@ -1,0 +1,247 @@
+
+> Configure project :app
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Configure project :capacitor-cordova-android-plugins
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Task :app:generateReleaseWebAssets
+Bundled release (progression locked) web assets: Z:\Automation\Devil Domain\android\app\build\generated\releaseWeb\assets\public
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:prePlaytestBuild
+> Task :app:mergePlaytestJniLibFolders
+> Task :capacitor-android:preBuild UP-TO-DATE
+> Task :capacitor-android:preReleaseBuild UP-TO-DATE
+> Task :capacitor-android:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :capacitor-android:mergeReleaseNativeLibs NO-SOURCE
+> Task :capacitor-android:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:preBuild UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:preReleaseBuild UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeReleaseJniLibFolders
+> Task :capacitor-cordova-android-plugins:mergeReleaseNativeLibs NO-SOURCE
+> Task :capacitor-android:generateReleaseResValues UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:copyReleaseJniLibsProjectOnly
+> Task :capacitor-android:generateReleaseResources UP-TO-DATE
+> Task :app:mergePlaytestNativeLibs NO-SOURCE
+> Task :app:stripPlaytestDebugSymbols NO-SOURCE
+> Task :app:extractPlaytestNativeSymbolTables NO-SOURCE
+> Task :app:mergePlaytestNativeDebugMetadata NO-SOURCE
+> Task :capacitor-android:packageReleaseResources UP-TO-DATE
+> Task :capacitor-android:processReleaseNavigationResources UP-TO-DATE
+> Task :capacitor-android:parseReleaseLocalResources UP-TO-DATE
+> Task :capacitor-android:generateReleaseRFile UP-TO-DATE
+> Task :capacitor-android:javaPreCompileRelease UP-TO-DATE
+> Task :capacitor-android:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :capacitor-android:bundleLibRuntimeToDirRelease UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:generateReleaseResValues
+> Task :capacitor-cordova-android-plugins:generateReleaseResources
+> Task :capacitor-cordova-android-plugins:packageReleaseResources
+> Task :capacitor-cordova-android-plugins:processReleaseNavigationResources
+> Task :capacitor-cordova-android-plugins:javaPreCompileRelease
+> Task :app:javaPreCompilePlaytest
+> Task :capacitor-android:writeReleaseAarMetadata UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:writeReleaseAarMetadata
+> Task :app:checkPlaytestDuplicateClasses
+> Task :app:processPlaytestNavigationResources
+> Task :capacitor-cordova-android-plugins:parseReleaseLocalResources
+> Task :app:checkPlaytestAarMetadata
+> Task :app:generatePlaytestResValues
+> Task :app:compilePlaytestNavigationResources
+> Task :capacitor-cordova-android-plugins:generateReleaseRFile
+> Task :app:mapPlaytestSourceSetPaths
+> Task :capacitor-cordova-android-plugins:compileReleaseJavaWithJavac NO-SOURCE
+> Task :app:generatePlaytestResources
+> Task :capacitor-cordova-android-plugins:bundleLibRuntimeToDirRelease
+> Task :app:packagePlaytestResources
+> Task :app:createPlaytestCompatibleScreenManifests
+> Task :app:extractDeepLinksPlaytest
+> Task :capacitor-android:extractDeepLinksRelease UP-TO-DATE
+> Task :capacitor-android:processReleaseManifest UP-TO-DATE
+> Task :app:parsePlaytestLocalResources
+> Task :capacitor-cordova-android-plugins:extractDeepLinksRelease
+> Task :capacitor-android:compileReleaseLibraryResources UP-TO-DATE
+> Task :capacitor-android:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:compileReleaseLibraryResources
+> Task :capacitor-cordova-android-plugins:bundleLibCompileToJarRelease
+> Task :app:desugarPlaytestFileDependencies
+> Task :app:mergePlaytestStartupProfile
+> Task :capacitor-cordova-android-plugins:processReleaseManifest
+> Task :app:processPlaytestMainManifest
+> Task :app:mergePlaytestResources
+> Task :app:processPlaytestManifest
+> Task :capacitor-android:prepareReleaseArtProfile UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:prepareReleaseArtProfile UP-TO-DATE
+> Task :capacitor-android:bundleLibRuntimeToJarRelease UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:bundleLibRuntimeToJarRelease
+> Task :app:mergePlaytestArtProfile
+> Task :app:mergePlaytestShaders
+> Task :app:compilePlaytestShaders NO-SOURCE
+> Task :app:generatePlaytestAssets UP-TO-DATE
+> Task :capacitor-android:mergeReleaseShaders UP-TO-DATE
+> Task :capacitor-android:compileReleaseShaders NO-SOURCE
+> Task :capacitor-android:generateReleaseAssets UP-TO-DATE
+> Task :capacitor-android:mergeReleaseAssets UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeReleaseShaders
+> Task :capacitor-cordova-android-plugins:compileReleaseShaders NO-SOURCE
+> Task :capacitor-cordova-android-plugins:generateReleaseAssets UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeReleaseAssets
+> Task :app:mergePlaytestAssets
+> Task :app:compressPlaytestAssets
+> Task :app:extractPlaytestVersionControlInfo
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :capacitor-android:processReleaseJavaRes NO-SOURCE
+> Task :capacitor-android:createFullJarRelease UP-TO-DATE
+> Task :capacitor-android:extractProguardFiles UP-TO-DATE
+> Task :capacitor-android:generateReleaseLintModel UP-TO-DATE
+> Task :capacitor-android:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:processReleaseJavaRes NO-SOURCE
+> Task :capacitor-cordova-android-plugins:createFullJarRelease
+> Task :capacitor-cordova-android-plugins:extractProguardFiles
+> Task :capacitor-cordova-android-plugins:generateReleaseLintModel
+> Task :capacitor-cordova-android-plugins:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-android:checkReleaseAarMetadata UP-TO-DATE
+> Task :capacitor-android:stripReleaseDebugSymbols NO-SOURCE
+> Task :capacitor-android:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :capacitor-android:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :capacitor-android:extractReleaseAnnotations UP-TO-DATE
+> Task :capacitor-android:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :capacitor-android:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-android:mergeReleaseJavaResource UP-TO-DATE
+> Task :capacitor-android:syncReleaseLibJars UP-TO-DATE
+> Task :capacitor-android:bundleReleaseLocalLintAar UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:stripReleaseDebugSymbols NO-SOURCE
+> Task :capacitor-cordova-android-plugins:copyReleaseJniLibsProjectAndLocalJars
+> Task :capacitor-cordova-android-plugins:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:checkReleaseAarMetadata
+> Task :capacitor-cordova-android-plugins:extractReleaseAnnotations
+> Task :capacitor-cordova-android-plugins:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-android:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :capacitor-android:writeReleaseLintModelMetadata UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:writeReleaseLintModelMetadata
+> Task :capacitor-android:generateReleaseLintVitalModel UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeReleaseJavaResource
+> Task :capacitor-cordova-android-plugins:generateReleaseLintVitalModel
+> Task :capacitor-cordova-android-plugins:syncReleaseLibJars
+> Task :capacitor-cordova-android-plugins:bundleReleaseLocalLintAar
+> Task :app:processPlaytestJavaRes NO-SOURCE
+> Task :app:collectPlaytestDependencies
+> Task :app:sdkPlaytestDependencyData
+> Task :app:validateSigningPlaytest
+> Task :app:writePlaytestAppMetadata
+> Task :app:writePlaytestSigningConfigVersions
+> Task :app:preReleaseBuild
+> Task :app:processReleaseNavigationResources
+> Task :app:compileReleaseNavigationResources UP-TO-DATE
+> Task :app:generateReleaseResValues UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease
+> Task :app:processReleaseMainManifest
+> Task :app:processReleaseManifest
+> Task :app:processApplicationManifestReleaseForBundle
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:packageReleaseResources UP-TO-DATE
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+> Task :app:mergePlaytestJavaResource
+> Task :app:extractReleaseVersionControlInfo UP-TO-DATE
+> Task :app:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :app:javaPreCompileRelease UP-TO-DATE
+> Task :app:processReleaseManifestForPackage
+> Task :app:desugarReleaseFileDependencies UP-TO-DATE
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :app:mergeExtDexRelease UP-TO-DATE
+> Task :app:mergeReleaseShaders UP-TO-DATE
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :app:mergeReleaseJavaResource UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :app:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:writeReleaseAppMetadata UP-TO-DATE
+> Task :app:mergeReleaseArtProfile UP-TO-DATE
+> Task :app:collectReleaseDependencies UP-TO-DATE
+> Task :app:configureReleaseDependencies UP-TO-DATE
+> Task :app:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :app:parseReleaseIntegrityConfig UP-TO-DATE
+> Task :app:validateSigningRelease
+> Task :app:preReleaseUnitTestBuild UP-TO-DATE
+> Task :capacitor-android:preReleaseUnitTestBuild UP-TO-DATE
+> Task :capacitor-android:generateReleaseUnitTestLintModel
+> Task :capacitor-cordova-android-plugins:preReleaseUnitTestBuild UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:generateReleaseUnitTestLintModel
+> Task :capacitor-android:generateReleaseLintReportModel
+> Task :capacitor-cordova-android-plugins:generateReleaseLintReportModel
+> Task :app:processPlaytestManifestForPackage
+> Task :app:mergeExtDexPlaytest
+> Task :app:processReleaseResources
+> Task :app:processPlaytestResources
+> Task :app:compilePlaytestJavaWithJavac
+> Task :app:dexBuilderPlaytest
+> Task :app:mergePlaytestGlobalSynthetics
+> Task :app:generatePlaytestLintVitalReportModel
+> Task :app:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :app:dexBuilderRelease UP-TO-DATE
+> Task :app:mergeDexRelease UP-TO-DATE
+> Task :app:mergeReleaseGlobalSynthetics UP-TO-DATE
+> Task :app:compileReleaseArtProfile UP-TO-DATE
+> Task :app:generateReleaseLintVitalReportModel
+> Task :app:generateReleaseLintReportModel
+> Task :app:optimizePlaytestResources
+> Task :app:bundleReleaseClassesToCompileJar
+> Task :app:generateReleaseUnitTestLintModel
+> Task :app:bundleReleaseResources
+> Task :app:buildReleasePreBundle
+> Task :app:mergeDexPlaytest
+> Task :app:compilePlaytestArtProfile
+> Task :capacitor-cordova-android-plugins:lintVitalAnalyzeRelease
+> Task :app:lintVitalAnalyzePlaytest
+> Task :app:lintVitalReportPlaytest
+> Task :app:lintVitalPlaytest
+> Task :app:lintVitalAnalyzeRelease
+> Task :app:lintVitalReportRelease SKIPPED
+> Task :app:lintVitalRelease SKIPPED
+> Task :app:packagePlaytest
+> Task :app:createPlaytestApkListingFileRedirect
+> Task :app:assemblePlaytest
+> Task :app:packageReleaseBundle
+> Task :capacitor-cordova-android-plugins:lintAnalyzeRelease
+> Task :app:signReleaseBundle
+> Task :app:produceReleaseBundleIdeListingFile
+> Task :app:createReleaseBundleListingFileRedirect UP-TO-DATE
+> Task :app:bundleRelease
+> Task :app:lintAnalyzeReleaseUnitTest
+> Task :capacitor-android:lintAnalyzeReleaseUnitTest
+> Task :capacitor-cordova-android-plugins:lintAnalyzeReleaseUnitTest
+> Task :capacitor-cordova-android-plugins:lintReportRelease
+> Task :capacitor-cordova-android-plugins:lintRelease
+> Task :capacitor-android:lintAnalyzeRelease
+
+> Task :capacitor-android:lintReportRelease
+Lint found no new issues (and 6 errors filtered by baseline lint-baseline.xml)
+
+6 errors/warnings were listed in the baseline file (Z:\Automation\Devil Domain\node_modules\@capacitor\android\capacitor\lint-baseline.xml) but not found in the project; perhaps they have been fixed?
+
+> Task :capacitor-android:lintRelease
+> Task :app:lintAnalyzeRelease
+
+> Task :app:lintReportRelease
+Wrote HTML report to file:///Z:/Automation/Devil%20Domain/android/app/build/reports/lint-results-release.html
+
+> Task :app:lintRelease
+
+[Incubating] Problems report is available at: file:///Z:/Automation/Devil%20Domain/android/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 25s
+183 actionable tasks: 113 executed, 70 up-to-date

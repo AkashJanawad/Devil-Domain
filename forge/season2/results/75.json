@@ -1,0 +1,620 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 75,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 75,
+    "name": "SUNDIAL STEPS",
+    "targetDifficulty": "HARD",
+    "intent": "Follow the door on a rising arc. Jump off the brittle hour mark and cross the pendulum’s shadow to the last step.",
+    "surprise": "The door slips from one hour mark to the next, then the dial drops a block beside its final position.",
+    "spawn": {
+      "x": 48,
+      "y": 458
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 257,
+          "y": 356
+        },
+        {
+          "x": 545,
+          "y": 226
+        },
+        {
+          "x": 887,
+          "y": 186
+        }
+      ],
+      "options": {
+        "fleeDist": 62
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 490,
+        "w": 180,
+        "h": 50
+      },
+      {
+        "x": 222,
+        "y": 420,
+        "w": 108,
+        "h": 16
+      },
+      {
+        "x": 498,
+        "y": 290,
+        "w": 140,
+        "h": 16
+      },
+      {
+        "x": 800,
+        "y": 250,
+        "w": 160,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 365,
+            "y": 356,
+            "w": 96,
+            "h": 16
+          },
+          {
+            "delay": 0.45
+          }
+        ]
+      },
+      {
+        "type": "Pendulum",
+        "args": [
+          647,
+          53,
+          {
+            "len": 160,
+            "amp": 0.68,
+            "speed": 1.9,
+            "r": 16
+          }
+        ]
+      },
+      {
+        "type": "BlinkPlatform",
+        "args": [
+          {
+            "x": 670,
+            "y": 236,
+            "w": 80,
+            "h": 16
+          },
+          {
+            "period": 1.8,
+            "onFrac": 0.72,
+            "phase": 0.17
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 830,
+            "y": 76,
+            "w": 42,
+            "h": 34
+          },
+          {
+            "x": 742,
+            "y": 92,
+            "w": 52,
+            "h": 170
+          },
+          {
+            "shakeTime": 0.56,
+            "floorY": 250
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          180,
+          540,
+          780,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "hour",
+        "hand",
+        "minute",
+        "stone",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "First mark",
+          "target": {
+            "x": 276,
+            "y": 388
+          },
+          "reach": {
+            "x": 222,
+            "y": 382,
+            "w": 108,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Brittle hour",
+          "target": {
+            "x": 402,
+            "y": 324
+          },
+          "requires": [
+            {
+              "trap": "hour",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "High noon",
+          "target": {
+            "x": 568,
+            "y": 258
+          },
+          "reach": {
+            "x": 498,
+            "y": 252,
+            "w": 140,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 2
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Minute step",
+          "target": {
+            "x": 710,
+            "y": 204
+          },
+          "reach": {
+            "x": 670,
+            "y": 198,
+            "w": 80,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Keystone",
+          "target": {
+            "x": 886,
+            "y": 218
+          },
+          "requires": [
+            {
+              "trap": "stone",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 2
+        },
+        {
+          "trap": "hour",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "stone",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "573e4fa7f9649798c49cdc60f8326f4d78ca7217629efeecfbbd38daab4ae5e0",
+      "seed": 75,
+      "initial": {
+        "spawn": {
+          "x": 48,
+          "y": 458
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 377,
+      "seconds": 3.1416666666666666,
+      "end": [
+        867.4583333333377,
+        189.67013888888889,
+        "win"
+      ]
+    },
+    "expanded": 17059,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      204,
+      300,
+      348
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "573e4fa7f9649798c49cdc60f8326f4d78ca7217629efeecfbbd38daab4ae5e0",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 377,
+      "seconds": 3.1416666666666666,
+      "end": [
+        867.4583333333377,
+        218,
+        "win"
+      ]
+    },
+    "ticks": 377,
+    "successfulReplaySeconds": 3.1416666666666666,
+    "seconds": {
+      "activeTraversal": 3.1416666666666666,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1039.0198035038252,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 2,
+        "observed": true,
+        "firstTick": 77
+      },
+      {
+        "trap": "hour",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 147
+      },
+      {
+        "trap": "stone",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 310
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 77,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 90,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 90,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "First mark"
+      },
+      {
+        "tick": 147,
+        "id": "hour",
+        "event": "trigger"
+      },
+      {
+        "tick": 147,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Brittle hour"
+      },
+      {
+        "tick": 211,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 211,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "High noon"
+      },
+      {
+        "tick": 288,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Minute step"
+      },
+      {
+        "tick": 310,
+        "id": "stone",
+        "event": "trigger"
+      },
+      {
+        "tick": 310,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Keystone"
+      },
+      {
+        "tick": 337,
+        "id": "platform:3",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 5,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "exit:relocate": 2,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "hour:trigger": 1,
+      "stage:1:complete": 1,
+      "platform:2:land": 1,
+      "stage:2:complete": 1,
+      "stage:3:complete": 1,
+      "stone:trigger": 1,
+      "stage:4:complete": 1,
+      "platform:3:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 68,
+      "score": 0.4035714285714285,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 78,
+      "score": 0.2952380952380952,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 57,
+      "score": 0.2791666666666666,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 12.232
+}

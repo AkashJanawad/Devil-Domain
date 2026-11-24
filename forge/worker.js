@@ -1,0 +1,1 @@
+const {parentPort,workerData}=require('node:worker_threads');const F=require('./v3');try{parentPort.postMessage(F.verify(workerData.c,workerData.others,workerData.budget,p=>parentPort.postMessage({progress:p})));}catch(e){parentPort.postMessage({...workerData.c,status:'FAILED',reason:e.message});}

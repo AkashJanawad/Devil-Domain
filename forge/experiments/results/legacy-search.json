@@ -1,0 +1,53 @@
+[
+  {
+    "id": 41,
+    "status": "VERIFIED",
+    "expanded": 10759,
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 339,
+      "seconds": 2.825,
+      "end": [
+        864.3333333333379,
+        421.49305555555554,
+        "win"
+      ]
+    },
+    "wallSeconds": 4.236
+  },
+  {
+    "id": 50,
+    "status": "VERIFIED",
+    "expanded": 12019,
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 377,
+      "seconds": 3.1416666666666666,
+      "end": [
+        865.6250000000043,
+        426.33680555555554,
+        "win"
+      ]
+    },
+    "wallSeconds": 5.217
+  },
+  {
+    "id": 81,
+    "status": "VERIFIED",
+    "expanded": 9169,
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 369,
+      "seconds": 3.075,
+      "end": [
+        864.9007661507907,
+        198.21180555555554,
+        "win"
+      ]
+    },
+    "wallSeconds": 4.981
+  }
+]

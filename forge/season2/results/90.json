@@ -1,0 +1,836 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 90,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 90,
+    "name": "CLOSING THE VAULT",
+    "targetDifficulty": "EXPERT",
+    "intent": "Reach the vault switch by ferry, climb through its unlocked ceiling and cross the roof before following the final door down.",
+    "surprise": "The exit abandons its roof perch and exposes hidden spikes at the lower vault entrance.",
+    "spawn": {
+      "x": 46,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 888,
+          "y": 141
+        },
+        {
+          "x": 894,
+          "y": 436
+        }
+      ],
+      "options": {
+        "fleeDist": 60
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 183,
+        "h": 40
+      },
+      {
+        "x": 474,
+        "y": 390,
+        "w": 151,
+        "h": 16
+      },
+      {
+        "x": 680,
+        "y": 320,
+        "w": 125,
+        "h": 16
+      },
+      {
+        "x": 837,
+        "y": 205,
+        "w": 80,
+        "h": 16
+      },
+      {
+        "x": 676,
+        "y": 150,
+        "w": 106,
+        "h": 16
+      },
+      {
+        "x": 505,
+        "y": 210,
+        "w": 110,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 265,
+        "w": 625,
+        "h": 16
+      },
+      {
+        "x": 812,
+        "y": 500,
+        "w": 148,
+        "h": 40
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 215,
+            "y": 463,
+            "w": 119,
+            "h": 16
+          },
+          {
+            "toX": 353,
+            "toY": 413,
+            "speed": 125,
+            "phase": 0.5
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          526,
+          380,
+          "vault"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 625,
+            "y": 265,
+            "w": 187,
+            "h": 16
+          },
+          "vault"
+        ]
+      },
+      {
+        "type": "Spring",
+        "args": [
+          727,
+          320,
+          {
+            "w": 57,
+            "power": -960
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 805,
+            "y": 0,
+            "len": 265,
+            "vertical": true,
+            "period": 2.1,
+            "warn": 0.45,
+            "fire": 0.45,
+            "phase": 0.12
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          839,
+          500,
+          35,
+          {
+            "x": 892,
+            "y": 250,
+            "w": 40,
+            "h": 200
+          },
+          {
+            "delay": 0.32
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          183,
+          540,
+          629,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "ferry",
+        "key",
+        "lock",
+        "spring",
+        "pulse",
+        "teeth",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Ride ferry",
+          "target": {
+            "trap": "ferry",
+            "dx": 38,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "ferry",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Vault key",
+          "target": {
+            "x": 542,
+            "y": 358
+          },
+          "requires": [
+            {
+              "trap": "key",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Spring shelf",
+          "target": {
+            "x": 742.5,
+            "y": 288
+          },
+          "reach": {
+            "x": 680,
+            "y": 282,
+            "w": 125,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "open",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Roof spring",
+          "target": {
+            "x": 740,
+            "y": 288
+          },
+          "requires": [
+            {
+              "trap": "spring",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Roof perch",
+          "target": {
+            "x": 877,
+            "y": 173
+          },
+          "reach": {
+            "x": 837,
+            "y": 167,
+            "w": 80,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "pulse",
+              "event": "beamCross",
+              "minTicks": 1
+            },
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Follow final door",
+          "target": {
+            "x": 886,
+            "y": 468
+          },
+          "reach": {
+            "x": 812,
+            "y": 462,
+            "w": 148,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "teeth",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        }
+      ],
+      "required": [
+        {
+          "trap": "ferry",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "key",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "open",
+          "minTicks": 1
+        },
+        {
+          "trap": "spring",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "pulse",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 1
+        },
+        {
+          "trap": "teeth",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "a191e361fdb705a4d99e1c2e35b64d324f6a5c138ea280a5595593da91a1b3d3",
+      "seed": 90,
+      "initial": {
+        "spawn": {
+          "x": 46,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 546,
+      "seconds": 4.55,
+      "end": [
+        874.0694444444426,
+        449.8333333333333,
+        "win"
+      ]
+    },
+    "expanded": 25459,
+    "rejectedWins": 152,
+    "removedJumpPressTicks": [
+      216
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "a191e361fdb705a4d99e1c2e35b64d324f6a5c138ea280a5595593da91a1b3d3",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 551,
+      "seconds": 4.591666666666667,
+      "end": [
+        875.3611111111089,
+        424.24305555555554,
+        "win"
+      ]
+    },
+    "ticks": 551,
+    "successfulReplaySeconds": 4.591666666666667,
+    "seconds": {
+      "activeTraversal": 4.591666666666667,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.058333333333333334
+    },
+    "distance": {
+      "selfPixels": 1852.1463461871963,
+      "carriedPixels": 16.075412514980883,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "ferry",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 109
+      },
+      {
+        "trap": "key",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 220
+      },
+      {
+        "trap": "lock",
+        "event": "open",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 247
+      },
+      {
+        "trap": "spring",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 319
+      },
+      {
+        "trap": "pulse",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 379
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 447
+      },
+      {
+        "trap": "teeth",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 496
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 48,
+        "id": "pit",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 109,
+        "id": "ferry",
+        "event": "ride"
+      },
+      {
+        "tick": 120,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Ride ferry"
+      },
+      {
+        "tick": 197,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 220,
+        "id": "key",
+        "event": "activate"
+      },
+      {
+        "tick": 220,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Vault key"
+      },
+      {
+        "tick": 247,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 318,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 318,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Spring shelf"
+      },
+      {
+        "tick": 319,
+        "id": "spring",
+        "event": "activate"
+      },
+      {
+        "tick": 319,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Roof spring"
+      },
+      {
+        "tick": 379,
+        "id": "pulse",
+        "event": "beamCross",
+        "phase": "warn"
+      },
+      {
+        "tick": 447,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 465,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 465,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Roof perch"
+      },
+      {
+        "tick": 496,
+        "id": "teeth",
+        "event": "trigger"
+      },
+      {
+        "tick": 533,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 533,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Follow final door"
+      },
+      {
+        "tick": 538,
+        "id": "teeth",
+        "event": "hazardNear"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "pit:hazardNear": 2,
+      "ferry:ride": 35,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "key:activate": 1,
+      "stage:1:complete": 1,
+      "lock:open": 1,
+      "platform:2:land": 1,
+      "stage:2:complete": 1,
+      "spring:activate": 2,
+      "stage:3:complete": 1,
+      "pulse:beamCross": 15,
+      "exit:relocate": 1,
+      "platform:3:land": 1,
+      "stage:4:complete": 1,
+      "teeth:trigger": 1,
+      "platform:7:land": 1,
+      "stage:5:complete": 1,
+      "teeth:hazardNear": 14
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 80,
+      "score": 0.41353668261563,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 51,
+      "score": 0.39928571428571424,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 70,
+      "score": 0.36441387559808613,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 22.536
+}

@@ -1,0 +1,8478 @@
+{
+  "report": {
+    "requested": {
+      "EXTREME": 5,
+      "VERY HARD": 5
+    },
+    "accepted": {
+      "EXTREME": 5,
+      "VERY HARD": 4
+    },
+    "shortfall": {
+      "EXTREME": 0,
+      "VERY HARD": 1
+    },
+    "satisfied": false
+  },
+  "candidates": [
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 71,
+        "season": 2,
+        "name": "SCARLET THRESHOLD",
+        "seed": 11156755,
+        "targetDifficulty": "EXTREME",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              50,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.7820351224625484
+              }
+            ]
+          },
+          {
+            "type": "FallBlock",
+            "args": [
+              {
+                "x": 360,
+                "y": 40,
+                "w": 60,
+                "h": 50
+              },
+              {
+                "x": 290,
+                "y": 300,
+                "w": 25,
+                "h": 180
+              },
+              {
+                "shakeTime": 0.36887951237149535
+              }
+            ]
+          },
+          {
+            "type": "Laser",
+            "args": [
+              {
+                "x": 510,
+                "y": 100,
+                "len": 380,
+                "vertical": true,
+                "period": 2.9771949234884234,
+                "warn": 0.6,
+                "fire": 0.4
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 660,
+                  "y": 160
+                },
+                {
+                  "x": 660,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 130.77594690024853,
+                "r": 18
+              }
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 740,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": 65,
+                "trigger": {
+                  "x": 720,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "fall",
+              "x": 330
+            },
+            {
+              "kind": "laser",
+              "x": 480
+            },
+            {
+              "kind": "saw",
+              "x": 630
+            },
+            {
+              "kind": "wind",
+              "x": 780
+            }
+          ],
+          "route": 0,
+          "target": {
+            "name": "EXTREME",
+            "time": 56,
+            "concentration": 3.6,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "EXTREME",
+        "seed": 11156755,
+        "startId": 71
+      },
+      "fingerprint": "9d1f172328d991fcf67b00298e25f28e31055808118f6a45bf4aff008e9af58f",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "9d1f172328d991fcf67b00298e25f28e31055808118f6a45bf4aff008e9af58f",
+          "seed": 11156755,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1985,
+          "seconds": 16.541666666666668,
+          "end": [
+            100.69444444442897,
+            426.33680555555554,
+            "win"
+          ]
+        },
+        "expanded": 39067
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 37,
+        "turns": 8,
+        "timed": 2,
+        "switches": 0,
+        "hidden": 4,
+        "nearest": {
+          "id": 77,
+          "score": 0.6166666666666667,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "EXTREME",
+        "estimatedSeconds": 56.2,
+        "solverSeconds": 16.6,
+        "discoverySeconds": 23,
+        "localConcentration": 2,
+        "windowWidth": 200,
+        "score": 61.50476190476191,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052026,
+          "status": "OUT OF BAND",
+          "actual": "VERY HARD",
+          "reason": "Requested EXTREME; measured VERY HARD"
+        },
+        {
+          "seed": 11156755,
+          "status": "VERIFIED",
+          "actual": "EXTREME",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 72,
+        "season": 2,
+        "name": "CRIMSON RETURN",
+        "seed": 11052027,
+        "targetDifficulty": "EXTREME",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 700,
+            "y": 420,
+            "w": 95,
+            "h": 16
+          },
+          {
+            "x": 830,
+            "y": 360,
+            "w": 130,
+            "h": 16
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              62,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.5750717564485968
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "args": [
+              300,
+              470,
+              "s1"
+            ]
+          },
+          {
+            "type": "Gate",
+            "args": [
+              {
+                "x": 395,
+                "y": 300,
+                "w": 24,
+                "h": 180
+              },
+              "s1"
+            ]
+          },
+          {
+            "type": "Pendulum",
+            "args": [
+              510,
+              40,
+              {
+                "len": 380,
+                "amp": 0.717747398559004,
+                "speed": 1.3,
+                "r": 16
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 660,
+                  "y": 160
+                },
+                {
+                  "x": 660,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 125.58803590247408,
+                "r": 18
+              }
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 740,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": 65,
+                "trigger": {
+                  "x": 720,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "switch",
+              "x": 330
+            },
+            {
+              "kind": "pendulum",
+              "x": 480
+            },
+            {
+              "kind": "saw",
+              "x": 630
+            },
+            {
+              "kind": "wind",
+              "x": 780
+            }
+          ],
+          "route": 1,
+          "target": {
+            "name": "EXTREME",
+            "time": 56,
+            "concentration": 3.6,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "EXTREME",
+        "seed": 11052026,
+        "startId": 72
+      },
+      "fingerprint": "3fa70fe774962d48f491ab3bb8f501888424c750be6d8d19f96651ca67f56b53",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "3fa70fe774962d48f491ab3bb8f501888424c750be6d8d19f96651ca67f56b53",
+          "seed": 11052027,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1941,
+          "seconds": 16.175,
+          "end": [
+            101.37499999998543,
+            437.81597222222223,
+            "win"
+          ]
+        },
+        "expanded": 37883
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 47,
+        "turns": 5,
+        "timed": 2,
+        "switches": 1,
+        "hidden": 3,
+        "nearest": {
+          "id": 75,
+          "score": 0.7000000000000001,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "EXTREME",
+        "estimatedSeconds": 53.4,
+        "solverSeconds": 16.2,
+        "discoverySeconds": 21,
+        "localConcentration": 3,
+        "windowWidth": 200,
+        "score": 65.77142857142857,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052027,
+          "status": "VERIFIED",
+          "actual": "EXTREME",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 73,
+        "season": 2,
+        "name": "CRIMSON ECHO",
+        "seed": 11052028,
+        "targetDifficulty": "EXTREME",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              55,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.5652910905890167
+              }
+            ]
+          },
+          {
+            "type": "PopSpikes",
+            "args": [
+              380,
+              480,
+              47,
+              {
+                "x": 300,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.6132812367985025
+              }
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 440,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": 65,
+                "trigger": {
+                  "x": 420,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "args": [
+              600,
+              470,
+              "s3"
+            ]
+          },
+          {
+            "type": "Gate",
+            "args": [
+              {
+                "x": 695,
+                "y": 300,
+                "w": 24,
+                "h": 180
+              },
+              "s3"
+            ]
+          },
+          {
+            "type": "FallBlock",
+            "args": [
+              {
+                "x": 810,
+                "y": 40,
+                "w": 60,
+                "h": 50
+              },
+              {
+                "x": 740,
+                "y": 300,
+                "w": 25,
+                "h": 180
+              },
+              {
+                "shakeTime": 0.7124261211836711
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "ambush",
+              "x": 330
+            },
+            {
+              "kind": "wind",
+              "x": 480
+            },
+            {
+              "kind": "switch",
+              "x": 630
+            },
+            {
+              "kind": "fall",
+              "x": 780
+            }
+          ],
+          "route": 2,
+          "target": {
+            "name": "EXTREME",
+            "time": 56,
+            "concentration": 3.6,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "EXTREME",
+        "seed": 11052026,
+        "startId": 73
+      },
+      "fingerprint": "770c74fe6fac5cbf1e923375e1b7f552dad294bf87f13d5367a4d2a84ff46c97",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "770c74fe6fac5cbf1e923375e1b7f552dad294bf87f13d5367a4d2a84ff46c97",
+          "seed": 11052028,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1973,
+          "seconds": 16.441666666666666,
+          "end": [
+            101.55555555555479,
+            426.33680555555554,
+            "win"
+          ]
+        },
+        "expanded": 38755
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 38,
+        "turns": 7,
+        "timed": 0,
+        "switches": 1,
+        "hidden": 5,
+        "nearest": {
+          "id": 61,
+          "score": 0.6500000000000001,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "EXTREME",
+        "estimatedSeconds": 58,
+        "solverSeconds": 16.5,
+        "discoverySeconds": 25,
+        "localConcentration": 2,
+        "windowWidth": 200,
+        "score": 63.04761904761905,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052028,
+          "status": "VERIFIED",
+          "actual": "EXTREME",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 74,
+        "season": 2,
+        "name": "EMBER ECHO",
+        "seed": 11366213,
+        "targetDifficulty": "EXTREME",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              62,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.596656899037771
+              }
+            ]
+          },
+          {
+            "type": "Laser",
+            "args": [
+              {
+                "x": 360,
+                "y": 100,
+                "len": 380,
+                "vertical": true,
+                "period": 2.7995264879893513,
+                "warn": 0.6,
+                "fire": 0.4
+              }
+            ]
+          },
+          {
+            "type": "PopSpikes",
+            "args": [
+              530,
+              480,
+              46,
+              {
+                "x": 450,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.47213224025908856
+              }
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 590,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": 65,
+                "trigger": {
+                  "x": 570,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 810,
+                  "y": 160
+                },
+                {
+                  "x": 810,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 130.36548341158777,
+                "r": 18
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "laser",
+              "x": 330
+            },
+            {
+              "kind": "ambush",
+              "x": 480
+            },
+            {
+              "kind": "wind",
+              "x": 630
+            },
+            {
+              "kind": "saw",
+              "x": 780
+            }
+          ],
+          "route": 0,
+          "target": {
+            "name": "EXTREME",
+            "time": 56,
+            "concentration": 3.6,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "EXTREME",
+        "seed": 11366213,
+        "startId": 74
+      },
+      "fingerprint": "7ec4a7d5d89a8e8bac8f554b562f7f77cea1ea85b17737e39d702cfc2284998c",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "7ec4a7d5d89a8e8bac8f554b562f7f77cea1ea85b17737e39d702cfc2284998c",
+          "seed": 11366213,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1974,
+          "seconds": 16.45,
+          "end": [
+            101.98611111109066,
+            428.98263888888886,
+            "win"
+          ]
+        },
+        "expanded": 38701
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 32,
+        "turns": 7,
+        "timed": 2,
+        "switches": 0,
+        "hidden": 4,
+        "nearest": {
+          "id": 71,
+          "score": 0.64,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "EXTREME",
+        "estimatedSeconds": 56,
+        "solverSeconds": 16.5,
+        "discoverySeconds": 23,
+        "localConcentration": 2,
+        "windowWidth": 200,
+        "score": 61.33333333333333,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052029,
+          "status": "UNVERIFIED",
+          "actual": "UNASSESSED",
+          "reason": null
+        },
+        {
+          "seed": 11156755,
+          "status": "NEEDS HUMAN REVIEW",
+          "actual": "EXTREME",
+          "reason": null
+        },
+        {
+          "seed": 11366213,
+          "status": "VERIFIED",
+          "actual": "EXTREME",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 75,
+        "season": 2,
+        "name": "BROKEN RELAY",
+        "seed": 11052030,
+        "targetDifficulty": "EXTREME",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 700,
+            "y": 420,
+            "w": 95,
+            "h": 16
+          },
+          {
+            "x": 830,
+            "y": 360,
+            "w": 130,
+            "h": 16
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              63,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.6972258468857035
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "args": [
+              300,
+              470,
+              "s1"
+            ]
+          },
+          {
+            "type": "Gate",
+            "args": [
+              {
+                "x": 395,
+                "y": 300,
+                "w": 24,
+                "h": 180
+              },
+              "s1"
+            ]
+          },
+          {
+            "type": "PopSpikes",
+            "args": [
+              530,
+              480,
+              57,
+              {
+                "x": 450,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.6434070984367282
+              }
+            ]
+          },
+          {
+            "type": "Pendulum",
+            "args": [
+              660,
+              40,
+              {
+                "len": 380,
+                "amp": 0.7151092822663486,
+                "speed": 1.3,
+                "r": 16
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 810,
+                  "y": 160
+                },
+                {
+                  "x": 810,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 120.21728799911216,
+                "r": 18
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "switch",
+              "x": 330
+            },
+            {
+              "kind": "ambush",
+              "x": 480
+            },
+            {
+              "kind": "pendulum",
+              "x": 630
+            },
+            {
+              "kind": "saw",
+              "x": 780
+            }
+          ],
+          "route": 1,
+          "target": {
+            "name": "EXTREME",
+            "time": 56,
+            "concentration": 3.6,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "EXTREME",
+        "seed": 11052026,
+        "startId": 75
+      },
+      "fingerprint": "40c067b15f176766da8a730b5e9077f803377781d42690e3ec3a7fa71f444aaa",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "40c067b15f176766da8a730b5e9077f803377781d42690e3ec3a7fa71f444aaa",
+          "seed": 11052030,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1942,
+          "seconds": 16.183333333333334,
+          "end": [
+            99.87499999999993,
+            441.05902777777777,
+            "win"
+          ]
+        },
+        "expanded": 37697
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 40,
+        "turns": 7,
+        "timed": 2,
+        "switches": 1,
+        "hidden": 3,
+        "nearest": {
+          "id": 72,
+          "score": 0.7000000000000001,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "EXTREME",
+        "estimatedSeconds": 53.4,
+        "solverSeconds": 16.2,
+        "discoverySeconds": 21,
+        "localConcentration": 3,
+        "windowWidth": 200,
+        "score": 65.77142857142857,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052030,
+          "status": "VERIFIED",
+          "actual": "EXTREME",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 76,
+        "season": 2,
+        "name": "IRON THRESHOLD",
+        "seed": 11052031,
+        "targetDifficulty": "VERY HARD",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              61,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.5147863724967465
+              }
+            ]
+          },
+          {
+            "type": "Conveyor",
+            "args": [
+              {
+                "x": 290,
+                "y": 480,
+                "w": 130,
+                "h": 60
+              },
+              {
+                "dir": 1,
+                "force": 90
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 510,
+                  "y": 160
+                },
+                {
+                  "x": 510,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 138.53304437361658,
+                "r": 18
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "args": [
+              600,
+              470,
+              "s3"
+            ]
+          },
+          {
+            "type": "Gate",
+            "args": [
+              {
+                "x": 695,
+                "y": 300,
+                "w": 24,
+                "h": 180
+              },
+              "s3"
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 740,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": -65,
+                "trigger": {
+                  "x": 720,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "belt",
+              "x": 330
+            },
+            {
+              "kind": "saw",
+              "x": 480
+            },
+            {
+              "kind": "switch",
+              "x": 630
+            },
+            {
+              "kind": "wind",
+              "x": 780
+            }
+          ],
+          "route": 2,
+          "target": {
+            "name": "VERY HARD",
+            "time": 44,
+            "concentration": 2.95,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "VERY HARD",
+        "seed": 11052026,
+        "startId": 76
+      },
+      "fingerprint": "845fc9c9fd91cbcbd478613c15d36339fb651a8c776834b2b22ddca42356c566",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "845fc9c9fd91cbcbd478613c15d36339fb651a8c776834b2b22ddca42356c566",
+          "seed": 11052031,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1293,
+          "seconds": 10.775,
+          "end": [
+            100.11111111112221,
+            437.81597222222223,
+            "win"
+          ]
+        },
+        "expanded": 24947
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 21,
+        "turns": 3,
+        "timed": 1,
+        "switches": 1,
+        "hidden": 3,
+        "nearest": {
+          "id": 56,
+          "score": 0.6642857142857143,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "VERY HARD",
+        "estimatedSeconds": 36.6,
+        "solverSeconds": 10.8,
+        "discoverySeconds": 15,
+        "localConcentration": 3,
+        "windowWidth": 200,
+        "score": 51.371428571428574,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052031,
+          "status": "VERIFIED",
+          "actual": "VERY HARD",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 77,
+        "season": 2,
+        "name": "SCARLET PASSAGE",
+        "seed": 11052032,
+        "targetDifficulty": "VERY HARD",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              61,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.5786772785475478
+              }
+            ]
+          },
+          {
+            "type": "Laser",
+            "args": [
+              {
+                "x": 360,
+                "y": 100,
+                "len": 380,
+                "vertical": true,
+                "period": 2.9187926878686996,
+                "warn": 0.6,
+                "fire": 0.4
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 510,
+                  "y": 160
+                },
+                {
+                  "x": 510,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 121.46178054623306,
+                "r": 18
+              }
+            ]
+          },
+          {
+            "type": "Pendulum",
+            "args": [
+              660,
+              40,
+              {
+                "len": 380,
+                "amp": 0.628812342742458,
+                "speed": 1.3,
+                "r": 16
+              }
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 740,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": -65,
+                "trigger": {
+                  "x": 720,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "laser",
+              "x": 330
+            },
+            {
+              "kind": "saw",
+              "x": 480
+            },
+            {
+              "kind": "pendulum",
+              "x": 630
+            },
+            {
+              "kind": "wind",
+              "x": 780
+            }
+          ],
+          "route": 0,
+          "target": {
+            "name": "VERY HARD",
+            "time": 44,
+            "concentration": 2.95,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "VERY HARD",
+        "seed": 11052026,
+        "startId": 77
+      },
+      "fingerprint": "a55f9e382800ee2151caf27e4ddb0625f0402d6c9cd21d4474eeb45998326961",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "a55f9e382800ee2151caf27e4ddb0625f0402d6c9cd21d4474eeb45998326961",
+          "seed": 11052032,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1316,
+          "seconds": 10.966666666666667,
+          "end": [
+            100.93055555556579,
+            434.72222222222223,
+            "win"
+          ]
+        },
+        "expanded": 25567
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 35,
+        "turns": 4,
+        "timed": 3,
+        "switches": 0,
+        "hidden": 3,
+        "nearest": {
+          "id": 67,
+          "score": 0.665,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "VERY HARD",
+        "estimatedSeconds": 37,
+        "solverSeconds": 11,
+        "discoverySeconds": 15,
+        "localConcentration": 2,
+        "windowWidth": 200,
+        "score": 45.04761904761905,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052032,
+          "status": "VERIFIED",
+          "actual": "VERY HARD",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 78,
+        "season": 2,
+        "name": "IRON RECKONING",
+        "seed": 11052033,
+        "targetDifficulty": "VERY HARD",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 700,
+            "y": 420,
+            "w": 95,
+            "h": 16
+          },
+          {
+            "x": 830,
+            "y": 360,
+            "w": 130,
+            "h": 16
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              64,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.363748731976375
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 360,
+                  "y": 160
+                },
+                {
+                  "x": 360,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 134.12676436360925,
+                "r": 18
+              }
+            ]
+          },
+          {
+            "type": "Laser",
+            "args": [
+              {
+                "x": 510,
+                "y": 100,
+                "len": 380,
+                "vertical": true,
+                "period": 3.1024214677046986,
+                "warn": 0.6,
+                "fire": 0.4
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "args": [
+              600,
+              470,
+              "s3"
+            ]
+          },
+          {
+            "type": "Gate",
+            "args": [
+              {
+                "x": 695,
+                "y": 300,
+                "w": 24,
+                "h": 180
+              },
+              "s3"
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 740,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": -65,
+                "trigger": {
+                  "x": 720,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "saw",
+              "x": 330
+            },
+            {
+              "kind": "laser",
+              "x": 480
+            },
+            {
+              "kind": "switch",
+              "x": 630
+            },
+            {
+              "kind": "wind",
+              "x": 780
+            }
+          ],
+          "route": 1,
+          "target": {
+            "name": "VERY HARD",
+            "time": 44,
+            "concentration": 2.95,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "VERY HARD",
+        "seed": 11052026,
+        "startId": 78
+      },
+      "fingerprint": "56da24ca3a231cbc0237c2085a777681b65c97d5f5ed69b6724f9600f2957f2b",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "56da24ca3a231cbc0237c2085a777681b65c97d5f5ed69b6724f9600f2957f2b",
+          "seed": 11052033,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1316,
+          "seconds": 10.966666666666667,
+          "end": [
+            100.87500000001025,
+            434.72222222222223,
+            "win"
+          ]
+        },
+        "expanded": 25615
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 31,
+        "turns": 4,
+        "timed": 2,
+        "switches": 1,
+        "hidden": 3,
+        "nearest": {
+          "id": 72,
+          "score": 0.6642857142857143,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "VERY HARD",
+        "estimatedSeconds": 37,
+        "solverSeconds": 11,
+        "discoverySeconds": 15,
+        "localConcentration": 3,
+        "windowWidth": 200,
+        "score": 51.714285714285715,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052033,
+          "status": "VERIFIED",
+          "actual": "VERY HARD",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 79,
+        "season": 2,
+        "name": "EMBER ECHO",
+        "seed": 11366213,
+        "targetDifficulty": "VERY HARD",
+        "batchDifficulty": "VERY HARD",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              62,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.596656899037771
+              }
+            ]
+          },
+          {
+            "type": "Laser",
+            "args": [
+              {
+                "x": 360,
+                "y": 100,
+                "len": 380,
+                "vertical": true,
+                "period": 2.7995264879893513,
+                "warn": 0.6,
+                "fire": 0.4
+              }
+            ]
+          },
+          {
+            "type": "PopSpikes",
+            "args": [
+              530,
+              480,
+              46,
+              {
+                "x": 450,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.47213224025908856
+              }
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 590,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": 65,
+                "trigger": {
+                  "x": 570,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 810,
+                  "y": 160
+                },
+                {
+                  "x": 810,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 130.36548341158777,
+                "r": 18
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "laser",
+              "x": 330
+            },
+            {
+              "kind": "ambush",
+              "x": 480
+            },
+            {
+              "kind": "wind",
+              "x": 630
+            },
+            {
+              "kind": "saw",
+              "x": 780
+            }
+          ],
+          "route": 0,
+          "target": {
+            "name": "VERY HARD",
+            "time": 44,
+            "concentration": 2.95,
+            "sections": 5
+          }
+        }
+      },
+      "status": "NEEDS HUMAN REVIEW",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "VERY HARD",
+        "seed": 11366213,
+        "startId": 79
+      },
+      "fingerprint": "a04187ec09daed95e2884390cd632eef698f0732df41aee76631a761e634e860",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "a04187ec09daed95e2884390cd632eef698f0732df41aee76631a761e634e860",
+          "seed": 11366213,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1337,
+          "seconds": 11.141666666666667,
+          "end": [
+            101.09722222220881,
+            426.33680555555554,
+            "win"
+          ]
+        },
+        "expanded": 25981
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 22,
+        "turns": 5,
+        "timed": 2,
+        "switches": 0,
+        "hidden": 4,
+        "nearest": {
+          "id": 74,
+          "score": 1,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": false,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "VERY HARD",
+        "estimatedSeconds": 39.4,
+        "solverSeconds": 11.2,
+        "discoverySeconds": 17,
+        "localConcentration": 2,
+        "windowWidth": 200,
+        "score": 47.1047619047619,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": false,
+      "accepted": false,
+      "failure": {
+        "id": 79,
+        "seed": 11366213,
+        "fingerprint": "a04187ec09daed95e2884390cd632eef698f0732df41aee76631a761e634e860",
+        "stage": "REPLAY/QUALITY",
+        "category": "DUPLICATE_LAYOUT",
+        "reason": "Similarity threshold exceeded",
+        "repairs": [],
+        "geometry": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              62,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.596656899037771
+              }
+            ]
+          },
+          {
+            "type": "Laser",
+            "args": [
+              {
+                "x": 360,
+                "y": 100,
+                "len": 380,
+                "vertical": true,
+                "period": 2.7995264879893513,
+                "warn": 0.6,
+                "fire": 0.4
+              }
+            ]
+          },
+          {
+            "type": "PopSpikes",
+            "args": [
+              530,
+              480,
+              46,
+              {
+                "x": 450,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.47213224025908856
+              }
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 590,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": 65,
+                "trigger": {
+                  "x": 570,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 810,
+                  "y": 160
+                },
+                {
+                  "x": 810,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 130.36548341158777,
+                "r": 18
+              }
+            ]
+          }
+        ],
+        "nextAction": "Inspect preview; retry bounded search or regenerate. No impossibility claim."
+      },
+      "attempts": [
+        {
+          "seed": 11052034,
+          "status": "UNVERIFIED",
+          "actual": "UNASSESSED",
+          "reason": null
+        },
+        {
+          "seed": 11156755,
+          "status": "NEEDS HUMAN REVIEW",
+          "actual": "VERY HARD",
+          "reason": null
+        },
+        {
+          "seed": 11366213,
+          "status": "NEEDS HUMAN REVIEW",
+          "actual": "VERY HARD",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    },
+    {
+      "data": {
+        "schemaVersion": 1,
+        "id": 80,
+        "season": 2,
+        "name": "CRIMSON PROMISE",
+        "seed": 11052035,
+        "targetDifficulty": "VERY HARD",
+        "batchDifficulty": "EXTREME",
+        "theme": "minimal",
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "exit": {
+          "positions": [
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            },
+            {
+              "x": 884,
+              "y": 416
+            },
+            {
+              "x": 70,
+              "y": 416
+            }
+          ],
+          "options": {
+            "fleeDist": 85
+          }
+        },
+        "platforms": [
+          {
+            "x": 0,
+            "y": 480,
+            "w": 960,
+            "h": 60
+          },
+          {
+            "x": -40,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          },
+          {
+            "x": 960,
+            "y": -200,
+            "w": 40,
+            "h": 940
+          }
+        ],
+        "traps": [
+          {
+            "type": "PopSpikes",
+            "args": [
+              230,
+              480,
+              63,
+              {
+                "x": 150,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.7561099112033844
+              }
+            ]
+          },
+          {
+            "type": "WindZone",
+            "args": [
+              {
+                "x": 260,
+                "y": 320,
+                "w": 130,
+                "h": 160
+              },
+              {
+                "force": 65,
+                "trigger": {
+                  "x": 240,
+                  "y": 320,
+                  "w": 25,
+                  "h": 160
+                }
+              }
+            ]
+          },
+          {
+            "type": "Pendulum",
+            "args": [
+              450,
+              40,
+              {
+                "len": 380,
+                "amp": 0.6283401152584701,
+                "speed": 1.3,
+                "r": 16
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "args": [
+              510,
+              470,
+              "s3"
+            ]
+          },
+          {
+            "type": "Gate",
+            "args": [
+              {
+                "x": 605,
+                "y": 300,
+                "w": 24,
+                "h": 180
+              },
+              "s3"
+            ]
+          },
+          {
+            "type": "PopSpikes",
+            "args": [
+              710,
+              480,
+              58,
+              {
+                "x": 630,
+                "y": 320,
+                "w": 28,
+                "h": 160
+              },
+              {
+                "delay": 0.5834383455337957
+              }
+            ]
+          },
+          {
+            "type": "Saw",
+            "args": [
+              [
+                {
+                  "x": 810,
+                  "y": 160
+                },
+                {
+                  "x": 810,
+                  "y": 430
+                }
+              ],
+              {
+                "speed": 123.12706433003768,
+                "r": 18
+              }
+            ]
+          }
+        ],
+        "checkpoints": [],
+        "composition": {
+          "version": 2,
+          "sections": [
+            {
+              "kind": "ambush",
+              "x": 180
+            },
+            {
+              "kind": "wind",
+              "x": 300
+            },
+            {
+              "kind": "pendulum",
+              "x": 420
+            },
+            {
+              "kind": "switch",
+              "x": 540
+            },
+            {
+              "kind": "ambush",
+              "x": 660
+            },
+            {
+              "kind": "saw",
+              "x": 780
+            }
+          ],
+          "route": 0,
+          "target": {
+            "name": "VERY HARD",
+            "time": 44,
+            "concentration": 2.95,
+            "sections": 5
+          }
+        }
+      },
+      "status": "VERIFIED",
+      "reason": null,
+      "approved": false,
+      "generationOptions": {
+        "count": 1,
+        "difficulty": "VERY HARD",
+        "seed": 11052026,
+        "startId": 80
+      },
+      "fingerprint": "5310de2c33747fcf04871ec870e14c28d4328f4953835cfc65591f6b6a2c6e14",
+      "validation": {
+        "status": "PASSED",
+        "errors": [],
+        "warning": "Static validation is not a completion proof."
+      },
+      "solution": {
+        "status": "VERIFIED",
+        "trace": {
+          "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+          "hash": "5310de2c33747fcf04871ec870e14c28d4328f4953835cfc65591f6b6a2c6e14",
+          "seed": 11052035,
+          "initial": {
+            "spawn": {
+              "x": 55,
+              "y": 440
+            },
+            "trapState": "fresh constructor reset",
+            "deaths": 0
+          },
+          "step": 0.008333333333333333,
+          "duration": 12,
+          "actions": [
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              true
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              1,
+              false
+            ],
+            [
+              0,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              true
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              -1,
+              false
+            ],
+            [
+              1,
+              false
+            ]
+          ]
+        },
+        "replay": {
+          "status": "VERIFIED",
+          "surprise": true,
+          "ticks": 1344,
+          "seconds": 11.2,
+          "end": [
+            101.7777777777839,
+            447.99305555555554,
+            "win"
+          ]
+        },
+        "expanded": 25963
+      },
+      "quality": {
+        "estimate": true,
+        "score": 100,
+        "tier": "ULTIMATE",
+        "jumps": 31,
+        "turns": 7,
+        "timed": 2,
+        "switches": 1,
+        "hidden": 4,
+        "nearest": {
+          "id": 64,
+          "score": 0.6450000000000001,
+          "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+        },
+        "unique": true,
+        "warnings": [
+          "Estimated difficulty; human review of precision and fun required.",
+          "Similarity is a structural heuristic, not proof of originality."
+        ]
+      },
+      "difficulty": {
+        "tier": "VERY HARD",
+        "estimatedSeconds": 39.4,
+        "solverSeconds": 11.2,
+        "discoverySeconds": 17,
+        "localConcentration": 3,
+        "windowWidth": 200,
+        "score": 53.77142857142857,
+        "humanSeconds": null,
+        "estimate": true
+      },
+      "gameplayVerified": true,
+      "accepted": true,
+      "failure": null,
+      "attempts": [
+        {
+          "seed": 11052035,
+          "status": "VERIFIED",
+          "actual": "VERY HARD",
+          "reason": null
+        }
+      ],
+      "generationRun": "critical-extreme"
+    }
+  ]
+}

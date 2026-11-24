@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Season 2 — Handcrafted Playtest Lab</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#11141b;color:#eee8df;font:15px system-ui;min-height:100dvh}
+header{padding:16px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0;color:#ff684d}
+a{color:#ffca82}button{padding:10px 14px;border:1px solid #485163;border-radius:6px;background:#252c38;color:white;font:inherit;cursor:pointer}button:hover{border-color:#ff684d}button:disabled{opacity:.5}
+p{margin:0;padding:0 20px 12px;color:#b5b8c1}#levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;padding:8px 20px 20px}.level{text-align:left;padding:18px}.level strong,.level small{display:block}.level small{color:#b5b8c1;margin-top:8px}
+#status{color:#ffca82}body.playing{height:100dvh;display:flex;flex-direction:column}iframe{display:block;border:0;width:100%;flex:1;min-height:0}#game{visibility:hidden}[hidden]{display:none!important}
+</style></head><body>
+<header><h1>SEASON 2 — HANDCRAFTED PLAYTEST LAB</h1><a href="/game">Play campaign</a><a href="/">Forge dashboard</a>
+<span id="status" role="status">Loading drafts…</span><button id="restart" hidden disabled>Restart level</button><button id="return" hidden>Return to laboratory</button></header>
+<p id="identity">Playtest with isolated saves. Levels 51–100 are approved and available in the campaign.</p>
+<p id="controls" hidden>Move: ← → or A / D · Jump: Space, ↑ or W · Restart: R · Return: Esc. Click the game if keyboard focus is lost.</p>
+<div id="levels"></div><iframe id="game" title="Season 2 developer gameplay" hidden></iframe>
+<script>
+(async()=>{
+ const frame=document.getElementById('game'),status=document.getElementById('status'),restart=document.getElementById('restart');
+ const back=()=>location.href='/season2-lab';document.getElementById('return').onclick=back;
+ restart.onclick=()=>{frame.contentWindow.restartComposite();frame.contentWindow.focus();};
+ addEventListener('message',e=>{
+  if(e.origin!==location.origin||e.source!==frame.contentWindow||e.data?.type!=='composite-playtest')return;
+  if(e.data.action==='return'){back();return;}
+  status.textContent=e.data.message;restart.disabled=e.data.action==='error';
+  if(e.data.action==='ready'){frame.style.visibility='visible';frame.contentWindow.focus();}
+ });
+ try{
+  const response=await fetch('/api/season2');if(!response.ok)throw Error('Could not load handcrafted drafts');
+  const levels=await response.json(),id=Number(new URLSearchParams(location.search).get('level'));
+  if(id){
+   const d=levels.find(d=>d.id===id);if(!d)throw Error('Unknown draft. Use the laboratory to choose Levels 51–100.');
+   document.body.classList.add('playing');document.getElementById('levels').hidden=true;
+   document.getElementById('identity').textContent='LEVEL '+id+' — '+d.name+(d.productionReady?' · Approved campaign level':' · Developer draft · Manual review pending');
+   for(const name of ['restart','return','controls','game'])document.getElementById(name).hidden=false;
+   status.textContent='Loading gameplay…';frame.src='/preview?season2='+id;
+  }else{
+   status.textContent='Season 2 playtests';
+   for(const d of levels){const b=document.createElement('button');b.className='level';b.setAttribute('aria-label','PLAY '+d.id);
+    const title=document.createElement('strong');title.textContent='PLAY '+d.id+' — '+d.name;
+    const detail=document.createElement('small');detail.textContent=d.targetDifficulty+' design intent · '+(d.verified?'Replay verified':'Verification pending')+(d.productionReady?' · In campaign':' · Manual review pending');
+    b.append(title,detail);b.onclick=()=>location.href='/season2-lab?level='+d.id;document.getElementById('levels').appendChild(b);
+   }
+  }
+ }catch(e){status.textContent=e.message;document.getElementById('return').hidden=false;}
+})();
+</script></body></html>

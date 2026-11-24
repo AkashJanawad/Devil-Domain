@@ -1,0 +1,665 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 88,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 88,
+    "name": "THE EMPTY BALCONY",
+    "targetDifficulty": "HARD",
+    "intent": "Approach the balcony door from below, follow it across a lift transfer, jump the balcony parapet and descend onto its new landing.",
+    "surprise": "The balcony door flees and its escape ledge crumbles behind you.",
+    "spawn": {
+      "x": 865,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 600,
+          "y": 246
+        },
+        {
+          "x": 69,
+          "y": 366
+        }
+      ],
+      "options": {
+        "fleeDist": 62
+      }
+    },
+    "platforms": [
+      {
+        "x": 740,
+        "y": 500,
+        "w": 220,
+        "h": 40
+      },
+      {
+        "x": 554,
+        "y": 310,
+        "w": 163,
+        "h": 16
+      },
+      {
+        "x": 280,
+        "y": 270,
+        "w": 115,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 430,
+        "w": 192,
+        "h": 16
+      },
+      {
+        "x": 130,
+        "y": 300,
+        "w": 25,
+        "h": 130
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Spring",
+        "args": [
+          783,
+          500,
+          {
+            "w": 60,
+            "power": -1010
+          }
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 417,
+            "y": 350,
+            "w": 105,
+            "h": 16
+          },
+          {
+            "toY": 267,
+            "speed": 85,
+            "phase": 0.5
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 185,
+            "y": 345,
+            "w": 94,
+            "h": 16
+          },
+          {
+            "delay": 0.7
+          }
+        ]
+      },
+      {
+        "type": "Saw",
+        "args": [
+          [
+            {
+              "x": 228,
+              "y": 397
+            },
+            {
+              "x": 285,
+              "y": 440
+            }
+          ],
+          {
+            "speed": 80,
+            "r": 14
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          192,
+          540,
+          548,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "boost",
+        "lift",
+        "ledge",
+        "blade",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Balcony boost",
+          "target": {
+            "x": 799,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "boost",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Empty balcony",
+          "target": {
+            "x": 635.5,
+            "y": 278
+          },
+          "reach": {
+            "x": 554,
+            "y": 272,
+            "w": 163,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Ride lift",
+          "target": {
+            "trap": "lift",
+            "dx": 38,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "lift",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Transfer landing",
+          "target": {
+            "x": 337.5,
+            "y": 238
+          },
+          "reach": {
+            "x": 280,
+            "y": 232,
+            "w": 115,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Escape ledge",
+          "target": {
+            "x": 232,
+            "y": 313
+          },
+          "reach": {
+            "x": 185,
+            "y": 307,
+            "w": 94,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "ledge",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Final balcony",
+          "target": {
+            "x": 96,
+            "y": 398
+          },
+          "reach": {
+            "x": 0,
+            "y": 392,
+            "w": 192,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        }
+      ],
+      "required": [
+        {
+          "trap": "boost",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lift",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "ledge",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "a16dd177c44ebbb5be55af3b57db369e423f38fb17568b4f403135697a9d5db8",
+      "seed": 88,
+      "initial": {
+        "spawn": {
+          "x": 865,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 402,
+      "seconds": 3.35,
+      "end": [
+        100.54166666666666,
+        398,
+        "win"
+      ]
+    },
+    "expanded": 18845,
+    "rejectedWins": 144,
+    "removedJumpPressTicks": [
+      108,
+      192
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "a16dd177c44ebbb5be55af3b57db369e423f38fb17568b4f403135697a9d5db8",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 402,
+      "seconds": 3.35,
+      "end": [
+        100.54166666666666,
+        398,
+        "win"
+      ]
+    },
+    "ticks": 402,
+    "successfulReplaySeconds": 3.35,
+    "seconds": {
+      "activeTraversal": 3.35,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1286.7812202949701,
+      "carriedPixels": 51.689926372155696,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 2,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "boost",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 19
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 97
+      },
+      {
+        "trap": "lift",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 167
+      },
+      {
+        "trap": "ledge",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 308
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 19,
+        "id": "boost",
+        "event": "activate"
+      },
+      {
+        "tick": 19,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Balcony boost"
+      },
+      {
+        "tick": 97,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 98,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 98,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Empty balcony"
+      },
+      {
+        "tick": 167,
+        "id": "lift",
+        "event": "ride"
+      },
+      {
+        "tick": 178,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Ride lift"
+      },
+      {
+        "tick": 219,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Transfer landing"
+      },
+      {
+        "tick": 223,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 308,
+        "id": "ledge",
+        "event": "trigger"
+      },
+      {
+        "tick": 308,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Escape ledge"
+      },
+      {
+        "tick": 397,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 397,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Final balcony"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "boost:activate": 1,
+      "stage:0:complete": 1,
+      "exit:relocate": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "lift:ride": 54,
+      "stage:2:complete": 1,
+      "stage:3:complete": 1,
+      "platform:2:land": 1,
+      "ledge:trigger": 1,
+      "stage:4:complete": 1,
+      "platform:3:land": 1,
+      "stage:5:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 30,
+      "score": 0.3214285714285714,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 72,
+      "score": 0.3067307692307692,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 40,
+      "score": 0.29393939393939394,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 14.215
+}

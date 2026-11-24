@@ -1,0 +1,4091 @@
+[
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 61,
+      "season": 2,
+      "name": "BROKEN RETURN",
+      "seed": 41050,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 416
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            46,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.6340634289197624
+            }
+          ]
+        },
+        {
+          "type": "FallBlock",
+          "args": [
+            {
+              "x": 360,
+              "y": 40,
+              "w": 60,
+              "h": 50
+            },
+            {
+              "x": 290,
+              "y": 300,
+              "w": 25,
+              "h": 180
+            },
+            {
+              "shakeTime": 0.7119793685385958
+            }
+          ]
+        },
+        {
+          "type": "Button",
+          "args": [
+            450,
+            470,
+            "s2"
+          ]
+        },
+        {
+          "type": "Gate",
+          "args": [
+            {
+              "x": 545,
+              "y": 300,
+              "w": 24,
+              "h": 180
+            },
+            "s2"
+          ]
+        },
+        {
+          "type": "Conveyor",
+          "args": [
+            {
+              "x": 590,
+              "y": 480,
+              "w": 130,
+              "h": 60
+            },
+            {
+              "dir": 1,
+              "force": 90
+            }
+          ]
+        },
+        {
+          "type": "WindZone",
+          "args": [
+            {
+              "x": 740,
+              "y": 320,
+              "w": 130,
+              "h": 160
+            },
+            {
+              "force": 65,
+              "trigger": {
+                "x": 720,
+                "y": 320,
+                "w": 25,
+                "h": 160
+              }
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "fall",
+            "x": 330
+          },
+          {
+            "kind": "switch",
+            "x": 480
+          },
+          {
+            "kind": "belt",
+            "x": 630
+          },
+          {
+            "kind": "wind",
+            "x": 780
+          }
+        ],
+        "route": 0,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "6a96d63d7804b24c1e79b35c5926d8ee2d914614ac74a050d76b7e7717f33251",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "6a96d63d7804b24c1e79b35c5926d8ee2d914614ac74a050d76b7e7717f33251",
+        "seed": 41050,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 348,
+        "seconds": 2.9,
+        "end": [
+          864.7083333333346,
+          428.5833333333333,
+          "win"
+        ]
+      },
+      "expanded": 10723
+    },
+    "quality": {
+      "estimate": true,
+      "score": 42,
+      "tier": "MEDIUM",
+      "jumps": 3,
+      "turns": 0,
+      "timed": 0,
+      "switches": 1,
+      "hidden": 3,
+      "nearest": {
+        "id": 49,
+        "score": 0.6276785714285714,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "MEDIUM",
+      "estimatedSeconds": 11.8,
+      "solverSeconds": 2.9,
+      "discoverySeconds": 6,
+      "localConcentration": 3,
+      "windowWidth": 200,
+      "score": 30.114285714285714,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 62,
+      "season": 2,
+      "name": "IRON PASSAGE",
+      "seed": 41051,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 296
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 700,
+          "y": 420,
+          "w": 95,
+          "h": 16
+        },
+        {
+          "x": 830,
+          "y": 360,
+          "w": 130,
+          "h": 16
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            50,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.6440735490294174
+            }
+          ]
+        },
+        {
+          "type": "Button",
+          "args": [
+            270,
+            470,
+            "s1"
+          ]
+        },
+        {
+          "type": "Gate",
+          "args": [
+            {
+              "x": 365,
+              "y": 300,
+              "w": 24,
+              "h": 180
+            },
+            "s1"
+          ]
+        },
+        {
+          "type": "Saw",
+          "args": [
+            [
+              {
+                "x": 450,
+                "y": 160
+              },
+              {
+                "x": 450,
+                "y": 430
+              }
+            ],
+            {
+              "speed": 123.5696132411249,
+              "r": 18
+            }
+          ]
+        },
+        {
+          "type": "FakeDoor",
+          "args": [
+            560,
+            416
+          ]
+        },
+        {
+          "type": "Pendulum",
+          "args": [
+            690,
+            40,
+            {
+              "len": 380,
+              "amp": 0.6096548485569656,
+              "speed": 1.3,
+              "r": 16
+            }
+          ]
+        },
+        {
+          "type": "Conveyor",
+          "args": [
+            {
+              "x": 740,
+              "y": 480,
+              "w": 130,
+              "h": 60
+            },
+            {
+              "dir": -1,
+              "force": 90
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "switch",
+            "x": 300
+          },
+          {
+            "kind": "saw",
+            "x": 420
+          },
+          {
+            "kind": "false",
+            "x": 540
+          },
+          {
+            "kind": "pendulum",
+            "x": 660
+          },
+          {
+            "kind": "belt",
+            "x": 780
+          }
+        ],
+        "route": 1,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "aaef2cac7ba3731b597e35bcaca926aa2f311236527a468eea3cd2a473ce2e2f",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "aaef2cac7ba3731b597e35bcaca926aa2f311236527a468eea3cd2a473ce2e2f",
+        "seed": 41051,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            0,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 383,
+        "seconds": 3.191666666666667,
+        "end": [
+          865.5000000000047,
+          284.24305555555554,
+          "win"
+        ]
+      },
+      "expanded": 11551
+    },
+    "quality": {
+      "estimate": true,
+      "score": 67,
+      "tier": "EXPERT",
+      "jumps": 7,
+      "turns": 1,
+      "timed": 2,
+      "switches": 1,
+      "hidden": 2,
+      "nearest": {
+        "id": 68,
+        "score": 0.58,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "MEDIUM",
+      "estimatedSeconds": 10.4,
+      "solverSeconds": 3.2,
+      "discoverySeconds": 4,
+      "localConcentration": 3,
+      "windowWidth": 200,
+      "score": 28.914285714285715,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 63,
+      "season": 2,
+      "name": "SCARLET RETURN",
+      "seed": 41052,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 416
+          },
+          {
+            "x": 70,
+            "y": 416
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            54,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.3965288107981905
+            }
+          ]
+        },
+        {
+          "type": "FakeDoor",
+          "args": [
+            320,
+            416
+          ]
+        },
+        {
+          "type": "FallBlock",
+          "args": [
+            {
+              "x": 450,
+              "y": 40,
+              "w": 60,
+              "h": 50
+            },
+            {
+              "x": 380,
+              "y": 300,
+              "w": 25,
+              "h": 180
+            },
+            {
+              "shakeTime": 0.3503204131964594
+            }
+          ]
+        },
+        {
+          "type": "WindZone",
+          "args": [
+            {
+              "x": 500,
+              "y": 320,
+              "w": 130,
+              "h": 160
+            },
+            {
+              "force": 65,
+              "trigger": {
+                "x": 480,
+                "y": 320,
+                "w": 25,
+                "h": 160
+              }
+            }
+          ]
+        },
+        {
+          "type": "Conveyor",
+          "args": [
+            {
+              "x": 620,
+              "y": 480,
+              "w": 130,
+              "h": 60
+            },
+            {
+              "dir": 1,
+              "force": 90
+            }
+          ]
+        },
+        {
+          "type": "Pendulum",
+          "args": [
+            810,
+            40,
+            {
+              "len": 380,
+              "amp": 0.7433974937070161,
+              "speed": 1.3,
+              "r": 16
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "false",
+            "x": 300
+          },
+          {
+            "kind": "fall",
+            "x": 420
+          },
+          {
+            "kind": "wind",
+            "x": 540
+          },
+          {
+            "kind": "belt",
+            "x": 660
+          },
+          {
+            "kind": "pendulum",
+            "x": 780
+          }
+        ],
+        "route": 2,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "ccad376ddd45293a08953cb7be79fc599e7f869b48ed37bec4f3a18872c74235",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "ccad376ddd45293a08953cb7be79fc599e7f869b48ed37bec4f3a18872c74235",
+        "seed": 41052,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            0,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            0,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            0,
+            false
+          ],
+          [
+            0,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 751,
+        "seconds": 6.258333333333334,
+        "end": [
+          101.40277777777314,
+          431.77777777777777,
+          "win"
+        ]
+      },
+      "expanded": 24499
+    },
+    "quality": {
+      "estimate": true,
+      "score": 88,
+      "tier": "EXTREME",
+      "jumps": 11,
+      "turns": 6,
+      "timed": 1,
+      "switches": 0,
+      "hidden": 5,
+      "nearest": {
+        "id": 69,
+        "score": 0.70625,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "VERY HARD",
+      "estimatedSeconds": 25.6,
+      "solverSeconds": 6.3,
+      "discoverySeconds": 13,
+      "localConcentration": 3,
+      "windowWidth": 200,
+      "score": 41.942857142857136,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 64,
+      "season": 2,
+      "name": "OBSIDIAN ECHO",
+      "seed": 41053,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 416
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            58,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.520716547803022
+            }
+          ]
+        },
+        {
+          "type": "PopSpikes",
+          "args": [
+            380,
+            480,
+            58,
+            {
+              "x": 300,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.3687870292458683
+            }
+          ]
+        },
+        {
+          "type": "Saw",
+          "args": [
+            [
+              {
+                "x": 510,
+                "y": 160
+              },
+              {
+                "x": 510,
+                "y": 430
+              }
+            ],
+            {
+              "speed": 137.7984768571332,
+              "r": 18
+            }
+          ]
+        },
+        {
+          "type": "Pendulum",
+          "args": [
+            660,
+            40,
+            {
+              "len": 380,
+              "amp": 0.6346417117398232,
+              "speed": 1.3,
+              "r": 16
+            }
+          ]
+        },
+        {
+          "type": "Button",
+          "args": [
+            750,
+            470,
+            "s4"
+          ]
+        },
+        {
+          "type": "Gate",
+          "args": [
+            {
+              "x": 845,
+              "y": 300,
+              "w": 24,
+              "h": 180
+            },
+            "s4"
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "ambush",
+            "x": 330
+          },
+          {
+            "kind": "saw",
+            "x": 480
+          },
+          {
+            "kind": "pendulum",
+            "x": 630
+          },
+          {
+            "kind": "switch",
+            "x": 780
+          }
+        ],
+        "route": 0,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "6d0ae0d41342aa761dcf972d18b94096d703ec90acb20de9e868b130194af357",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "6d0ae0d41342aa761dcf972d18b94096d703ec90acb20de9e868b130194af357",
+        "seed": 41053,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 375,
+        "seconds": 3.125,
+        "end": [
+          865.8333333333377,
+          409.95138888888886,
+          "win"
+        ]
+      },
+      "expanded": 11983
+    },
+    "quality": {
+      "estimate": true,
+      "score": 67,
+      "tier": "EXPERT",
+      "jumps": 9,
+      "turns": 0,
+      "timed": 2,
+      "switches": 1,
+      "hidden": 2,
+      "nearest": {
+        "id": 20,
+        "score": 0.5833333333333333,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "MEDIUM",
+      "estimatedSeconds": 10.4,
+      "solverSeconds": 3.2,
+      "discoverySeconds": 4,
+      "localConcentration": 2,
+      "windowWidth": 200,
+      "score": 22.247619047619047,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 65,
+      "season": 2,
+      "name": "CINDER RETURN",
+      "seed": 41054,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 296
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 700,
+          "y": 420,
+          "w": 95,
+          "h": 16
+        },
+        {
+          "x": 830,
+          "y": 360,
+          "w": 130,
+          "h": 16
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            55,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.5258044468471781
+            }
+          ]
+        },
+        {
+          "type": "Saw",
+          "args": [
+            [
+              {
+                "x": 360,
+                "y": 160
+              },
+              {
+                "x": 360,
+                "y": 430
+              }
+            ],
+            {
+              "speed": 128.09872383950278,
+              "r": 18
+            }
+          ]
+        },
+        {
+          "type": "Conveyor",
+          "args": [
+            {
+              "x": 440,
+              "y": 480,
+              "w": 130,
+              "h": 60
+            },
+            {
+              "dir": 1,
+              "force": 90
+            }
+          ]
+        },
+        {
+          "type": "FallBlock",
+          "args": [
+            {
+              "x": 660,
+              "y": 40,
+              "w": 60,
+              "h": 50
+            },
+            {
+              "x": 590,
+              "y": 300,
+              "w": 25,
+              "h": 180
+            },
+            {
+              "shakeTime": 0.65017295088619
+            }
+          ]
+        },
+        {
+          "type": "WindZone",
+          "args": [
+            {
+              "x": 740,
+              "y": 320,
+              "w": 130,
+              "h": 160
+            },
+            {
+              "force": 65,
+              "trigger": {
+                "x": 720,
+                "y": 320,
+                "w": 25,
+                "h": 160
+              }
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "saw",
+            "x": 330
+          },
+          {
+            "kind": "belt",
+            "x": 480
+          },
+          {
+            "kind": "fall",
+            "x": 630
+          },
+          {
+            "kind": "wind",
+            "x": 780
+          }
+        ],
+        "route": 1,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "53369dc68e6fb60221eab066a0dcf1f3fb3ebab34b682ed83dfed8a420771853",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "53369dc68e6fb60221eab066a0dcf1f3fb3ebab34b682ed83dfed8a420771853",
+        "seed": 41054,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 356,
+        "seconds": 2.966666666666667,
+        "end": [
+          864.3750000000016,
+          299.3125,
+          "win"
+        ]
+      },
+      "expanded": 11143
+    },
+    "quality": {
+      "estimate": true,
+      "score": 46,
+      "tier": "HARD",
+      "jumps": 5,
+      "turns": 0,
+      "timed": 1,
+      "switches": 0,
+      "hidden": 3,
+      "nearest": {
+        "id": 68,
+        "score": 0.5285714285714286,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "MEDIUM",
+      "estimatedSeconds": 12,
+      "solverSeconds": 3,
+      "discoverySeconds": 6,
+      "localConcentration": 2,
+      "windowWidth": 200,
+      "score": 23.619047619047617,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 66,
+      "season": 2,
+      "name": "OBSIDIAN DETOUR",
+      "seed": 41055,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 416
+          },
+          {
+            "x": 70,
+            "y": 416
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            54,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.6605206465581432
+            }
+          ]
+        },
+        {
+          "type": "FallBlock",
+          "args": [
+            {
+              "x": 360,
+              "y": 40,
+              "w": 60,
+              "h": 50
+            },
+            {
+              "x": 290,
+              "y": 300,
+              "w": 25,
+              "h": 180
+            },
+            {
+              "shakeTime": 0.7389596974942834
+            }
+          ]
+        },
+        {
+          "type": "PopSpikes",
+          "args": [
+            530,
+            480,
+            63,
+            {
+              "x": 450,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.7990206458605826
+            }
+          ]
+        },
+        {
+          "type": "FakeDoor",
+          "args": [
+            650,
+            416
+          ]
+        },
+        {
+          "type": "WindZone",
+          "args": [
+            {
+              "x": 740,
+              "y": 320,
+              "w": 130,
+              "h": 160
+            },
+            {
+              "force": -65,
+              "trigger": {
+                "x": 720,
+                "y": 320,
+                "w": 25,
+                "h": 160
+              }
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "fall",
+            "x": 330
+          },
+          {
+            "kind": "ambush",
+            "x": 480
+          },
+          {
+            "kind": "false",
+            "x": 630
+          },
+          {
+            "kind": "wind",
+            "x": 780
+          }
+        ],
+        "route": 2,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "b55d5c17a01b1db321ece51f1344e99d2eec59c12df2a46a609f40849135bd47",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "b55d5c17a01b1db321ece51f1344e99d2eec59c12df2a46a609f40849135bd47",
+        "seed": 41055,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            0,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 713,
+        "seconds": 5.941666666666666,
+        "end": [
+          101.62500000000482,
+          426.33680555555554,
+          "win"
+        ]
+      },
+      "expanded": 23743
+    },
+    "quality": {
+      "estimate": true,
+      "score": 91,
+      "tier": "ULTIMATE",
+      "jumps": 14,
+      "turns": 6,
+      "timed": 0,
+      "switches": 0,
+      "hidden": 6,
+      "nearest": {
+        "id": 69,
+        "score": 0.6775,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "VERY HARD",
+      "estimatedSeconds": 27,
+      "solverSeconds": 6,
+      "discoverySeconds": 15,
+      "localConcentration": 2,
+      "windowWidth": 200,
+      "score": 36.47619047619048,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 67,
+      "season": 2,
+      "name": "SCARLET ECHO",
+      "seed": 41056,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 416
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            62,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.3371720509137958
+            }
+          ]
+        },
+        {
+          "type": "PopSpikes",
+          "args": [
+            350,
+            480,
+            52,
+            {
+              "x": 270,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.5436031716642902
+            }
+          ]
+        },
+        {
+          "type": "Saw",
+          "args": [
+            [
+              {
+                "x": 450,
+                "y": 160
+              },
+              {
+                "x": 450,
+                "y": 430
+              }
+            ],
+            {
+              "speed": 122.57995134452358,
+              "r": 18
+            }
+          ]
+        },
+        {
+          "type": "WindZone",
+          "args": [
+            {
+              "x": 500,
+              "y": 320,
+              "w": 130,
+              "h": 160
+            },
+            {
+              "force": 65,
+              "trigger": {
+                "x": 480,
+                "y": 320,
+                "w": 25,
+                "h": 160
+              }
+            }
+          ]
+        },
+        {
+          "type": "Pendulum",
+          "args": [
+            690,
+            40,
+            {
+              "len": 380,
+              "amp": 0.7796183571685106,
+              "speed": 1.3,
+              "r": 16
+            }
+          ]
+        },
+        {
+          "type": "Laser",
+          "args": [
+            {
+              "x": 810,
+              "y": 100,
+              "len": 380,
+              "vertical": true,
+              "period": 2.8179947177879514,
+              "warn": 0.6,
+              "fire": 0.4
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "ambush",
+            "x": 300
+          },
+          {
+            "kind": "saw",
+            "x": 420
+          },
+          {
+            "kind": "wind",
+            "x": 540
+          },
+          {
+            "kind": "pendulum",
+            "x": 660
+          },
+          {
+            "kind": "laser",
+            "x": 780
+          }
+        ],
+        "route": 0,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "8c945a0be47828edbc9dbc9f845b41942c744978e9fdb064d2ca6d3d4a667a0b",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "8c945a0be47828edbc9dbc9f845b41942c744978e9fdb064d2ca6d3d4a667a0b",
+        "seed": 41056,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            0,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            0,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 377,
+        "seconds": 3.1416666666666666,
+        "end": [
+          864.2361111111145,
+          435.69097222222223,
+          "win"
+        ]
+      },
+      "expanded": 11983
+    },
+    "quality": {
+      "estimate": true,
+      "score": 65,
+      "tier": "EXPERT",
+      "jumps": 6,
+      "turns": 2,
+      "timed": 3,
+      "switches": 0,
+      "hidden": 3,
+      "nearest": {
+        "id": 70,
+        "score": 0.6,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "MEDIUM",
+      "estimatedSeconds": 12.4,
+      "solverSeconds": 3.2,
+      "discoverySeconds": 6,
+      "localConcentration": 3,
+      "windowWidth": 200,
+      "score": 30.628571428571426,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 68,
+      "season": 2,
+      "name": "BROKEN DETOUR",
+      "seed": 41057,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 296
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 700,
+          "y": 420,
+          "w": 95,
+          "h": 16
+        },
+        {
+          "x": 830,
+          "y": 360,
+          "w": 130,
+          "h": 16
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            64,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.7691193385515362
+            }
+          ]
+        },
+        {
+          "type": "FakeDoor",
+          "args": [
+            350,
+            416
+          ]
+        },
+        {
+          "type": "Pendulum",
+          "args": [
+            510,
+            40,
+            {
+              "len": 380,
+              "amp": 0.6139921355992556,
+              "speed": 1.3,
+              "r": 16
+            }
+          ]
+        },
+        {
+          "type": "WindZone",
+          "args": [
+            {
+              "x": 590,
+              "y": 320,
+              "w": 130,
+              "h": 160
+            },
+            {
+              "force": -65,
+              "trigger": {
+                "x": 570,
+                "y": 320,
+                "w": 25,
+                "h": 160
+              }
+            }
+          ]
+        },
+        {
+          "type": "Saw",
+          "args": [
+            [
+              {
+                "x": 810,
+                "y": 160
+              },
+              {
+                "x": 810,
+                "y": 430
+              }
+            ],
+            {
+              "speed": 129.6787071460858,
+              "r": 18
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "false",
+            "x": 330
+          },
+          {
+            "kind": "pendulum",
+            "x": 480
+          },
+          {
+            "kind": "wind",
+            "x": 630
+          },
+          {
+            "kind": "saw",
+            "x": 780
+          }
+        ],
+        "route": 1,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "80ebba8aadc725318e5af6f2887b15865ae143bf5cd23477a0ce41db2603c162",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "80ebba8aadc725318e5af6f2887b15865ae143bf5cd23477a0ce41db2603c162",
+        "seed": 41057,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 416,
+        "seconds": 3.466666666666667,
+        "end": [
+          865.083333333334,
+          311.85416666666663,
+          "win"
+        ]
+      },
+      "expanded": 12739
+    },
+    "quality": {
+      "estimate": true,
+      "score": 61,
+      "tier": "EXPERT",
+      "jumps": 8,
+      "turns": 0,
+      "timed": 2,
+      "switches": 0,
+      "hidden": 3,
+      "nearest": {
+        "id": 62,
+        "score": 0.58,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "MEDIUM",
+      "estimatedSeconds": 13,
+      "solverSeconds": 3.5,
+      "discoverySeconds": 6,
+      "localConcentration": 2,
+      "windowWidth": 200,
+      "score": 24.476190476190474,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 69,
+      "season": 2,
+      "name": "SILENT VERDICT",
+      "seed": 41058,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 416
+          },
+          {
+            "x": 70,
+            "y": 416
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            45,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.48207650654949247
+            }
+          ]
+        },
+        {
+          "type": "FallBlock",
+          "args": [
+            {
+              "x": 360,
+              "y": 40,
+              "w": 60,
+              "h": 50
+            },
+            {
+              "x": 290,
+              "y": 300,
+              "w": 25,
+              "h": 180
+            },
+            {
+              "shakeTime": 0.5767424829071388
+            }
+          ]
+        },
+        {
+          "type": "Conveyor",
+          "args": [
+            {
+              "x": 440,
+              "y": 480,
+              "w": 130,
+              "h": 60
+            },
+            {
+              "dir": -1,
+              "force": 90
+            }
+          ]
+        },
+        {
+          "type": "WindZone",
+          "args": [
+            {
+              "x": 590,
+              "y": 320,
+              "w": 130,
+              "h": 160
+            },
+            {
+              "force": 65,
+              "trigger": {
+                "x": 570,
+                "y": 320,
+                "w": 25,
+                "h": 160
+              }
+            }
+          ]
+        },
+        {
+          "type": "FakeDoor",
+          "args": [
+            800,
+            416
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "fall",
+            "x": 330
+          },
+          {
+            "kind": "belt",
+            "x": 480
+          },
+          {
+            "kind": "wind",
+            "x": 630
+          },
+          {
+            "kind": "false",
+            "x": 780
+          }
+        ],
+        "route": 2,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "2d472f21924b862f882f5a39c8a235d9e7fceeb061ce402ac771b76dc8251b03",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "2d472f21924b862f882f5a39c8a235d9e7fceeb061ce402ac771b76dc8251b03",
+        "seed": 41058,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            0,
+            false
+          ],
+          [
+            0,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            true
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            -1,
+            false
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 733,
+        "seconds": 6.108333333333333,
+        "end": [
+          100.0694444444383,
+          405.15277777777777,
+          "win"
+        ]
+      },
+      "expanded": 24439
+    },
+    "quality": {
+      "estimate": true,
+      "score": 75,
+      "tier": "EXTREME",
+      "jumps": 12,
+      "turns": 2,
+      "timed": 0,
+      "switches": 0,
+      "hidden": 5,
+      "nearest": {
+        "id": 63,
+        "score": 0.70625,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "VERY HARD",
+      "estimatedSeconds": 25.4,
+      "solverSeconds": 6.2,
+      "discoverySeconds": 13,
+      "localConcentration": 2,
+      "windowWidth": 200,
+      "score": 35.1047619047619,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  },
+  {
+    "data": {
+      "schemaVersion": 1,
+      "id": 70,
+      "season": 2,
+      "name": "CRIMSON RECKONING",
+      "seed": 41059,
+      "targetDifficulty": "EXTREME",
+      "theme": "minimal",
+      "spawn": {
+        "x": 55,
+        "y": 440
+      },
+      "exit": {
+        "positions": [
+          {
+            "x": 884,
+            "y": 416
+          }
+        ],
+        "options": {
+          "fleeDist": 85
+        }
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 480,
+          "w": 960,
+          "h": 60
+        },
+        {
+          "x": -40,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        },
+        {
+          "x": 960,
+          "y": -200,
+          "w": 40,
+          "h": 940
+        }
+      ],
+      "traps": [
+        {
+          "type": "PopSpikes",
+          "args": [
+            230,
+            480,
+            46,
+            {
+              "x": 150,
+              "y": 320,
+              "w": 28,
+              "h": 160
+            },
+            {
+              "delay": 0.4031777336029336
+            }
+          ]
+        },
+        {
+          "type": "Saw",
+          "args": [
+            [
+              {
+                "x": 360,
+                "y": 160
+              },
+              {
+                "x": 360,
+                "y": 430
+              }
+            ],
+            {
+              "speed": 139.42751983413473,
+              "r": 18
+            }
+          ]
+        },
+        {
+          "type": "Laser",
+          "args": [
+            {
+              "x": 510,
+              "y": 100,
+              "len": 380,
+              "vertical": true,
+              "period": 2.553990675881505,
+              "warn": 0.6,
+              "fire": 0.4
+            }
+          ]
+        },
+        {
+          "type": "WindZone",
+          "args": [
+            {
+              "x": 590,
+              "y": 320,
+              "w": 130,
+              "h": 160
+            },
+            {
+              "force": 65,
+              "trigger": {
+                "x": 570,
+                "y": 320,
+                "w": 25,
+                "h": 160
+              }
+            }
+          ]
+        },
+        {
+          "type": "FakeDoor",
+          "args": [
+            800,
+            416
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "composition": {
+        "version": 2,
+        "sections": [
+          {
+            "kind": "ambush",
+            "x": 180
+          },
+          {
+            "kind": "saw",
+            "x": 330
+          },
+          {
+            "kind": "laser",
+            "x": 480
+          },
+          {
+            "kind": "wind",
+            "x": 630
+          },
+          {
+            "kind": "false",
+            "x": 780
+          }
+        ],
+        "route": 0,
+        "target": {
+          "name": "EXTREME",
+          "time": 44,
+          "concentration": 2.95,
+          "sections": 5
+        }
+      }
+    },
+    "status": "VERIFIED",
+    "reason": null,
+    "approved": false,
+    "fingerprint": "7f07f13db163cb3933849c32c8432fc65f1d93cda2da02be08e2a1a2398c4879",
+    "validation": {
+      "status": "PASSED",
+      "errors": [],
+      "warning": "Static validation is not a completion proof."
+    },
+    "solution": {
+      "status": "VERIFIED",
+      "trace": {
+        "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+        "hash": "7f07f13db163cb3933849c32c8432fc65f1d93cda2da02be08e2a1a2398c4879",
+        "seed": 41059,
+        "initial": {
+          "spawn": {
+            "x": 55,
+            "y": 440
+          },
+          "trapState": "fresh constructor reset",
+          "deaths": 0
+        },
+        "step": 0.008333333333333333,
+        "duration": 12,
+        "actions": [
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            true
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ],
+          [
+            1,
+            false
+          ]
+        ]
+      },
+      "replay": {
+        "status": "VERIFIED",
+        "surprise": true,
+        "ticks": 361,
+        "seconds": 3.0083333333333333,
+        "end": [
+          865.7916666666683,
+          398.72916666666663,
+          "win"
+        ]
+      },
+      "expanded": 11563
+    },
+    "quality": {
+      "estimate": true,
+      "score": 67,
+      "tier": "EXPERT",
+      "jumps": 10,
+      "turns": 0,
+      "timed": 2,
+      "switches": 0,
+      "hidden": 3,
+      "nearest": {
+        "id": 67,
+        "score": 0.6,
+        "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+      },
+      "unique": true,
+      "warnings": [
+        "Estimated difficulty; human review of precision and fun required.",
+        "Similarity is a structural heuristic, not proof of originality."
+      ]
+    },
+    "difficulty": {
+      "tier": "MEDIUM",
+      "estimatedSeconds": 12.2,
+      "solverSeconds": 3.1,
+      "discoverySeconds": 6,
+      "localConcentration": 2,
+      "windowWidth": 200,
+      "score": 23.790476190476188,
+      "humanSeconds": null,
+      "estimate": true
+    },
+    "failure": null
+  }
+]

@@ -1,0 +1,873 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 87,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 87,
+    "name": "THE PRISM LOCK",
+    "targetDifficulty": "EXPERT",
+    "intent": "Spring onto the prism shelf, carry its switch through a portal and negotiate the two angled landing heights beneath a laser.",
+    "surprise": "The portal wakes teeth on the final landing before you can see them.",
+    "spawn": {
+      "x": 55,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 878,
+          "y": 116
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 259,
+        "h": 40
+      },
+      {
+        "x": 300,
+        "y": 320,
+        "w": 160,
+        "h": 16
+      },
+      {
+        "x": 515,
+        "y": 255,
+        "w": 145,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 200,
+        "w": 195,
+        "h": 16
+      },
+      {
+        "x": 253,
+        "y": 133,
+        "w": 115,
+        "h": 16
+      },
+      {
+        "x": 432,
+        "y": 190,
+        "w": 125,
+        "h": 16
+      },
+      {
+        "x": 621,
+        "y": 125,
+        "w": 108,
+        "h": 16
+      },
+      {
+        "x": 795,
+        "y": 180,
+        "w": 165,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Spring",
+        "args": [
+          155,
+          500,
+          {
+            "w": 62,
+            "power": -1010
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          551,
+          245,
+          "prism"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          613,
+          207,
+          75,
+          152,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 587,
+            "y": 0,
+            "len": 200,
+            "vertical": true,
+            "period": 2,
+            "warn": 0.44,
+            "fire": 0.44,
+            "phase": 0.15
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 752,
+            "y": 0,
+            "w": 22,
+            "h": 540
+          },
+          "prism"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          840,
+          180,
+          36,
+          {
+            "x": 591,
+            "y": 205,
+            "w": 33,
+            "h": 50
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          259,
+          540,
+          701,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "launch",
+        "prism",
+        "refract",
+        "beam",
+        "lock",
+        "shards",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Prism launch",
+          "target": {
+            "x": 170,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "launch",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Prism base",
+          "target": {
+            "x": 380,
+            "y": 288
+          },
+          "reach": {
+            "x": 300,
+            "y": 282,
+            "w": 160,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Prism switch",
+          "target": {
+            "x": 571,
+            "y": 223
+          },
+          "requires": [
+            {
+              "trap": "prism",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Refraction",
+          "target": {
+            "x": 616,
+            "y": 223
+          },
+          "requires": [
+            {
+              "trap": "refract",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "High facet",
+          "target": {
+            "x": 310.5,
+            "y": 101
+          },
+          "reach": {
+            "x": 253,
+            "y": 95,
+            "w": 115,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Low facet",
+          "target": {
+            "x": 494.5,
+            "y": 158
+          },
+          "reach": {
+            "x": 432,
+            "y": 152,
+            "w": 125,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Last facet",
+          "target": {
+            "x": 675,
+            "y": 93
+          },
+          "reach": {
+            "x": 621,
+            "y": 87,
+            "w": 108,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "beam",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Unlock light",
+          "target": {
+            "x": 900,
+            "y": 148
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "shards",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "launch",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "prism",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "refract",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "beam",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "shards",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "b77ee56c4c9222c82f88ce7f50322b09ad5260b71ca21739805cdf2cd82e7094",
+      "seed": 87,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 607,
+      "seconds": 5.058333333333334,
+      "end": [
+        859.5833333333376,
+        116.89930555555554,
+        "win"
+      ]
+    },
+    "expanded": 28459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      504,
+      336,
+      420,
+      372
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "b77ee56c4c9222c82f88ce7f50322b09ad5260b71ca21739805cdf2cd82e7094",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 609,
+      "seconds": 5.075,
+      "end": [
+        864.0000000000043,
+        91.13541666666664,
+        "win"
+      ]
+    },
+    "ticks": 609,
+    "successfulReplaySeconds": 5.075,
+    "seconds": {
+      "activeTraversal": 5.066666666666666,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1751.771463394258,
+      "carriedPixels": 0,
+      "portalPixels": 513.1504371448735
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "launch",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 42
+      },
+      {
+        "trap": "prism",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 220
+      },
+      {
+        "trap": "refract",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 248
+      },
+      {
+        "trap": "beam",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 470
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 569
+      },
+      {
+        "trap": "shards",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 238
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 42,
+        "id": "launch",
+        "event": "activate"
+      },
+      {
+        "tick": 42,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Prism launch"
+      },
+      {
+        "tick": 124,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 124,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Prism base"
+      },
+      {
+        "tick": 206,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 220,
+        "id": "prism",
+        "event": "activate"
+      },
+      {
+        "tick": 220,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Prism switch"
+      },
+      {
+        "tick": 238,
+        "id": "shards",
+        "event": "trigger"
+      },
+      {
+        "tick": 247,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 248,
+        "id": "refract",
+        "event": "activate"
+      },
+      {
+        "tick": 248,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Refraction"
+      },
+      {
+        "tick": 343,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 343,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "High facet"
+      },
+      {
+        "tick": 412,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 414,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Low facet"
+      },
+      {
+        "tick": 470,
+        "id": "beam",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 512,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 512,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Last facet"
+      },
+      {
+        "tick": 569,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 569,
+        "id": "stage:7",
+        "event": "complete",
+        "label": "Unlock light"
+      },
+      {
+        "tick": 574,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 578,
+        "id": "shards",
+        "event": "hazardNear"
+      }
+    ],
+    "stagesCompleted": 8,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "launch:activate": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "platform:2:land": 1,
+      "prism:activate": 1,
+      "stage:2:complete": 1,
+      "shards:trigger": 1,
+      "lock:open": 1,
+      "refract:activate": 1,
+      "stage:3:complete": 1,
+      "platform:4:land": 1,
+      "stage:4:complete": 1,
+      "platform:5:land": 1,
+      "stage:5:complete": 1,
+      "beam:beamCross": 16,
+      "platform:6:land": 1,
+      "stage:6:complete": 1,
+      "lock:pass": 1,
+      "stage:7:complete": 1,
+      "platform:7:land": 1,
+      "shards:hazardNear": 8
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 82,
+      "score": 0.4928571428571429,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 81,
+      "score": 0.4140507518796992,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 51,
+      "score": 0.4046703296703297,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 27.908
+}

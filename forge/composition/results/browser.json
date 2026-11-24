@@ -1,0 +1,202 @@
+{
+  "engineHash": "87f51bc323017ae08dd02c0b8329ef382df00fdc4b7cbef587ab1d83920451ba",
+  "results": [
+    {
+      "id": 481,
+      "actionTicks": 12,
+      "hash": "0ea7d42def12c9398be1a14c3475c95c6e6aceca0ccc1338e9ac7fbe9400c4c6",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 516,
+      "seconds": 4.3,
+      "encounters": [
+        {
+          "key": "launch",
+          "enteredTick": 1,
+          "completedTick": 191,
+          "interactions": {
+            "launch/spring:activate": 1,
+            "platform:1:land": 1,
+            "launch/portal:activate": 1
+          }
+        },
+        {
+          "key": "pulse",
+          "enteredTick": 192,
+          "completedTick": 513,
+          "interactions": {
+            "pulse/carrier:ride": 64,
+            "pulse/laser:beamCrossRiding": 8,
+            "pulse/ambush:trigger": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": 482,
+      "actionTicks": 12,
+      "hash": "6fa410bde5cd7099f69dc3c16057a6a23cbff19db4a6b6579920a69560676094",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 696,
+      "seconds": 5.8,
+      "encounters": [
+        {
+          "key": "ride",
+          "enteredTick": 1,
+          "completedTick": 326,
+          "interactions": {
+            "ride/carrier:ride": 60,
+            "ride/laser:beamCrossRiding": 8,
+            "ride/ambush:trigger": 1,
+            "ride/portal:activate": 1
+          }
+        },
+        {
+          "key": "switch",
+          "enteredTick": 327,
+          "completedTick": 693,
+          "interactions": {
+            "switch/button:activate": 1,
+            "switch/gate:open": 1,
+            "switch/gate:pass": 1,
+            "switch/ambush:trigger": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": 483,
+      "actionTicks": 12,
+      "hash": "f832b1b95c8250c945e7642f97744db1e354ad01747787cad1e0472250e0a4d6",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 528,
+      "seconds": 4.4,
+      "encounters": [
+        {
+          "key": "launch",
+          "enteredTick": 1,
+          "completedTick": 191,
+          "interactions": {
+            "launch/spring:activate": 1,
+            "platform:1:land": 1,
+            "launch/portal:activate": 1
+          }
+        },
+        {
+          "key": "switch",
+          "enteredTick": 192,
+          "completedTick": 379,
+          "interactions": {
+            "switch/button:activate": 1,
+            "switch/gate:open": 1,
+            "switch/gate:pass": 1
+          }
+        },
+        {
+          "key": "pulse",
+          "enteredTick": 380,
+          "completedTick": 525,
+          "interactions": {
+            "pulse/carrier:ride": 60,
+            "pulse/laser:beamCrossRiding": 10,
+            "pulse/ambush:trigger": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "actionTicks": 12,
+      "hash": "4efd272dcadc1e6d4345090696867a20b5ae59938ee465b6f42c71932181d734",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 340,
+      "seconds": 2.8333333333333335
+    },
+    {
+      "id": 42,
+      "actionTicks": 12,
+      "hash": "477006ddd6f919791313f605faf454232fca7688b987d55c34fc6c49b7aa852c",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 240,
+      "seconds": 2
+    },
+    {
+      "id": 43,
+      "actionTicks": 12,
+      "hash": "abfc45b24945257b254bbdb4fd15792717b0ea039b5c171c3b40dda6676b2ab6",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 375,
+      "seconds": 3.125
+    },
+    {
+      "id": 44,
+      "actionTicks": 12,
+      "hash": "a9a00ef700ec30e933e9139b1b4204eac88a0561ae6ea4e03484b8c47f59ac1c",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 375,
+      "seconds": 3.125
+    },
+    {
+      "id": 45,
+      "actionTicks": 12,
+      "hash": "34d48fab1924ec046fce7e0fa1a3f4cde93fdc7de0b7e336766ea412716d3042",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 351,
+      "seconds": 2.925
+    },
+    {
+      "id": 46,
+      "actionTicks": 12,
+      "hash": "95131b29bc9c8ac5dfeafadc815063d5ba9c5eba98eedde5d1347b66bbb066dc",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 351,
+      "seconds": 2.925
+    },
+    {
+      "id": 47,
+      "actionTicks": 12,
+      "hash": "f96f5e31e074c4e714b68c90a4e5cef6da80baf871cee4dee344ca9b9112b3fc",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 370,
+      "seconds": 3.0833333333333335
+    },
+    {
+      "id": 48,
+      "actionTicks": 12,
+      "hash": "32c018e4ad2c15dafc086542cc1943e691afb059f39c3a3f9376e2aba099b280",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 351,
+      "seconds": 2.925
+    },
+    {
+      "id": 49,
+      "actionTicks": 12,
+      "hash": "20445034f79595a03e3f799696d3900f592fc8b160043f32cc1cd8a6e2801552",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 375,
+      "seconds": 3.125
+    },
+    {
+      "id": 50,
+      "actionTicks": 12,
+      "hash": "a90aee8cad372934cbe060017346f0f855cc8f637d37355e6350feab8da7a493",
+      "state": "win",
+      "deaths": 0,
+      "ticks": 377,
+      "seconds": 3.1416666666666666
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": []
+}

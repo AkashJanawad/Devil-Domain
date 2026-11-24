@@ -1,0 +1,52 @@
+0 6 {
+  score: -820.0833333333334,
+  stage: 0,
+  p: {
+    x: 59.91666666666667,
+    y: 448,
+    w: 26,
+    h: 32,
+    vx: 193.33333333333331,
+    vy: 0,
+    grounded: true,
+    coyote: 0.1,
+    face: 1,
+    squash: 0,
+    jumping: false
+  }
+}
+20 100 {
+  score: -286.9343253968258,
+  stage: 0,
+  p: {
+    x: 612.6656746031742,
+    y: 420,
+    w: 26,
+    h: 32,
+    vx: 265,
+    vy: 0,
+    grounded: true,
+    coyote: 0.1,
+    face: 1,
+    squash: 0,
+    jumping: false
+  }
+}
+40 100 {
+  score: 9541.439583333333,
+  stage: 1,
+  p: {
+    x: 638.555555555557,
+    y: 447.99305555555554,
+    w: 26,
+    h: 32,
+    vx: -265,
+    vy: 425.0000000000001,
+    grounded: false,
+    coyote: 0,
+    face: -1,
+    squash: 0,
+    jumping: false
+  }
+}
+WIN 30 seconds 5.9 actions 59

@@ -1,0 +1,52 @@
+{
+  "name": "Devil Domain — Chapter 1: The Stolen Light",
+  "duration_seconds": 20,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "orientation": "landscape 16:9",
+  "offline": true,
+  "voices": false,
+  "audio": "Original synthesized cinematic music and effects only — no speech and no dialogue captions",
+  "level_range": "1–100",
+  "character_design": "Original simple rounded characters with triangular horns, small feet; villain with a short temporary action claw",
+  "scenes": [
+    {
+      "time": "00:00–00:02.92",
+      "scene": "The guardians",
+      "action": "Three horned guardians protect a turquoise crystal on a stone pedestal. Film lighting and an ominous score introduce the story."
+    },
+    {
+      "time": "00:02.92–00:05.00",
+      "scene": "The shadow",
+      "action": "The dangerous devil emerges from the dark. He dwarfs the innocent heroes; a low bass impact signals danger."
+    },
+    {
+      "time": "00:05.00–00:08.03",
+      "scene": "A short-handed theft",
+      "action": "The devil approaches the pedestal first, then uses a short jointed claw to physically pick up the diamond and hold it at his side. The diamond never spins above his head."
+    },
+    {
+      "time": "00:08.03–00:11.00",
+      "scene": "Escape inside the mountain",
+      "action": "He runs across the rocky foreground and enters the dark cave built into the base of the mountain. His position is clamped to the cave entrance; he disappears inside instead of running beyond the mountain."
+    },
+    {
+      "time": "00:11.00–00:15.01",
+      "scene": "The decision",
+      "action": "Emerald, Ocean, and Slate pack small backpacks and open an old paper map."
+    },
+    {
+      "time": "00:15.01–00:18.48",
+      "scene": "The impossible journey",
+      "action": "They walk on short alternating feet toward a huge forbidding mountain, keeping the map in hand."
+    },
+    {
+      "time": "00:18.48–00:20.00",
+      "scene": "Chapter title",
+      "action": "DEVIL DOMAIN — CHAPTER I: THE STOLEN LIGHT. THE JOURNEY BEGINS."
+    }
+  ]
+}

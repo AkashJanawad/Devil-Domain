@@ -1,0 +1,353 @@
+
+> devildomain@1.0.0 test
+> npm run build && node tests/run-tests.js && node --test tests/gameplay.test.js
+
+
+> devildomain@1.0.0 build
+> node scripts/build.js
+
+Bundled five offline runtime/license files into www.
+
+[Collision Detection]
+  ✓ overlapping rects collide
+  ✓ adjacent rects do NOT collide
+  ✓ contained rect collides
+  ✓ separated rects don't collide
+  ✓ Y-only separation no collision
+
+[Physics Constants]
+  ✓ jump velocity is negative (upward)
+  ✓ gravity is positive (downward)
+  ✓ max fall speed reasonable
+  ✓ player speed sane
+  ✓ coyote time positive
+  ✓ jump buffer positive
+
+[File Checks]
+  ✓ game.js readable and non-trivial
+  ✓ LEVELS array present
+  ✓ 30 level build() entries
+  ✓ no FableDevil player-facing strings
+  ✓ uses dd_done save key
+  ✓ uses dd_deaths save key
+  ✓ uses dd_theme key
+  ✓ DEVIL DOMAIN in source
+  ✓ KEEP GOING win text
+  ✓ YOU ESCAPED win text
+  ✓ migrates fd_ keys
+
+[HTML Structure]
+  ✓ title contains DEVIL DOMAIN
+  ✓ no vercel analytics CDN
+  ✓ no Google Fonts CDN
+  ✓ canvas element present
+  ✓ touch controls present
+  ✓ hud present
+  ✓ level grid present
+  ✓ devil/domain title spans
+
+[CSS Structure]
+  ✓ dark theme vars
+  ✓ light theme vars
+  ✓ crimson accent color
+  ✓ touch controls styled
+  ✓ tc-btn styled
+
+[Capacitor Config]
+  ✓ capacitor.config.json exists
+  ✓ correct appId
+  ✓ correct appName
+
+[Level Schema]
+  ✓ level 1 name present
+  ✓ level 30 name present
+  ✓ Door class present
+  ✓ CollapseFloor present
+  ✓ Saw class present
+  ✓ Laser class present
+  ✓ Teleporter class present
+
+==========================================
+  Results: 45 passed, 0 failed
+==========================================
+
+TAP version 13
+# Subtest: level 1: build, finite geometry, safe spawn, simulate, reset
+ok 1 - level 1: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 17.4115
+  type: 'test'
+  ...
+# Subtest: level 2: build, finite geometry, safe spawn, simulate, reset
+ok 2 - level 2: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 10.4468
+  type: 'test'
+  ...
+# Subtest: level 3: build, finite geometry, safe spawn, simulate, reset
+ok 3 - level 3: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 14.767
+  type: 'test'
+  ...
+# Subtest: level 4: build, finite geometry, safe spawn, simulate, reset
+ok 4 - level 4: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 22.189
+  type: 'test'
+  ...
+# Subtest: level 5: build, finite geometry, safe spawn, simulate, reset
+ok 5 - level 5: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 18.5334
+  type: 'test'
+  ...
+# Subtest: level 6: build, finite geometry, safe spawn, simulate, reset
+ok 6 - level 6: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 12.4007
+  type: 'test'
+  ...
+# Subtest: level 7: build, finite geometry, safe spawn, simulate, reset
+ok 7 - level 7: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 12.515
+  type: 'test'
+  ...
+# Subtest: level 8: build, finite geometry, safe spawn, simulate, reset
+ok 8 - level 8: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 13.7793
+  type: 'test'
+  ...
+# Subtest: level 9: build, finite geometry, safe spawn, simulate, reset
+ok 9 - level 9: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 15.1912
+  type: 'test'
+  ...
+# Subtest: level 10: build, finite geometry, safe spawn, simulate, reset
+ok 10 - level 10: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 13.4172
+  type: 'test'
+  ...
+# Subtest: level 11: build, finite geometry, safe spawn, simulate, reset
+ok 11 - level 11: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 15.4254
+  type: 'test'
+  ...
+# Subtest: level 12: build, finite geometry, safe spawn, simulate, reset
+ok 12 - level 12: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 14.9246
+  type: 'test'
+  ...
+# Subtest: level 13: build, finite geometry, safe spawn, simulate, reset
+ok 13 - level 13: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 15.775
+  type: 'test'
+  ...
+# Subtest: level 14: build, finite geometry, safe spawn, simulate, reset
+ok 14 - level 14: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 16.8697
+  type: 'test'
+  ...
+# Subtest: level 15: build, finite geometry, safe spawn, simulate, reset
+ok 15 - level 15: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 18.3535
+  type: 'test'
+  ...
+# Subtest: level 16: build, finite geometry, safe spawn, simulate, reset
+ok 16 - level 16: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 15.7268
+  type: 'test'
+  ...
+# Subtest: level 17: build, finite geometry, safe spawn, simulate, reset
+ok 17 - level 17: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 15.0278
+  type: 'test'
+  ...
+# Subtest: level 18: build, finite geometry, safe spawn, simulate, reset
+ok 18 - level 18: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 25.3987
+  type: 'test'
+  ...
+# Subtest: level 19: build, finite geometry, safe spawn, simulate, reset
+ok 19 - level 19: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 18.2178
+  type: 'test'
+  ...
+# Subtest: level 20: build, finite geometry, safe spawn, simulate, reset
+ok 20 - level 20: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 23.8684
+  type: 'test'
+  ...
+# Subtest: level 21: build, finite geometry, safe spawn, simulate, reset
+ok 21 - level 21: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 21.6462
+  type: 'test'
+  ...
+# Subtest: level 22: build, finite geometry, safe spawn, simulate, reset
+ok 22 - level 22: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 28.0144
+  type: 'test'
+  ...
+# Subtest: level 23: build, finite geometry, safe spawn, simulate, reset
+ok 23 - level 23: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 15.7416
+  type: 'test'
+  ...
+# Subtest: level 24: build, finite geometry, safe spawn, simulate, reset
+ok 24 - level 24: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 18.2408
+  type: 'test'
+  ...
+# Subtest: level 25: build, finite geometry, safe spawn, simulate, reset
+ok 25 - level 25: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 18.2881
+  type: 'test'
+  ...
+# Subtest: level 26: build, finite geometry, safe spawn, simulate, reset
+ok 26 - level 26: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 16.2232
+  type: 'test'
+  ...
+# Subtest: level 27: build, finite geometry, safe spawn, simulate, reset
+ok 27 - level 27: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 16.9327
+  type: 'test'
+  ...
+# Subtest: level 28: build, finite geometry, safe spawn, simulate, reset
+ok 28 - level 28: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 20.5278
+  type: 'test'
+  ...
+# Subtest: level 29: build, finite geometry, safe spawn, simulate, reset
+ok 29 - level 29: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 19.0786
+  type: 'test'
+  ...
+# Subtest: level 30: build, finite geometry, safe spawn, simulate, reset
+ok 30 - level 30: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 21.5022
+  type: 'test'
+  ...
+# Subtest: real collision helper excludes edge contact
+ok 31 - real collision helper excludes edge contact
+  ---
+  duration_ms: 1.8735
+  type: 'test'
+  ...
+# Subtest: frame pacing produces same movement at 30/60/120 Hz
+ok 32 - frame pacing produces same movement at 30/60/120 Hz
+  ---
+  duration_ms: 17.337
+  type: 'test'
+  ...
+# Subtest: held jump is higher than released jump and lands on floor
+ok 33 - held jump is higher than released jump and lands on floor
+  ---
+  duration_ms: 6.1302
+  type: 'test'
+  ...
+# Subtest: death counted once, respawn resets traps and flags
+ok 34 - death counted once, respawn resets traps and flags
+  ---
+  duration_ms: 3.2583
+  type: 'test'
+  ...
+# Subtest: level one completes through actual movement and unlocks level two
+ok 35 - level one completes through actual movement and unlocks level two
+  ---
+  duration_ms: 4.7244
+  type: 'test'
+  ...
+# Subtest: final victory transitions to end screen
+ok 36 - final victory transitions to end screen
+  ---
+  duration_ms: 2.449
+  type: 'test'
+  ...
+# Subtest: level 26 portal arrival does not intersect platform
+ok 37 - level 26 portal arrival does not intersect platform
+  ---
+  duration_ms: 2.3357
+  type: 'test'
+  ...
+# Subtest: legacy migration preserves existing progress
+ok 38 - legacy migration preserves existing progress
+  ---
+  duration_ms: 2.9028
+  type: 'test'
+  ...
+# Subtest: invalid saves and inaccessible storage do not crash gameplay
+ok 39 - invalid saves and inaccessible storage do not crash gameplay
+  ---
+  duration_ms: 9.3189
+  type: 'test'
+  ...
+# Subtest: multi-pointer ownership, cancellation, blur and resume
+ok 40 - multi-pointer ownership, cancellation, blur and resume
+  ---
+  duration_ms: 2.3126
+  type: 'test'
+  ...
+# Subtest: back cancels pending transition and returns to menu
+ok 41 - back cancels pending transition and returns to menu
+  ---
+  duration_ms: 1.8196
+  type: 'test'
+  ...
+# Subtest: Android packaging and offline runtime configuration
+ok 42 - Android packaging and offline runtime configuration
+  ---
+  duration_ms: 3.0997
+  type: 'test'
+  ...
+# Subtest: all reusable traps reset to their constructor state after activation
+ok 43 - all reusable traps reset to their constructor state after activation
+  ---
+  duration_ms: 22.857
+  type: 'test'
+  ...
+# Subtest: wall and ceiling collisions stop player without penetration
+ok 44 - wall and ceiling collisions stop player without penetration
+  ---
+  duration_ms: 2.9482
+  type: 'test'
+  ...
+# Subtest: coyote time and buffered landing jump work
+ok 45 - coyote time and buffered landing jump work
+  ---
+  duration_ms: 2.0115
+  type: 'test'
+  ...
+1..45
+# tests 45
+# suites 0
+# pass 45
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 743.8292

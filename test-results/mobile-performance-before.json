@@ -1,0 +1,75 @@
+{
+  "label": "before",
+  "environment": "Desktop headless Chrome; CPU throttle is synthetic, not phone FPS",
+  "profiles": [
+    {
+      "cpuThrottle": 1,
+      "menu": {
+        "updates": 143,
+        "draws": 146,
+        "updateMs": 1.3000000044703484,
+        "drawMs": 3.399999987334013
+      },
+      "scene": {
+        "updates": 431,
+        "draws": 495,
+        "updateMs": 0,
+        "drawMs": 107.39999997615814
+      },
+      "frameIntervalMeanMs": 7.920445344129554,
+      "frameIntervalP95Ms": 7,
+      "sampledFrames": 494,
+      "canvas": [
+        960,
+        540
+      ],
+      "renderInfo": null
+    },
+    {
+      "cpuThrottle": 4,
+      "menu": {
+        "updates": 145,
+        "draws": 174,
+        "updateMs": 3.0000000074505806,
+        "drawMs": 9.800000000745058
+      },
+      "scene": {
+        "updates": 424,
+        "draws": 496,
+        "updateMs": 0,
+        "drawMs": 316.69999995455146
+      },
+      "frameIntervalMeanMs": 7.161818181818183,
+      "frameIntervalP95Ms": 7,
+      "sampledFrames": 495,
+      "canvas": [
+        960,
+        540
+      ],
+      "renderInfo": null
+    },
+    {
+      "cpuThrottle": 6,
+      "menu": {
+        "updates": 147,
+        "draws": 170,
+        "updateMs": 5.399999998509884,
+        "drawMs": 19.100000008940697
+      },
+      "scene": {
+        "updates": 419,
+        "draws": 490,
+        "updateMs": 0,
+        "drawMs": 450.09999999403954
+      },
+      "frameIntervalMeanMs": 7.26359918200409,
+      "frameIntervalP95Ms": 7,
+      "sampledFrames": 489,
+      "canvas": [
+        960,
+        540
+      ],
+      "renderInfo": null
+    }
+  ]
+}

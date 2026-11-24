@@ -1,0 +1,616 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 51,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 51,
+    "name": "THE BELL TOWER",
+    "targetDifficulty": "MEDIUM",
+    "intent": "Spring to a high balcony, climb to the bell switch, descend through its gate and jump the false landing.",
+    "surprise": "The far landing grows spikes after the gate is crossed.",
+    "spawn": {
+      "x": 55,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 884,
+          "y": 436
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 230,
+        "h": 40
+      },
+      {
+        "x": 260,
+        "y": 310,
+        "w": 130,
+        "h": 16
+      },
+      {
+        "x": 440,
+        "y": 245,
+        "w": 140,
+        "h": 16
+      },
+      {
+        "x": 650,
+        "y": 500,
+        "w": 310,
+        "h": 40
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Spring",
+        "args": [
+          150,
+          500,
+          {
+            "power": -1000,
+            "w": 60
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          490,
+          235,
+          "bell"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 650,
+            "y": 0,
+            "w": 24,
+            "h": 500
+          },
+          "bell"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          750,
+          500,
+          60,
+          {
+            "x": 690,
+            "y": 280,
+            "w": 30,
+            "h": 220
+          },
+          {
+            "delay": 0.22
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          230,
+          540,
+          420,
+          {
+            "size": 32
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "launch",
+        "bell",
+        "lock",
+        "landing",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Launch",
+          "target": {
+            "x": 160,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "launch",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Tower landing",
+          "target": {
+            "x": 310,
+            "y": 278
+          },
+          "reach": {
+            "x": 260,
+            "y": 275,
+            "w": 130,
+            "h": 6
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Ring the bell",
+          "target": {
+            "x": 495,
+            "y": 213
+          },
+          "requires": [
+            {
+              "trap": "bell",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Descend through gate",
+          "target": {
+            "x": 700,
+            "y": 468
+          },
+          "reach": {
+            "x": 675,
+            "y": 270,
+            "w": 80,
+            "h": 230
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Escape landing",
+          "target": {
+            "x": 870,
+            "y": 468
+          },
+          "reach": {
+            "x": 850,
+            "y": 340,
+            "w": 100,
+            "h": 160
+          },
+          "requires": [
+            {
+              "trap": "landing",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "launch",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "bell",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "landing",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "8b4bfbd460af2c12740a0b8c2027656b266ac45a2fa3c0411f30358454e2559d",
+      "seed": 51,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 373,
+      "seconds": 3.1083333333333334,
+      "end": [
+        865.6250000000043,
+        438.88541666666663,
+        "win"
+      ]
+    },
+    "expanded": 17059,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      168,
+      204
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "8b4bfbd460af2c12740a0b8c2027656b266ac45a2fa3c0411f30358454e2559d",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 373,
+      "seconds": 3.1083333333333334,
+      "end": [
+        865.6250000000043,
+        468,
+        "win"
+      ]
+    },
+    "ticks": 373,
+    "successfulReplaySeconds": 3.1083333333333334,
+    "seconds": {
+      "activeTraversal": 3.1083333333333334,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.016666666666666666
+    },
+    "distance": {
+      "selfPixels": 1300.8925701210826,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 2,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "launch",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 40
+      },
+      {
+        "trap": "bell",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 193
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 287
+      },
+      {
+        "trap": "landing",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 283
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 40,
+        "id": "launch",
+        "event": "activate"
+      },
+      {
+        "tick": 40,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Launch"
+      },
+      {
+        "tick": 117,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 117,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Tower landing"
+      },
+      {
+        "tick": 176,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 193,
+        "id": "bell",
+        "event": "activate"
+      },
+      {
+        "tick": 193,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Ring the bell"
+      },
+      {
+        "tick": 220,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 283,
+        "id": "landing",
+        "event": "trigger"
+      },
+      {
+        "tick": 287,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 287,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Descend through gate"
+      },
+      {
+        "tick": 302,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 366,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Escape landing"
+      }
+    ],
+    "stagesCompleted": 5,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "launch:activate": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "platform:2:land": 1,
+      "bell:activate": 1,
+      "stage:2:complete": 1,
+      "lock:open": 1,
+      "landing:trigger": 1,
+      "lock:pass": 1,
+      "stage:3:complete": 1,
+      "platform:3:land": 1,
+      "stage:4:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 34,
+      "score": 0.47125000000000006,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 39,
+      "score": 0.46875,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 23,
+      "score": 0.38285714285714284,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 6.222
+}

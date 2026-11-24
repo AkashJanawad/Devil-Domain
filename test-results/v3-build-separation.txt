@@ -1,0 +1,2 @@
+Bundled release (progression locked) web assets: Z:\Automation\Devil Domain\android\app\build\generated\releaseWeb\assets\public
+Fresh release assets and existing APK/AAB exclude Forge and tests. No device test or new binary build claimed.

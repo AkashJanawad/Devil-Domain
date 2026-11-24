@@ -1,0 +1,29 @@
+{
+  "productionLevels": 50,
+  "files": {
+    "game.js": {
+      "sha256": "6aaad3c77936a2de22874aa8ac3e6118cd47d8330a22f3343c21fde82bb9f396",
+      "unchanged": true
+    },
+    "level-runtime.js": {
+      "sha256": "bd6d2e4f211888a6eb8eb9023777dda357be4ccdf1e9a695032a55afaf576f6f",
+      "unchanged": true
+    },
+    "campaign.js": {
+      "sha256": "d47a2bff062f0c0a098b595a2140665ee0a0c50497c3d645c3bb1f5232e24497",
+      "unchanged": true
+    },
+    "content/season-one.js": {
+      "sha256": "c45cb624a4c9ade8697dbd3d892439d202fe55206d3f35a6b3f42240bba729ef",
+      "unchanged": true
+    },
+    "style.css": {
+      "sha256": "a0da3fdd20155568a9583ecda55cc348aa3cdab955fad9b713188d87548ef3ec",
+      "unchanged": true
+    },
+    "index.html": {
+      "sha256": "b4f214af12fbd2beccf8db552d6863a33b3ba481db55007e3ae7ea2878acf9b5",
+      "unchanged": true
+    }
+  }
+}

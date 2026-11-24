@@ -1,0 +1,678 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 85,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 85,
+    "name": "BORROWED SECONDS",
+    "targetDifficulty": "HARD",
+    "intent": "Use a momentary switch to enter the rising stairwell, then hop between brittle clock shelves to the summit.",
+    "surprise": "The summit drops a block onto the last broad landing.",
+    "spawn": {
+      "x": 52,
+      "y": 458
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 876,
+          "y": 111
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 490,
+        "w": 355,
+        "h": 50
+      },
+      {
+        "x": 399,
+        "y": 420,
+        "w": 128,
+        "h": 16
+      },
+      {
+        "x": 625,
+        "y": 300,
+        "w": 120,
+        "h": 16
+      },
+      {
+        "x": 802,
+        "y": 175,
+        "w": 158,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          182,
+          480,
+          "seconds",
+          {
+            "w": 95,
+            "momentary": true
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 310,
+            "y": 0,
+            "w": 20,
+            "h": 490
+          },
+          "seconds",
+          {
+            "closeSpeed": 0.62
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 539,
+            "y": 359,
+            "w": 85,
+            "h": 16
+          },
+          {
+            "delay": 0.7
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 727,
+            "y": 238,
+            "w": 88,
+            "h": 16
+          },
+          {
+            "delay": 0.7
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 841,
+            "y": 20,
+            "w": 38,
+            "h": 34
+          },
+          {
+            "x": 765,
+            "y": 90,
+            "w": 34,
+            "h": 190
+          },
+          {
+            "shakeTime": 0.64,
+            "floorY": 175
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          355,
+          540,
+          605,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "timer",
+        "shutter",
+        "tick",
+        "tock",
+        "weight",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Borrow time",
+          "target": {
+            "x": 221,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "timer",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Enter stairwell",
+          "target": {
+            "x": 463,
+            "y": 388
+          },
+          "reach": {
+            "x": 399,
+            "y": 382,
+            "w": 128,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "shutter",
+              "event": "open",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "First brittle second",
+          "target": {
+            "x": 581.5,
+            "y": 327
+          },
+          "reach": {
+            "x": 539,
+            "y": 321,
+            "w": 85,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "tick",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Clock landing",
+          "target": {
+            "x": 685,
+            "y": 268
+          },
+          "reach": {
+            "x": 625,
+            "y": 262,
+            "w": 120,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Last brittle second",
+          "target": {
+            "x": 771,
+            "y": 206
+          },
+          "reach": {
+            "x": 727,
+            "y": 200,
+            "w": 88,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "tock",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Summit",
+          "target": {
+            "x": 888,
+            "y": 143
+          },
+          "requires": [
+            {
+              "trap": "weight",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "timer",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "shutter",
+          "event": "open",
+          "minTicks": 1
+        },
+        {
+          "trap": "tick",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "tock",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "weight",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "13e852536561e7e376bca85c8f9cccab7347b1d2378d456aa52218fae88b5e7c",
+      "seed": 85,
+      "initial": {
+        "spawn": {
+          "x": 52,
+          "y": 458
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 370,
+      "seconds": 3.0833333333333335,
+      "end": [
+        856.0000000000041,
+        143,
+        "win"
+      ]
+    },
+    "expanded": 16459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": []
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "13e852536561e7e376bca85c8f9cccab7347b1d2378d456aa52218fae88b5e7c",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 370,
+      "seconds": 3.0833333333333335,
+      "end": [
+        856.0000000000041,
+        143,
+        "win"
+      ]
+    },
+    "ticks": 370,
+    "successfulReplaySeconds": 3.0833333333333335,
+    "seconds": {
+      "activeTraversal": 3.0833333333333335,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1029.887169471459,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 5,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "timer",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 55
+      },
+      {
+        "trap": "shutter",
+        "event": "open",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 82
+      },
+      {
+        "trap": "tick",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 223
+      },
+      {
+        "trap": "tock",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 305
+      },
+      {
+        "trap": "weight",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 319
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 55,
+        "id": "timer",
+        "event": "activate"
+      },
+      {
+        "tick": 55,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Borrow time"
+      },
+      {
+        "tick": 82,
+        "id": "shutter",
+        "event": "open"
+      },
+      {
+        "tick": 162,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 164,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Enter stairwell"
+      },
+      {
+        "tick": 223,
+        "id": "tick",
+        "event": "trigger"
+      },
+      {
+        "tick": 227,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "First brittle second"
+      },
+      {
+        "tick": 260,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 266,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Clock landing"
+      },
+      {
+        "tick": 305,
+        "id": "tock",
+        "event": "trigger"
+      },
+      {
+        "tick": 312,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Last brittle second"
+      },
+      {
+        "tick": 319,
+        "id": "weight",
+        "event": "trigger"
+      },
+      {
+        "tick": 319,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Summit"
+      },
+      {
+        "tick": 368,
+        "id": "platform:3",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "timer:activate": 1,
+      "stage:0:complete": 1,
+      "shutter:open": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "tick:trigger": 1,
+      "stage:2:complete": 1,
+      "platform:2:land": 1,
+      "stage:3:complete": 1,
+      "tock:trigger": 1,
+      "stage:4:complete": 1,
+      "weight:trigger": 1,
+      "stage:5:complete": 1,
+      "platform:3:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 82,
+      "score": 0.4371428571428571,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 73,
+      "score": 0.40499999999999997,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 62,
+      "score": 0.3471428571428571,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 13.903
+}

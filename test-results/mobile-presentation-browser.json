@@ -1,0 +1,260 @@
+{
+  "viewports": [
+    {
+      "width": 800,
+      "height": 360,
+      "dpr": 2,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    },
+    {
+      "width": 915,
+      "height": 412,
+      "dpr": 2.625,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    },
+    {
+      "width": 960,
+      "height": 432,
+      "dpr": 3,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    },
+    {
+      "width": 740,
+      "height": 360,
+      "dpr": 2,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "dpr": 2,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "dpr": 2,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    },
+    {
+      "width": 412,
+      "height": 915,
+      "dpr": 2.625,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "dpr": 2,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "dpr": 2,
+      "fullViewportMenu": true,
+      "cinematicContained": true,
+      "level50Reachable": true,
+      "minTouchTarget": 44
+    }
+  ],
+  "pixels": [
+    {
+      "mode": "light",
+      "level": 1,
+      "pixelsDifferentByMoreThan8": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "mode": "light",
+      "level": 34,
+      "pixelsDifferentByMoreThan8": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "mode": "light",
+      "level": 72,
+      "pixelsDifferentByMoreThan8": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "mode": "light",
+      "level": 100,
+      "pixelsDifferentByMoreThan8": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "mode": "dark",
+      "level": 1,
+      "pixelsDifferentByMoreThan8": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "mode": "dark",
+      "level": 34,
+      "pixelsDifferentByMoreThan8": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "mode": "dark",
+      "level": 72,
+      "pixelsDifferentByMoreThan8": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "mode": "dark",
+      "level": 100,
+      "pixelsDifferentByMoreThan8": 0,
+      "maxChannelDifference": 0
+    }
+  ],
+  "clock": [
+    {
+      "fps": 24,
+      "ticks": 120,
+      "player": {
+        "x": 60,
+        "y": 448,
+        "w": 26,
+        "h": 32,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "coyote": 0.1,
+        "face": 1,
+        "squash": 0,
+        "jumping": false
+      }
+    },
+    {
+      "fps": 30,
+      "ticks": 120,
+      "player": {
+        "x": 60,
+        "y": 448,
+        "w": 26,
+        "h": 32,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "coyote": 0.1,
+        "face": 1,
+        "squash": 0,
+        "jumping": false
+      }
+    },
+    {
+      "fps": 40,
+      "ticks": 120,
+      "player": {
+        "x": 60,
+        "y": 448,
+        "w": 26,
+        "h": 32,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "coyote": 0.1,
+        "face": 1,
+        "squash": 0,
+        "jumping": false
+      }
+    },
+    {
+      "fps": 60,
+      "ticks": 120,
+      "player": {
+        "x": 60,
+        "y": 448,
+        "w": 26,
+        "h": 32,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "coyote": 0.1,
+        "face": 1,
+        "squash": 0,
+        "jumping": false
+      }
+    },
+    {
+      "fps": 90,
+      "ticks": 120,
+      "player": {
+        "x": 60,
+        "y": 448,
+        "w": 26,
+        "h": 32,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "coyote": 0.1,
+        "face": 1,
+        "squash": 0,
+        "jumping": false
+      }
+    },
+    {
+      "fps": 120,
+      "ticks": 120,
+      "player": {
+        "x": 60,
+        "y": 448,
+        "w": 26,
+        "h": 32,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "coyote": 0.1,
+        "face": 1,
+        "squash": 0,
+        "jumping": false
+      }
+    }
+  ],
+  "errors": [],
+  "adaptive": {
+    "sustainedStalls": {
+      "width": 720,
+      "height": 405,
+      "scale": 0.75,
+      "draws": 1
+    },
+    "slow": {
+      "width": 640,
+      "height": 360,
+      "scale": 0.6666666666666666,
+      "draws": 2
+    },
+    "recovered": {
+      "width": 960,
+      "height": 540,
+      "scale": 1,
+      "draws": 3
+    }
+  }
+}

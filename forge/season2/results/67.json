@@ -1,0 +1,678 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 67,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 67,
+    "name": "THE TRAPDOOR ORGAN",
+    "targetDifficulty": "HARD",
+    "intent": "Play the upper key to open a gate below. Drop through its collapsing trapdoor, then climb back out over the pipes.",
+    "surprise": "The floor under the key drops you onto the lower keyboard.",
+    "spawn": {
+      "x": 50,
+      "y": 158
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 900,
+          "y": 261
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 190,
+        "w": 190,
+        "h": 16
+      },
+      {
+        "x": 310,
+        "y": 190,
+        "w": 145,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 240,
+        "w": 455,
+        "h": 16
+      },
+      {
+        "x": 565,
+        "y": 190,
+        "w": 90,
+        "h": 16
+      },
+      {
+        "x": 300,
+        "y": 480,
+        "w": 430,
+        "h": 60
+      },
+      {
+        "x": 755,
+        "y": 400,
+        "w": 92,
+        "h": 16
+      },
+      {
+        "x": 865,
+        "y": 325,
+        "w": 95,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "BlinkPlatform",
+        "args": [
+          {
+            "x": 210,
+            "y": 140,
+            "w": 85,
+            "h": 16
+          },
+          {
+            "period": 1.8,
+            "onFrac": 0.76,
+            "phase": 0.05
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          390,
+          180,
+          "organ"
+        ]
+      },
+      {
+        "type": "CollapseFloor",
+        "args": [
+          {
+            "x": 455,
+            "y": 190,
+            "w": 110,
+            "h": 16
+          },
+          {
+            "x": 410,
+            "y": 30,
+            "w": 35,
+            "h": 190
+          },
+          {
+            "delay": 0.22,
+            "shakeTime": 0.15
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 675,
+            "y": 0,
+            "w": 22,
+            "h": 480
+          },
+          "organ"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          600,
+          480,
+          47,
+          {
+            "x": 480,
+            "y": 310,
+            "w": 50,
+            "h": 170
+          },
+          {
+            "delay": 0.32
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          730,
+          540,
+          230,
+          {
+            "size": 28
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "ivory",
+        "key",
+        "hatch",
+        "bar",
+        "pipe",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Blinking ivory",
+          "target": {
+            "x": 240,
+            "y": 108
+          },
+          "reach": {
+            "x": 210,
+            "y": 100,
+            "w": 85,
+            "h": 15
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Upper key",
+          "target": {
+            "x": 400,
+            "y": 158
+          },
+          "requires": [
+            {
+              "trap": "key",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Drop through hatch",
+          "target": {
+            "x": 505,
+            "y": 448
+          },
+          "reach": {
+            "x": 455,
+            "y": 280,
+            "w": 110,
+            "h": 200
+          },
+          "requires": [
+            {
+              "trap": "hatch",
+              "event": "trigger",
+              "minTicks": 1
+            },
+            {
+              "trap": "pipe",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Through organ gate",
+          "target": {
+            "x": 710,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "bar",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Middle pipe",
+          "target": {
+            "x": 790,
+            "y": 368
+          },
+          "reach": {
+            "x": 755,
+            "y": 360,
+            "w": 92,
+            "h": 15
+          },
+          "requires": [],
+          "grounded": true
+        }
+      ],
+      "required": [
+        {
+          "trap": "key",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "hatch",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "pipe",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "bar",
+          "event": "pass",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "35e300af3058cb3e62dae8aefc77ef83c4de35cb9cfc58e83dfd16bdbd8e03df",
+      "seed": 67,
+      "initial": {
+        "spawn": {
+          "x": 50,
+          "y": 158
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 414,
+      "seconds": 3.45,
+      "end": [
+        880.1666666666715,
+        277.07291666666663,
+        "win"
+      ]
+    },
+    "expanded": 18859,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      96,
+      168
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "35e300af3058cb3e62dae8aefc77ef83c4de35cb9cfc58e83dfd16bdbd8e03df",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 417,
+      "seconds": 3.475,
+      "end": [
+        880.7916666666719,
+        280.65625,
+        "win"
+      ]
+    },
+    "ticks": 417,
+    "successfulReplaySeconds": 3.475,
+    "seconds": {
+      "activeTraversal": 3.475,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1296.7136318533844,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "key",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 150
+      },
+      {
+        "trap": "hatch",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 159
+      },
+      {
+        "trap": "pipe",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 244
+      },
+      {
+        "trap": "bar",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 326
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 79,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Blinking ivory"
+      },
+      {
+        "tick": 142,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 150,
+        "id": "key",
+        "event": "activate"
+      },
+      {
+        "tick": 150,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Upper key"
+      },
+      {
+        "tick": 159,
+        "id": "hatch",
+        "event": "trigger"
+      },
+      {
+        "tick": 177,
+        "id": "bar",
+        "event": "open"
+      },
+      {
+        "tick": 244,
+        "id": "pipe",
+        "event": "trigger"
+      },
+      {
+        "tick": 244,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Drop through hatch"
+      },
+      {
+        "tick": 266,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 301,
+        "id": "pipe",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 326,
+        "id": "bar",
+        "event": "pass"
+      },
+      {
+        "tick": 326,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Through organ gate"
+      },
+      {
+        "tick": 358,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 361,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Middle pipe"
+      }
+    ],
+    "stagesCompleted": 5,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "key:activate": 1,
+      "stage:1:complete": 1,
+      "hatch:trigger": 1,
+      "bar:open": 1,
+      "pipe:trigger": 1,
+      "stage:2:complete": 1,
+      "platform:4:land": 2,
+      "pipe:hazardNear": 12,
+      "bar:pass": 1,
+      "stage:3:complete": 1,
+      "platform:5:land": 1,
+      "stage:4:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 64,
+      "score": 0.31339285714285714,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 34,
+      "score": 0.3045454545454545,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 51,
+      "score": 0.2919642857142857,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 15.013
+}

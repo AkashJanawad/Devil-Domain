@@ -1,0 +1,64 @@
+
+[Collision Detection]
+  ✓ overlapping rects collide
+  ✓ adjacent rects do NOT collide
+  ✓ contained rect collides
+  ✓ separated rects don't collide
+  ✓ Y-only separation no collision
+
+[Physics Constants]
+  ✓ jump velocity is negative (upward)
+  ✓ gravity is positive (downward)
+  ✓ max fall speed reasonable
+  ✓ player speed sane
+  ✓ coyote time positive
+  ✓ jump buffer positive
+
+[File Checks]
+  ✓ game.js readable and non-trivial
+  ✓ LEVELS array present
+  ✓ 40 level build() entries
+  ✓ no FableDevil player-facing strings
+  ✓ uses dd_done save key
+  ✓ uses dd_deaths save key
+  ✓ uses dd_theme key
+  ✓ DEVIL DOMAIN in source
+  ✓ KEEP GOING win text
+  ✓ YOU ESCAPED win text
+  ✓ migrates fd_ keys
+
+[HTML Structure]
+  ✓ title contains DEVIL DOMAIN
+  ✓ no vercel analytics CDN
+  ✓ no Google Fonts CDN
+  ✓ canvas element present
+  ✓ touch controls present
+  ✓ hud present
+  ✓ level grid present
+  ✓ devil/domain title spans
+
+[CSS Structure]
+  ✓ dark theme vars
+  ✓ light theme vars
+  ✓ crimson accent color
+  ✓ touch controls styled
+  ✓ tc-btn styled
+
+[Capacitor Config]
+  ✓ capacitor.config.json exists
+  ✓ correct appId
+  ✓ correct appName
+
+[Level Schema]
+  ✓ level 1 name present
+  ✓ level 30 name present
+  ✓ Door class present
+  ✓ CollapseFloor present
+  ✓ Saw class present
+  ✓ Laser class present
+  ✓ Teleporter class present
+
+==========================================
+  Results: 45 passed, 0 failed
+==========================================
+

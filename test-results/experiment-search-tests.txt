@@ -1,0 +1,12 @@
+✔ LAB A — LAND THEN WARP: discover a complete route from reset (8323.1952ms)
+✔ LAB B — CROSS THE PULSE: discover a complete route from reset (9193.1193ms)
+✔ LAB C — OPEN THE ESCAPE: discover a complete route from reset (11234.2982ms)
+✔ moving-platform encounter can be searched with 25ms control groups (26748.4464ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 55732.9366

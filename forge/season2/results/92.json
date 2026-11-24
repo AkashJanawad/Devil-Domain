@@ -1,0 +1,797 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 92,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 92,
+    "name": "HIGH WATER MARK",
+    "targetDifficulty": "HARD",
+    "intent": "Descend the reservoir ledges beneath the piston, cross its brittle low step and drain into the isolated exit well.",
+    "surprise": "A submerged step breaks away, and entering the drain drops a block above the exit well.",
+    "spawn": {
+      "x": 874,
+      "y": 88
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 812,
+          "y": 291
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 800,
+        "y": 120,
+        "w": 160,
+        "h": 16
+      },
+      {
+        "x": 629,
+        "y": 185,
+        "w": 112,
+        "h": 16
+      },
+      {
+        "x": 450,
+        "y": 255,
+        "w": 120,
+        "h": 16
+      },
+      {
+        "x": 86,
+        "y": 390,
+        "w": 135,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 500,
+        "w": 200,
+        "h": 40
+      },
+      {
+        "x": 760,
+        "y": 260,
+        "w": 200,
+        "h": 16
+      },
+      {
+        "x": 760,
+        "y": 276,
+        "w": 22,
+        "h": 264
+      },
+      {
+        "x": 782,
+        "y": 500,
+        "w": 178,
+        "h": 40
+      },
+      {
+        "x": 837,
+        "y": 410,
+        "w": 123,
+        "h": 16
+      },
+      {
+        "x": 809,
+        "y": 355,
+        "w": 70,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Crusher",
+        "args": [
+          664,
+          42,
+          {
+            "topY": 20,
+            "floorY": 185,
+            "period": 2.05,
+            "hold": 0.16,
+            "phase": 0.42,
+            "upSpeed": 280
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 272,
+            "y": 323,
+            "w": 115,
+            "h": 16
+          },
+          {
+            "delay": 0.7
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          52,
+          452,
+          790,
+          452,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 906,
+            "y": 215,
+            "w": 36,
+            "h": 34
+          },
+          {
+            "x": 20,
+            "y": 405,
+            "w": 90,
+            "h": 95
+          },
+          {
+            "shakeTime": 0.6,
+            "floorY": 500
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          200,
+          540,
+          560,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "piston",
+        "step",
+        "drain",
+        "weight",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Piston ledge",
+          "target": {
+            "x": 685,
+            "y": 153
+          },
+          "reach": {
+            "x": 629,
+            "y": 147,
+            "w": 112,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Middle water mark",
+          "target": {
+            "x": 510,
+            "y": 223
+          },
+          "reach": {
+            "x": 450,
+            "y": 217,
+            "w": 120,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Brittle mark",
+          "target": {
+            "x": 329.5,
+            "y": 291
+          },
+          "reach": {
+            "x": 272,
+            "y": 285,
+            "w": 115,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "step",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Low mark",
+          "target": {
+            "x": 153.5,
+            "y": 358
+          },
+          "reach": {
+            "x": 86,
+            "y": 352,
+            "w": 135,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Drain",
+          "target": {
+            "x": 58,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "drain",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "weight",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Exit well step",
+          "target": {
+            "x": 898.5,
+            "y": 378
+          },
+          "reach": {
+            "x": 837,
+            "y": 372,
+            "w": 123,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Clear summit overhang",
+          "target": {
+            "x": 916,
+            "y": 378
+          },
+          "reach": {
+            "x": 900,
+            "y": 372,
+            "w": 48,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Well summit",
+          "target": {
+            "x": 844,
+            "y": 323
+          },
+          "reach": {
+            "x": 809,
+            "y": 317,
+            "w": 70,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        }
+      ],
+      "required": [
+        {
+          "trap": "step",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "drain",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "weight",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "ef208e484269704ede6a6306c5a85674db8ed139ca5d5be218763c30ce7ba38b",
+      "seed": 92,
+      "initial": {
+        "spawn": {
+          "x": 874,
+          "y": 88
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 575,
+      "seconds": 4.791666666666667,
+      "end": [
+        842.9305555555558,
+        323,
+        "win"
+      ]
+    },
+    "expanded": 26663,
+    "rejectedWins": 88,
+    "removedJumpPressTicks": [
+      12,
+      108,
+      168,
+      240
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "ef208e484269704ede6a6306c5a85674db8ed139ca5d5be218763c30ce7ba38b",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 575,
+      "seconds": 4.791666666666667,
+      "end": [
+        842.9305555555558,
+        323,
+        "win"
+      ]
+    },
+    "ticks": 575,
+    "successfulReplaySeconds": 4.791666666666667,
+    "seconds": {
+      "activeTraversal": 4.775,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0.008333333333333333,
+      "neutralWaiting": 0.008333333333333333,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.016666666666666666
+    },
+    "distance": {
+      "selfPixels": 1518.8559810240831,
+      "carriedPixels": 0,
+      "portalPixels": 746.3997541468362
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 4
+    },
+    "required": [
+      {
+        "trap": "step",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 240
+      },
+      {
+        "trap": "drain",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 390
+      },
+      {
+        "trap": "weight",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 382
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 81,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 81,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Piston ledge"
+      },
+      {
+        "tick": 159,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 159,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Middle water mark"
+      },
+      {
+        "tick": 240,
+        "id": "step",
+        "event": "trigger"
+      },
+      {
+        "tick": 240,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Brittle mark"
+      },
+      {
+        "tick": 320,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 320,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Low mark"
+      },
+      {
+        "tick": 382,
+        "id": "weight",
+        "event": "trigger"
+      },
+      {
+        "tick": 390,
+        "id": "drain",
+        "event": "activate"
+      },
+      {
+        "tick": 390,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 390,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Drain"
+      },
+      {
+        "tick": 433,
+        "id": "platform:8",
+        "event": "land"
+      },
+      {
+        "tick": 439,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Exit well step"
+      },
+      {
+        "tick": 478,
+        "id": "weight",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 503,
+        "id": "platform:9",
+        "event": "land"
+      },
+      {
+        "tick": 540,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Clear summit overhang"
+      },
+      {
+        "tick": 575,
+        "id": "stage:7",
+        "event": "complete",
+        "label": "Well summit"
+      }
+    ],
+    "stagesCompleted": 8,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "stage:1:complete": 1,
+      "step:trigger": 1,
+      "stage:2:complete": 1,
+      "platform:3:land": 1,
+      "stage:3:complete": 1,
+      "weight:trigger": 1,
+      "drain:activate": 1,
+      "platform:7:land": 1,
+      "stage:4:complete": 1,
+      "platform:8:land": 2,
+      "stage:5:complete": 1,
+      "weight:hazardNear": 14,
+      "platform:9:land": 2,
+      "stage:6:complete": 1,
+      "stage:7:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 52,
+      "score": 0.305,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 55,
+      "score": 0.2776785714285714,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 86,
+      "score": 0.2718045112781955,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 15.5
+}

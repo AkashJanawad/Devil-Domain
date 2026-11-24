@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+
+www/
+android/.gradle/
+android/**/build/
+android/local.properties
+*.jks
+*.keystore

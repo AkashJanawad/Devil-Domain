@@ -1,0 +1,954 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 99,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 99,
+    "name": "THE LAST RECEIPT",
+    "targetDifficulty": "HARD",
+    "intent": "Cross the conveyor and its brittle receipt, stamp the switch, then follow the one-way tube to a timed lower exit.",
+    "surprise": "Stamping the receipt drops a weight into the outgoing passage; the portal wakes teeth near the exit.",
+    "spawn": {
+      "x": 53,
+      "y": 198
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 891,
+          "y": 426
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 230,
+        "w": 190,
+        "h": 16
+      },
+      {
+        "x": 470,
+        "y": 168,
+        "w": 140,
+        "h": 16
+      },
+      {
+        "x": 720,
+        "y": 230,
+        "w": 240,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 290,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 490,
+        "w": 295,
+        "h": 50
+      },
+      {
+        "x": 355,
+        "y": 425,
+        "w": 140,
+        "h": 16
+      },
+      {
+        "x": 560,
+        "y": 490,
+        "w": 400,
+        "h": 50
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Conveyor",
+        "args": [
+          {
+            "x": 232,
+            "y": 210,
+            "w": 115,
+            "h": 16
+          },
+          {
+            "dir": 1,
+            "force": 70
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 365,
+            "y": 230,
+            "w": 76,
+            "h": 16
+          },
+          {
+            "delay": 0.72
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          515,
+          158,
+          "receipt"
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 768,
+            "y": 65,
+            "w": 38,
+            "h": 35
+          },
+          {
+            "x": 510,
+            "y": 30,
+            "w": 70,
+            "h": 138
+          },
+          {
+            "shakeTime": 0.65,
+            "floorY": 230
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          882,
+          182,
+          63,
+          442,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 649,
+            "y": 306,
+            "w": 22,
+            "h": 184
+          },
+          "receipt"
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 754,
+            "y": 306,
+            "len": 184,
+            "vertical": true,
+            "period": 2.05,
+            "warn": 0.45,
+            "fire": 0.45,
+            "phase": 0.1
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          806,
+          490,
+          40,
+          {
+            "x": 844,
+            "y": 45,
+            "w": 32,
+            "h": 185
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          295,
+          540,
+          265,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "belt",
+        "receipt",
+        "stamp",
+        "weight",
+        "tube",
+        "lock",
+        "beam",
+        "teeth",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Conveyor",
+          "target": {
+            "x": 289.5,
+            "y": 178
+          },
+          "reach": {
+            "x": 232,
+            "y": 172,
+            "w": 115,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Brittle receipt",
+          "target": {
+            "x": 403,
+            "y": 198
+          },
+          "reach": {
+            "x": 365,
+            "y": 192,
+            "w": 76,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "receipt",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Stamp receipt",
+          "target": {
+            "x": 527,
+            "y": 136
+          },
+          "requires": [
+            {
+              "trap": "stamp",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "weight",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Outgoing tube",
+          "target": {
+            "x": 884,
+            "y": 198
+          },
+          "requires": [
+            {
+              "trap": "tube",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Lower step",
+          "target": {
+            "x": 425,
+            "y": 393
+          },
+          "reach": {
+            "x": 355,
+            "y": 387,
+            "w": 140,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Timed exit",
+          "target": {
+            "x": 890,
+            "y": 458
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "beam",
+              "event": "beamCross",
+              "minTicks": 1
+            },
+            {
+              "trap": "teeth",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "receipt",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "stamp",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "weight",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "tube",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "beam",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "teeth",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "205b4a7b67ad72f3255ebd6a11be485fa95dc4ecd3d9ac27a8d3ddd706169094",
+      "seed": 99,
+      "initial": {
+        "spawn": {
+          "x": 53,
+          "y": 198
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 782,
+      "seconds": 6.516666666666667,
+      "end": [
+        871.6944444444449,
+        446.1145833333333,
+        "win"
+      ]
+    },
+    "expanded": 37459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      192,
+      612,
+      588,
+      384,
+      480,
+      528
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "205b4a7b67ad72f3255ebd6a11be485fa95dc4ecd3d9ac27a8d3ddd706169094",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 783,
+      "seconds": 6.525,
+      "end": [
+        871.1250000000065,
+        450.10416666666663,
+        "win"
+      ]
+    },
+    "ticks": 783,
+    "successfulReplaySeconds": 6.525,
+    "seconds": {
+      "activeTraversal": 6.508333333333334,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0.008333333333333333,
+      "neutralWaiting": 0.008333333333333333,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 2209.203518634994,
+      "carriedPixels": 0,
+      "portalPixels": 834.284449009793
+    },
+    "inputs": {
+      "jumpPresses": 7,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "receipt",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 143
+      },
+      {
+        "trap": "stamp",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 195
+      },
+      {
+        "trap": "weight",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 190
+      },
+      {
+        "trap": "tube",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 359
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 359
+      },
+      {
+        "trap": "beam",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 716
+      },
+      {
+        "trap": "teeth",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 341
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 86,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Conveyor"
+      },
+      {
+        "tick": 143,
+        "id": "receipt",
+        "event": "trigger"
+      },
+      {
+        "tick": 143,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Brittle receipt"
+      },
+      {
+        "tick": 190,
+        "id": "weight",
+        "event": "trigger"
+      },
+      {
+        "tick": 195,
+        "id": "stamp",
+        "event": "activate"
+      },
+      {
+        "tick": 195,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Stamp receipt"
+      },
+      {
+        "tick": 201,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 222,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 293,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 296,
+        "id": "weight",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 341,
+        "id": "teeth",
+        "event": "trigger"
+      },
+      {
+        "tick": 359,
+        "id": "tube",
+        "event": "activate"
+      },
+      {
+        "tick": 359,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 359,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Outgoing tube"
+      },
+      {
+        "tick": 488,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 495,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Lower step"
+      },
+      {
+        "tick": 588,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 672,
+        "id": "beam",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 716,
+        "id": "beam",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 716,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Timed exit"
+      },
+      {
+        "tick": 733,
+        "id": "teeth",
+        "event": "hazardNear"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "stage:0:complete": 1,
+      "receipt:trigger": 1,
+      "stage:1:complete": 1,
+      "weight:trigger": 1,
+      "stamp:activate": 1,
+      "stage:2:complete": 1,
+      "platform:1:land": 1,
+      "lock:open": 1,
+      "platform:2:land": 2,
+      "weight:hazardNear": 7,
+      "teeth:trigger": 1,
+      "tube:activate": 1,
+      "lock:pass": 2,
+      "stage:3:complete": 1,
+      "platform:5:land": 1,
+      "stage:4:complete": 1,
+      "platform:6:land": 2,
+      "beam:hazardNear": 42,
+      "beam:beamCross": 17,
+      "stage:5:complete": 1,
+      "teeth:hazardNear": 18
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 89,
+      "score": 0.4681818181818182,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 64,
+      "score": 0.41238095238095235,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 96,
+      "score": 0.4069930069930069,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 28.289
+}

@@ -1,0 +1,26 @@
+{
+  "realClock": true,
+  "results": [
+    {
+      "mobile": false,
+      "jumpAt": 725,
+      "level": 34,
+      "state": "win",
+      "deaths": 0
+    },
+    {
+      "mobile": false,
+      "jumpAt": 740,
+      "level": 34,
+      "state": "win",
+      "deaths": 0
+    },
+    {
+      "mobile": true,
+      "jumpAt": 735,
+      "level": 34,
+      "state": "win",
+      "deaths": 0
+    }
+  ]
+}

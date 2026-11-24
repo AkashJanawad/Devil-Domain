@@ -1,0 +1,1102 @@
+TAP version 13
+# Subtest: level 30: movement-only victory, surprise activation, repeatability and death reset
+ok 1 - level 30: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 225.5004
+  type: 'test'
+  ...
+# Subtest: level 31: movement-only victory, surprise activation, repeatability and death reset
+ok 2 - level 31: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 84.5866
+  type: 'test'
+  ...
+# Subtest: level 32: movement-only victory, surprise activation, repeatability and death reset
+ok 3 - level 32: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 263.5474
+  type: 'test'
+  ...
+# Subtest: level 33: movement-only victory, surprise activation, repeatability and death reset
+ok 4 - level 33: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 111.1257
+  type: 'test'
+  ...
+# Subtest: level 34: movement-only victory, surprise activation, repeatability and death reset
+ok 5 - level 34: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 122.8333
+  type: 'test'
+  ...
+# Subtest: level 35: movement-only victory, surprise activation, repeatability and death reset
+ok 6 - level 35: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 128.3436
+  type: 'test'
+  ...
+# Subtest: level 36: movement-only victory, surprise activation, repeatability and death reset
+ok 7 - level 36: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 136.5638
+  type: 'test'
+  ...
+# Subtest: level 37: movement-only victory, surprise activation, repeatability and death reset
+ok 8 - level 37: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 130.137
+  type: 'test'
+  ...
+# Subtest: level 38: movement-only victory, surprise activation, repeatability and death reset
+ok 9 - level 38: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 166.2483
+  type: 'test'
+  ...
+# Subtest: level 39: movement-only victory, surprise activation, repeatability and death reset
+ok 10 - level 39: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 75.7013
+  type: 'test'
+  ...
+# Subtest: level 40: movement-only victory, surprise activation, repeatability and death reset
+ok 11 - level 40: movement-only victory, surprise activation, repeatability and death reset
+  ---
+  duration_ms: 144.0239
+  type: 'test'
+  ...
+# Subtest: level 30 recorded route fails with old ceiling and succeeds with corrected geometry
+ok 12 - level 30 recorded route fails with old ceiling and succeeds with corrected geometry
+  ---
+  duration_ms: 108.6349
+  type: 'test'
+  ...
+# Subtest: level 30 completion progresses to 31; 40 completes the campaign
+ok 13 - level 30 completion progresses to 31; 40 completes the campaign
+  ---
+  duration_ms: 106.7678
+  type: 'test'
+  ...
+# Subtest: development unlock enables all 40 without changing saves
+ok 14 - development unlock enables all 40 without changing saves
+  ---
+  duration_ms: 17.5577
+  type: 'test'
+  ...
+# Subtest: release and disabled development retain genuine sequential unlocking
+ok 15 - release and disabled development retain genuine sequential unlocking
+  ---
+  duration_ms: 11.8112
+  type: 'test'
+  ...
+# Subtest: old 30-level saves unlock 31 and preserve statistics, without completing expansion
+ok 16 - old 30-level saves unlock 31 and preserve statistics, without completing expansion
+  ---
+  duration_ms: 6.9925
+  type: 'test'
+  ...
+# Subtest: release packaging always overwrites developer configuration
+ok 17 - release packaging always overwrites developer configuration
+  ---
+  duration_ms: 244.3025
+  type: 'test'
+  ...
+# Subtest: original levels 1-29 definitions match the pre-expansion inventory
+ok 18 - original levels 1-29 definitions match the pre-expansion inventory
+  ---
+  duration_ms: 27.0649
+  type: 'test'
+  ...
+# Subtest: gate close-speed option preserves original default
+ok 19 - gate close-speed option preserves original default
+  ---
+  duration_ms: 5.5523
+  type: 'test'
+  ...
+# Subtest: COMPOSITE A — LAUNCH INTO THE PULSE: fresh whole-level search and replay
+ok 20 - COMPOSITE A — LAUNCH INTO THE PULSE: fresh whole-level search and replay
+  ---
+  duration_ms: 40724.2774
+  type: 'test'
+  ...
+# Subtest: COMPOSITE B — CARRY THE KEY: fresh whole-level search and replay
+ok 21 - COMPOSITE B — CARRY THE KEY: fresh whole-level search and replay
+  ---
+  duration_ms: 54037.6878
+  type: 'test'
+  ...
+# Subtest: COMPOSITE C — THREE TERMS: fresh whole-level search and replay
+ok 22 - COMPOSITE C — THREE TERMS: fresh whole-level search and replay
+  ---
+  duration_ms: 38165.5613
+  type: 'test'
+  ...
+# Subtest: contracts reject incompatible connections and impossible geometry before search
+ok 23 - contracts reject incompatible connections and impossible geometry before search
+  ---
+  duration_ms: 21.8102
+  type: 'test'
+  ...
+# Subtest: only three developer-only composites; production and generator are isolated
+ok 24 - only three developer-only composites; production and generator are isolated
+  ---
+  duration_ms: 34.4493
+  type: 'test'
+  ...
+# Subtest: COMPOSITE A — LAUNCH INTO THE PULSE: fresh completion, ordered contracts, no floor bypass
+ok 25 - COMPOSITE A — LAUNCH INTO THE PULSE: fresh completion, ordered contracts, no floor bypass
+  ---
+  duration_ms: 2094.1444
+  type: 'test'
+  ...
+# Subtest: COMPOSITE B — CARRY THE KEY: fresh completion, ordered contracts, no floor bypass
+ok 26 - COMPOSITE B — CARRY THE KEY: fresh completion, ordered contracts, no floor bypass
+  ---
+  duration_ms: 1155.1402
+  type: 'test'
+  ...
+# Subtest: COMPOSITE C — THREE TERMS: fresh completion, ordered contracts, no floor bypass
+ok 27 - COMPOSITE C — THREE TERMS: fresh completion, ordered contracts, no floor bypass
+  ---
+  duration_ms: 2370.4562
+  type: 'test'
+  ...
+# Subtest: a physical win is rejected if a later encounter tries to reuse an earlier activation
+ok 28 - a physical win is rejected if a later encounter tries to reuse an earlier activation
+  ---
+  duration_ms: 141.7554
+  type: 'test'
+  ...
+# Subtest: missing encounter entry rejects an otherwise identical successful physics replay
+ok 29 - missing encounter entry rejects an otherwise identical successful physics replay
+  ---
+  duration_ms: 189.0906
+  type: 'test'
+  ...
+# Subtest: changed composite geometry invalidates its saved trace
+ok 30 - changed composite geometry invalidates its saved trace
+  ---
+  duration_ms: 1.9561
+  type: 'test'
+  ...
+# Subtest: EXTREME exact quotas and rejection of easier results
+ok 31 - EXTREME exact quotas and rejection of easier results
+  ---
+  duration_ms: 16.1879
+  type: 'test'
+  ...
+# Subtest: VERY HARD exact quotas and rejection of easier results
+ok 32 - VERY HARD exact quotas and rejection of easier results
+  ---
+  duration_ms: 5.2435
+  type: 'test'
+  ...
+# Subtest: HARD exact quotas and rejection of easier results
+ok 33 - HARD exact quotas and rejection of easier results
+  ---
+  duration_ms: 1.5285
+  type: 'test'
+  ...
+# Subtest: odd count, beginner and released reservations
+ok 34 - odd count, beginner and released reservations
+  ---
+  duration_ms: 57.8619
+  type: 'test'
+  ...
+# Subtest: LAB A — LAND THEN WARP: discover a complete route from reset
+ok 35 - LAB A — LAND THEN WARP: discover a complete route from reset
+  ---
+  duration_ms: 12279.5883
+  type: 'test'
+  ...
+# Subtest: LAB B — CROSS THE PULSE: discover a complete route from reset
+ok 36 - LAB B — CROSS THE PULSE: discover a complete route from reset
+  ---
+  duration_ms: 13334.5418
+  type: 'test'
+  ...
+# Subtest: LAB C — OPEN THE ESCAPE: discover a complete route from reset
+ok 37 - LAB C — OPEN THE ESCAPE: discover a complete route from reset
+  ---
+  duration_ms: 14095.1258
+  type: 'test'
+  ...
+# Subtest: moving-platform encounter can be searched with 25ms control groups
+ok 38 - moving-platform encounter can be searched with 25ms control groups
+  ---
+  duration_ms: 29721.9234
+  type: 'test'
+  ...
+# Subtest: deduplication distinguishes dynamics the old key merged
+ok 39 - deduplication distinguishes dynamics the old key merged
+  ---
+  duration_ms: 26.4412
+  type: 'test'
+  ...
+# Subtest: search snapshot restores pending input, trap timers and ordered progress
+ok 40 - search snapshot restores pending input, trap timers and ordered progress
+  ---
+  duration_ms: 37.3215
+  type: 'test'
+  ...
+# Subtest: time accounting distinguishes waiting, carrying, portals and repeated motion
+ok 41 - time accounting distinguishes waiting, carrying, portals and repeated motion
+  ---
+  duration_ms: 16.2254
+  type: 'test'
+  ...
+# Subtest: actual engine standing still is measured as waiting after initial landing
+ok 42 - actual engine standing still is measured as waiting after initial landing
+  ---
+  duration_ms: 41.0221
+  type: 'test'
+  ...
+# Subtest: measurement refuses stale or unsuccessful proof
+ok 43 - measurement refuses stale or unsuccessful proof
+  ---
+  duration_ms: 48.0835
+  type: 'test'
+  ...
+# Subtest: LAB A — LAND THEN WARP: fresh replay, measurements, requirements and counterfactuals
+ok 44 - LAB A — LAND THEN WARP: fresh replay, measurements, requirements and counterfactuals
+  ---
+  duration_ms: 354.2223
+  type: 'test'
+  ...
+# Subtest: LAB B — CROSS THE PULSE: fresh replay, measurements, requirements and counterfactuals
+ok 45 - LAB B — CROSS THE PULSE: fresh replay, measurements, requirements and counterfactuals
+  ---
+  duration_ms: 501.6378
+  type: 'test'
+  ...
+# Subtest: LAB C — OPEN THE ESCAPE: fresh replay, measurements, requirements and counterfactuals
+ok 46 - LAB C — OPEN THE ESCAPE: fresh replay, measurements, requirements and counterfactuals
+  ---
+  duration_ms: 439.4747
+  type: 'test'
+  ...
+# Subtest: experimental fixtures remain outside production and active generation
+ok 47 - experimental fixtures remain outside production and active generation
+  ---
+  duration_ms: 26.4962
+  type: 'test'
+  ...
+# Subtest: production files untouched
+ok 48 - production files untouched
+  ---
+  duration_ms: 11.79
+  type: 'test'
+  ...
+# Subtest: saved Season 2 failures were generation constraints
+ok 49 - saved Season 2 failures were generation constraints
+  ---
+  duration_ms: 6.5918
+  type: 'test'
+  ...
+# Subtest: determinism, automatic slots and season boundary
+ok 50 - determinism, automatic slots and season boundary
+  ---
+  duration_ms: 72.585
+  type: 'test'
+  ...
+# Subtest: seven active categories and two-factor difficulty
+ok 51 - seven active categories and two-factor difficulty
+  ---
+  duration_ms: 4.4501
+  type: 'test'
+  ...
+# Subtest: candidate 51 proof bound to identity; unapproved
+ok 52 - candidate 51 proof bound to identity; unapproved
+  ---
+  duration_ms: 75.9323
+  type: 'test'
+  ...
+# Subtest: candidate 52 proof bound to identity; unapproved
+ok 53 - candidate 52 proof bound to identity; unapproved
+  ---
+  duration_ms: 72.6274
+  type: 'test'
+  ...
+# Subtest: candidate 53 proof bound to identity; unapproved
+ok 54 - candidate 53 proof bound to identity; unapproved
+  ---
+  duration_ms: 110.4746
+  type: 'test'
+  ...
+# Subtest: candidate 54 proof bound to identity; unapproved
+ok 55 - candidate 54 proof bound to identity; unapproved
+  ---
+  duration_ms: 39.8047
+  type: 'test'
+  ...
+# Subtest: candidate 55 proof bound to identity; unapproved
+ok 56 - candidate 55 proof bound to identity; unapproved
+  ---
+  duration_ms: 38.2643
+  type: 'test'
+  ...
+# Subtest: candidate 56 proof bound to identity; unapproved
+ok 57 - candidate 56 proof bound to identity; unapproved
+  ---
+  duration_ms: 87.6754
+  type: 'test'
+  ...
+# Subtest: candidate 57 proof bound to identity; unapproved
+ok 58 - candidate 57 proof bound to identity; unapproved
+  ---
+  duration_ms: 54.1748
+  type: 'test'
+  ...
+# Subtest: candidate 58 proof bound to identity; unapproved
+ok 59 - candidate 58 proof bound to identity; unapproved
+  ---
+  duration_ms: 89.2816
+  type: 'test'
+  ...
+# Subtest: candidate 59 proof bound to identity; unapproved
+ok 60 - candidate 59 proof bound to identity; unapproved
+  ---
+  duration_ms: 77.1427
+  type: 'test'
+  ...
+# Subtest: candidate 60 proof bound to identity; unapproved
+ok 61 - candidate 60 proof bound to identity; unapproved
+  ---
+  duration_ms: 34.9765
+  type: 'test'
+  ...
+# Subtest: deterministic compositional alternatives, no boomerang exits
+ok 62 - deterministic compositional alternatives, no boomerang exits
+  ---
+  duration_ms: 21.0179
+  type: 'test'
+  ...
+# Subtest: quality cannot accept geometry without a completion proof
+ok 63 - quality cannot accept geometry without a completion proof
+  ---
+  duration_ms: 1.553
+  type: 'test'
+  ...
+# Subtest: repeated exit destinations rejected even with existing winning proof
+ok 64 - repeated exit destinations rejected even with existing winning proof
+  ---
+  duration_ms: 41.434
+  type: 'test'
+  ...
+# Subtest: experimental reporting never claims target-band fulfillment
+ok 65 - experimental reporting never claims target-band fulfillment
+  ---
+  duration_ms: 1.2413
+  type: 'test'
+  ...
+# Subtest: five experimental proofs: exact hashes, quality, novelty and timing tolerance
+ok 66 - five experimental proofs: exact hashes, quality, novelty and timing tolerance
+  ---
+  duration_ms: 1928.0991
+  type: 'test'
+  ...
+# Subtest: original 40 definitions are byte-identical
+ok 67 - original 40 definitions are byte-identical
+  ---
+  duration_ms: 5.6942
+  type: 'test'
+  ...
+# Subtest: generation deterministic and constraints reject explicitly
+ok 68 - generation deterministic and constraints reject explicitly
+  ---
+  duration_ms: 11.5528
+  type: 'test'
+  ...
+# Subtest: malformed geometry, references, checkpoints and missing surprise rejected
+ok 69 - malformed geometry, references, checkpoints and missing surprise rejected
+  ---
+  duration_ms: 4.7825
+  type: 'test'
+  ...
+# Subtest: renamed/recolored identical layout rejected as duplicate
+ok 70 - renamed/recolored identical layout rejected as duplicate
+  ---
+  duration_ms: 3.155
+  type: 'test'
+  ...
+# Subtest: bounded search failure is UNVERIFIED, never impossible
+ok 71 - bounded search failure is UNVERIFIED, never impossible
+  ---
+  duration_ms: 55.2621
+  type: 'test'
+  ...
+# Subtest: tampered trace cannot verify
+ok 72 - tampered trace cannot verify
+  ---
+  duration_ms: 25.1696
+  type: 'test'
+  ...
+# Subtest: limited repair revalidates out-of-world exit
+ok 73 - limited repair revalidates out-of-world exit
+  ---
+  duration_ms: 41.473
+  type: 'test'
+  ...
+# Subtest: wind triggers, affects motion, resets; old constructors retained
+ok 74 - wind triggers, affects motion, resets; old constructors retained
+  ---
+  duration_ms: 9.1937
+  type: 'test'
+  ...
+# Subtest: level 41: schema, replay repeatability, hidden activation, production data
+ok 75 - level 41: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 223.73
+  type: 'test'
+  ...
+# Subtest: level 42: schema, replay repeatability, hidden activation, production data
+ok 76 - level 42: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 127.2842
+  type: 'test'
+  ...
+# Subtest: level 43: schema, replay repeatability, hidden activation, production data
+ok 77 - level 43: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 200.9542
+  type: 'test'
+  ...
+# Subtest: level 44: schema, replay repeatability, hidden activation, production data
+ok 78 - level 44: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 125.4506
+  type: 'test'
+  ...
+# Subtest: level 45: schema, replay repeatability, hidden activation, production data
+ok 79 - level 45: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 97.0913
+  type: 'test'
+  ...
+# Subtest: level 46: schema, replay repeatability, hidden activation, production data
+ok 80 - level 46: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 154.1673
+  type: 'test'
+  ...
+# Subtest: level 47: schema, replay repeatability, hidden activation, production data
+ok 81 - level 47: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 130.0291
+  type: 'test'
+  ...
+# Subtest: level 48: schema, replay repeatability, hidden activation, production data
+ok 82 - level 48: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 117.2923
+  type: 'test'
+  ...
+# Subtest: level 49: schema, replay repeatability, hidden activation, production data
+ok 83 - level 49: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 161.639
+  type: 'test'
+  ...
+# Subtest: level 50: schema, replay repeatability, hidden activation, production data
+ok 84 - level 50: schema, replay repeatability, hidden activation, production data
+  ---
+  duration_ms: 114.5465
+  type: 'test'
+  ...
+# Subtest: season 2 unavailable; legacy progress retained; final completion screen
+ok 85 - season 2 unavailable; legacy progress retained; final completion screen
+  ---
+  duration_ms: 13.394
+  type: 'test'
+  ...
+# Subtest: level 1: build, finite geometry, safe spawn, simulate, reset
+ok 86 - level 1: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 80.0624
+  type: 'test'
+  ...
+# Subtest: level 2: build, finite geometry, safe spawn, simulate, reset
+ok 87 - level 2: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 38.8711
+  type: 'test'
+  ...
+# Subtest: level 3: build, finite geometry, safe spawn, simulate, reset
+ok 88 - level 3: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 101.4435
+  type: 'test'
+  ...
+# Subtest: level 4: build, finite geometry, safe spawn, simulate, reset
+ok 89 - level 4: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 82.9323
+  type: 'test'
+  ...
+# Subtest: level 5: build, finite geometry, safe spawn, simulate, reset
+ok 90 - level 5: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 79.7032
+  type: 'test'
+  ...
+# Subtest: level 6: build, finite geometry, safe spawn, simulate, reset
+ok 91 - level 6: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 49.6656
+  type: 'test'
+  ...
+# Subtest: level 7: build, finite geometry, safe spawn, simulate, reset
+ok 92 - level 7: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 81.6645
+  type: 'test'
+  ...
+# Subtest: level 8: build, finite geometry, safe spawn, simulate, reset
+ok 93 - level 8: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 74.3512
+  type: 'test'
+  ...
+# Subtest: level 9: build, finite geometry, safe spawn, simulate, reset
+ok 94 - level 9: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 80.3106
+  type: 'test'
+  ...
+# Subtest: level 10: build, finite geometry, safe spawn, simulate, reset
+ok 95 - level 10: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 68.7541
+  type: 'test'
+  ...
+# Subtest: level 11: build, finite geometry, safe spawn, simulate, reset
+ok 96 - level 11: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 69.8957
+  type: 'test'
+  ...
+# Subtest: level 12: build, finite geometry, safe spawn, simulate, reset
+ok 97 - level 12: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 62.7346
+  type: 'test'
+  ...
+# Subtest: level 13: build, finite geometry, safe spawn, simulate, reset
+ok 98 - level 13: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 54.2287
+  type: 'test'
+  ...
+# Subtest: level 14: build, finite geometry, safe spawn, simulate, reset
+ok 99 - level 14: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 65.5717
+  type: 'test'
+  ...
+# Subtest: level 15: build, finite geometry, safe spawn, simulate, reset
+ok 100 - level 15: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 92.3789
+  type: 'test'
+  ...
+# Subtest: level 16: build, finite geometry, safe spawn, simulate, reset
+ok 101 - level 16: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 77.9599
+  type: 'test'
+  ...
+# Subtest: level 17: build, finite geometry, safe spawn, simulate, reset
+ok 102 - level 17: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 57.3199
+  type: 'test'
+  ...
+# Subtest: level 18: build, finite geometry, safe spawn, simulate, reset
+ok 103 - level 18: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 83.2426
+  type: 'test'
+  ...
+# Subtest: level 19: build, finite geometry, safe spawn, simulate, reset
+ok 104 - level 19: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 112.2136
+  type: 'test'
+  ...
+# Subtest: level 20: build, finite geometry, safe spawn, simulate, reset
+ok 105 - level 20: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 101.5056
+  type: 'test'
+  ...
+# Subtest: level 21: build, finite geometry, safe spawn, simulate, reset
+ok 106 - level 21: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 86.7747
+  type: 'test'
+  ...
+# Subtest: level 22: build, finite geometry, safe spawn, simulate, reset
+ok 107 - level 22: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 70.7885
+  type: 'test'
+  ...
+# Subtest: level 23: build, finite geometry, safe spawn, simulate, reset
+ok 108 - level 23: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 78.9497
+  type: 'test'
+  ...
+# Subtest: level 24: build, finite geometry, safe spawn, simulate, reset
+ok 109 - level 24: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 67.2059
+  type: 'test'
+  ...
+# Subtest: level 25: build, finite geometry, safe spawn, simulate, reset
+ok 110 - level 25: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 88.6786
+  type: 'test'
+  ...
+# Subtest: level 26: build, finite geometry, safe spawn, simulate, reset
+ok 111 - level 26: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 53.5804
+  type: 'test'
+  ...
+# Subtest: level 27: build, finite geometry, safe spawn, simulate, reset
+ok 112 - level 27: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 68.9276
+  type: 'test'
+  ...
+# Subtest: level 28: build, finite geometry, safe spawn, simulate, reset
+ok 113 - level 28: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 70.8947
+  type: 'test'
+  ...
+# Subtest: level 29: build, finite geometry, safe spawn, simulate, reset
+ok 114 - level 29: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 58.4288
+  type: 'test'
+  ...
+# Subtest: level 30: build, finite geometry, safe spawn, simulate, reset
+ok 115 - level 30: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 77.5354
+  type: 'test'
+  ...
+# Subtest: level 31: build, finite geometry, safe spawn, simulate, reset
+ok 116 - level 31: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 61.977
+  type: 'test'
+  ...
+# Subtest: level 32: build, finite geometry, safe spawn, simulate, reset
+ok 117 - level 32: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 45.2522
+  type: 'test'
+  ...
+# Subtest: level 33: build, finite geometry, safe spawn, simulate, reset
+ok 118 - level 33: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 31.7531
+  type: 'test'
+  ...
+# Subtest: level 34: build, finite geometry, safe spawn, simulate, reset
+ok 119 - level 34: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 54.9283
+  type: 'test'
+  ...
+# Subtest: level 35: build, finite geometry, safe spawn, simulate, reset
+ok 120 - level 35: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 55.3079
+  type: 'test'
+  ...
+# Subtest: level 36: build, finite geometry, safe spawn, simulate, reset
+ok 121 - level 36: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 65.9707
+  type: 'test'
+  ...
+# Subtest: level 37: build, finite geometry, safe spawn, simulate, reset
+ok 122 - level 37: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 72.7024
+  type: 'test'
+  ...
+# Subtest: level 38: build, finite geometry, safe spawn, simulate, reset
+ok 123 - level 38: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 54.8714
+  type: 'test'
+  ...
+# Subtest: level 39: build, finite geometry, safe spawn, simulate, reset
+ok 124 - level 39: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 57.773
+  type: 'test'
+  ...
+# Subtest: level 40: build, finite geometry, safe spawn, simulate, reset
+ok 125 - level 40: build, finite geometry, safe spawn, simulate, reset
+  ---
+  duration_ms: 71
+  type: 'test'
+  ...
+# Subtest: real collision helper excludes edge contact
+ok 126 - real collision helper excludes edge contact
+  ---
+  duration_ms: 5.3219
+  type: 'test'
+  ...
+# Subtest: frame pacing produces same movement at 30/60/120 Hz
+ok 127 - frame pacing produces same movement at 30/60/120 Hz
+  ---
+  duration_ms: 49.98
+  type: 'test'
+  ...
+# Subtest: held jump is higher than released jump and lands on floor
+ok 128 - held jump is higher than released jump and lands on floor
+  ---
+  duration_ms: 12.7088
+  type: 'test'
+  ...
+# Subtest: death counted once, respawn resets traps and flags
+ok 129 - death counted once, respawn resets traps and flags
+  ---
+  duration_ms: 7.9159
+  type: 'test'
+  ...
+# Subtest: level one completes through actual movement and unlocks level two
+ok 130 - level one completes through actual movement and unlocks level two
+  ---
+  duration_ms: 15.6852
+  type: 'test'
+  ...
+# Subtest: final victory transitions to end screen
+ok 131 - final victory transitions to end screen
+  ---
+  duration_ms: 7.0864
+  type: 'test'
+  ...
+# Subtest: level 26 portal arrival does not intersect platform
+ok 132 - level 26 portal arrival does not intersect platform
+  ---
+  duration_ms: 7.1297
+  type: 'test'
+  ...
+# Subtest: legacy migration preserves existing progress
+ok 133 - legacy migration preserves existing progress
+  ---
+  duration_ms: 7.8036
+  type: 'test'
+  ...
+# Subtest: invalid saves and inaccessible storage do not crash gameplay
+ok 134 - invalid saves and inaccessible storage do not crash gameplay
+  ---
+  duration_ms: 26.0769
+  type: 'test'
+  ...
+# Subtest: multi-pointer ownership, cancellation, blur and resume
+ok 135 - multi-pointer ownership, cancellation, blur and resume
+  ---
+  duration_ms: 8.7289
+  type: 'test'
+  ...
+# Subtest: back cancels pending transition and returns to menu
+ok 136 - back cancels pending transition and returns to menu
+  ---
+  duration_ms: 4.9411
+  type: 'test'
+  ...
+# Subtest: Android packaging and offline runtime configuration
+ok 137 - Android packaging and offline runtime configuration
+  ---
+  duration_ms: 8.6874
+  type: 'test'
+  ...
+# Subtest: all reusable traps reset to their constructor state after activation
+ok 138 - all reusable traps reset to their constructor state after activation
+  ---
+  duration_ms: 68.3002
+  type: 'test'
+  ...
+# Subtest: wall and ceiling collisions stop player without penetration
+ok 139 - wall and ceiling collisions stop player without penetration
+  ---
+  duration_ms: 10.5638
+  type: 'test'
+  ...
+# Subtest: coyote time and buffered landing jump work
+ok 140 - coyote time and buffered landing jump work
+  ---
+  duration_ms: 7.0038
+  type: 'test'
+  ...
+# Subtest: Season 2 is ten handcrafted developer drafts, alongside the approved 80-level campaign
+ok 141 - Season 2 is ten handcrafted developer drafts, alongside the approved 80-level campaign
+  ---
+  duration_ms: 40.9441
+  type: 'test'
+  ...
+# Subtest: Level 51: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 142 - Level 51: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 627.3862
+  type: 'test'
+  ...
+# Subtest: Level 52: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 143 - Level 52: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 488.8115
+  type: 'test'
+  ...
+# Subtest: Level 53: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 144 - Level 53: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 390.2974
+  type: 'test'
+  ...
+# Subtest: Level 54: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 145 - Level 54: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 628.8371
+  type: 'test'
+  ...
+# Subtest: Level 55: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 146 - Level 55: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 382.2751
+  type: 'test'
+  ...
+# Subtest: Level 56: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 147 - Level 56: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 281.4084
+  type: 'test'
+  ...
+# Subtest: Level 57: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 148 - Level 57: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 270.6711
+  type: 'test'
+  ...
+# Subtest: Level 58: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 149 - Level 58: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 223.2056
+  type: 'test'
+  ...
+# Subtest: Level 59: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 150 - Level 59: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 477.1949
+  type: 'test'
+  ...
+# Subtest: Level 60: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 151 - Level 60: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 363.4418
+  type: 'test'
+  ...
+# Subtest: Level 61: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 152 - Level 61: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 502.9189
+  type: 'test'
+  ...
+# Subtest: Level 62: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 153 - Level 62: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 295.6463
+  type: 'test'
+  ...
+# Subtest: Level 63: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 154 - Level 63: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 271.8075
+  type: 'test'
+  ...
+# Subtest: Level 64: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 155 - Level 64: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 443.7513
+  type: 'test'
+  ...
+# Subtest: Level 65: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 156 - Level 65: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 255.1406
+  type: 'test'
+  ...
+# Subtest: Level 66: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 157 - Level 66: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 336.8373
+  type: 'test'
+  ...
+# Subtest: Level 67: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 158 - Level 67: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 265.6011
+  type: 'test'
+  ...
+# Subtest: Level 68: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 159 - Level 68: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 244.4786
+  type: 'test'
+  ...
+# Subtest: Level 69: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 160 - Level 69: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 467.4217
+  type: 'test'
+  ...
+# Subtest: Level 70: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 161 - Level 70: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 326.9619
+  type: 'test'
+  ...
+# Subtest: Level 71: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 162 - Level 71: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 316.6767
+  type: 'test'
+  ...
+# Subtest: Level 72: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 163 - Level 72: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 312.1237
+  type: 'test'
+  ...
+# Subtest: Level 73: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 164 - Level 73: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 516.5775
+  type: 'test'
+  ...
+# Subtest: Level 74: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 165 - Level 74: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 404.1476
+  type: 'test'
+  ...
+# Subtest: Level 75: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 166 - Level 75: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 281.543
+  type: 'test'
+  ...
+# Subtest: Level 76: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 167 - Level 76: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 438.6458
+  type: 'test'
+  ...
+# Subtest: Level 77: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 168 - Level 77: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 384.181
+  type: 'test'
+  ...
+# Subtest: Level 78: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 169 - Level 78: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 266.7526
+  type: 'test'
+  ...
+# Subtest: Level 79: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 170 - Level 79: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 330.66
+  type: 'test'
+  ...
+# Subtest: Level 80: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 171 - Level 80: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 855.4278
+  type: 'test'
+  ...
+# Subtest: Level 81: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 172 - Level 81: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 473.5923
+  type: 'test'
+  ...
+# Subtest: Level 82: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 173 - Level 82: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 371.793
+  type: 'test'
+  ...
+# Subtest: Level 83: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 174 - Level 83: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 299.9459
+  type: 'test'
+  ...
+# Subtest: Level 84: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 175 - Level 84: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 599.2166
+  type: 'test'
+  ...
+# Subtest: Level 85: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 176 - Level 85: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 291.6328
+  type: 'test'
+  ...
+# Subtest: Level 86: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 177 - Level 86: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 600.349
+  type: 'test'
+  ...
+# Subtest: Level 87: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 178 - Level 87: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 423.8164
+  type: 'test'
+  ...
+# Subtest: Level 88: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 179 - Level 88: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 514.5357
+  type: 'test'
+  ...
+# Subtest: Level 89: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 180 - Level 89: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 682.4073
+  type: 'test'
+  ...
+# Subtest: Level 90: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 181 - Level 90: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 530.0702
+  type: 'test'
+  ...
+# Subtest: campaign uses approved geometry, progresses from 50 to 51 and finishes at 80
+ok 182 - campaign uses approved geometry, progresses from 50 to 51 and finishes at 80
+  ---
+  duration_ms: 34.6955
+  type: 'test'
+  ...
+1..182
+# tests 182
+# suites 0
+# pass 182
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 133374.6869

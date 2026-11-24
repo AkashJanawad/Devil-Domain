@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Composite Playtest Lab — Devil Domain</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#11141b;color:#eee8df;font:15px system-ui;height:100dvh;display:flex;flex-direction:column}
+header{padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}h1{font-size:19px;margin:0;color:#ff684d}
+button{padding:10px 14px;border:1px solid #485163;border-radius:6px;background:#252c38;color:white;font:inherit;cursor:pointer}
+button:hover{border-color:#ff684d}button:disabled{opacity:.5;cursor:wait}p{margin:0;padding:0 20px 8px;color:#b5b8c1}
+#lab-status{color:#ffca82;min-width:180px}iframe{display:block;border:0;width:100%;flex:1;min-height:0}
+</style></head><body>
+<header><h1>COMPOSITE PLAYTEST LAB</h1><span id="lab-status" role="status">Loading…</span>
+<button id="lab-restart" disabled>Restart level</button><button id="lab-return">Return to laboratory</button></header>
+<p id="lab-title"></p><p>Move: ← → or A / D · Jump: Space, ↑ or W · Restart: R · Return: Esc. Click the game if keyboard focus is lost.</p>
+<iframe id="lab-game" title="Experimental composite gameplay" style="visibility:hidden"></iframe>
+<script>
+const game=document.getElementById('lab-game'),status=document.getElementById('lab-status'),restart=document.getElementById('lab-restart');
+const id=Number(new URLSearchParams(location.search).get('level'));
+const names={481:'A — Launch into the Pulse',482:'B — Carry the Key',483:'C — Three Terms'};
+document.getElementById('lab-return').onclick=()=>location.href='/#composite-playtest-lab';
+restart.onclick=()=>{game.contentWindow.restartComposite();game.contentWindow.focus();};
+addEventListener('message',event=>{
+ if(event.origin!==location.origin||event.source!==game.contentWindow||event.data?.type!=='composite-playtest')return;
+ if(event.data.action==='return'){location.href='/#composite-playtest-lab';return;}
+ status.textContent=event.data.message;restart.disabled=event.data.action==='error';
+ if(event.data.action==='ready'){game.style.visibility='visible';game.contentWindow.focus();}
+});
+if(names[id]){document.getElementById('lab-title').textContent=names[id];game.src='/preview?composite='+id;}
+else status.textContent='Unknown composite. Return to the laboratory.';
+</script></body></html>

@@ -1,0 +1,3 @@
+android\app\build\outputs\apk\debug\app-debug.apk: no Forge or test tools
+android\app\build\outputs\bundle\release\app-release.aab: no Forge or test tools
+Fresh release assets: no Forge tools

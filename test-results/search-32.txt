@@ -1,0 +1,205 @@
+0 6 {
+  score: -379.92743055555553,
+  stage: 0,
+  p: {
+    x: 64.86111111111111,
+    y: 437.69791666666663,
+    w: 26,
+    h: 32,
+    vx: 186.66666666666666,
+    vy: -609.1666666666667,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: true
+  }
+}
+20 80 {
+  score: 9965.128819444446,
+  stage: 1,
+  p: {
+    x: 561.1666666666642,
+    y: 366.14930555555554,
+    w: 26,
+    h: 32,
+    vx: 65,
+    vy: 17.916666666666668,
+    grounded: false,
+    coyote: 0,
+    face: -1,
+    squash: 0,
+    jumping: false
+  }
+}
+40 80 {
+  score: 9937.012500000003,
+  stage: 1,
+  p: {
+    x: 560.5416666666641,
+    y: 407.2083333333333,
+    w: 26,
+    h: 32,
+    vx: -180,
+    vy: 412.0833333333334,
+    grounded: false,
+    coyote: 0,
+    face: -1,
+    squash: 0,
+    jumping: false
+  }
+}
+60 80 {
+  score: 9966.33055555555,
+  stage: 1,
+  p: {
+    x: 560.0694444444489,
+    y: 366,
+    w: 26,
+    h: 32,
+    vx: 0,
+    vy: 0,
+    grounded: false,
+    coyote: 0,
+    face: -1,
+    squash: 0,
+    jumping: true
+  }
+}
+80 80 {
+  score: 9966.28159722221,
+  stage: 1,
+  p: {
+    x: 560.0138888889003,
+    y: 366.14930555555554,
+    w: 26,
+    h: 32,
+    vx: 0,
+    vy: 17.916666666666668,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: false
+  }
+}
+100 80 {
+  score: 9954.126388888883,
+  stage: 1,
+  p: {
+    x: 560.3055555555616,
+    y: 383.09722222222223,
+    w: 26,
+    h: 32,
+    vx: -180,
+    vy: 209.99999999999997,
+    grounded: false,
+    coyote: 0,
+    face: -1,
+    squash: 0,
+    jumping: false
+  }
+}
+120 80 {
+  score: 9929.613541666675,
+  stage: 1,
+  p: {
+    x: 557.1805555555633,
+    y: 414.52430555555554,
+    w: 26,
+    h: 32,
+    vx: 0,
+    vy: 447.9166666666668,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: false
+  }
+}
+140 80 {
+  score: 9955.672569444429,
+  stage: 1,
+  p: {
+    x: 563.1805555555703,
+    y: 376.78125,
+    w: 26,
+    h: 32,
+    vx: -265,
+    vy: -322.50000000000006,
+    grounded: false,
+    coyote: 0,
+    face: -1,
+    squash: 0,
+    jumping: true
+  }
+}
+160 80 {
+  score: 9965.291319444459,
+  stage: 1,
+  p: {
+    x: 559.9583333333478,
+    y: 367.52430555555554,
+    w: 26,
+    h: 32,
+    vx: 88.33333333333333,
+    vy: -250.83333333333334,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: true
+  }
+}
+180 80 {
+  score: 9964.804513888877,
+  stage: 1,
+  p: {
+    x: 560.0277777777897,
+    y: 368.2395833333333,
+    w: 26,
+    h: 32,
+    vx: 0,
+    vy: 89.58333333333334,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: false
+  }
+}
+200 80 {
+  score: 9960.510416666662,
+  stage: 1,
+  p: {
+    x: 561.7916666666724,
+    y: 371.85416666666663,
+    w: 26,
+    h: 32,
+    vx: 88.33333333333333,
+    vy: -286.6666666666667,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: true
+  }
+}
+220 80 {
+  score: 19599.15000000001,
+  stage: 2,
+  p: {
+    x: 521.3333333333437,
+    y: 294.8333333333333,
+    w: 26,
+    h: 32,
+    vx: 265,
+    vy: -71.66666666666671,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: true
+  }
+}
+WIN 32 seconds 23.4 actions 234

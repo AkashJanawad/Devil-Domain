@@ -1,0 +1,13 @@
+{
+  "naturalVideoCompletion": true,
+  "skip": true,
+  "reloadDoesNotRepeat": true,
+  "freshInstallPlays": true,
+  "pauseResume": true,
+  "videoErrorRecovery": true,
+  "seasonsOf50": true,
+  "releaseUnlocks": true,
+  "previousSavesPreserved": true,
+  "externalRequests": [],
+  "pageErrors": []
+}

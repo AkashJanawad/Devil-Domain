@@ -1,0 +1,940 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 70,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 70,
+    "name": "THE LAST CARILLON",
+    "targetDifficulty": "EXPERT",
+    "intent": "Launch to the bell hanger, board its shuttle and pass the beam. A one-way portal takes you to the upper bell and final gate.",
+    "surprise": "Ringing the upper bell primes spikes in the exit aisle.",
+    "spawn": {
+      "x": 48,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 60,
+          "y": 126
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 220,
+        "h": 40
+      },
+      {
+        "x": 270,
+        "y": 365,
+        "w": 140,
+        "h": 16
+      },
+      {
+        "x": 755,
+        "y": 380,
+        "w": 205,
+        "h": 16
+      },
+      {
+        "x": 710,
+        "y": 190,
+        "w": 250,
+        "h": 16
+      },
+      {
+        "x": 530,
+        "y": 125,
+        "w": 110,
+        "h": 16
+      },
+      {
+        "x": 320,
+        "y": 185,
+        "w": 130,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 190,
+        "w": 260,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 240,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Spring",
+        "args": [
+          143,
+          500,
+          {
+            "power": -980,
+            "w": 55
+          }
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 440,
+            "y": 377,
+            "w": 110,
+            "h": 16
+          },
+          {
+            "toX": 630,
+            "speed": 140,
+            "phase": 0.45
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 602,
+            "y": 256,
+            "len": 284,
+            "vertical": true,
+            "period": 1.85,
+            "warn": 0.4,
+            "fire": 0.48,
+            "phase": 0.2
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          885,
+          332,
+          845,
+          142,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          570,
+          115,
+          "last"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 235,
+            "y": 0,
+            "w": 23,
+            "h": 190
+          },
+          "last"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          146,
+          190,
+          48,
+          {
+            "x": 285,
+            "y": 30,
+            "w": 35,
+            "h": 170
+          },
+          {
+            "delay": 0.35
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          220,
+          540,
+          740,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "clapper",
+        "shuttle",
+        "beam",
+        "belfry",
+        "bell",
+        "gate",
+        "teeth",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Launch clapper",
+          "target": {
+            "x": 150,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "clapper",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Bell hanger",
+          "target": {
+            "x": 320,
+            "y": 333
+          },
+          "reach": {
+            "x": 270,
+            "y": 325,
+            "w": 140,
+            "h": 15
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Ride shuttle",
+          "target": {
+            "trap": "shuttle",
+            "dx": 35,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "shuttle",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Beam crossing",
+          "target": {
+            "x": 635,
+            "y": 345
+          },
+          "requires": [
+            {
+              "trap": "beam",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Upper belfry",
+          "target": {
+            "x": 890,
+            "y": 348
+          },
+          "requires": [
+            {
+              "trap": "belfry",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Ring upper bell",
+          "target": {
+            "x": 580,
+            "y": 93
+          },
+          "requires": [
+            {
+              "trap": "bell",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Catch middle rafter",
+          "target": {
+            "x": 375,
+            "y": 153
+          },
+          "reach": {
+            "x": 320,
+            "y": 145,
+            "w": 130,
+            "h": 15
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Bell gate",
+          "target": {
+            "x": 200,
+            "y": 158
+          },
+          "requires": [
+            {
+              "trap": "gate",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "teeth",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "clapper",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "shuttle",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "beam",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "belfry",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "bell",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "gate",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "teeth",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "795c6ae4bf99e0194d94d9a086c58b64a3aaee441f46a9ff14594113afe18463",
+      "seed": 70,
+      "initial": {
+        "spawn": {
+          "x": 48,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 708,
+      "seconds": 5.9,
+      "end": [
+        91.5833333333296,
+        158,
+        "win"
+      ]
+    },
+    "expanded": 33263,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      132,
+      12,
+      540
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "795c6ae4bf99e0194d94d9a086c58b64a3aaee441f46a9ff14594113afe18463",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 708,
+      "seconds": 5.9,
+      "end": [
+        91.5833333333296,
+        158,
+        "win"
+      ]
+    },
+    "ticks": 708,
+    "successfulReplaySeconds": 5.9,
+    "seconds": {
+      "activeTraversal": 5.883333333333334,
+      "passiveTransport": 0.016666666666666666,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 2080.743298210054,
+      "carriedPixels": 62.281578947366825,
+      "portalPixels": 144.05558556760528
+    },
+    "inputs": {
+      "jumpPresses": 5,
+      "horizontalReversals": 1
+    },
+    "required": [
+      {
+        "trap": "clapper",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 40
+      },
+      {
+        "trap": "shuttle",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 177
+      },
+      {
+        "trap": "beam",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 234
+      },
+      {
+        "trap": "belfry",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 361
+      },
+      {
+        "trap": "bell",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 473
+      },
+      {
+        "trap": "gate",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 655
+      },
+      {
+        "trap": "teeth",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 606
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 40,
+        "id": "clapper",
+        "event": "activate"
+      },
+      {
+        "tick": 40,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Launch clapper"
+      },
+      {
+        "tick": 116,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 116,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Bell hanger"
+      },
+      {
+        "tick": 177,
+        "id": "shuttle",
+        "event": "ride"
+      },
+      {
+        "tick": 188,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Ride shuttle"
+      },
+      {
+        "tick": 234,
+        "id": "beam",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 234,
+        "id": "beam",
+        "event": "beamCrossRiding",
+        "phase": "off"
+      },
+      {
+        "tick": 234,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Beam crossing"
+      },
+      {
+        "tick": 305,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 361,
+        "id": "belfry",
+        "event": "activate"
+      },
+      {
+        "tick": 361,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 361,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Upper belfry"
+      },
+      {
+        "tick": 464,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 473,
+        "id": "bell",
+        "event": "activate"
+      },
+      {
+        "tick": 473,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Ring upper bell"
+      },
+      {
+        "tick": 500,
+        "id": "gate",
+        "event": "open"
+      },
+      {
+        "tick": 549,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 549,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Catch middle rafter"
+      },
+      {
+        "tick": 606,
+        "id": "teeth",
+        "event": "trigger"
+      },
+      {
+        "tick": 648,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 653,
+        "id": "teeth",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 655,
+        "id": "gate",
+        "event": "pass"
+      },
+      {
+        "tick": 655,
+        "id": "stage:7",
+        "event": "complete",
+        "label": "Bell gate"
+      }
+    ],
+    "stagesCompleted": 8,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "clapper:activate": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "shuttle:ride": 69,
+      "stage:2:complete": 1,
+      "beam:beamCross": 10,
+      "beam:beamCrossRiding": 10,
+      "stage:3:complete": 1,
+      "platform:2:land": 1,
+      "belfry:activate": 1,
+      "platform:3:land": 1,
+      "stage:4:complete": 1,
+      "platform:4:land": 1,
+      "bell:activate": 1,
+      "stage:5:complete": 1,
+      "gate:open": 1,
+      "platform:5:land": 1,
+      "stage:6:complete": 1,
+      "teeth:trigger": 1,
+      "platform:6:land": 2,
+      "teeth:hazardNear": 22,
+      "gate:pass": 1,
+      "stage:7:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 60,
+      "score": 0.3525,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 51,
+      "score": 0.33988095238095234,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 64,
+      "score": 0.3375,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 31.323
+}

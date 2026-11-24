@@ -1,0 +1,754 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 54,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 54,
+    "name": "TWO SIGNATURES",
+    "targetDifficulty": "HARD",
+    "intent": "Sign the upper-left permit, cross the first lock, climb the second desk and leave through the final lock.",
+    "surprise": "The second desk drops a block behind you; its floor also hides an escape spike strip.",
+    "spawn": {
+      "x": 55,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 900,
+          "y": 436
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 960,
+        "h": 40
+      },
+      {
+        "x": 140,
+        "y": 430,
+        "w": 90,
+        "h": 16
+      },
+      {
+        "x": 270,
+        "y": 365,
+        "w": 90,
+        "h": 16
+      },
+      {
+        "x": 360,
+        "y": 300,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "x": 585,
+        "y": 430,
+        "w": 90,
+        "h": 16
+      },
+      {
+        "x": 720,
+        "y": 360,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          390,
+          290,
+          "first"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 500,
+            "y": 0,
+            "w": 24,
+            "h": 500
+          },
+          "first"
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          755,
+          350,
+          "second"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 840,
+            "y": 0,
+            "w": 24,
+            "h": 500
+          },
+          "second"
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 600,
+            "y": 210,
+            "w": 50,
+            "h": 40
+          },
+          {
+            "x": 550,
+            "y": 300,
+            "w": 30,
+            "h": 200
+          },
+          {
+            "shakeTime": 0.55,
+            "floorY": 500
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          700,
+          500,
+          55,
+          {
+            "x": 650,
+            "y": 300,
+            "w": 25,
+            "h": 200
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "first",
+        "firstLock",
+        "second",
+        "lastLock",
+        "paperweight",
+        "escape"
+      ],
+      "stages": [
+        {
+          "label": "First step",
+          "target": {
+            "x": 175,
+            "y": 398
+          },
+          "reach": {
+            "x": 140,
+            "y": 390,
+            "w": 90,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Second step",
+          "target": {
+            "x": 305,
+            "y": 333
+          },
+          "reach": {
+            "x": 270,
+            "y": 325,
+            "w": 90,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "First signature",
+          "target": {
+            "x": 400,
+            "y": 268
+          },
+          "requires": [
+            {
+              "trap": "first",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "First lock",
+          "target": {
+            "x": 555,
+            "y": 468
+          },
+          "reach": {
+            "x": 525,
+            "y": 250,
+            "w": 60,
+            "h": 250
+          },
+          "requires": [
+            {
+              "trap": "firstLock",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Second climb",
+          "target": {
+            "x": 620,
+            "y": 398
+          },
+          "reach": {
+            "x": 585,
+            "y": 390,
+            "w": 90,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "paperweight",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Second signature",
+          "target": {
+            "x": 760,
+            "y": 328
+          },
+          "requires": [
+            {
+              "trap": "second",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Final lock",
+          "target": {
+            "x": 885,
+            "y": 468
+          },
+          "reach": {
+            "x": 865,
+            "y": 250,
+            "w": 80,
+            "h": 250
+          },
+          "requires": [
+            {
+              "trap": "lastLock",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "escape",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "first",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "firstLock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "second",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lastLock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "paperweight",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "escape",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "e53330c6e213e176932c2be3443f770e4f77e0597070013c7bdea22d6f391dc0",
+      "seed": 54,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 382,
+      "seconds": 3.183333333333333,
+      "end": [
+        881.0555555555602,
+        448.0138888888888,
+        "win"
+      ]
+    },
+    "expanded": 17059,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": []
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "e53330c6e213e176932c2be3443f770e4f77e0597070013c7bdea22d6f391dc0",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 382,
+      "seconds": 3.183333333333333,
+      "end": [
+        881.0555555555602,
+        448.0138888888888,
+        "win"
+      ]
+    },
+    "ticks": 382,
+    "successfulReplaySeconds": 3.183333333333333,
+    "seconds": {
+      "activeTraversal": 3.183333333333333,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1331.745317545589,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 6,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "first",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 157
+      },
+      {
+        "trap": "firstLock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 221
+      },
+      {
+        "trap": "second",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 315
+      },
+      {
+        "trap": "lastLock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 375
+      },
+      {
+        "trap": "paperweight",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 222
+      },
+      {
+        "trap": "escape",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 267
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 55,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 55,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "First step"
+      },
+      {
+        "tick": 98,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 106,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Second step"
+      },
+      {
+        "tick": 157,
+        "id": "first",
+        "event": "activate"
+      },
+      {
+        "tick": 157,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "First signature"
+      },
+      {
+        "tick": 164,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 184,
+        "id": "firstLock",
+        "event": "open"
+      },
+      {
+        "tick": 221,
+        "id": "firstLock",
+        "event": "pass"
+      },
+      {
+        "tick": 221,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "First lock"
+      },
+      {
+        "tick": 222,
+        "id": "paperweight",
+        "event": "trigger"
+      },
+      {
+        "tick": 243,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 248,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Second climb"
+      },
+      {
+        "tick": 267,
+        "id": "escape",
+        "event": "trigger"
+      },
+      {
+        "tick": 315,
+        "id": "second",
+        "event": "activate"
+      },
+      {
+        "tick": 315,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Second signature"
+      },
+      {
+        "tick": 318,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 342,
+        "id": "lastLock",
+        "event": "open"
+      },
+      {
+        "tick": 375,
+        "id": "lastLock",
+        "event": "pass"
+      },
+      {
+        "tick": 375,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Final lock"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "stage:1:complete": 1,
+      "first:activate": 1,
+      "stage:2:complete": 1,
+      "platform:3:land": 1,
+      "firstLock:open": 1,
+      "firstLock:pass": 1,
+      "stage:3:complete": 1,
+      "paperweight:trigger": 1,
+      "platform:4:land": 1,
+      "stage:4:complete": 1,
+      "escape:trigger": 1,
+      "second:activate": 1,
+      "stage:5:complete": 1,
+      "platform:5:land": 1,
+      "lastLock:open": 1,
+      "lastLock:pass": 1,
+      "stage:6:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 49,
+      "score": 0.415,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 50,
+      "score": 0.37,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 20,
+      "score": 0.32285714285714284,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 6.968
+}

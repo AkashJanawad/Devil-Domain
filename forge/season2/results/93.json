@@ -1,0 +1,767 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 93,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 93,
+    "name": "SPLIT DECISION",
+    "targetDifficulty": "HARD",
+    "intent": "Enter the sealed right-hand room, ride its lift to the release switch, then return through the portal carrying the open-gate state.",
+    "surprise": "Returning with the release wakes a hidden spike strip in the left-hand exit corridor.",
+    "spawn": {
+      "x": 300,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 52,
+          "y": 436
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 460,
+        "h": 40
+      },
+      {
+        "x": 249,
+        "y": 420,
+        "w": 143,
+        "h": 16
+      },
+      {
+        "x": 460,
+        "y": 0,
+        "w": 24,
+        "h": 540
+      },
+      {
+        "x": 484,
+        "y": 500,
+        "w": 476,
+        "h": 40
+      },
+      {
+        "x": 490,
+        "y": 270,
+        "w": 145,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Teleporter",
+        "args": [
+          333,
+          372,
+          836,
+          452,
+          {
+            "twoWay": true
+          }
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 673,
+            "y": 439,
+            "w": 115,
+            "h": 16
+          },
+          {
+            "toY": 324,
+            "speed": 115,
+            "phase": 0.2
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          536,
+          260,
+          "split"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 181,
+            "y": 0,
+            "w": 22,
+            "h": 500
+          },
+          "split"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          111,
+          500,
+          42,
+          {
+            "x": 216,
+            "y": 330,
+            "w": 32,
+            "h": 170
+          },
+          {
+            "delay": 0.28
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 816,
+            "y": 240,
+            "w": 40,
+            "h": 35
+          },
+          {
+            "x": 500,
+            "y": 150,
+            "w": 120,
+            "h": 120
+          },
+          {
+            "shakeTime": 0.65,
+            "floorY": 500
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "link",
+        "lift",
+        "release",
+        "lock",
+        "thorns",
+        "weight"
+      ],
+      "stages": [
+        {
+          "label": "Enter right room",
+          "target": {
+            "x": 339,
+            "y": 388
+          },
+          "requires": [
+            {
+              "trap": "link",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Ride lift",
+          "target": {
+            "trap": "lift",
+            "dx": 38,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "lift",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ],
+          "reach": {
+            "x": 630,
+            "y": 240,
+            "w": 220,
+            "h": 85
+          },
+          "grounded": true
+        },
+        {
+          "label": "Release switch",
+          "target": {
+            "x": 550,
+            "y": 238
+          },
+          "requires": [
+            {
+              "trap": "release",
+              "event": "activate",
+              "minTicks": 1
+            },
+            {
+              "trap": "weight",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Return link",
+          "target": {
+            "x": 839,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "link",
+              "event": "activate",
+              "minTicks": 2
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Exit corridor",
+          "target": {
+            "x": 72,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "lock",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "thorns",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "link",
+          "event": "activate",
+          "minTicks": 2
+        },
+        {
+          "trap": "lift",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "release",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "lock",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "thorns",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "weight",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "509cad9c26832ce091819504cc796f3154c658e1914f0eae5dd6d2518d76b22d",
+      "seed": 93,
+      "initial": {
+        "spawn": {
+          "x": 300,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 574,
+      "seconds": 4.783333333333333,
+      "end": [
+        83.08333333333347,
+        412.58680555555554,
+        "win"
+      ]
+    },
+    "expanded": 26663,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      0,
+      24
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "509cad9c26832ce091819504cc796f3154c658e1914f0eae5dd6d2518d76b22d",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 574,
+      "seconds": 4.783333333333333,
+      "end": [
+        83.08333333333347,
+        412.58680555555554,
+        "win"
+      ]
+    },
+    "ticks": 574,
+    "successfulReplaySeconds": 4.783333333333333,
+    "seconds": {
+      "activeTraversal": 4.75,
+      "passiveTransport": 0.016666666666666666,
+      "stationary": 0.016666666666666666,
+      "neutralWaiting": 0.008333333333333333,
+      "blockedInput": 0.008333333333333333,
+      "repeatedTraversal": 0.13333333333333333
+    },
+    "distance": {
+      "selfPixels": 1580.1065398743885,
+      "carriedPixels": 31.497222222222888,
+      "portalPixels": 961.5600648965855
+    },
+    "inputs": {
+      "jumpPresses": 7,
+      "horizontalReversals": 11
+    },
+    "required": [
+      {
+        "trap": "link",
+        "event": "activate",
+        "minTicks": 2,
+        "observed": true,
+        "firstTick": 97
+      },
+      {
+        "trap": "lift",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 152
+      },
+      {
+        "trap": "release",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 327
+      },
+      {
+        "trap": "lock",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 542
+      },
+      {
+        "trap": "thorns",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 501
+      },
+      {
+        "trap": "weight",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 309
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 97,
+        "id": "link",
+        "event": "activate"
+      },
+      {
+        "tick": 97,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 97,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Enter right room"
+      },
+      {
+        "tick": 152,
+        "id": "lift",
+        "event": "ride"
+      },
+      {
+        "tick": 268,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Ride lift"
+      },
+      {
+        "tick": 309,
+        "id": "weight",
+        "event": "trigger"
+      },
+      {
+        "tick": 316,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 327,
+        "id": "release",
+        "event": "activate"
+      },
+      {
+        "tick": 327,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Release switch"
+      },
+      {
+        "tick": 354,
+        "id": "lock",
+        "event": "open"
+      },
+      {
+        "tick": 432,
+        "id": "weight",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 455,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 455,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Return link"
+      },
+      {
+        "tick": 501,
+        "id": "thorns",
+        "event": "trigger"
+      },
+      {
+        "tick": 538,
+        "id": "thorns",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 542,
+        "id": "lock",
+        "event": "pass"
+      },
+      {
+        "tick": 542,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Exit corridor"
+      }
+    ],
+    "stagesCompleted": 5,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 2,
+      "link:activate": 2,
+      "platform:3:land": 1,
+      "stage:0:complete": 1,
+      "lift:ride": 48,
+      "stage:1:complete": 1,
+      "weight:trigger": 1,
+      "platform:4:land": 1,
+      "release:activate": 1,
+      "stage:2:complete": 1,
+      "lock:open": 1,
+      "weight:hazardNear": 1,
+      "platform:1:land": 1,
+      "stage:3:complete": 1,
+      "thorns:trigger": 1,
+      "thorns:hazardNear": 12,
+      "lock:pass": 1,
+      "stage:4:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 69,
+      "score": 0.4919642857142857,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 77,
+      "score": 0.4392857142857143,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 96,
+      "score": 0.38666666666666666,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 15.673
+}

@@ -1,0 +1,44 @@
+✔ contracts reject incompatible connections and impossible geometry before search (10.7889ms)
+✔ only three developer-only composites; production and generator are isolated (13.2566ms)
+✔ COMPOSITE A — LAUNCH INTO THE PULSE: fresh completion, ordered contracts, no floor bypass (537.9977ms)
+✔ COMPOSITE B — CARRY THE KEY: fresh completion, ordered contracts, no floor bypass (515.8633ms)
+✔ COMPOSITE C — THREE TERMS: fresh completion, ordered contracts, no floor bypass (1085.5004ms)
+✔ a physical win is rejected if a later encounter tries to reuse an earlier activation (60.5514ms)
+✔ missing encounter entry rejects an otherwise identical successful physics replay (97.6277ms)
+✔ changed composite geometry invalidates its saved trace (2.5997ms)
+✔ deduplication distinguishes dynamics the old key merged (7.931ms)
+✔ search snapshot restores pending input, trap timers and ordered progress (10.6577ms)
+✔ time accounting distinguishes waiting, carrying, portals and repeated motion (0.729ms)
+✔ actual engine standing still is measured as waiting after initial landing (7.362ms)
+✔ measurement refuses stale or unsuccessful proof (8.0132ms)
+✔ LAB A — LAND THEN WARP: fresh replay, measurements, requirements and counterfactuals (85.1799ms)
+✔ LAB B — CROSS THE PULSE: fresh replay, measurements, requirements and counterfactuals (103.2191ms)
+✔ LAB C — OPEN THE ESCAPE: fresh replay, measurements, requirements and counterfactuals (127.9608ms)
+✔ experimental fixtures remain outside production and active generation (11.6401ms)
+✔ original 40 definitions are byte-identical (3.136ms)
+✔ generation deterministic and constraints reject explicitly (4.7376ms)
+✔ malformed geometry, references, checkpoints and missing surprise rejected (1.9806ms)
+✔ renamed/recolored identical layout rejected as duplicate (1.6461ms)
+✔ bounded search failure is UNVERIFIED, never impossible (14.777ms)
+✔ tampered trace cannot verify (4.9702ms)
+✔ limited repair revalidates out-of-world exit (13.5238ms)
+✔ wind triggers, affects motion, resets; old constructors retained (3.0245ms)
+✔ level 41: schema, replay repeatability, hidden activation, production data (34.7791ms)
+✔ level 42: schema, replay repeatability, hidden activation, production data (30.1724ms)
+✔ level 43: schema, replay repeatability, hidden activation, production data (45.097ms)
+✔ level 44: schema, replay repeatability, hidden activation, production data (38.9174ms)
+✔ level 45: schema, replay repeatability, hidden activation, production data (34.4479ms)
+✔ level 46: schema, replay repeatability, hidden activation, production data (47.8436ms)
+✔ level 47: schema, replay repeatability, hidden activation, production data (50.6436ms)
+✔ level 48: schema, replay repeatability, hidden activation, production data (38.6019ms)
+✔ level 49: schema, replay repeatability, hidden activation, production data (40.6919ms)
+✔ level 50: schema, replay repeatability, hidden activation, production data (34.2873ms)
+✔ season 2 unavailable; legacy progress retained; final completion screen (3.9504ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2568.4971

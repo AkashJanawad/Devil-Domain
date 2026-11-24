@@ -1,0 +1,679 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 98,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 98,
+    "name": "MISSING RUNG",
+    "targetDifficulty": "HARD",
+    "intent": "Climb the short rungs to a spring, clear the divider and take its portal into the isolated lower exit room.",
+    "surprise": "The missing rung is a crumbling step; the exit room grows spikes as you cross its gap.",
+    "spawn": {
+      "x": 48,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 891,
+          "y": 436
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 190,
+        "h": 40
+      },
+      {
+        "x": 390,
+        "y": 370,
+        "w": 170,
+        "h": 16
+      },
+      {
+        "x": 625,
+        "y": 180,
+        "w": 335,
+        "h": 16
+      },
+      {
+        "x": 600,
+        "y": 260,
+        "w": 360,
+        "h": 16
+      },
+      {
+        "x": 600,
+        "y": 276,
+        "w": 23,
+        "h": 264
+      },
+      {
+        "x": 650,
+        "y": 500,
+        "w": 115,
+        "h": 40
+      },
+      {
+        "x": 845,
+        "y": 500,
+        "w": 115,
+        "h": 40
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 243,
+            "y": 435,
+            "w": 106,
+            "h": 16
+          },
+          {
+            "delay": 0.75
+          }
+        ]
+      },
+      {
+        "type": "Spring",
+        "args": [
+          476,
+          370,
+          {
+            "w": 58,
+            "power": -1010
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          858,
+          132,
+          677,
+          452,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          878,
+          500,
+          35,
+          {
+            "x": 796,
+            "y": 310,
+            "w": 30,
+            "h": 190
+          },
+          {
+            "delay": 0.35
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          190,
+          540,
+          655,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "rung",
+        "launch",
+        "drop",
+        "teeth",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Missing rung",
+          "target": {
+            "x": 296,
+            "y": 403
+          },
+          "reach": {
+            "x": 243,
+            "y": 397,
+            "w": 106,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "rung",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Spring rung",
+          "target": {
+            "x": 475,
+            "y": 338
+          },
+          "reach": {
+            "x": 390,
+            "y": 332,
+            "w": 170,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Clear divider",
+          "target": {
+            "x": 495,
+            "y": 338
+          },
+          "requires": [
+            {
+              "trap": "launch",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "High landing",
+          "target": {
+            "x": 792.5,
+            "y": 148
+          },
+          "reach": {
+            "x": 625,
+            "y": 142,
+            "w": 335,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Drop portal",
+          "target": {
+            "x": 862,
+            "y": 148
+          },
+          "requires": [
+            {
+              "trap": "drop",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Exit gap",
+          "target": {
+            "x": 916,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "teeth",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "rung",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "launch",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "drop",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "teeth",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "5d576f4f7b2410520fca10e8bef87fef938e4df95213d6a45f6db3e1a2a77825",
+      "seed": 98,
+      "initial": {
+        "spawn": {
+          "x": 48,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 454,
+      "seconds": 3.783333333333333,
+      "end": [
+        871.9583333333363,
+        424.43402777777777,
+        "win"
+      ]
+    },
+    "expanded": 20659,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      168
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "5d576f4f7b2410520fca10e8bef87fef938e4df95213d6a45f6db3e1a2a77825",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 454,
+      "seconds": 3.783333333333333,
+      "end": [
+        871.9583333333363,
+        424.43402777777777,
+        "win"
+      ]
+    },
+    "ticks": 454,
+    "successfulReplaySeconds": 3.783333333333333,
+    "seconds": {
+      "activeTraversal": 3.775,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1355.4080162535888,
+      "carriedPixels": 0,
+      "portalPixels": 354.67168351367
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "rung",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 93
+      },
+      {
+        "trap": "launch",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 191
+      },
+      {
+        "trap": "drop",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 362
+      },
+      {
+        "trap": "teeth",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 409
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 93,
+        "id": "rung",
+        "event": "trigger"
+      },
+      {
+        "tick": 95,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Missing rung"
+      },
+      {
+        "tick": 176,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 176,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Spring rung"
+      },
+      {
+        "tick": 191,
+        "id": "launch",
+        "event": "activate"
+      },
+      {
+        "tick": 191,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Clear divider"
+      },
+      {
+        "tick": 270,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 270,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "High landing"
+      },
+      {
+        "tick": 362,
+        "id": "drop",
+        "event": "activate"
+      },
+      {
+        "tick": 362,
+        "id": "pit",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 362,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Drop portal"
+      },
+      {
+        "tick": 409,
+        "id": "teeth",
+        "event": "trigger"
+      },
+      {
+        "tick": 409,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Exit gap"
+      },
+      {
+        "tick": 437,
+        "id": "platform:6",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "rung:trigger": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "launch:activate": 1,
+      "stage:2:complete": 1,
+      "platform:2:land": 1,
+      "stage:3:complete": 1,
+      "drop:activate": 1,
+      "pit:hazardNear": 27,
+      "stage:4:complete": 1,
+      "teeth:trigger": 1,
+      "stage:5:complete": 1,
+      "platform:6:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 17,
+      "score": 0.37285714285714283,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 23,
+      "score": 0.369010989010989,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 58,
+      "score": 0.36857142857142855,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 8.764
+}

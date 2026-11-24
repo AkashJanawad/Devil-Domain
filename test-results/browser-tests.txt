@@ -1,0 +1,5 @@
+
+> devildomain@1.0.0 test:browser
+> node tests/browser-smoke.js
+
+PASS: Chrome mobile viewport; menu, keyboard level 1 completion, progression/reload, lifecycle pause, all 30 level render smoke checks, small-screen grid, no JS errors or external requests.

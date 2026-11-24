@@ -1,0 +1,36 @@
+{
+  "level": 72,
+  "name": "DOVETAIL",
+  "url": "http://127.0.0.1:8091/season2-lab?level=72",
+  "realClock": true,
+  "nativeKeyboard": true,
+  "results": [
+    {
+      "start": 640,
+      "pause": 140,
+      "wallSeconds": 6.228,
+      "x": 41,
+      "y": 92,
+      "deaths": 0,
+      "state": "win"
+    },
+    {
+      "start": 632,
+      "pause": 225,
+      "wallSeconds": 6.249,
+      "x": 39,
+      "y": 92,
+      "deaths": 0,
+      "state": "win"
+    },
+    {
+      "start": 648,
+      "pause": 300,
+      "wallSeconds": 6.342,
+      "x": 45,
+      "y": 92,
+      "deaths": 0,
+      "state": "win"
+    }
+  ]
+}

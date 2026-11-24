@@ -1,0 +1,853 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 97,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 97,
+    "name": "THE BACKDRAFT",
+    "targetDifficulty": "HARD",
+    "intent": "Release the flue, cross the low piston passage and take the vent into a broken overhead escape route.",
+    "surprise": "Entering the flue arms the hidden teeth at the far end of the upper escape.",
+    "spawn": {
+      "x": 52,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 53,
+          "y": 136
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 960,
+        "h": 40
+      },
+      {
+        "x": 0,
+        "y": 300,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 730,
+        "y": 200,
+        "w": 230,
+        "h": 16
+      },
+      {
+        "x": 552,
+        "y": 140,
+        "w": 115,
+        "h": 16
+      },
+      {
+        "x": 378,
+        "y": 205,
+        "w": 115,
+        "h": 16
+      },
+      {
+        "x": 206,
+        "y": 140,
+        "w": 115,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 200,
+        "w": 145,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          185,
+          490,
+          "draft"
+        ]
+      },
+      {
+        "type": "Crusher",
+        "args": [
+          428,
+          48,
+          {
+            "topY": 332,
+            "floorY": 500,
+            "period": 2.1,
+            "hold": 0.16,
+            "phase": 0.3,
+            "upSpeed": 290
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 700,
+            "y": 316,
+            "w": 21,
+            "h": 184
+          },
+          "draft"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          879,
+          452,
+          850,
+          152,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 518,
+            "y": 0,
+            "len": 300,
+            "vertical": true,
+            "period": 2.1,
+            "warn": 0.45,
+            "fire": 0.45,
+            "phase": 0.12
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          102,
+          200,
+          30,
+          {
+            "x": 824,
+            "y": 316,
+            "w": 33,
+            "h": 184
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "flue",
+        "piston",
+        "grille",
+        "vent",
+        "heat",
+        "embers"
+      ],
+      "stages": [
+        {
+          "label": "Release flue",
+          "target": {
+            "x": 201,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "flue",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Clear piston",
+          "target": {
+            "x": 525,
+            "y": 468
+          },
+          "reach": {
+            "x": 500,
+            "y": 400,
+            "w": 80,
+            "h": 100
+          },
+          "requires": [],
+          "grounded": false
+        },
+        {
+          "label": "Vent passage",
+          "target": {
+            "x": 882,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "grille",
+              "event": "pass",
+              "minTicks": 1
+            },
+            {
+              "trap": "vent",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "High escape",
+          "target": {
+            "x": 609.5,
+            "y": 108
+          },
+          "reach": {
+            "x": 552,
+            "y": 102,
+            "w": 115,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Low escape",
+          "target": {
+            "x": 435.5,
+            "y": 173
+          },
+          "reach": {
+            "x": 378,
+            "y": 167,
+            "w": 115,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "heat",
+              "event": "beamCross",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Last high step",
+          "target": {
+            "x": 263.5,
+            "y": 108
+          },
+          "reach": {
+            "x": 206,
+            "y": 102,
+            "w": 115,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Clear embers",
+          "target": {
+            "x": 66,
+            "y": 168
+          },
+          "requires": [
+            {
+              "trap": "embers",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "flue",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "grille",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "vent",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "heat",
+          "event": "beamCross",
+          "minTicks": 1
+        },
+        {
+          "trap": "embers",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "3921e4eaf67e169a8c5bf7b462ee765b68241a229cf003c3bd8db734fc33d889",
+      "seed": 97,
+      "initial": {
+        "spawn": {
+          "x": 52,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 729,
+      "seconds": 6.075,
+      "end": [
+        84.54166666666289,
+        126.36458333333333,
+        "win"
+      ]
+    },
+    "expanded": 34483,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      24,
+      108,
+      72,
+      384
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "3921e4eaf67e169a8c5bf7b462ee765b68241a229cf003c3bd8db734fc33d889",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 729,
+      "seconds": 6.075,
+      "end": [
+        84.54166666666289,
+        130.54513888888889,
+        "win"
+      ]
+    },
+    "ticks": 729,
+    "successfulReplaySeconds": 6.075,
+    "seconds": {
+      "activeTraversal": 6.066666666666666,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.008333333333333333
+    },
+    "distance": {
+      "selfPixels": 2211.5700289866204,
+      "carriedPixels": 0,
+      "portalPixels": 253.6427752163736
+    },
+    "inputs": {
+      "jumpPresses": 11,
+      "horizontalReversals": 2
+    },
+    "required": [
+      {
+        "trap": "flue",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 56
+      },
+      {
+        "trap": "grille",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 309
+      },
+      {
+        "trap": "vent",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 374
+      },
+      {
+        "trap": "heat",
+        "event": "beamCross",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 528
+      },
+      {
+        "trap": "embers",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 345
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 56,
+        "id": "flue",
+        "event": "activate"
+      },
+      {
+        "tick": 56,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Release flue"
+      },
+      {
+        "tick": 83,
+        "id": "grille",
+        "event": "open"
+      },
+      {
+        "tick": 209,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Clear piston"
+      },
+      {
+        "tick": 309,
+        "id": "grille",
+        "event": "pass"
+      },
+      {
+        "tick": 345,
+        "id": "embers",
+        "event": "trigger"
+      },
+      {
+        "tick": 374,
+        "id": "vent",
+        "event": "activate"
+      },
+      {
+        "tick": 374,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 374,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Vent passage"
+      },
+      {
+        "tick": 489,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 489,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "High escape"
+      },
+      {
+        "tick": 528,
+        "id": "heat",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 559,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 559,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Low escape"
+      },
+      {
+        "tick": 632,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 632,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Last high step"
+      },
+      {
+        "tick": 633,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Clear embers"
+      },
+      {
+        "tick": 696,
+        "id": "embers",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 701,
+        "id": "platform:6",
+        "event": "land"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 5,
+      "flue:activate": 1,
+      "stage:0:complete": 1,
+      "grille:open": 1,
+      "stage:1:complete": 1,
+      "grille:pass": 1,
+      "embers:trigger": 1,
+      "vent:activate": 1,
+      "platform:2:land": 1,
+      "stage:2:complete": 1,
+      "platform:3:land": 1,
+      "stage:3:complete": 1,
+      "heat:beamCross": 17,
+      "platform:4:land": 2,
+      "stage:4:complete": 1,
+      "platform:5:land": 1,
+      "stage:5:complete": 1,
+      "stage:6:complete": 1,
+      "embers:hazardNear": 34,
+      "platform:6:land": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 59,
+      "score": 0.3878571428571428,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 61,
+      "score": 0.3714285714285714,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 60,
+      "score": 0.3619755244755245,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 20.285
+}

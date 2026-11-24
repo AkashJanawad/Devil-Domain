@@ -1,0 +1,801 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "id": 493,
+    "season": 10,
+    "name": "LAB C — OPEN THE ESCAPE",
+    "seed": 493,
+    "targetDifficulty": "MEDIUM",
+    "experimental": true,
+    "developerOnly": true,
+    "spawn": {
+      "x": 55,
+      "y": 440
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 884,
+          "y": 416
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 480,
+        "w": 960,
+        "h": 60
+      },
+      {
+        "x": 180,
+        "y": 420,
+        "w": 90,
+        "h": 16
+      },
+      {
+        "x": 300,
+        "y": 360,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "x": 420,
+        "y": 300,
+        "w": 140,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          475,
+          290,
+          "escape"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 600,
+            "y": 0,
+            "w": 24,
+            "h": 480
+          },
+          "escape"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          720,
+          480,
+          65,
+          {
+            "x": 650,
+            "y": 330,
+            "w": 25,
+            "h": 150
+          },
+          {
+            "delay": 0.18
+          }
+        ]
+      }
+    ],
+    "checkpoints": [],
+    "experiment": {
+      "version": 1,
+      "trapIds": [
+        "switch",
+        "route-gate",
+        "ambush"
+      ],
+      "stages": [
+        {
+          "label": "First step",
+          "target": {
+            "x": 220,
+            "y": 388
+          },
+          "reach": {
+            "x": 180,
+            "y": 380,
+            "w": 90,
+            "h": 10
+          },
+          "grounded": true
+        },
+        {
+          "label": "Second step",
+          "target": {
+            "x": 340,
+            "y": 328
+          },
+          "reach": {
+            "x": 300,
+            "y": 320,
+            "w": 100,
+            "h": 10
+          },
+          "grounded": true
+        },
+        {
+          "label": "Change the route",
+          "target": {
+            "x": 475,
+            "y": 268
+          },
+          "requires": [
+            {
+              "trap": "switch",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ]
+        },
+        {
+          "label": "Pass the opened gate",
+          "target": {
+            "x": 655,
+            "y": 448
+          },
+          "reach": {
+            "x": 625,
+            "y": 0,
+            "w": 70,
+            "h": 480
+          },
+          "requires": [
+            {
+              "trap": "route-gate",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ]
+        },
+        {
+          "label": "Hidden escape",
+          "target": {
+            "x": 884,
+            "y": 416
+          },
+          "reach": {
+            "x": 855,
+            "y": 350,
+            "w": 100,
+            "h": 130
+          },
+          "requires": [
+            {
+              "trap": "ambush",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ]
+        }
+      ],
+      "required": [
+        {
+          "trap": "switch",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "route-gate",
+          "event": "open",
+          "minTicks": 1
+        },
+        {
+          "trap": "route-gate",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "ambush",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    }
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "253004738bcc34325d661032ad9d28dfa7dc5ed623fef3bfe95786a97e3c144d",
+      "seed": 493,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 375,
+      "seconds": 3.125,
+      "end": [
+        865.0972222222265,
+        448,
+        "win"
+      ]
+    },
+    "expanded": 20419,
+    "rejectedWins": 0,
+    "searchTrace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "253004738bcc34325d661032ad9d28dfa7dc5ed623fef3bfe95786a97e3c144d",
+      "seed": 493,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    }
+  },
+  "cleanup": {
+    "removedJumpPressTicks": [
+      168,
+      204,
+      348
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "253004738bcc34325d661032ad9d28dfa7dc5ed623fef3bfe95786a97e3c144d",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 375,
+      "seconds": 3.125,
+      "end": [
+        865.0972222222265,
+        448,
+        "win"
+      ]
+    },
+    "ticks": 375,
+    "successfulReplaySeconds": 3.125,
+    "seconds": {
+      "activeTraversal": 3.125,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0.03333333333333333
+    },
+    "distance": {
+      "selfPixels": 1214.3233000987475,
+      "carriedPixels": 0,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 4,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "switch",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 188
+      },
+      {
+        "trap": "route-gate",
+        "event": "open",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 215
+      },
+      {
+        "trap": "route-gate",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 266
+      },
+      {
+        "trap": "ambush",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 267
+      }
+    ],
+    "events": [
+      {
+        "tick": 10,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 67,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 67,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "First step"
+      },
+      {
+        "tick": 124,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 124,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Second step"
+      },
+      {
+        "tick": 181,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 188,
+        "id": "switch",
+        "event": "activate"
+      },
+      {
+        "tick": 188,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Change the route"
+      },
+      {
+        "tick": 215,
+        "id": "route-gate",
+        "event": "open"
+      },
+      {
+        "tick": 266,
+        "id": "route-gate",
+        "event": "pass"
+      },
+      {
+        "tick": 267,
+        "id": "ambush",
+        "event": "trigger"
+      },
+      {
+        "tick": 267,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Pass the opened gate"
+      },
+      {
+        "tick": 347,
+        "id": "ambush",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 371,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Hidden escape"
+      }
+    ],
+    "stagesCompleted": 5,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 3,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "stage:1:complete": 1,
+      "platform:3:land": 1,
+      "switch:activate": 1,
+      "stage:2:complete": 1,
+      "route-gate:open": 1,
+      "route-gate:pass": 1,
+      "ambush:trigger": 1,
+      "stage:3:complete": 1,
+      "ambush:hazardNear": 1,
+      "stage:4:complete": 1
+    }
+  },
+  "jumpPresses": [
+    {
+      "start": 0,
+      "end": 3,
+      "tick": 0
+    },
+    {
+      "start": 5,
+      "end": 8,
+      "tick": 60
+    },
+    {
+      "start": 10,
+      "end": 13,
+      "tick": 120
+    },
+    {
+      "start": 23,
+      "end": 26,
+      "tick": 276
+    }
+  ],
+  "controls": {
+    "scope": "Same recorded route with one intervention. Failure demonstrates route dependence, not impossibility of all alternate routes.",
+    "results": [
+      {
+        "kind": "disable mechanic",
+        "mechanic": "switch",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 384,
+          "seconds": 3.2,
+          "end": [
+            574,
+            448,
+            "play"
+          ]
+        }
+      },
+      {
+        "kind": "remove jump press",
+        "tick": 0,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 384,
+          "seconds": 3.2,
+          "end": [
+            574,
+            448,
+            "play"
+          ]
+        }
+      },
+      {
+        "kind": "remove jump press",
+        "tick": 60,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 384,
+          "seconds": 3.2,
+          "end": [
+            574,
+            448,
+            "play"
+          ]
+        }
+      },
+      {
+        "kind": "remove jump press",
+        "tick": 120,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 384,
+          "seconds": 3.2,
+          "end": [
+            574,
+            448,
+            "play"
+          ]
+        }
+      },
+      {
+        "kind": "remove jump press",
+        "tick": 276,
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 300,
+          "seconds": 2.5,
+          "end": [
+            699.4722222222236,
+            448,
+            "dead"
+          ]
+        }
+      }
+    ]
+  },
+  "approved": false,
+  "integrated": false,
+  "runWallSeconds": 12.189
+}

@@ -1,0 +1,934 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 69,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 69,
+    "name": "COUNTERSIGN",
+    "targetDifficulty": "EXPERT",
+    "intent": "Collect an upper signature and take its gate to the records vault. The second signature is on a raised desk across the lower aisle.",
+    "surprise": "Crossing the vault threshold drops a file weight onto the approach to the second desk.",
+    "spawn": {
+      "x": 55,
+      "y": 173
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 45,
+          "y": 436
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 205,
+        "w": 175,
+        "h": 16
+      },
+      {
+        "x": 232,
+        "y": 145,
+        "w": 105,
+        "h": 16
+      },
+      {
+        "x": 385,
+        "y": 90,
+        "w": 150,
+        "h": 16
+      },
+      {
+        "x": 590,
+        "y": 185,
+        "w": 370,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 235,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 500,
+        "w": 960,
+        "h": 40
+      },
+      {
+        "x": 615,
+        "y": 435,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "x": 460,
+        "y": 375,
+        "w": 105,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          465,
+          80,
+          "sig1"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 663,
+            "y": 0,
+            "w": 22,
+            "h": 185
+          },
+          "sig1"
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          855,
+          137,
+          845,
+          452,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 694,
+            "y": 258,
+            "w": 42,
+            "h": 40
+          },
+          {
+            "x": 765,
+            "y": 310,
+            "w": 35,
+            "h": 190
+          },
+          {
+            "shakeTime": 0.5,
+            "floorY": 500
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          480,
+          365,
+          "sig2"
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 318,
+            "y": 251,
+            "w": 22,
+            "h": 249
+          },
+          "sig2"
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          175,
+          500,
+          65,
+          {
+            "x": 260,
+            "y": 300,
+            "w": 30,
+            "h": 200
+          },
+          {
+            "delay": 0.24
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "upper",
+        "vault",
+        "tube",
+        "file",
+        "lower",
+        "records",
+        "teeth"
+      ],
+      "stages": [
+        {
+          "label": "Clerk stair",
+          "target": {
+            "x": 269,
+            "y": 113
+          },
+          "reach": {
+            "x": 232,
+            "y": 105,
+            "w": 105,
+            "h": 15
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Countersign upstairs",
+          "target": {
+            "x": 475,
+            "y": 58
+          },
+          "requires": [
+            {
+              "trap": "upper",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Vault gate",
+          "target": {
+            "x": 705,
+            "y": 153
+          },
+          "requires": [
+            {
+              "trap": "vault",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Records tube",
+          "target": {
+            "x": 860,
+            "y": 153
+          },
+          "requires": [
+            {
+              "trap": "tube",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Lower step",
+          "target": {
+            "x": 665,
+            "y": 403
+          },
+          "reach": {
+            "x": 615,
+            "y": 395,
+            "w": 100,
+            "h": 15
+          },
+          "requires": [
+            {
+              "trap": "file",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Sign desk",
+          "target": {
+            "x": 490,
+            "y": 343
+          },
+          "requires": [
+            {
+              "trap": "lower",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Records gate",
+          "target": {
+            "x": 275,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "records",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Sealed exit",
+          "target": {
+            "x": 80,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "teeth",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "upper",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "vault",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "tube",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "file",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "lower",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "records",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "teeth",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "48bf069ae9be1f2cedef58106ea456e6d8077f0bb00a759191d9a3170f1b4bbe",
+      "seed": 69,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 173
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 721,
+      "seconds": 6.008333333333334,
+      "end": [
+        76.08333333332968,
+        432.87152777777777,
+        "win"
+      ]
+    },
+    "expanded": 34459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      144,
+      180,
+      240,
+      276,
+      312,
+      348,
+      516,
+      588,
+      708
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "48bf069ae9be1f2cedef58106ea456e6d8077f0bb00a759191d9a3170f1b4bbe",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 719,
+      "seconds": 5.991666666666666,
+      "end": [
+        74.87499999999618,
+        468,
+        "win"
+      ]
+    },
+    "ticks": 719,
+    "successfulReplaySeconds": 5.991666666666666,
+    "seconds": {
+      "activeTraversal": 5.975,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0.008333333333333333,
+      "neutralWaiting": 0,
+      "blockedInput": 0.008333333333333333,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1966.2725022919253,
+      "carriedPixels": 0,
+      "portalPixels": 315.45242837534335
+    },
+    "inputs": {
+      "jumpPresses": 5,
+      "horizontalReversals": 1
+    },
+    "required": [
+      {
+        "trap": "upper",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 181
+      },
+      {
+        "trap": "vault",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 292
+      },
+      {
+        "trap": "tube",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 358
+      },
+      {
+        "trap": "file",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 392
+      },
+      {
+        "trap": "lower",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 520
+      },
+      {
+        "trap": "records",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 621
+      },
+      {
+        "trap": "teeth",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 623
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 79,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 87,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Clerk stair"
+      },
+      {
+        "tick": 155,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 181,
+        "id": "upper",
+        "event": "activate"
+      },
+      {
+        "tick": 181,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Countersign upstairs"
+      },
+      {
+        "tick": 208,
+        "id": "vault",
+        "event": "open"
+      },
+      {
+        "tick": 259,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 292,
+        "id": "vault",
+        "event": "pass"
+      },
+      {
+        "tick": 292,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Vault gate"
+      },
+      {
+        "tick": 358,
+        "id": "tube",
+        "event": "activate"
+      },
+      {
+        "tick": 358,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Records tube"
+      },
+      {
+        "tick": 392,
+        "id": "file",
+        "event": "trigger"
+      },
+      {
+        "tick": 440,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 440,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Lower step"
+      },
+      {
+        "tick": 520,
+        "id": "lower",
+        "event": "activate"
+      },
+      {
+        "tick": 520,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Sign desk"
+      },
+      {
+        "tick": 525,
+        "id": "platform:7",
+        "event": "land"
+      },
+      {
+        "tick": 547,
+        "id": "records",
+        "event": "open"
+      },
+      {
+        "tick": 597,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 621,
+        "id": "records",
+        "event": "pass"
+      },
+      {
+        "tick": 621,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Records gate"
+      },
+      {
+        "tick": 623,
+        "id": "teeth",
+        "event": "trigger"
+      },
+      {
+        "tick": 623,
+        "id": "stage:7",
+        "event": "complete",
+        "label": "Sealed exit"
+      }
+    ],
+    "stagesCompleted": 8,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "platform:1:land": 1,
+      "stage:0:complete": 1,
+      "platform:2:land": 1,
+      "upper:activate": 1,
+      "stage:1:complete": 1,
+      "vault:open": 1,
+      "platform:3:land": 1,
+      "vault:pass": 1,
+      "stage:2:complete": 1,
+      "tube:activate": 1,
+      "stage:3:complete": 1,
+      "file:trigger": 1,
+      "platform:6:land": 1,
+      "stage:4:complete": 1,
+      "lower:activate": 1,
+      "stage:5:complete": 1,
+      "platform:7:land": 1,
+      "records:open": 1,
+      "platform:5:land": 2,
+      "records:pass": 1,
+      "stage:6:complete": 1,
+      "teeth:trigger": 1,
+      "stage:7:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 59,
+      "score": 0.4071428571428571,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 61,
+      "score": 0.40267857142857144,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 54,
+      "score": 0.39,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 32.976
+}

@@ -1,0 +1,445 @@
+  // ---- 1: Tutorial ----
+  {
+    name: "WELCOME TO THE DOMAIN",
+    build: () => ({
+      spawn: { x: 60, y: 440 },
+      door: new Door([{ x: 876, y: 416 }]),
+      solids: [floorSeg(0, 960), wallL(), wallR()],
+      traps: [new Note(420, 430, "just reach the exit :)")],
+    }),
+  },
+  // ---- 2: First collapse ----
+  {
+    name: "NOT SO FAST",
+    build: () => ({
+      spawn: { x: 60, y: 440 },
+      door: new Door([{ x: 876, y: 416 }]),
+      solids: [floorSeg(0, 400), floorSeg(500, 960), wallL(), wallR()],
+      traps: [
+        new CollapseFloor(R(400, 480, 100, 60), R(330, 300, 30, 180)),
+        new Note(220, 430, "looks solid enough \u2192"),
+      ],
+    }),
+  },
+  // ---- 3: Crumble ----
+  {
+    name: "UNSTABLE GROUND",
+    build: () => ({
+      spawn: { x: 60, y: 440 },
+      door: new Door([{ x: 876, y: 416 }]),
+      solids: [floorSeg(0, 200), floorSeg(760, 960), wallL(), wallR()],
+      traps: [
+        new CrumblePlatform(R(270, 408, 92, 16), { delay: 0.38 }),
+        new CrumblePlatform(R(430, 360, 92, 16), { delay: 0.38 }),
+        new CrumblePlatform(R(590, 408, 92, 16), { delay: 0.22 }),
+        new Note(320, 380, "they look sturdy", { angle: -0.04 }),
+      ],
+    }),
+  },
+  // ---- 4: Pop spikes ----
+  {
+    name: "FIND THE BEAT",
+    build: () => ({
+      spawn: { x: 50, y: 440 },
+      door: new Door([{ x: 880, y: 416 }]),
+      solids: [floorSeg(0, 960), wallL(), wallR()],
+      traps: [
+        new PopSpikes(220, 480, 64, null, { period: 1.8, phase: 0.0, holdOut: 0.7 }),
+        new PopSpikes(330, 480, 64, null, { period: 1.8, phase: 0.3, holdOut: 0.7 }),
+        new PopSpikes(440, 480, 64, null, { period: 1.8, phase: 0.6, holdOut: 0.7 }),
+        new PopSpikes(550, 480, 64, null, { period: 1.8, phase: 0.9, holdOut: 0.7 }),
+        new PopSpikes(660, 480, 64, null, { period: 1.8, phase: 1.2, holdOut: 0.7 }),
+        new Note(120, 420, "feel the rhythm", { angle: 0.03 }),
+      ],
+    }),
+  },
+  // ---- 5: Fall blocks ----
+  {
+    name: "THE SKY IS WATCHING",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 876, y: 416 }]),
+      solids: [floorSeg(0, 960), roof(40), wallL(), wallR()],
+      traps: [
+        new FallBlock(R(200, 40, 64, 42), R(180, 200, 104, 280)),
+        new FallBlock(R(360, 40, 64, 42), R(340, 200, 104, 280)),
+        new FallBlock(R(520, 40, 64, 42), R(500, 200, 104, 280)),
+        new FallBlock(R(680, 40, 64, 42), R(660, 200, 104, 280)),
+        new FallBlock(R(830, 40, 56, 42), R(790, 200, 40, 280), { shakeTime: 0.04 }),
+        new Note(120, 110, "look up.", { size: 14 }),
+      ],
+    }),
+  },
+  // ---- 6: Moving platform ----
+  {
+    name: "FREE RIDE",
+    build: () => ({
+      spawn: { x: 60, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 300), floorSeg(620, 960), wallL(), wallR()],
+      traps: [
+        new MovingPlatform(R(300, 452, 100, 16), { toX: 520, speed: 95, pause: 0.5 }),
+        new Note(160, 430, "hop on :)"),
+        new PopSpikes(806, 480, 70, R(706, 330, 18, 150), { delay: 0.05 }),
+      ],
+    }),
+  },
+  // ---- 7: Fleeing door ----
+  {
+    name: "CATCH ME IF YOU CAN",
+    build: () => ({
+      spawn: { x: 60, y: 440 },
+      door: new Door(
+        [{ x: 870, y: 416 }, { x: 470, y: 416 }, { x: 120, y: 416 }, { x: 856, y: 288 }],
+        { fleeDist: 105 }
+      ),
+      solids: [floorSeg(0, 960), R(640, 420, 92, 14), R(800, 352, 160, 16), wallL(), wallR()],
+      traps: [
+        new PopSpikes(652, 420, 68, R(640, 320, 92, 100), { delay: 0.45 }),
+        new Note(760, 250, "it just wants space"),
+      ],
+    }),
+  },
+  // ---- 8: Conveyor ----
+  {
+    name: "GOING THE WRONG WAY",
+    build: () => ({
+      spawn: { x: 150, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(120, 960), wallL(), wallR()],
+      traps: [
+        new Conveyor(R(300, 480, 320, 60), { dir: -1, force: 165 }),
+        new Note(450, 430, "keep walking \u2192"),
+        new PopSpikes(812, 480, 66, R(720, 330, 16, 150), { delay: 0.04 }),
+      ],
+    }),
+  },
+  // ---- 9: Sliding hole ----
+  {
+    name: "THE FLOOR HATES YOU",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 880, y: 416 }]),
+      solids: [wallL(), wallR()],
+      traps: [
+        new SlidingHole(0, 960, { gapW: 96, startGap: 760, speed: 150, trigger: R(120, 300, 20, 180) }),
+        new Note(420, 420, "the hole has opinions", { angle: -0.03 }),
+      ],
+    }),
+  },
+  // ---- 10: Spring ----
+  {
+    name: "BOUNCE HOUSE",
+    build: () => ({
+      spawn: { x: 60, y: 440 },
+      door: new Door([{ x: 884, y: 226 }]),
+      solids: [floorSeg(0, 440), R(480, 290, 480, 16), wallL(), wallR()],
+      traps: [
+        new Spring(360, 480, { power: -1220 }),
+        new Note(160, 430, "hit the spring"),
+        new PopSpikes(700, 290, 60, R(580, 200, 18, 90), { delay: 0.3 }),
+      ],
+    }),
+  },
+  // ---- 11: Invert controls ----
+  {
+    name: "EVERYTHING IS BACKWARDS",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 880, y: 416 }]),
+      solids: [floorSeg(0, 350), floorSeg(430, 540), floorSeg(620, 960), wallL(), wallR()],
+      traps: [
+        new InvertZone(R(280, 0, 420, 480)),
+        new StaticSpikes(355, 540, 70, { dir: "up", size: 40 }),
+        new StaticSpikes(545, 540, 70, { dir: "up", size: 40 }),
+        new PopSpikes(700, 480, 64, R(648, 330, 16, 150), { delay: 0.4 }),
+        new Note(490, 300, "sdrawkcab", { size: 18 }),
+      ],
+    }),
+  },
+  // ---- 12: Blink platforms ----
+  {
+    name: "NOW YOU SEE IT",
+    build: () => ({
+      spawn: { x: 60, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 250), floorSeg(740, 960), wallL(), wallR()],
+      traps: [
+        new BlinkPlatform(R(300, 430, 96, 16), { period: 1.7, onFrac: 0.62, phase: 0.0 }),
+        new BlinkPlatform(R(444, 400, 96, 16), { period: 1.7, onFrac: 0.62, phase: 0.34 }),
+        new BlinkPlatform(R(588, 430, 96, 16), { period: 1.7, onFrac: 0.62, phase: 0.68 }),
+        new Note(150, 430, "now you don't"),
+        new PopSpikes(806, 480, 66, R(720, 330, 16, 150), { delay: 0.05 }),
+      ],
+    }),
+  },
+  // ---- 13: Fake doors ----
+  {
+    name: "PICK YOUR DOOM",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), wallL(), wallR()],
+      traps: [
+        new FakeDoor(380, 416, { label: "definitely this one" }),
+        new FakeDoor(600, 416, { label: "or maybe this?" }),
+        new FallBlock(R(800, 40, 70, 42), R(745, 200, 50, 280), { shakeTime: 0.05 }),
+        new PopSpikes(700, 480, 70, R(560, 330, 30, 150), { delay: 0.85 }),
+        new Note(884 + 19, 396, "real", { size: 13, angle: 0.06 }),
+      ],
+    }),
+  },
+  // ---- 14: Saw ----
+  {
+    name: "SPINNING DEATH",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), roof(30), wallL(), wallR()],
+      traps: [
+        new Saw([{ x: 300, y: 444 }, { x: 640, y: 444 }], { r: 24, speed: 165 }),
+        new Saw([{ x: 520, y: 90 }, { x: 520, y: 430 }], { r: 22, speed: 185 }),
+        new Note(150, 430, "perfectly safe"),
+        new PopSpikes(820, 480, 64, R(740, 330, 16, 150), { delay: 0.04 }),
+      ],
+    }),
+  },
+  // ---- 15: Crushers ----
+  {
+    name: "FLAT ENOUGH",
+    build: () => ({
+      spawn: { x: 50, y: 440 },
+      door: new Door([{ x: 880, y: 416 }]),
+      solids: [floorSeg(0, 960), roof(36), wallL(), wallR()],
+      traps: [
+        new Crusher(230, 92, { topY: 36, period: 1.9, phase: 0.0 }),
+        new Crusher(450, 92, { topY: 36, period: 1.9, phase: 0.95 }),
+        new Crusher(640, 92, { topY: 36, period: 1.9, phase: 0.45 }),
+        new Crusher(806, 100, { topY: 36, trigger: R(770, 320, 12, 160), slamSpeed: 2100 }),
+        new Note(340, 110, "nice and flat here"),
+      ],
+    }),
+  },
+  // ---- 16: Laser ----
+  {
+    name: "LASER FOCUS",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), roof(30), wallL(), wallR()],
+      traps: [
+        new Laser({ x: 300, y: 30, len: 418, vertical: true, period: 2.2, warn: 0.55, fire: 0.5, phase: 0.0 }),
+        new Laser({ x: 480, y: 30, len: 418, vertical: true, period: 2.2, warn: 0.55, fire: 0.5, phase: 0.5 }),
+        new Laser({ x: 660, y: 30, len: 418, vertical: true, period: 2.2, warn: 0.55, fire: 0.5, phase: 1.0 }),
+        new Note(150, 430, "dodge the beams"),
+        new PopSpikes(820, 480, 64, R(740, 330, 16, 150), { delay: 0.04 }),
+      ],
+    }),
+  },
+  // ---- 17: Teleporter ----
+  {
+    name: "QUANTUM LEAP",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 360), floorSeg(620, 960), wallL(), wallR()],
+      traps: [
+        new StaticSpikes(360, 540, 260, { dir: "up", size: 44 }),
+        new Teleporter(300, 432, 648, 432, { w: 30, h: 48, twoWay: false }),
+        new Note(170, 430, "step in \u2192"),
+        new PopSpikes(806, 480, 66, R(720, 330, 16, 150), { delay: 0.05 }),
+      ],
+    }),
+  },
+  // ---- 18: Pendulum ----
+  {
+    name: "TICK TOCK",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), roof(30), wallL(), wallR()],
+      traps: [
+        new Pendulum(240, 30, { len: 400, amp: 0.85, speed: 1.6, r: 18, phase: 0.0 }),
+        new Pendulum(470, 30, { len: 400, amp: 0.85, speed: 1.6, r: 18, phase: 1.1 }),
+        new Pendulum(700, 30, { len: 400, amp: 0.85, speed: 1.6, r: 18, phase: 2.2 }),
+        new Note(150, 430, "mind the swing"),
+        new PopSpikes(844, 480, 58, R(764, 330, 14, 150), { delay: 0.04 }),
+      ],
+    }),
+  },
+  // ---- 19: Turret ----
+  {
+    name: "INCOMING",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), wallL(), wallR()],
+      traps: [
+        new Turret(942, 430, { dir: -1, period: 1.3, speed: 300, phase: 0.0 }),
+        new Turret(942, 388, { dir: -1, period: 1.7, speed: 250, phase: 0.6 }),
+        new Note(150, 430, "duck! (you can't)"),
+        new PopSpikes(300, 480, 64, null, { period: 1.8, phase: 0, holdOut: 0.7 }),
+      ],
+    }),
+  },
+  // ---- 20: Button + Gate ----
+  {
+    name: "PRESS TO PROCEED",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), wallL(), wallR()],
+      traps: [
+        new Button(330, 470, "g1", { momentary: false }),
+        new Gate(R(620, 300, 28, 180), "g1"),
+        new FakeDoor(720, 416, { label: "this way!" }),
+        new PopSpikes(812, 480, 66, R(740, 330, 16, 150), { delay: 0.05 }),
+        new Note(352, 440, "press to open"),
+      ],
+    }),
+  },
+  // ---- 21: Moving platforms vertical ----
+  {
+    name: "ELEVATOR SHAFT",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 300), floorSeg(660, 960), R(450, 330, 120, 16), wallL(), wallR()],
+      traps: [
+        new StaticSpikes(300, 540, 360, { dir: "up", size: 46 }),
+        new MovingPlatform(R(300, 452, 120, 16), { toY: 320, speed: 62, pause: 0.45 }),
+        new MovingPlatform(R(560, 320, 120, 16), { toY: 452, speed: 62, pause: 0.45, phase: 0.5 }),
+        new Note(150, 430, "going up \u2191"),
+        new PopSpikes(812, 480, 64, R(740, 330, 16, 150), { delay: 0.05 }),
+      ],
+    }),
+  },
+  // ---- 22: Conveyor + crushers ----
+  {
+    name: "PRODUCTION LINE",
+    build: () => ({
+      spawn: { x: 80, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), roof(30), wallL(), wallR()],
+      traps: [
+        new Conveyor(R(260, 480, 420, 60), { dir: 1, force: 150 }),
+        new Crusher(360, 90, { topY: 30, period: 1.7, phase: 0.0 }),
+        new Crusher(520, 90, { topY: 30, period: 1.7, phase: 0.85 }),
+        new Crusher(660, 90, { topY: 30, period: 1.7, phase: 0.4 }),
+        new Note(150, 430, "belt + hammers"),
+        new PopSpikes(812, 480, 64, R(740, 330, 16, 150), { delay: 0.04 }),
+      ],
+    }),
+  },
+  // ---- 23: Spring + gaps ----
+  {
+    name: "SPRING FEVER",
+    build: () => ({
+      spawn: { x: 60, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 300), floorSeg(460, 650), floorSeg(790, 960), wallL(), wallR()],
+      traps: [
+        new StaticSpikes(300, 540, 160, { dir: "up", size: 44 }),
+        new StaticSpikes(650, 540, 140, { dir: "up", size: 44 }),
+        new Spring(250, 480, { power: -1080 }),
+        new Spring(600, 480, { power: -1080 }),
+        new Note(150, 430, "run and bounce \u2192"),
+        new PopSpikes(820, 480, 64, R(742, 330, 16, 150), { delay: 0.05 }),
+      ],
+    }),
+  },
+  // ---- 24: Blink + saw ----
+  {
+    name: "PHASE BLADE",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 260), floorSeg(700, 960), wallL(), wallR()],
+      traps: [
+        new StaticSpikes(260, 540, 440, { dir: "up", size: 46 }),
+        new BlinkPlatform(R(320, 420, 100, 16), { period: 1.6, onFrac: 0.6, phase: 0.0 }),
+        new BlinkPlatform(R(540, 420, 100, 16), { period: 1.6, onFrac: 0.6, phase: 0.5 }),
+        new Saw([{ x: 480, y: 150 }, { x: 480, y: 360 }], { r: 22, speed: 180 }),
+        new Note(150, 430, "time the blink and blade"),
+        new PopSpikes(806, 480, 66, R(720, 330, 16, 150), { delay: 0.05 }),
+      ],
+    }),
+  },
+  // ---- 25: Turret + laser ----
+  {
+    name: "CROSSFIRE",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), roof(30), wallL(), wallR()],
+      traps: [
+        new Turret(942, 430, { dir: -1, period: 1.2, speed: 300 }),
+        new Laser({ x: 430, y: 30, len: 418, vertical: true, period: 2.0, warn: 0.5, fire: 0.45, phase: 0.0 }),
+        new Laser({ x: 620, y: 30, len: 418, vertical: true, period: 2.0, warn: 0.5, fire: 0.45, phase: 0.5 }),
+        new Note(150, 430, "crossfire!"),
+        new PopSpikes(280, 480, 64, null, { period: 1.7, phase: 0, holdOut: 0.7 }),
+      ],
+    }),
+  },
+  // ---- 26: Portal hop ----
+  {
+    name: "PORTAL HOPPER",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 196 }]),
+      solids: [floorSeg(0, 300), floorSeg(640, 960), R(760, 260, 200, 16), wallL(), wallR()],
+      traps: [
+        new StaticSpikes(300, 540, 340, { dir: "up", size: 46 }),
+        new MovingPlatform(R(320, 452, 100, 16), { toX: 520, speed: 95, pause: 0.4 }),
+        new Teleporter(700, 432, 820, 212, { w: 30, h: 48, twoWay: false }),
+        new Note(150, 430, "ride, then warp up"),
+        new PopSpikes(806, 260, 60, R(720, 180, 16, 80), { delay: 0.05 }),
+      ],
+    }),
+  },
+  // ---- 27: Rhythm domain ----
+  {
+    name: "RHYTHM DOMAIN",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 960), roof(30), wallL(), wallR()],
+      traps: [
+        new PopSpikes(240, 480, 64, null, { period: 1.5, phase: 0.0, holdOut: 0.7 }),
+        new PopSpikes(360, 480, 64, null, { period: 1.5, phase: 0.3, holdOut: 0.7 }),
+        new PopSpikes(480, 480, 64, null, { period: 1.5, phase: 0.6, holdOut: 0.7 }),
+        new Laser({ x: 600, y: 30, len: 418, vertical: true, period: 1.8, warn: 0.45, fire: 0.4, phase: 0.0 }),
+        new Laser({ x: 720, y: 30, len: 418, vertical: true, period: 1.8, warn: 0.45, fire: 0.4, phase: 0.9 }),
+        new Note(150, 430, "feel the beat"),
+        new PopSpikes(844, 480, 58, R(770, 330, 14, 150), { delay: 0.04 }),
+      ],
+    }),
+  },
+  // ---- 28: Mixed gauntlet ----
+  {
+    name: "THE FULL DOMAIN",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 360), floorSeg(540, 960), roof(30), wallL(), wallR()],
+      traps: [
+        new Conveyor(R(120, 480, 200, 60), { dir: 1, force: 120 }),
+        new StaticSpikes(360, 540, 180, { dir: "up", size: 44 }),
+        new MovingPlatform(R(360, 452, 100, 16), { toX: 450, speed: 80, pause: 0.4 }),
+        new Saw([{ x: 660, y: 150 }, { x: 660, y: 360 }], { r: 20, speed: 170 }),
+        new Crusher(770, 90, { topY: 30, period: 1.8, phase: 0.3 }),
+        new Note(150, 430, "everything at once"),
+        new PopSpikes(844, 480, 58, R(800, 330, 14, 150), { delay: 0.04 }),
+      ],
+    }),
+  },
+  // ---- 29: Trust nobody ----
+  {
+    name: "TRUST NOBODY",
+    build: () => ({
+      spawn: { x: 55, y: 440 },
+      door: new Door([{ x: 884, y: 416 }]),
+      solids: [floorSeg(0, 620), floorSeg(770, 960), wallL(), wallR()],
+      traps: [
+        new FakeDoor(300, 416, { label: "100% real" }),
+        new FakeDoor(520, 416, { label: "trust me" }),

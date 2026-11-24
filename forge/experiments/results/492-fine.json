@@ -1,0 +1,1381 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "id": 492,
+    "season": 10,
+    "name": "LAB B — CROSS THE PULSE",
+    "seed": 492,
+    "targetDifficulty": "MEDIUM",
+    "experimental": true,
+    "developerOnly": true,
+    "spawn": {
+      "x": 55,
+      "y": 440
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 884,
+          "y": 416
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 480,
+        "w": 250,
+        "h": 60
+      },
+      {
+        "x": 760,
+        "y": 480,
+        "w": 200,
+        "h": 60
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      }
+    ],
+    "traps": [
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 250,
+            "y": 450,
+            "w": 110,
+            "h": 16
+          },
+          {
+            "toX": 650,
+            "speed": 130,
+            "pause": 0
+          }
+        ]
+      },
+      {
+        "type": "Laser",
+        "args": [
+          {
+            "x": 530,
+            "y": 50,
+            "len": 430,
+            "vertical": true,
+            "period": 1.7,
+            "warn": 0.35,
+            "fire": 0.5,
+            "phase": 0.2
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          830,
+          480,
+          45,
+          {
+            "x": 775,
+            "y": 320,
+            "w": 25,
+            "h": 160
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          250,
+          540,
+          510,
+          {
+            "size": 40
+          }
+        ]
+      }
+    ],
+    "checkpoints": [],
+    "experiment": {
+      "version": 1,
+      "trapIds": [
+        "carrier",
+        "pulse",
+        "escape",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Board the carrier",
+          "target": {
+            "trap": "carrier",
+            "dx": 35,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "carrier",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Cross the pulse while riding",
+          "target": {
+            "x": 560,
+            "y": 418
+          },
+          "requires": [
+            {
+              "trap": "pulse",
+              "event": "beamCrossRiding",
+              "minTicks": 1
+            }
+          ]
+        },
+        {
+          "label": "Reach the far bank",
+          "target": {
+            "x": 785,
+            "y": 448
+          },
+          "reach": {
+            "x": 760,
+            "y": 400,
+            "w": 70,
+            "h": 80
+          }
+        },
+        {
+          "label": "Escape the ambush",
+          "target": {
+            "x": 884,
+            "y": 416
+          },
+          "reach": {
+            "x": 855,
+            "y": 350,
+            "w": 100,
+            "h": 130
+          },
+          "requires": [
+            {
+              "trap": "escape",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ]
+        }
+      ],
+      "required": [
+        {
+          "trap": "carrier",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "pulse",
+          "event": "beamCrossRiding",
+          "minTicks": 1
+        },
+        {
+          "trap": "escape",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    }
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "08fcaa1a41003e4ca1e80cf2dbe5d7a9ff15002dac4284c363fd0e7012592c49",
+      "seed": 492,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 3,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 325,
+      "seconds": 2.7083333333333335,
+      "end": [
+        865.0590972222254,
+        408.63888888888886,
+        "win"
+      ]
+    },
+    "expanded": 63259,
+    "rejectedWins": 0,
+    "searchTrace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "08fcaa1a41003e4ca1e80cf2dbe5d7a9ff15002dac4284c363fd0e7012592c49",
+      "seed": 492,
+      "initial": {
+        "spawn": {
+          "x": 55,
+          "y": 440
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 3,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    }
+  },
+  "cleanup": {
+    "removedJumpPressTicks": [
+      60
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "08fcaa1a41003e4ca1e80cf2dbe5d7a9ff15002dac4284c363fd0e7012592c49",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 325,
+      "seconds": 2.7083333333333335,
+      "end": [
+        865.0590972222254,
+        408.63888888888886,
+        "win"
+      ]
+    },
+    "ticks": 325,
+    "successfulReplaySeconds": 2.7083333333333335,
+    "seconds": {
+      "activeTraversal": 2.7083333333333335,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 795.7177715371027,
+      "carriedPixels": 112.89243055555494,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 3,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "carrier",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 132
+      },
+      {
+        "trap": "pulse",
+        "event": "beamCrossRiding",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 175
+      },
+      {
+        "trap": "escape",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 274
+      }
+    ],
+    "events": [
+      {
+        "tick": 10,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 103,
+        "id": "pit",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 132,
+        "id": "carrier",
+        "event": "ride"
+      },
+      {
+        "tick": 143,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Board the carrier"
+      },
+      {
+        "tick": 175,
+        "id": "pulse",
+        "event": "beamCross",
+        "phase": "off"
+      },
+      {
+        "tick": 175,
+        "id": "pulse",
+        "event": "beamCrossRiding",
+        "phase": "off"
+      },
+      {
+        "tick": 175,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Cross the pulse while riding"
+      },
+      {
+        "tick": 268,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 274,
+        "id": "escape",
+        "event": "trigger"
+      },
+      {
+        "tick": 278,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Reach the far bank"
+      },
+      {
+        "tick": 314,
+        "id": "escape",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 321,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Escape the ambush"
+      }
+    ],
+    "stagesCompleted": 4,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "pit:hazardNear": 3,
+      "carrier:ride": 60,
+      "stage:0:complete": 1,
+      "pulse:beamCross": 8,
+      "pulse:beamCrossRiding": 8,
+      "stage:1:complete": 1,
+      "platform:1:land": 1,
+      "escape:trigger": 1,
+      "stage:2:complete": 1,
+      "escape:hazardNear": 12,
+      "stage:3:complete": 1
+    }
+  },
+  "jumpPresses": [
+    {
+      "start": 35,
+      "end": 37,
+      "tick": 105
+    },
+    {
+      "start": 74,
+      "end": 76,
+      "tick": 222
+    },
+    {
+      "start": 102,
+      "end": 104,
+      "tick": 306
+    }
+  ],
+  "controls": {
+    "scope": "Same recorded route with one intervention. Failure demonstrates route dependence, not impossibility of all alternate routes.",
+    "results": [
+      {
+        "kind": "disable mechanic",
+        "mechanic": "carrier",
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 152,
+          "seconds": 1.2666666666666666,
+          "end": [
+            373.37499999999943,
+            478.9895833333333,
+            "dead"
+          ]
+        }
+      },
+      {
+        "kind": "change laser phase",
+        "from": 0.2,
+        "to": 0.1,
+        "offsetSeconds": -0.17,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 175,
+          "seconds": 1.4583333333333333,
+          "end": [
+            503.1741666666652,
+            418,
+            "dead"
+          ]
+        }
+      },
+      {
+        "kind": "remove jump press",
+        "tick": 105,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 115,
+          "seconds": 0.9583333333333334,
+          "end": [
+            291.6666666666668,
+            476.36805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "kind": "remove jump press",
+        "tick": 222,
+        "proof": {
+          "status": "FAILED",
+          "surprise": false,
+          "ticks": 238,
+          "seconds": 1.9833333333333334,
+          "end": [
+            672.9340972222221,
+            478.61805555555554,
+            "dead"
+          ]
+        }
+      },
+      {
+        "kind": "remove jump press",
+        "tick": 306,
+        "proof": {
+          "status": "FAILED",
+          "surprise": true,
+          "ticks": 313,
+          "seconds": 2.6083333333333334,
+          "end": [
+            838.559097222225,
+            448,
+            "dead"
+          ]
+        }
+      }
+    ]
+  },
+  "searchWallSeconds": 24.391,
+  "runWallSeconds": 24.637,
+  "approved": false,
+  "integrated": false
+}

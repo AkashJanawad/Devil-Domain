@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: Season 2 is ten handcrafted developer drafts, alongside the approved 60-level campaign
+ok 1 - Season 2 is ten handcrafted developer drafts, alongside the approved 60-level campaign
+  ---
+  duration_ms: 20.6534
+  type: 'test'
+  ...
+# Subtest: Level 51: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 2 - Level 51: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 244.8886
+  type: 'test'
+  ...
+# Subtest: Level 52: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 3 - Level 52: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 198.7667
+  type: 'test'
+  ...
+# Subtest: Level 53: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 4 - Level 53: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 172.1205
+  type: 'test'
+  ...
+# Subtest: Level 54: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 5 - Level 54: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 288.5346
+  type: 'test'
+  ...
+# Subtest: Level 55: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 6 - Level 55: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 200.0847
+  type: 'test'
+  ...
+# Subtest: Level 56: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 7 - Level 56: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 196.8495
+  type: 'test'
+  ...
+# Subtest: Level 57: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 8 - Level 57: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 178.1488
+  type: 'test'
+  ...
+# Subtest: Level 58: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 9 - Level 58: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 166.295
+  type: 'test'
+  ...
+# Subtest: Level 59: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 10 - Level 59: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 360.4913
+  type: 'test'
+  ...
+# Subtest: Level 60: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 11 - Level 60: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 267.1609
+  type: 'test'
+  ...
+# Subtest: Level 61: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 12 - Level 61: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 392.2494
+  type: 'test'
+  ...
+# Subtest: Level 62: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 13 - Level 62: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 204.011
+  type: 'test'
+  ...
+# Subtest: Level 63: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 14 - Level 63: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 229.0674
+  type: 'test'
+  ...
+# Subtest: Level 64: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 15 - Level 64: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 387.5792
+  type: 'test'
+  ...
+# Subtest: Level 65: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 16 - Level 65: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 191.9776
+  type: 'test'
+  ...
+# Subtest: Level 66: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 17 - Level 66: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 268.9326
+  type: 'test'
+  ...
+# Subtest: Level 67: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 18 - Level 67: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 214.1944
+  type: 'test'
+  ...
+# Subtest: Level 68: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 19 - Level 68: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 217.4543
+  type: 'test'
+  ...
+# Subtest: Level 69: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 20 - Level 69: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 426.9095
+  type: 'test'
+  ...
+# Subtest: Level 70: fresh replay, intended interactions, no ground-only win, distinct layout
+ok 21 - Level 70: fresh replay, intended interactions, no ground-only win, distinct layout
+  ---
+  duration_ms: 305.1977
+  type: 'test'
+  ...
+# Subtest: campaign uses approved geometry, progresses from 50 to 51 and finishes at 60
+ok 22 - campaign uses approved geometry, progresses from 50 to 51 and finishes at 60
+  ---
+  duration_ms: 12.1146
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5383.9026

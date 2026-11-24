@@ -1,0 +1,805 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 94,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 94,
+    "name": "PAPER MOON",
+    "targetDifficulty": "EXPERT",
+    "intent": "Launch to the moon switch, ferry across its high gap and follow the fleeing door down via the lower return ledge.",
+    "surprise": "The door falls into a locked pocket; approaching the ferry releases a paperweight into that pocket.",
+    "spawn": {
+      "x": 48,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 873,
+          "y": 136
+        },
+        {
+          "x": 426,
+          "y": 416
+        }
+      ],
+      "options": {
+        "fleeDist": 60
+      }
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 245,
+        "h": 40
+      },
+      {
+        "x": 330,
+        "y": 330,
+        "w": 125,
+        "h": 16
+      },
+      {
+        "x": 510,
+        "y": 265,
+        "w": 116,
+        "h": 16
+      },
+      {
+        "x": 831,
+        "y": 200,
+        "w": 129,
+        "h": 16
+      },
+      {
+        "x": 641,
+        "y": 368,
+        "w": 119,
+        "h": 16
+      },
+      {
+        "x": 360,
+        "y": 480,
+        "w": 170,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Spring",
+        "args": [
+          175,
+          500,
+          {
+            "w": 58,
+            "power": -990
+          }
+        ]
+      },
+      {
+        "type": "Button",
+        "args": [
+          553,
+          255,
+          "moon"
+        ]
+      },
+      {
+        "type": "MovingPlatform",
+        "args": [
+          {
+            "x": 655,
+            "y": 248,
+            "w": 108,
+            "h": 16
+          },
+          {
+            "toX": 708,
+            "toY": 222,
+            "speed": 90,
+            "phase": 0.4
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 480,
+            "y": 340,
+            "w": 21,
+            "h": 140
+          },
+          "moon"
+        ]
+      },
+      {
+        "type": "FallBlock",
+        "args": [
+          {
+            "x": 370,
+            "y": 370,
+            "w": 36,
+            "h": 35
+          },
+          {
+            "x": 777,
+            "y": 80,
+            "w": 38,
+            "h": 200
+          },
+          {
+            "shakeTime": 0.65,
+            "floorY": 480
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          245,
+          540,
+          715,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "launch",
+        "moon",
+        "ferry",
+        "pocket",
+        "weight",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Launch",
+          "target": {
+            "x": 194,
+            "y": 468
+          },
+          "requires": [
+            {
+              "trap": "launch",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Moon base",
+          "target": {
+            "x": 392.5,
+            "y": 298
+          },
+          "reach": {
+            "x": 330,
+            "y": 292,
+            "w": 125,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Moon switch",
+          "target": {
+            "x": 564,
+            "y": 233
+          },
+          "requires": [
+            {
+              "trap": "moon",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Ride ferry",
+          "target": {
+            "trap": "ferry",
+            "dx": 38,
+            "dy": -32
+          },
+          "requires": [
+            {
+              "trap": "ferry",
+              "event": "ride",
+              "minTicks": 12
+            }
+          ]
+        },
+        {
+          "label": "Find moon door",
+          "target": {
+            "x": 895.5,
+            "y": 168
+          },
+          "reach": {
+            "x": 831,
+            "y": 162,
+            "w": 129,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "exit",
+              "event": "relocate",
+              "minTicks": 1
+            },
+            {
+              "trap": "weight",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Return ledge",
+          "target": {
+            "x": 700.5,
+            "y": 336
+          },
+          "reach": {
+            "x": 641,
+            "y": 330,
+            "w": 119,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Door pocket",
+          "target": {
+            "x": 435,
+            "y": 448
+          },
+          "requires": [
+            {
+              "trap": "pocket",
+              "event": "pass",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "launch",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "moon",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "ferry",
+          "event": "ride",
+          "minTicks": 12
+        },
+        {
+          "trap": "exit",
+          "event": "relocate",
+          "minTicks": 1
+        },
+        {
+          "trap": "pocket",
+          "event": "pass",
+          "minTicks": 1
+        },
+        {
+          "trap": "weight",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "ad0c4413257a53daed523b33040887f7b6b05c9a68c7bce784aa99f78a181428",
+      "seed": 94,
+      "initial": {
+        "spawn": {
+          "x": 48,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          0,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          true
+        ],
+        [
+          -1,
+          false
+        ],
+        [
+          -1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 557,
+      "seconds": 4.641666666666667,
+      "end": [
+        453.70853183786215,
+        390.40624999999994,
+        "win"
+      ]
+    },
+    "expanded": 26375,
+    "rejectedWins": 108,
+    "removedJumpPressTicks": []
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "ad0c4413257a53daed523b33040887f7b6b05c9a68c7bce784aa99f78a181428",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 557,
+      "seconds": 4.641666666666667,
+      "end": [
+        453.70853183786215,
+        390.40624999999994,
+        "win"
+      ]
+    },
+    "ticks": 557,
+    "successfulReplaySeconds": 4.641666666666667,
+    "seconds": {
+      "activeTraversal": 4.641666666666667,
+      "passiveTransport": 0,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1770.9812592921633,
+      "carriedPixels": 43.81153463551917,
+      "portalPixels": 0
+    },
+    "inputs": {
+      "jumpPresses": 6,
+      "horizontalReversals": 3
+    },
+    "required": [
+      {
+        "trap": "launch",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 55
+      },
+      {
+        "trap": "moon",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 242
+      },
+      {
+        "trap": "ferry",
+        "event": "ride",
+        "minTicks": 12,
+        "observed": true,
+        "firstTick": 275
+      },
+      {
+        "trap": "exit",
+        "event": "relocate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 341
+      },
+      {
+        "trap": "pocket",
+        "event": "pass",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 557
+      },
+      {
+        "trap": "weight",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 309
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 55,
+        "id": "launch",
+        "event": "activate"
+      },
+      {
+        "tick": 55,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Launch"
+      },
+      {
+        "tick": 136,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 136,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Moon base"
+      },
+      {
+        "tick": 212,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 242,
+        "id": "moon",
+        "event": "activate"
+      },
+      {
+        "tick": 242,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Moon switch"
+      },
+      {
+        "tick": 269,
+        "id": "pocket",
+        "event": "open"
+      },
+      {
+        "tick": 275,
+        "id": "ferry",
+        "event": "ride"
+      },
+      {
+        "tick": 286,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Ride ferry"
+      },
+      {
+        "tick": 309,
+        "id": "weight",
+        "event": "trigger"
+      },
+      {
+        "tick": 341,
+        "id": "exit",
+        "event": "relocate"
+      },
+      {
+        "tick": 359,
+        "id": "platform:3",
+        "event": "land"
+      },
+      {
+        "tick": 359,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "Find moon door"
+      },
+      {
+        "tick": 421,
+        "id": "platform:4",
+        "event": "land"
+      },
+      {
+        "tick": 421,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Return ledge"
+      },
+      {
+        "tick": 529,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 557,
+        "id": "pocket",
+        "event": "pass"
+      },
+      {
+        "tick": 557,
+        "id": "stage:6",
+        "event": "complete",
+        "label": "Door pocket"
+      }
+    ],
+    "stagesCompleted": 7,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "launch:activate": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "stage:1:complete": 1,
+      "platform:2:land": 2,
+      "moon:activate": 1,
+      "stage:2:complete": 1,
+      "pocket:open": 1,
+      "ferry:ride": 39,
+      "stage:3:complete": 1,
+      "weight:trigger": 1,
+      "exit:relocate": 1,
+      "platform:3:land": 1,
+      "stage:4:complete": 1,
+      "platform:4:land": 1,
+      "stage:5:complete": 1,
+      "platform:5:land": 1,
+      "pocket:pass": 1,
+      "stage:6:complete": 1
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 63,
+      "score": 0.40499999999999997,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 62,
+      "score": 0.36428571428571427,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 90,
+      "score": 0.3625,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 15.756
+}

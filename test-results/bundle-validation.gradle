@@ -1,0 +1,14 @@
+gradle.projectsEvaluated {
+ def app=gradle.rootProject.project(':app')
+ app.tasks.register('verifyVersion1Bundle', JavaExec) {
+  classpath=gradle.rootProject.buildscript.configurations.classpath
+  mainClass='com.android.tools.build.bundletool.BundleToolMain'
+  args 'validate', '--bundle='+app.layout.buildDirectory.file('outputs/bundle/release/app-release.aab').get().asFile.absolutePath
+ }
+ app.tasks.register('inspectVersion1Manifest', JavaExec) {
+  classpath=gradle.rootProject.buildscript.configurations.classpath
+  mainClass='com.android.tools.build.bundletool.BundleToolMain'
+  args 'dump','manifest','--bundle='+app.layout.buildDirectory.file('outputs/bundle/release/app-release.aab').get().asFile.absolutePath
+  standardOutput=new FileOutputStream(new File(gradle.rootProject.projectDir.parentFile,'test-results/version1-bundle-manifest.xml'))
+ }
+}

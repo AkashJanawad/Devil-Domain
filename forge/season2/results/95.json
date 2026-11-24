@@ -1,0 +1,811 @@
+{
+  "data": {
+    "schemaVersion": 1,
+    "season": 2,
+    "seed": 95,
+    "experimental": true,
+    "developerOnly": true,
+    "checkpoints": [],
+    "id": 95,
+    "name": "THE LONG FUSE",
+    "targetDifficulty": "HARD",
+    "intent": "Jump onto the fuse plate, pass its closing shutter and transfer to the overhead fuse holders.",
+    "surprise": "The transfer arms the last holder with concealed teeth.",
+    "spawn": {
+      "x": 50,
+      "y": 468
+    },
+    "exit": {
+      "positions": [
+        {
+          "x": 878,
+          "y": 126
+        }
+      ]
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 500,
+        "w": 295,
+        "h": 40
+      },
+      {
+        "x": 355,
+        "y": 440,
+        "w": 120,
+        "h": 16
+      },
+      {
+        "x": 535,
+        "y": 440,
+        "w": 150,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 265,
+        "w": 960,
+        "h": 16
+      },
+      {
+        "x": 0,
+        "y": 170,
+        "w": 215,
+        "h": 16
+      },
+      {
+        "x": 470,
+        "y": 125,
+        "w": 130,
+        "h": 16
+      },
+      {
+        "x": 722,
+        "y": 190,
+        "w": 238,
+        "h": 16
+      },
+      {
+        "x": -40,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 960,
+        "y": -200,
+        "w": 40,
+        "h": 940
+      },
+      {
+        "x": 0,
+        "y": -20,
+        "w": 960,
+        "h": 20
+      }
+    ],
+    "traps": [
+      {
+        "type": "Button",
+        "args": [
+          363,
+          430,
+          "fuse",
+          {
+            "w": 98,
+            "momentary": true
+          }
+        ]
+      },
+      {
+        "type": "Gate",
+        "args": [
+          {
+            "x": 503,
+            "y": 281,
+            "w": 21,
+            "h": 259
+          },
+          "fuse",
+          {
+            "closeSpeed": 0.72
+          }
+        ]
+      },
+      {
+        "type": "Teleporter",
+        "args": [
+          612,
+          392,
+          67,
+          122,
+          {
+            "twoWay": false
+          }
+        ]
+      },
+      {
+        "type": "CrumblePlatform",
+        "args": [
+          {
+            "x": 280,
+            "y": 180,
+            "w": 122,
+            "h": 16
+          },
+          {
+            "delay": 0.7
+          }
+        ]
+      },
+      {
+        "type": "Saw",
+        "args": [
+          [
+            {
+              "x": 662,
+              "y": 153
+            },
+            {
+              "x": 687,
+              "y": 207
+            }
+          ],
+          {
+            "speed": 85,
+            "r": 14
+          }
+        ]
+      },
+      {
+        "type": "PopSpikes",
+        "args": [
+          804,
+          190,
+          40,
+          {
+            "x": 578,
+            "y": 281,
+            "w": 32,
+            "h": 159
+          },
+          {
+            "delay": 0.3
+          }
+        ]
+      },
+      {
+        "type": "StaticSpikes",
+        "args": [
+          295,
+          540,
+          665,
+          {
+            "size": 30
+          }
+        ]
+      }
+    ],
+    "experiment": {
+      "version": 2,
+      "trapIds": [
+        "plate",
+        "shutter",
+        "transfer",
+        "holder",
+        "needle",
+        "teeth",
+        "pit"
+      ],
+      "stages": [
+        {
+          "label": "Fuse plate",
+          "target": {
+            "x": 402,
+            "y": 408
+          },
+          "requires": [
+            {
+              "trap": "plate",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Shutter landing",
+          "target": {
+            "x": 610,
+            "y": 408
+          },
+          "reach": {
+            "x": 535,
+            "y": 402,
+            "w": 150,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "shutter",
+              "event": "open",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "Transfer",
+          "target": {
+            "x": 618,
+            "y": 408
+          },
+          "requires": [
+            {
+              "trap": "transfer",
+              "event": "activate",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        },
+        {
+          "label": "Brittle holder",
+          "target": {
+            "x": 341,
+            "y": 148
+          },
+          "reach": {
+            "x": 280,
+            "y": 142,
+            "w": 122,
+            "h": 12
+          },
+          "requires": [
+            {
+              "trap": "holder",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": true
+        },
+        {
+          "label": "High holder",
+          "target": {
+            "x": 535,
+            "y": 93
+          },
+          "reach": {
+            "x": 470,
+            "y": 87,
+            "w": 130,
+            "h": 12
+          },
+          "requires": [],
+          "grounded": true
+        },
+        {
+          "label": "Final fuse",
+          "target": {
+            "x": 896,
+            "y": 158
+          },
+          "requires": [
+            {
+              "trap": "teeth",
+              "event": "trigger",
+              "minTicks": 1
+            }
+          ],
+          "grounded": false
+        }
+      ],
+      "required": [
+        {
+          "trap": "plate",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "shutter",
+          "event": "open",
+          "minTicks": 1
+        },
+        {
+          "trap": "transfer",
+          "event": "activate",
+          "minTicks": 1
+        },
+        {
+          "trap": "holder",
+          "event": "trigger",
+          "minTicks": 1
+        },
+        {
+          "trap": "teeth",
+          "event": "trigger",
+          "minTicks": 1
+        }
+      ]
+    },
+    "review": {
+      "authorship": "Handcrafted; explicit coordinates",
+      "productionReady": false,
+      "manualReview": "PENDING"
+    }
+  },
+  "validation": {
+    "status": "PASSED",
+    "errors": [],
+    "warning": "Static validation is not a completion proof."
+  },
+  "solution": {
+    "status": "VERIFIED",
+    "trace": {
+      "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+      "hash": "b754dcc11e157772b7a910bbdbdd865075c0dc96a4c0e9a2ba949bb3491600f5",
+      "seed": 95,
+      "initial": {
+        "spawn": {
+          "x": 50,
+          "y": 468
+        },
+        "trapState": "fresh constructor reset",
+        "deaths": 0
+      },
+      "step": 0.008333333333333333,
+      "duration": 12,
+      "actions": [
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          true
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          1,
+          false
+        ]
+      ]
+    },
+    "replay": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 612,
+      "seconds": 5.1,
+      "end": [
+        858.2083333333376,
+        158,
+        "win"
+      ]
+    },
+    "expanded": 28459,
+    "rejectedWins": 0,
+    "removedJumpPressTicks": [
+      36,
+      444
+    ]
+  },
+  "measurements": {
+    "status": "VERIFIED",
+    "requirementsMet": true,
+    "orderedStagesComplete": true,
+    "engineHash": "745ca221d6c6963cf8651c366c02eda58ce8de814fde9f9a2e13b15ce02f27bd",
+    "levelHash": "b754dcc11e157772b7a910bbdbdd865075c0dc96a4c0e9a2ba949bb3491600f5",
+    "proof": {
+      "status": "VERIFIED",
+      "surprise": true,
+      "ticks": 612,
+      "seconds": 5.1,
+      "end": [
+        858.2083333333376,
+        158,
+        "win"
+      ]
+    },
+    "ticks": 612,
+    "successfulReplaySeconds": 5.1,
+    "seconds": {
+      "activeTraversal": 5.091666666666667,
+      "passiveTransport": 0.008333333333333333,
+      "stationary": 0,
+      "neutralWaiting": 0,
+      "blockedInput": 0,
+      "repeatedTraversal": 0
+    },
+    "distance": {
+      "selfPixels": 1791.9507848242843,
+      "carriedPixels": 0,
+      "portalPixels": 583.7989913880278
+    },
+    "inputs": {
+      "jumpPresses": 6,
+      "horizontalReversals": 0
+    },
+    "required": [
+      {
+        "trap": "plate",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 137
+      },
+      {
+        "trap": "shutter",
+        "event": "open",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 164
+      },
+      {
+        "trap": "transfer",
+        "event": "activate",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 250
+      },
+      {
+        "trap": "holder",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 362
+      },
+      {
+        "trap": "teeth",
+        "event": "trigger",
+        "minTicks": 1,
+        "observed": true,
+        "firstTick": 235
+      }
+    ],
+    "events": [
+      {
+        "tick": 1,
+        "id": "platform:0",
+        "event": "land"
+      },
+      {
+        "tick": 97,
+        "id": "pit",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 137,
+        "id": "plate",
+        "event": "activate"
+      },
+      {
+        "tick": 137,
+        "id": "stage:0",
+        "event": "complete",
+        "label": "Fuse plate"
+      },
+      {
+        "tick": 139,
+        "id": "platform:1",
+        "event": "land"
+      },
+      {
+        "tick": 164,
+        "id": "shutter",
+        "event": "open"
+      },
+      {
+        "tick": 221,
+        "id": "platform:2",
+        "event": "land"
+      },
+      {
+        "tick": 226,
+        "id": "stage:1",
+        "event": "complete",
+        "label": "Shutter landing"
+      },
+      {
+        "tick": 235,
+        "id": "teeth",
+        "event": "trigger"
+      },
+      {
+        "tick": 250,
+        "id": "transfer",
+        "event": "activate"
+      },
+      {
+        "tick": 250,
+        "id": "stage:2",
+        "event": "complete",
+        "label": "Transfer"
+      },
+      {
+        "tick": 362,
+        "id": "holder",
+        "event": "trigger"
+      },
+      {
+        "tick": 362,
+        "id": "stage:3",
+        "event": "complete",
+        "label": "Brittle holder"
+      },
+      {
+        "tick": 455,
+        "id": "platform:5",
+        "event": "land"
+      },
+      {
+        "tick": 455,
+        "id": "stage:4",
+        "event": "complete",
+        "label": "High holder"
+      },
+      {
+        "tick": 456,
+        "id": "stage:5",
+        "event": "complete",
+        "label": "Final fuse"
+      },
+      {
+        "tick": 537,
+        "id": "needle",
+        "event": "hazardNear"
+      },
+      {
+        "tick": 546,
+        "id": "platform:6",
+        "event": "land"
+      },
+      {
+        "tick": 599,
+        "id": "teeth",
+        "event": "hazardNear"
+      }
+    ],
+    "stagesCompleted": 6,
+    "limitations": [
+      "Time categories describe motion, not human difficulty. Active includes ballistic motion.",
+      "Repeated traversal is a 20px-cell revisit heuristic, reset on first mechanic events or ordered stage progress.",
+      "Hazard proximity uses a 24px margin around the player and does not prove causality.",
+      "Observed requirements are not a proof that every alternative route requires them."
+    ],
+    "interactionTicks": {
+      "platform:0:land": 1,
+      "pit:hazardNear": 13,
+      "plate:activate": 1,
+      "stage:0:complete": 1,
+      "platform:1:land": 1,
+      "shutter:open": 1,
+      "platform:2:land": 1,
+      "stage:1:complete": 1,
+      "teeth:trigger": 1,
+      "transfer:activate": 1,
+      "stage:2:complete": 1,
+      "holder:trigger": 1,
+      "stage:3:complete": 1,
+      "platform:5:land": 1,
+      "stage:4:complete": 1,
+      "stage:5:complete": 1,
+      "needle:hazardNear": 7,
+      "platform:6:land": 2,
+      "teeth:hazardNear": 14
+    }
+  },
+  "verified": true,
+  "nearest": [
+    {
+      "id": 79,
+      "score": 0.4883928571428572,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 89,
+      "score": 0.3848684210526315,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    },
+    {
+      "id": 81,
+      "score": 0.3694852941176471,
+      "reason": "30% geometry cells + 30% mechanic overlap + 15% activation order + 10% exits + 15% timing/trigger/path parameters; names/colors ignored"
+    }
+  ],
+  "productionReady": false,
+  "manualReview": "PENDING",
+  "wallSeconds": 18.599
+}

@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "id": 481,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 516,
+      "seconds": 4.3,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 482,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 696,
+      "seconds": 5.8,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    },
+    {
+      "id": 483,
+      "state": "win",
+      "deaths": 0,
+      "ticks": 528,
+      "seconds": 4.4,
+      "liveControls": true,
+      "restart": true,
+      "returnToLab": true,
+      "savesUnchanged": true
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "postRequests": [],
+  "filesUnchanged": true
+}

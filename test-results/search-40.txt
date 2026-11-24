@@ -1,0 +1,35 @@
+0 6 {
+  score: -533.9274305555556,
+  stage: 0,
+  p: {
+    x: 64.86111111111111,
+    y: 437.69791666666663,
+    w: 26,
+    h: 32,
+    vx: 186.66666666666666,
+    vy: -609.1666666666667,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: true
+  }
+}
+20 80 {
+  score: 19674.210416666665,
+  stage: 2,
+  p: {
+    x: 823.8333333333345,
+    y: 395.9375,
+    w: 26,
+    h: 32,
+    vx: 265,
+    vy: 209.99999999999997,
+    grounded: false,
+    coyote: 0,
+    face: 1,
+    squash: 0,
+    jumping: false
+  }
+}
+WIN 40 seconds 3.3 actions 33

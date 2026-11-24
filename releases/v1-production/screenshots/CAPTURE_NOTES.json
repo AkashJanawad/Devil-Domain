@@ -1,0 +1,44 @@
+[
+  {
+    "level": 72,
+    "name": "DOVETAIL",
+    "state": "play",
+    "ticks": 120,
+    "player": {
+      "x": 296.91666666666674,
+      "y": 266.8333333333329
+    },
+    "file": "screenshots/01-level-72.jpg",
+    "width": 1920,
+    "height": 1080,
+    "source": "Locked release assets in Chrome touch viewport; actual physics replay; not a physical-device screenshot"
+  },
+  {
+    "level": 91,
+    "name": "THE TURNSTILE",
+    "state": "play",
+    "ticks": 160,
+    "player": {
+      "x": 705.2500000000022,
+      "y": 298
+    },
+    "file": "screenshots/02-level-91.jpg",
+    "width": 1920,
+    "height": 1080,
+    "source": "Locked release assets in Chrome touch viewport; actual physics replay; not a physical-device screenshot"
+  },
+  {
+    "level": 100,
+    "name": "THE HUNDREDTH DOOR",
+    "state": "play",
+    "ticks": 150,
+    "player": {
+      "x": 254.5957725451374,
+      "y": 357.675213112375
+    },
+    "file": "screenshots/03-level-100.jpg",
+    "width": 1920,
+    "height": 1080,
+    "source": "Locked release assets in Chrome touch viewport; actual physics replay; not a physical-device screenshot"
+  }
+]

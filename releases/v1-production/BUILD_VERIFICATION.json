@@ -1,0 +1,34 @@
+{
+  "package": "com.janawad.devildomain",
+  "versionName": "1.0",
+  "versionCode": 1,
+  "targetSdk": 36,
+  "minSdk": 24,
+  "debuggable": false,
+  "permissions": [
+    "android.permission.INTERNET",
+    "com.janawad.devildomain.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "nativeSharedLibraries": [],
+  "packagedWebAssets": 20,
+  "releaseProgressionLocked": true,
+  "signatureVerified": true,
+  "existingUploadCertificateMatched": true,
+  "bundletoolValidation": "PASS",
+  "releaseLint": "PASS",
+  "engineAnd100LevelHashesUnchanged": true,
+  "nodeRegression": {
+    "unresolvedFailures": 0,
+    "suiteTests": 193,
+    "initialFail": 1,
+    "initialFailure": "Stale www output in packaging comparison; refreshed with cap sync",
+    "affectedFileRerun": "tests/gameplay.test.js: all 55 passed",
+    "initialPass": 192
+  },
+  "chromeCompletionReplays": 61,
+  "privacyBrowserChecks": "PASS: three phone viewports, local policy, Close/Escape/native Back, unchanged saves",
+  "publicPrivacyHosting": "Pending publisher hosting of privacy-policy.html",
+  "playConsoleUpload": "Not performed",
+  "guide": "PLAY_STORE_UPLOAD_GUIDE.md",
+  "verifiedSourceWebAssets": 18
+}
